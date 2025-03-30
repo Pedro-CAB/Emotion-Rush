@@ -8,10 +8,21 @@ public class Player : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
 
+    private Animator animator;
+
+    enum Directions{
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
+    private Directions facingDirection = Directions.Down;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -24,6 +35,19 @@ public class Player : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.zero;
+        }
+
+        handleAnimations(movementJoystick.joystickVector.x, movementJoystick.joystickVector.y);
+    }
+
+    void handleAnimations(float x, float y){
+        if(x != 0 || y != 0){
+            animator.SetFloat("x", (int)x);
+            animator.SetFloat("y", (int)y);
+            animator.SetBool("isMoving", true);
+        }
+        else{
+            animator.SetBool("isMoving", false);
         }
     }
 }
