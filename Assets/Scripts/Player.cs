@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
     private Animator animator;
 
     enum Directions{
-        Up,
-        Down,
-        Left,
-        Right
+        Up, //0
+        Down, //1
+        Left, //2
+        Right //3
     }
 
     private Directions facingDirection = Directions.Down;
@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
     }
 
     void handleAnimations(float x, float y){
+
+        //Check if the player is moving
         if(x != 0 || y != 0){
             animator.SetFloat("x", (int)x);
             animator.SetFloat("y", (int)y);
@@ -49,5 +51,26 @@ public class Player : MonoBehaviour
         else{
             animator.SetBool("isMoving", false);
         }
+
+        print("x: " + x + " y: " + y);
+        //Check the direction the player is facing
+        if(Mathf.Abs(x) > Mathf.Abs(y)){
+            if (x > 0){
+                facingDirection = Directions.Right;
+            }
+            else{
+                facingDirection = Directions.Left;
+            }
+        }
+        else if(Mathf.Abs(y) >= Mathf.Abs(x)){
+            if (y > 0){
+                facingDirection = Directions.Up;
+            }
+            else{
+                facingDirection = Directions.Down;
+            }
+        }
+
+        animator.SetInteger("direction", (int)facingDirection);
     }
 }
