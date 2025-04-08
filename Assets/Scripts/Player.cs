@@ -51,8 +51,7 @@ public class Player : MonoBehaviour
         else{
             animator.SetBool("isMoving", false);
         }
-
-        print("x: " + x + " y: " + y);
+        
         //Check the direction the player is facing
         if(Mathf.Abs(x) > Mathf.Abs(y)){
             if (x > 0){
