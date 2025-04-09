@@ -16,17 +16,5 @@ To ensure replayability, the player character’s classmates will have their ski
 
 There are no known games for promoting Emotion Regulation in adolescents in Residential Care, so this game aims to be the first Serious Game for this specific group.
 
-## Development Log
-### Sprint 0 (03/04-10/04)
-This first sprint kicked off the project and consisted on the first development week, where the project was configured and initial basic features were implemented, as well as some key features of the game started their implementation. Namely:
-- Player Movement and Animation
-- Joystick and Interact Button UI
-- Player-Wall Collisions
-
-### Sprint 1
-### Sprint 2
-### Sprint 3
-### Sprint 4
-### Sprint 5
-### Sprint 6
-### Sprint 7
+## Documentation Links
+- [Development Log](Docs/LOG.md)
