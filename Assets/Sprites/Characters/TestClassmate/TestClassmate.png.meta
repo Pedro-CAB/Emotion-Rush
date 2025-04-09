@@ -1,0 +1,1593 @@
+fileFormatVersion: 2
+guid: 51335d5aa87dfa842ab51719ea13614c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1680172823496670083
+    second: TestClassmate_0
+  - first:
+      213: -8777872973359755756
+    second: TestClassmate_1
+  - first:
+      213: 3629132483525008105
+    second: TestClassmate_2
+  - first:
+      213: 435894769230167002
+    second: TestClassmate_3
+  - first:
+      213: 4196950542292826255
+    second: TestClassmate_4
+  - first:
+      213: -1524783219701026798
+    second: TestClassmate_5
+  - first:
+      213: -2163234702445291580
+    second: TestClassmate_6
+  - first:
+      213: -6666786263241813598
+    second: TestClassmate_7
+  - first:
+      213: -3987888757332818189
+    second: TestClassmate_8
+  - first:
+      213: 526823798507194200
+    second: TestClassmate_9
+  - first:
+      213: -718678961529017805
+    second: TestClassmate_10
+  - first:
+      213: 7817036463985872268
+    second: TestClassmate_11
+  - first:
+      213: -7352143077519983924
+    second: TestClassmate_12
+  - first:
+      213: -5758645301574019469
+    second: TestClassmate_13
+  - first:
+      213: 5913276089138775989
+    second: TestClassmate_14
+  - first:
+      213: -6590451282330394742
+    second: TestClassmate_15
+  - first:
+      213: -4720780107493487381
+    second: TestClassmate_16
+  - first:
+      213: 7488929045849196663
+    second: TestClassmate_17
+  - first:
+      213: -1749616236377788664
+    second: TestClassmate_18
+  - first:
+      213: -9186214929840288976
+    second: TestClassmate_19
+  - first:
+      213: -1386763061359861118
+    second: TestClassmate_20
+  - first:
+      213: -2367390426929311791
+    second: TestClassmate_21
+  - first:
+      213: -7179863986137197152
+    second: TestClassmate_22
+  - first:
+      213: 4402379825098385268
+    second: TestClassmate_23
+  - first:
+      213: -4814840959045659601
+    second: TestClassmate_24
+  - first:
+      213: 1823277874956046227
+    second: TestClassmate_25
+  - first:
+      213: -4209982799840211282
+    second: TestClassmate_26
+  - first:
+      213: 5802887901255564387
+    second: TestClassmate_27
+  - first:
+      213: -9157864940807791718
+    second: TestClassmate_28
+  - first:
+      213: 3148988415479947835
+    second: TestClassmate_29
+  - first:
+      213: -7924694695538031160
+    second: TestClassmate_30
+  - first:
+      213: -3996975155117805514
+    second: TestClassmate_31
+  - first:
+      213: -5253643179902275117
+    second: TestClassmate_32
+  - first:
+      213: 1100920311361307961
+    second: TestClassmate_33
+  - first:
+      213: 3415191850189267569
+    second: TestClassmate_34
+  - first:
+      213: -236208641266417783
+    second: TestClassmate_35
+  - first:
+      213: -5642854344964333604
+    second: TestClassmate_36
+  - first:
+      213: 5125918553871797484
+    second: TestClassmate_37
+  - first:
+      213: -7023178779738349573
+    second: TestClassmate_38
+  - first:
+      213: -6546403211829604580
+    second: TestClassmate_39
+  - first:
+      213: -6143951735587112620
+    second: TestClassmate_40
+  - first:
+      213: 4570546433473595818
+    second: TestClassmate_41
+  - first:
+      213: 1997086242748679447
+    second: TestClassmate_42
+  - first:
+      213: 7278425376009591178
+    second: TestClassmate_43
+  - first:
+      213: -5747058499341082362
+    second: TestClassmate_44
+  - first:
+      213: 5099718819921374615
+    second: TestClassmate_45
+  - first:
+      213: -4400919072575265790
+    second: TestClassmate_46
+  - first:
+      213: -6068247904568725687
+    second: TestClassmate_47
+  - first:
+      213: 8563323617547152794
+    second: TestClassmate_48
+  - first:
+      213: 7895714518551331362
+    second: TestClassmate_49
+  - first:
+      213: -7041351092204002899
+    second: TestClassmate_50
+  - first:
+      213: -2208416092807956220
+    second: TestClassmate_51
+  - first:
+      213: -2136741971278620988
+    second: TestClassmate_52
+  - first:
+      213: 2129967682834397572
+    second: TestClassmate_53
+  - first:
+      213: -7358597357977603858
+    second: TestClassmate_54
+  - first:
+      213: -410920358332870653
+    second: TestClassmate_55
+  - first:
+      213: -8986651650268160139
+    second: TestClassmate_56
+  - first:
+      213: -3854871492335288039
+    second: TestClassmate_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestClassmate_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 287
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38bb8c1f74c215710800000000000000
+      internalID: 1680172823496670083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 287
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ec363b90bbe2680800000000000000
+      internalID: -8777872973359755756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 287
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ead65b04c44d5230800000000000000
+      internalID: 3629132483525008105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 287
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb3a6fabfb9c0600800000000000000
+      internalID: 435894769230167002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f883f3528409e3a30800000000000000
+      internalID: 4196950542292826255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2107e368db1e6dae0800000000000000
+      internalID: -1524783219701026798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 191
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c753fadf75aaf1e0800000000000000
+      internalID: -2163234702445291580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_7
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 191
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1940a3731da73a0800000000000000
+      internalID: -6666786263241813598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_8
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6476fcd4c28a8c0800000000000000
+      internalID: -3987888757332818189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8574e391477af4700800000000000000
+      internalID: 526823798507194200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_10
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a248eca4db606f0800000000000000
+      internalID: -718678961529017805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_11
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d47206f31bb7c60800000000000000
+      internalID: 7817036463985872268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_12
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 191
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccaf29603d0f7f990800000000000000
+      internalID: -7352143077519983924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_13
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 191
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376553cdb9e2510b0800000000000000
+      internalID: -5758645301574019469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_14
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b78defe54d201250800000000000000
+      internalID: 5913276089138775989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_15
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8fdd27f9730a84a0800000000000000
+      internalID: -6590451282330394742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_16
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becce16018b6c7eb0800000000000000
+      internalID: -4720780107493487381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_17
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77842f50a450ee760800000000000000
+      internalID: 7488929045849196663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_18
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 191
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f22798d4d18b7e0800000000000000
+      internalID: -1749616236377788664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_19
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 191
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03bca742132048080800000000000000
+      internalID: -9186214929840288976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_20
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2822304d75a31cce0800000000000000
+      internalID: -1386763061359861118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_21
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 191
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dfc73e13f6552fd0800000000000000
+      internalID: -2367390426929311791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_22
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a51ca2cebffb5c90800000000000000
+      internalID: -7179863986137197152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_23
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477e5594025681d30800000000000000
+      internalID: 4402379825098385268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_24
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 191
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24151a68af3e2db0800000000000000
+      internalID: -4814840959045659601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_25
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 191
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f859f21959d4910800000000000000
+      internalID: 1823277874956046227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_26
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 191
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae0501f2f22395c0800000000000000
+      internalID: -4209982799840211282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_27
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 191
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36cffb91dcff78050800000000000000
+      internalID: 5802887901255564387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bd5265b5ab8e080800000000000000
+      internalID: -9157864940807791718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_29
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 98
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32a082a74473bb20800000000000000
+      internalID: 3148988415479947835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_30
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c588074924d50290800000000000000
+      internalID: -7924694695538031160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_31
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6303427f544e788c0800000000000000
+      internalID: -3996975155117805514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_32
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 98
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d17545ec5f4717b0800000000000000
+      internalID: -5253643179902275117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_33
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93504b4b031474f00800000000000000
+      internalID: 1100920311361307961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_34
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 95
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172275ea4e2356f20800000000000000
+      internalID: 3415191850189267569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_35
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 95
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fff640e71d8bcf0800000000000000
+      internalID: -236208641266417783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_36
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 95
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf9121dedd80b1b0800000000000000
+      internalID: -5642854344964333604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_37
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 95
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceccc1734cbe22740800000000000000
+      internalID: 5125918553871797484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_38
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 95
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff52a73c18a88e90800000000000000
+      internalID: -7023178779738349573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_39
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 95
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f8b6296f08625a0800000000000000
+      internalID: -6546403211829604580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_40
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4597f23d27c4cbaa0800000000000000
+      internalID: -6143951735587112620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_41
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 98
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa94f94f3c7dd6f30800000000000000
+      internalID: 4570546433473595818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_42
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715cad45b5317bb10800000000000000
+      internalID: 1997086242748679447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_43
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a899d351159220560800000000000000
+      internalID: 7278425376009591178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_44
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 98
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601a26b7eb85e30b0800000000000000
+      internalID: -5747058499341082362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_45
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 95
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79da9cb4f37d5c640800000000000000
+      internalID: 5099718819921374615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_46
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 98
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204e8e9ab6bcce2c0800000000000000
+      internalID: -4400919072575265790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_47
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 95
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f2c278ea049cba0800000000000000
+      internalID: -6068247904568725687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_48
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 98
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d6c90b57907d670800000000000000
+      internalID: 8563323617547152794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_49
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 98
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22285267586339d60800000000000000
+      internalID: 7895714518551331362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_50
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 95
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da12f520d78184e90800000000000000
+      internalID: -7041351092204002899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_51
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 98
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409fce7a3412a51e0800000000000000
+      internalID: -2208416092807956220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_52
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 38
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c615418f74c852e0800000000000000
+      internalID: -2136741971278620988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_53
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 38
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489f76e825a2f8d10800000000000000
+      internalID: 2129967682834397572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_54
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 41
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0fd90c0b201e990800000000000000
+      internalID: -7358597357977603858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_55
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 41
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300d79a7c1e1c4af0800000000000000
+      internalID: -410920358332870653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_56
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 38
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f9699ffeff84380800000000000000
+      internalID: -8986651650268160139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestClassmate_57
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 38
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911439c3dceb08ac0800000000000000
+      internalID: -3854871492335288039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
