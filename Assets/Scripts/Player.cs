@@ -6,8 +6,12 @@ public class Player : MonoBehaviour
 {
     public MovementJoystick movementJoystick;
     public float speed;
+
+    public float detect_distance;
     private Rigidbody2D rb;
     private Animator animator;
+
+    private GameObject detectedObject;
 
     enum Directions{
         Up, //0
@@ -27,9 +31,11 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         handleJoystickInput();
+        handleObjectDetection();
         handleAnimations(movementJoystick.joystickVector.x, movementJoystick.joystickVector.y);
     }
 
+    //Receiving input from joystick and translating it to player movement
     void handleJoystickInput(){
         if(movementJoystick.joystickVector.y != 0)
         {
@@ -42,12 +48,39 @@ public class Player : MonoBehaviour
         }
     }
 
+    void handleObjectDetection(){
+        Vector3 position = transform.position; //Get Player position
+        Vector3 direction = movementJoystick.joystickVector; //Get direction from joystick
+        if (direction == Vector3.zero){ //If it's not moving
+            if (facingDirection == Directions.Up){
+                direction = Vector3.up;
+            }
+            else if (facingDirection == Directions.Down){
+                direction = Vector3.down;
+            }
+            else if (facingDirection == Directions.Left){
+                direction = Vector3.left;
+            }
+            else if (facingDirection == Directions.Right){
+                direction = Vector3.right;
+            }
+        }
+        else{
+            detectedObject = null;
+        }
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, detect_distance, 1 << 3); //Raycast to detect objects in the direction of the joystick in Layer 3: NPC's
+
+        if (hit)
+        {
+            detectedObject = hit.collider.gameObject;
+        }
+    }
+
+    // Handle animation parameters for animator
     void handleAnimations(float x, float y){
 
         //Check if the player is moving
         if(x != 0 || y != 0){
-            animator.SetFloat("x", (int)x);
-            animator.SetFloat("y", (int)y);
             animator.SetBool("isMoving", true);
         }
         else{
@@ -73,5 +106,14 @@ public class Player : MonoBehaviour
         }
 
         animator.SetInteger("direction", (int)facingDirection);
+    }
+
+    public void interact(){
+        if (detectedObject != null){
+            Debug.Log("Interacting with: " + detectedObject.name);
+        }
+        else{
+            Debug.Log("No object detected to interact with.");	
+        }
     }
 }
