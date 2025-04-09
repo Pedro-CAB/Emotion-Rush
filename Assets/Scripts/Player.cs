@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     public MovementJoystick movementJoystick;
     public float speed;
     private Rigidbody2D rb;
-
     private Animator animator;
 
     enum Directions{
@@ -27,6 +26,11 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        handleJoystickInput();
+        handleAnimations(movementJoystick.joystickVector.x, movementJoystick.joystickVector.y);
+    }
+
+    void handleJoystickInput(){
         if(movementJoystick.joystickVector.y != 0)
         {
             rb.linearVelocity = new Vector2(movementJoystick.joystickVector.x * speed, movementJoystick.joystickVector.y * speed);
@@ -36,8 +40,6 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
         }
-
-        handleAnimations(movementJoystick.joystickVector.x, movementJoystick.joystickVector.y);
     }
 
     void handleAnimations(float x, float y){
