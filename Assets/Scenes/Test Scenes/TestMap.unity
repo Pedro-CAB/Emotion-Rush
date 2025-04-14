@@ -318,6 +318,7 @@ MonoBehaviour:
   movementJoystick: {fileID: 1048663258}
   speed: 5
   detect_distance: 1
+  dialogueBox: {fileID: 0}
 --- !u!95 &210098759
 Animator:
   serializedVersion: 7

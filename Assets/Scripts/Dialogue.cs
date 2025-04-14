@@ -14,10 +14,13 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
+        //StartDialogue();
+        gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
-    void StartDialogue(){
+    public void StartDialogue(string[] l){
+        gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        lines = l;
         index = 0;
         StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
     }
