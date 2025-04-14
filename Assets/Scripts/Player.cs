@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
-    private GameObject detectedObject;
+    private InteractiveNPC detectedNPC;
 
     enum Directions{
         Up, //0
@@ -66,13 +66,13 @@ public class Player : MonoBehaviour
             }
         }
         else{
-            detectedObject = null;
+            detectedNPC = null;
         }
         RaycastHit2D hit = Physics2D.Raycast(position, direction, detect_distance, 1 << 3); //Raycast to detect objects in the direction of the joystick in Layer 3: NPC's
 
         if (hit)
         {
-            detectedObject = hit.collider.gameObject;
+            detectedNPC = hit.collider.gameObject.GetComponent<InteractiveNPC>();
         }
     }
 
@@ -109,8 +109,9 @@ public class Player : MonoBehaviour
     }
 
     public void interact(){
-        if (detectedObject != null){
-            Debug.Log("Interacting with: " + detectedObject.name);
+        if (detectedNPC != null){
+            Debug.Log("Interacting with: " + detectedNPC.name);
+            detectedNPC.whenInteracted();
         }
         else{
             Debug.Log("No object detected to interact with.");	
