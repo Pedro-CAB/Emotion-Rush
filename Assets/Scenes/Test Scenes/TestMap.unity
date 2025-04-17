@@ -759,8 +759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 200}
+  m_AnchoredPosition: {x: -7.8586, y: 0}
+  m_SizeDelta: {x: 1698.3594, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399986379
 MonoBehaviour:
@@ -1844,7 +1844,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2127514861}
         m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: Pressed
+        m_MethodName: SkipDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14901,7 +14901,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1577725098}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 778374040}
+        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+        m_MethodName: PickOptionB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1577725098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15567,7 +15579,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1959820225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 778374040}
+        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+        m_MethodName: PickOptionA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1959820225
 MonoBehaviour:
   m_ObjectHideFlags: 0

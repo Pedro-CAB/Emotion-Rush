@@ -14,7 +14,6 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        //StartDialogue();
         gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
@@ -32,6 +31,7 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeLine()); // Start the coroutine to type out the next line of dialogue
         }
         else{
+            textComponent.text = string.Empty; // Clear the text component when all lines are displayed
             gameObject.SetActive(false);
         }
     }
@@ -43,7 +43,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void Pressed(){
+    public void SkipDialog(){
         if (textComponent.text == lines[index]){ //If previous line is already fully displayed
             NextLine();
         }
@@ -53,5 +53,18 @@ public class Dialogue : MonoBehaviour
         }
         Debug.Log("Line Skipped!");
 
+ 
+    }
+
+    public void PickOptionA(){
+        Debug.Log("Option A picked!");
+    }
+
+    public void PickOptionB(){
+        Debug.Log("Option B picked!");
+    }
+
+    public void PickOptionC(){
+        Debug.Log("Option C picked!");
     }
 }
