@@ -13,13 +13,14 @@ public class DialogueManager : MonoBehaviour
     public void setCurrentLine(DialogueLine line){
         List<string> linearLines =  new List<string>();
         linearLines.Add(line.content);
-        while (line.options.Length >= 1){
+        //Iterate through the dialogue lines until there are no more options or next lines
+        while (line.dialogueOptions.Length >= 1 || line.nextLine){
             //If the first line doesn't have options, send all consecutive lines without options to be handled at once
             if(currentLine.type == DialogueLine.LineType.Linear){
                 //linearDialogueBox.StartDialogue(line.content);
-                while (currentLine.options[0].type == DialogueLine.LineType.Linear){
-                    linearLines.Add(currentLine.options[0].content);
-                    currentLine = currentLine.options[0];
+                while (currentLine.nextLine){
+                    linearLines.Add(currentLine.nextLine.content);
+                    currentLine = currentLine.nextLine;
                 }
                 linearDialogueBox.StartLinearDialogue(linearLines);
             }

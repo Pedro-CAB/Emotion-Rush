@@ -6,6 +6,8 @@ public class InteractiveNPC : MonoBehaviour
     public int friendshipLevel = 0;
     public int maxFriendshipLevel = 100;
 
+    DialogueLine interactions; //Contains the first line of each possible interaction
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,5 +37,12 @@ public class InteractiveNPC : MonoBehaviour
         lines.Add("Este é um diálogo de teste!"); // Add the second line to the list
         lines.Add("Espero que funcione! :)"); // Add the third line to the list
         return lines;
+    }
+
+    public void createDialogueInteractions(){
+        //Create Interactions Here
+        //DialogueLine line1 = new DialogueLine("Olá! Tudo bem?", {new DialogueLine("Este é um diálogo de teste!", {new DialogueLine("Espero que funcione! :)", {})})});
+
+        //Add the lines to the interactions list
     }
 }
