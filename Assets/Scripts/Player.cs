@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private Animator animator;
 
     private InteractiveNPC detectedNPC;
-    public Dialogue dialogueBox;
+    public DialogueBox dialogueBox;
 
     enum Directions{
         Up, //0
@@ -112,8 +112,8 @@ public class Player : MonoBehaviour
     public void interact(){
         if (detectedNPC != null){
             Debug.Log("Interacting with: " + detectedNPC.name);
-            string[] lines = detectedNPC.whenInteracted();
-            dialogueBox.StartDialogue(lines); //Start the dialogue with the lines returned from the NPC
+            List<string> lines = detectedNPC.whenInteracted();
+            dialogueBox.StartLinearDialogue(lines); //Start the dialogue with the lines returned from the NPC
         }
         else{
             Debug.Log("No object detected to interact with.");	

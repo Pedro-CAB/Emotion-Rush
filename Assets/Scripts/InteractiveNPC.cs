@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class InteractiveNPC : MonoBehaviour
 {
@@ -27,12 +28,12 @@ public class InteractiveNPC : MonoBehaviour
         }
     }
 
-    public string[] whenInteracted(){ //Called when player interacts with character
+    public List<string> whenInteracted(){ //Called when player interacts with character
         Debug.Log(gameObject.name + " interacted back!");
-        string[] lines = new string[3];
-        lines[0] = "Olá! Tudo bem?";
-        lines[1] = "Este é um diálogo de teste!";
-        lines[2] = "Espero que funcione! :)";
+        List<string> lines = new List<string>();
+        lines.Add("Olá! Tudo bem?"); // Add the first line to the list
+        lines.Add("Este é um diálogo de teste!"); // Add the second line to the list
+        lines.Add("Espero que funcione! :)"); // Add the third line to the list
         return lines;
     }
 }

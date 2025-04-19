@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class DialogueBox : MonoBehaviour
 {
     public TextMeshProUGUI textComponent; // Reference to the TextMeshProUGUI component for displaying text
-    public string[] lines; // Array of strings to hold the dialogue lines
+
+    public Button optionAButton; // Reference to the button for option A
+    public Button optionBButton; // Reference to the button for option B
+    public Button optionCButton; // Reference to the button for option C
+
+
+
+    public List<string> lines; // Array of strings to hold the dialogue lines
     public float textSpeed; // Speed at which the text is displayed
     private int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,15 +25,22 @@ public class Dialogue : MonoBehaviour
         gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
-    public void StartDialogue(string[] l){
-        gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
-        lines = l;
-        index = 0;
-        StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
+    //Handling Linear Dialogue --------------------------------------------------------------------------------------------
+
+    public void StartLinearDialogue(List<string> l, int option_amount = 1){
+        if (option_amount == 1){ // If the dialogue is linear (one option)
+            gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+            lines = l;
+            index = 0;
+            StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
+        }
+        else{
+            Debug.LogError("DialogueBox: Too many options for a single line of dialogue.");
+        }
     }
 
-    void NextLine(){
-        if (index < lines.Length - 1){
+    void NextLinearLine(){
+        if (index < lines.Count - 1){
             index++;
             textComponent.text = string.Empty; // Clear the text component before displaying the next line
             StartCoroutine(TypeLine()); // Start the coroutine to type out the next line of dialogue
@@ -45,7 +60,7 @@ public class Dialogue : MonoBehaviour
 
     public void SkipDialog(){
         if (textComponent.text == lines[index]){ //If previous line is already fully displayed
-            NextLine();
+            NextLinearLine();
         }
         else{
             StopAllCoroutines(); // Stop the typing coroutine if the button is pressed before the line is fully displayed
@@ -55,6 +70,8 @@ public class Dialogue : MonoBehaviour
 
  
     }
+
+    //Handling Option Dialogue ----------------------------------------------------------------------------------------
 
     public void PickOptionA(){
         Debug.Log("Option A picked!");
