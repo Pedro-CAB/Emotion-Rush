@@ -39,13 +39,6 @@ public class InteractiveNPC : MonoBehaviour
         Debug.Log(dialogueManager.name + " is the dialogue manager!");
         Debug.Log(interactions[0].content);
         dialogueManager.setCurrentLine(interactions[0]);
-
-        /**
-        List<string> lines = new List<string>();
-        lines.Add("Olá! Tudo bem?"); // Add the first line to the list
-        lines.Add("Este é um diálogo de teste!"); // Add the second line to the list
-        lines.Add("Espero que funcione! :)"); // Add the third line to the list
-        return lines;*/
     }
 
     public void createDialogueInteractions(){
@@ -55,6 +48,15 @@ public class InteractiveNPC : MonoBehaviour
         DialogueLine line3 = new DialogueLine("Espero que funcione! :)", null, null);
         DialogueLine line2 = new DialogueLine("Este é um diálogo de teste!", line3, null);
         DialogueLine line1 = new DialogueLine("Olá! Tudo bem?", line2, null);
+
+        //interactions.Add(line1);
+
+        //Sample Two Option Interaction
+        line1 = new DialogueLine("Ok... Fica para a próxima então.", null, null);
+        line2 = new DialogueLine("Obrigado!", null, null);
+        DialogueLine option1 = new DialogueLine("Sim.", line2, null);
+        DialogueLine option2 = new DialogueLine("Não.", line1, null);
+        line1 = new DialogueLine("Queres ajudar-me?", null, new DialogueLine[]{option1, option2});
 
         interactions.Add(line1);
     }

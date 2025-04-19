@@ -1112,12 +1112,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 399986379}
   optionAButton: {fileID: 1959820224}
+  optionAText: {fileID: 1719276509}
   optionBButton: {fileID: 1577725097}
+  optionBText: {fileID: 220061476}
   optionCButton: {fileID: 0}
-  lines:
-  - "Ol\xE1!"
-  - Adeus!
-  textSpeed: 0.3
+  optionCText: {fileID: 0}
+  dialogueManager: {fileID: 1582145401}
+  textSpeed: 0.1
 --- !u!114 &778374041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15854,11 +15855,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 94086506}
   optionAButton: {fileID: 0}
+  optionAText: {fileID: 0}
   optionBButton: {fileID: 0}
+  optionBText: {fileID: 0}
   optionCButton: {fileID: 0}
-  lines:
-  - "Ol\xE1!"
-  - Adeus!
+  optionCText: {fileID: 0}
+  dialogueManager: {fileID: 0}
   textSpeed: 0.3
 --- !u!114 &2127514862
 MonoBehaviour:
