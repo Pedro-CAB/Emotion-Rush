@@ -112,8 +112,9 @@ public class Player : MonoBehaviour
     public void interact(){
         if (detectedNPC != null){
             Debug.Log("Interacting with: " + detectedNPC.name);
-            List<string> lines = detectedNPC.whenInteracted();
-            dialogueBox.StartLinearDialogue(lines); //Start the dialogue with the lines returned from the NPC
+            detectedNPC.whenInteracted();
+            //List<string> lines = detectedNPC.whenInteracted();
+            //dialogueBox.StartLinearDialogue(lines); //Start the dialogue with the lines returned from the NPC
         }
         else{
             Debug.Log("No object detected to interact with.");	

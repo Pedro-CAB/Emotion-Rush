@@ -1111,6 +1111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 399986379}
+  optionAButton: {fileID: 1959820224}
+  optionBButton: {fileID: 1577725097}
+  optionCButton: {fileID: 0}
   lines:
   - "Ol\xE1!"
   - Adeus!
@@ -14964,6 +14967,7 @@ GameObject:
   - component: {fileID: 1582145399}
   - component: {fileID: 1582145398}
   - component: {fileID: 1582145397}
+  - component: {fileID: 1582145401}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -15057,6 +15061,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1582145401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582145396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e868c27b31a2a594aacc2700257d6d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linearDialogueBox: {fileID: 2127514861}
+  twoOptionDialogueBox: {fileID: 778374040}
+  threeOptionDialogueBox: {fileID: 0}
 --- !u!1 &1645671770
 GameObject:
   m_ObjectHideFlags: 0
@@ -15497,6 +15516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friendshipLevel: 0
   maxFriendshipLevel: 100
+  dialogueManager: {fileID: 1582145401}
 --- !u!1 &1959820222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15833,6 +15853,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 94086506}
+  optionAButton: {fileID: 0}
+  optionBButton: {fileID: 0}
+  optionCButton: {fileID: 0}
   lines:
   - "Ol\xE1!"
   - Adeus!

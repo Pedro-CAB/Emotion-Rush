@@ -3,22 +3,22 @@ using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
-    public int index;
-    public DialogueLine currentLine;
+    private DialogueLine currentLine;
 
     public DialogueBox linearDialogueBox;
     public DialogueBox twoOptionDialogueBox;
     public DialogueBox threeOptionDialogueBox;
 
     public void setCurrentLine(DialogueLine line){
+        currentLine = line;
         List<string> linearLines =  new List<string>();
-        linearLines.Add(line.content);
+        linearLines.Add(currentLine.content);
         //Iterate through the dialogue lines until there are no more options or next lines
-        while (line.dialogueOptions.Length >= 1 || line.nextLine){
+        while (line.dialogueOptions != null || currentLine.nextLine != null){
             //If the first line doesn't have options, send all consecutive lines without options to be handled at once
             if(currentLine.type == DialogueLine.LineType.Linear){
                 //linearDialogueBox.StartDialogue(line.content);
-                while (currentLine.nextLine){
+                while (currentLine.nextLine != null){
                     linearLines.Add(currentLine.nextLine.content);
                     currentLine = currentLine.nextLine;
                 }

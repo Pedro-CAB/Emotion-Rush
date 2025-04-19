@@ -6,12 +6,16 @@ public class InteractiveNPC : MonoBehaviour
     public int friendshipLevel = 0;
     public int maxFriendshipLevel = 100;
 
-    DialogueLine interactions; //Contains the first line of each possible interaction
+    List<DialogueLine> interactions; //Contains the first line of each possible interaction
+
+    public DialogueManager dialogueManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Debug.Log("NPC Created!");
+        interactions = new List<DialogueLine>();
+        createDialogueInteractions();
     }
 
     // Update is called once per frame
@@ -30,19 +34,28 @@ public class InteractiveNPC : MonoBehaviour
         }
     }
 
-    public List<string> whenInteracted(){ //Called when player interacts with character
+    public void whenInteracted(){ //Called when player interacts with character
         Debug.Log(gameObject.name + " interacted back!");
+        Debug.Log(dialogueManager.name + " is the dialogue manager!");
+        Debug.Log(interactions[0].content);
+        dialogueManager.setCurrentLine(interactions[0]);
+
+        /**
         List<string> lines = new List<string>();
         lines.Add("Olá! Tudo bem?"); // Add the first line to the list
         lines.Add("Este é um diálogo de teste!"); // Add the second line to the list
         lines.Add("Espero que funcione! :)"); // Add the third line to the list
-        return lines;
+        return lines;*/
     }
 
     public void createDialogueInteractions(){
         //Create Interactions Here
-        //DialogueLine line1 = new DialogueLine("Olá! Tudo bem?", {new DialogueLine("Este é um diálogo de teste!", {new DialogueLine("Espero que funcione! :)", {})})});
 
-        //Add the lines to the interactions list
+        //Sample Linear Interaction
+        DialogueLine line3 = new DialogueLine("Espero que funcione! :)", null, null);
+        DialogueLine line2 = new DialogueLine("Este é um diálogo de teste!", line3, null);
+        DialogueLine line1 = new DialogueLine("Olá! Tudo bem?", line2, null);
+
+        interactions.Add(line1);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DialogueLine : MonoBehaviour
+public class DialogueLine
 {
     public enum LineType{
             Linear,
