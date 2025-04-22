@@ -15872,7 +15872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linearDialogueBox: {fileID: 2127514861}
   twoOptionDialogueBox: {fileID: 778374040}
-  threeOptionDialogueBox: {fileID: 0}
+  threeOptionDialogueBox: {fileID: 1592765944}
 --- !u!1 &1592765942
 GameObject:
   m_ObjectHideFlags: 0
