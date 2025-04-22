@@ -56,7 +56,8 @@ public class InteractiveNPC : MonoBehaviour
         line2 = new DialogueLine("Obrigado!", null, null);
         DialogueLine option1 = new DialogueLine("Sim.", line2, null);
         DialogueLine option2 = new DialogueLine("Não.", line1, null);
-        line1 = new DialogueLine("Queres ajudar-me?", null, new DialogueLine[]{option1, option2});
+        DialogueLine option3 = new DialogueLine("Talvez noutro dia.", line1, null);
+        line1 = new DialogueLine("Queres ajudar-me?", null, new DialogueLine[]{option1, option2, option3});
 
         interactions.Add(line1);
     }

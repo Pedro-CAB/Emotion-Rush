@@ -23,11 +23,11 @@ public class DialogueManager : MonoBehaviour
         }
         //Handle two option sequences with the correct GUI interface
         else if(currentLine.type == DialogueLine.LineType.TwoOption){
-                twoOptionDialogueBox.StartTwoOptionDialogue(line);
+            twoOptionDialogueBox.StartTwoOptionDialogue(line);
         }
         //Handle three option sequences with the correct GUI interface
         else if(currentLine.type == DialogueLine.LineType.ThreeOption){
-            //threeOptionDialogueBox.StartDialogue(line, true);
+            threeOptionDialogueBox.StartThreeOptionDialogue(line);
         }
     } 
 }

@@ -85,6 +85,21 @@ public class DialogueBox : MonoBehaviour
         optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
     }
+
+    public void StartThreeOptionDialogue(DialogueLine l){
+        //optionAButton.gameObject.SetActive(false); // Hide option A button
+        //optionBButton.gameObject.SetActive(false); // Hide option B button
+        //optionCButton.gameObject.SetActive(false); // Hide option C button
+        gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        lines = new List<DialogueLine>();
+        lines.Add(l); // Add the first line of dialogue to the list
+
+        index = 0;
+        StartCoroutine(TypeLine());
+        optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
+        optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
+        optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
+    }
     
     public void PickOptionA(){
         DialogueLine currentLine = lines[index];
