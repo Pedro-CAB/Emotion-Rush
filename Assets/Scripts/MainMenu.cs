@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public void NewGame(){
         Debug.Log("New Game Started");
+        SceneManager.LoadScene("TestMap"); // Replace with your game scene name
     }
 
     public void LoadGame(){
