@@ -107,6 +107,7 @@ public class DialogueBox : MonoBehaviour
         DialogueLine nextLine = chosenLine.nextLine;
         dialogueManager.setCurrentLine(nextLine);
         gameObject.SetActive(false); // Hide the dialogue box after picking an option
+        textComponent.text = string.Empty;
     }
 
     public void PickOptionB(){
@@ -115,6 +116,7 @@ public class DialogueBox : MonoBehaviour
         DialogueLine nextLine = chosenLine.nextLine;
         dialogueManager.setCurrentLine(nextLine);
         gameObject.SetActive(false); // Hide the dialogue box after picking an option
+        textComponent.text = string.Empty;
     }
 
     public void PickOptionC(){
@@ -123,5 +125,6 @@ public class DialogueBox : MonoBehaviour
         DialogueLine nextLine = chosenLine.nextLine;
         dialogueManager.setCurrentLine(nextLine);
         gameObject.SetActive(false); // Hide the dialogue box after picking an option
+        textComponent.text = string.Empty;
     }
 }
