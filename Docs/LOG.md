@@ -16,9 +16,20 @@ This first sprint kicked off the project and consisted on the first development 
 - Detection and Interaction code requires some additional testing and might require a refactoring.
 
 ## Sprint 1 (10/04-24/04)
+
+Sprint 1 finished the implementation of the core mechanics of the game, focusing specifically on dialogue boxes and choices. Additionally, some progresses were made towards the Main Menu UI.
+
+### What Was Done
+- Dialogue Boxes
+- Main Menu UI
+
+### What Went Well
+- Good Time Management allowed to accomplish all mechanics revolving around dialogue and led to UI related features being added mid sprint.
+
+### What Needs to Change/Improve
+- Dialogue was not as quick to implement as initially foreseen. Situations like this are to be avoided in the future.
+
 ## Sprint 2
 ## Sprint 3
 ## Sprint 4
 ## Sprint 5
-## Sprint 6
-## Sprint 7
