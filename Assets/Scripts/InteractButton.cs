@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-//using Player;
 
 public class InteractButton : MonoBehaviour
 {
