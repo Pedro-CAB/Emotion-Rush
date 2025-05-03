@@ -30,10 +30,6 @@ public class DialogueBox : MonoBehaviour
         //gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
-    public void Update(){
-        Debug.Log("Status:" + gameObject.activeSelf);
-    }
-
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
     public void StartLinearDialogue(List<DialogueLine> l){
@@ -56,7 +52,12 @@ public class DialogueBox : MonoBehaviour
     }
 
     IEnumerator TypeLine(){
+        //Debug.Log("Typing Line: " + lines[index].content); // Log the current line being typed
+        textComponent.text = lines[index].content;
+        Debug.Log(lines[index].content.ToCharArray().Length); // Log the current line being typed
         foreach (char letter in lines[index].content.ToCharArray()){
+            //Debug.Log("Typing Letter: " + letter); // Log each letter being typed
+            //Debug.Log(textComponent.text);
             textComponent.text += letter; // Display each letter one by one
             yield return new WaitForSeconds(textSpeed); // Wait for the specified text speed before displaying the next letter
         }
@@ -99,12 +100,11 @@ public class DialogueBox : MonoBehaviour
         lines.Add(l); // Add the first line of dialogue to the list
 
         index = 0;
+        Debug.Log(l.content[0]);
         StartCoroutine(TypeLine());
         optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
         optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
-
-        Debug.Log("Chegou aqui!");
     }
     
     public void PickOptionA(){
