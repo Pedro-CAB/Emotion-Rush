@@ -27,7 +27,11 @@ public class DialogueBox : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        gameObject.SetActive(false); // Hide the dialogue box at the start
+        //gameObject.SetActive(false); // Hide the dialogue box at the start
+    }
+
+    public void Update(){
+        Debug.Log("Status:" + gameObject.activeSelf);
     }
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
@@ -99,6 +103,8 @@ public class DialogueBox : MonoBehaviour
         optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
         optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
+
+        Debug.Log("Chegou aqui!");
     }
     
     public void PickOptionA(){

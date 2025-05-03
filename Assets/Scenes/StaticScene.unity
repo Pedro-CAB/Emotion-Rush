@@ -27546,6 +27546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 210098758}
+  dialogueManager: {fileID: 1582145401}
 --- !u!1 &1592765942
 GameObject:
   m_ObjectHideFlags: 0
@@ -28804,7 +28805,7 @@ MonoBehaviour:
   optionBText: {fileID: 0}
   optionCButton: {fileID: 0}
   optionCText: {fileID: 0}
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 1582145401}
   textSpeed: 0.3
 --- !u!114 &2127514862
 MonoBehaviour:

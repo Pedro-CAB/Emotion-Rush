@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
             }
         }
         else{
-            Debug.Log("Static Scene: " + staticFacingDirection);
+            //Debug.Log("Static Scene: " + staticFacingDirection);
             facingDirection = staticFacingDirection; //Set the direction the player is facing
         }
 
