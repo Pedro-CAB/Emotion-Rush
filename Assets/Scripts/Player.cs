@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private InteractiveNPC detectedNPC;
     public DialogueBox dialogueBox;
 
+    public bool isStaticScene;
+
     enum Directions{
         Up, //0
         Down, //1
@@ -21,7 +23,11 @@ public class Player : MonoBehaviour
         Right //3
     }
 
-    private Directions facingDirection = Directions.Down;
+    Directions facingDirection = Directions.Down;
+
+    Directions staticFacingDirection = Directions.Down;
+
+    
 
     void Start()
     {
@@ -31,9 +37,14 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        handleJoystickInput();
-        handleObjectDetection();
-        handleAnimations(movementJoystick.joystickVector.x, movementJoystick.joystickVector.y);
+        if (isStaticScene){
+            handleAnimations();
+        }
+        else{
+            handleJoystickInput();
+            handleObjectDetection();
+            handleAnimations();
+        }
     }
 
     //Receiving input from joystick and translating it to player movement
@@ -78,32 +89,39 @@ public class Player : MonoBehaviour
     }
 
     // Handle animation parameters for animator
-    void handleAnimations(float x, float y){
-
-        //Check if the player is moving
-        if(x != 0 || y != 0){
-            animator.SetBool("isMoving", true);
+    void handleAnimations(){
+        if (!isStaticScene){
+            float x = movementJoystick.joystickVector.x;
+            float y = movementJoystick.joystickVector.y;
+            //Check if the player is moving
+            if(x != 0 || y != 0){
+                animator.SetBool("isMoving", true);
+            }
+            else{
+                animator.SetBool("isMoving", false);
+            }
+            
+            //Check the direction the player is facing
+            if(Mathf.Abs(x) > Mathf.Abs(y)){
+                if (x > 0){
+                    facingDirection = Directions.Right;
+                }
+                else{
+                    facingDirection = Directions.Left;
+                }
+            }
+            else if(Mathf.Abs(y) >= Mathf.Abs(x)){
+                if (y > 0){
+                    facingDirection = Directions.Up;
+                }
+                else{
+                    facingDirection = Directions.Down;
+                }
+            }
         }
         else{
-            animator.SetBool("isMoving", false);
-        }
-        
-        //Check the direction the player is facing
-        if(Mathf.Abs(x) > Mathf.Abs(y)){
-            if (x > 0){
-                facingDirection = Directions.Right;
-            }
-            else{
-                facingDirection = Directions.Left;
-            }
-        }
-        else if(Mathf.Abs(y) >= Mathf.Abs(x)){
-            if (y > 0){
-                facingDirection = Directions.Up;
-            }
-            else{
-                facingDirection = Directions.Down;
-            }
+            Debug.Log("Static Scene: " + staticFacingDirection);
+            facingDirection = staticFacingDirection; //Set the direction the player is facing
         }
 
         animator.SetInteger("direction", (int)facingDirection);
@@ -119,5 +137,16 @@ public class Player : MonoBehaviour
         else{
             Debug.Log("No object detected to interact with.");	
         }
+    }
+
+    public void setStaticScene(int newFacingDirection){
+        isStaticScene = true;
+        animator.SetBool("isStaticScene", true);
+        staticFacingDirection = (Directions)newFacingDirection; //Set the direction the player is facing 
+    }
+
+    public void setBreakScene(){
+        isStaticScene = false;
+        animator.SetBool("isStaticScene", false);
     }
 }
