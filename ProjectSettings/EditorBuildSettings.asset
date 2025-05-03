@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: acd2dc3404d882b4f9e56a12e89f8322
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scenes/TestMap.unity
     guid: 526750c2b93d31248a4b1816e5794eb0
+  - enabled: 1
+    path: Assets/Scenes/SchoolMap.unity
+    guid: ba31adc82650d5c4d8428ac3dada0084
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 0f6e47a45a338654da4c7fdb15e4942d, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: dcce103193e0c3143905c93837d6d9f2, type: 2}
