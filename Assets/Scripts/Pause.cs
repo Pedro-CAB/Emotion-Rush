@@ -15,11 +15,13 @@ public class Pause : MonoBehaviour
 
     public void ResumeGame(){
         Debug.Log("Game Resumed");
+        Time.timeScale = 1;
         pausedUI.SetActive(false);
         unpausedUI.SetActive(true);
     }
 
     public void PauseGame(){
+        Time.timeScale = 0;
         Debug.Log("Game Paused");
         pausedUI.SetActive(true);
         unpausedUI.SetActive(false);
