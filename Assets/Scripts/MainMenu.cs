@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void NewGame(){
         Debug.Log("New Game Started");
-        SceneManager.LoadScene("TestMap"); // Replace with your game scene name
+        SceneManager.LoadScene("SchoolMap");
     }
 
     public void LoadGame(){
