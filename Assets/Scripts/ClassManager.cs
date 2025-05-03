@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClassManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class ClassManager : MonoBehaviour
         DialogueLine line = createSampleScene();
         player.setStaticScene(3); // Set the Player to start a Class Scene facing Right
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
+    }
+
+    void Update(){
+        if (!dialogueManager.isDialogueActive()){
+            SceneManager.LoadScene("BreakScene");
+        }
     }
 
     public DialogueLine createSampleScene(){

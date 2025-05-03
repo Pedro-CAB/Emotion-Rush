@@ -36,5 +36,9 @@ public class DialogueManager : MonoBehaviour
         else if(currentLine.type == DialogueLine.LineType.ThreeOption){
             threeOptionDialogueBox.StartThreeOptionDialogue(line);
         }
-    } 
+    }
+
+    public bool isDialogueActive(){
+        return linearDialogueBox.gameObject.activeSelf || twoOptionDialogueBox.gameObject.activeSelf || threeOptionDialogueBox.gameObject.activeSelf;
+    }
 }
