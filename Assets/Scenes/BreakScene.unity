@@ -664,6 +664,7 @@ MonoBehaviour:
   speed: 5
   detect_distance: 1
   dialogueBox: {fileID: 2127514861}
+  isStaticScene: 0
 --- !u!95 &210098759
 Animator:
   serializedVersion: 7
@@ -790,7 +791,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.034559846, y: 0.024808228}
+  m_Offset: {x: -0.034559846, y: -0.5680638}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -800,7 +801,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.82445693, y: 1.4297513}
+  m_Size: {x: 0.82445693, y: 0.24400723}
   m_EdgeRadius: 0
 --- !u!1 &219160452
 GameObject:
