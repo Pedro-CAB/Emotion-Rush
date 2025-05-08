@@ -9,6 +9,13 @@ public class DialogueManager : MonoBehaviour
     public DialogueBox twoOptionDialogueBox;
     public DialogueBox threeOptionDialogueBox;
 
+    public void Start()
+    {
+        linearDialogueBox.gameObject.SetActive(false);
+        twoOptionDialogueBox.gameObject.SetActive(false);
+        threeOptionDialogueBox.gameObject.SetActive(false);
+    }
+
     public void setCurrentLine(DialogueLine line){
         currentLine = line;
         List<DialogueLine> linearLines =  new List<DialogueLine>();
@@ -29,5 +36,9 @@ public class DialogueManager : MonoBehaviour
         else if(currentLine.type == DialogueLine.LineType.ThreeOption){
             threeOptionDialogueBox.StartThreeOptionDialogue(line);
         }
-    } 
+    }
+
+    public bool isDialogueActive(){
+        return linearDialogueBox.gameObject.activeSelf || twoOptionDialogueBox.gameObject.activeSelf || threeOptionDialogueBox.gameObject.activeSelf;
+    }
 }

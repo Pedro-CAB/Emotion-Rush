@@ -27,7 +27,7 @@ public class DialogueBox : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        gameObject.SetActive(false); // Hide the dialogue box at the start
+        //gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
@@ -52,7 +52,12 @@ public class DialogueBox : MonoBehaviour
     }
 
     IEnumerator TypeLine(){
+        //Debug.Log("Typing Line: " + lines[index].content); // Log the current line being typed
+        textComponent.text = lines[index].content;
+        Debug.Log(lines[index].content.ToCharArray().Length); // Log the current line being typed
         foreach (char letter in lines[index].content.ToCharArray()){
+            //Debug.Log("Typing Letter: " + letter); // Log each letter being typed
+            //Debug.Log(textComponent.text);
             textComponent.text += letter; // Display each letter one by one
             yield return new WaitForSeconds(textSpeed); // Wait for the specified text speed before displaying the next letter
         }
@@ -95,6 +100,7 @@ public class DialogueBox : MonoBehaviour
         lines.Add(l); // Add the first line of dialogue to the list
 
         index = 0;
+        Debug.Log(l.content[0]);
         StartCoroutine(TypeLine());
         optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
