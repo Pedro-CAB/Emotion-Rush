@@ -10,7 +10,7 @@ public class ClassManager : MonoBehaviour
     void Start()
     {
         DialogueLine line = createSampleScene();
-        player.setStaticScene(3); // Set the Player to start a Class Scene facing Right
+        player.setStaticScene();
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
     }
 

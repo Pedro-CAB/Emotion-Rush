@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     public bool isStaticScene;
 
-    enum Directions{
+    public enum Directions{
         Up, //0
         Down, //1
         Left, //2
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     Directions facingDirection = Directions.Down;
 
-    Directions staticFacingDirection = Directions.Down;
+    public Directions staticFacingDirection = Directions.Down;
 
     
 
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
             }
         }
         else{
-            //Debug.Log("Static Scene: " + staticFacingDirection);
+            Debug.Log("Static Scene: " + staticFacingDirection);
             facingDirection = staticFacingDirection; //Set the direction the player is facing
         }
 
@@ -139,10 +139,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void setStaticScene(int newFacingDirection){
+    public void setStaticScene(){
         isStaticScene = true;
         animator.SetBool("isStaticScene", true);
-        staticFacingDirection = (Directions)newFacingDirection; //Set the direction the player is facing 
     }
 
     public void setBreakScene(){
