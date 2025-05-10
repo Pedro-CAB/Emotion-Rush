@@ -15,7 +15,7 @@ public class InteractiveNPC : MonoBehaviour
     {
         Debug.Log("NPC Created!");
         interactions = new List<DialogueLine>();
-        createDialogueInteractions();
+        //createDialogueInteractions();
     }
 
     // Update is called once per frame
