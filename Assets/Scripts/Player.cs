@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
-    private InteractiveNPC detectedNPC;
+    private InteractiveObject detectedNPC;
     public DialogueBox dialogueBox;
 
     public bool isStaticScene;
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 
         if (hit)
         {
-            detectedNPC = hit.collider.gameObject.GetComponent<InteractiveNPC>();
+            detectedNPC = hit.collider.gameObject.GetComponent<InteractiveObject>();
         }
     }
 

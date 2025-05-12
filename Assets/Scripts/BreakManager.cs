@@ -6,7 +6,7 @@ public class BreakManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
 
-    float timeLeft = 10.0f;
+    float timeLeft = 600.0f;
 
     // Update is called once per frame
     void Update()

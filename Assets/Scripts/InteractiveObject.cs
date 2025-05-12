@@ -1,12 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class InteractiveNPC : MonoBehaviour
+public class InteractiveObject : MonoBehaviour
 {
-    public int friendshipLevel = 0;
-    public int maxFriendshipLevel = 100;
 
-    List<DialogueLine> interactions; //Contains the first line of each possible interaction
+    //List<DialogueLine> interactions; //Contains the first line of each possible interaction
 
     public DialogueManager dialogueManager;
 
@@ -14,7 +12,7 @@ public class InteractiveNPC : MonoBehaviour
     void Start()
     {
         Debug.Log("NPC Created!");
-        interactions = new List<DialogueLine>();
+        //interactions = new List<DialogueLine>();
         //createDialogueInteractions();
     }
 
@@ -24,7 +22,7 @@ public class InteractiveNPC : MonoBehaviour
         
     }
 
-    public void adjustFriendship(int i){
+    /**public void adjustFriendship(int i){
         if (friendshipLevel + i > maxFriendshipLevel){
             friendshipLevel = maxFriendshipLevel;
         } else if (friendshipLevel + i < 0){
@@ -32,12 +30,12 @@ public class InteractiveNPC : MonoBehaviour
         } else {
             friendshipLevel += i;
         }
-    }
+    }*/
 
     public void whenInteracted(){ //Called when player interacts with character
         Debug.Log(gameObject.name + " interacted back!");
         Debug.Log(dialogueManager.name + " is the dialogue manager!");
-        Debug.Log(interactions[0].content);
-        dialogueManager.setCurrentLine(interactions[0]);
+        //Debug.Log(interactions[0].content);
+        //dialogueManager.setCurrentLine(interactions[0]);
     }
 }
