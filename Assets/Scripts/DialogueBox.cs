@@ -20,9 +20,10 @@ public class DialogueBox : MonoBehaviour
 
     public DialogueManager dialogueManager; // Reference to the DialogManager for handling dialogue logic
 
-    public List<DialogueLine> lines; // Array of strings to hold the dialogue lines
+    //public List<DialogueLine> lines; // Array of strings to hold the dialogue lines
+    public DialogueLine currentLine;
     public float textSpeed; // Speed at which the text is displayed
-    private int index;
+    //private int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,14 +33,15 @@ public class DialogueBox : MonoBehaviour
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
-    public void StartLinearDialogue(List<DialogueLine> l){
+    public void StartLinearDialogue(DialogueLine l){
         gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
-        lines = l;
-        index = 0;
+        currentLine = l;
+        //lines = l;
+        //index = 0;
         StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
     }
 
-    void NextLinearLine(){
+    /**void NextLinearLine(){
         if (index < lines.Count - 1){
             index++;
             textComponent.text = string.Empty; // Clear the text component before displaying the next line
@@ -49,27 +51,36 @@ public class DialogueBox : MonoBehaviour
             textComponent.text = string.Empty; // Clear the text component when all lines are displayed
             gameObject.SetActive(false);
         }
-    }
+    }*/
 
     IEnumerator TypeLine(){
         //Debug.Log("Typing Line: " + lines[index].content); // Log the current line being typed
-        textComponent.text = lines[index].content;
-        Debug.Log(lines[index].content.ToCharArray().Length); // Log the current line being typed
-        foreach (char letter in lines[index].content.ToCharArray()){
-            //Debug.Log("Typing Letter: " + letter); // Log each letter being typed
-            //Debug.Log(textComponent.text);
+        //textComponent.text = currentLine.content;
+        foreach (char letter in currentLine.content.ToCharArray()){
             textComponent.text += letter; // Display each letter one by one
             yield return new WaitForSeconds(textSpeed); // Wait for the specified text speed before displaying the next letter
         }
     }
 
     public void SkipDialog(){
-        if (textComponent.text == lines[index].content){ //If previous line is already fully displayed
-            NextLinearLine();
+        if (textComponent.text == currentLine.content){ //If previous line is already fully displayed
+            if (currentLine.type == DialogueLine.LineType.Linear){ //Only for linear lines
+                if (currentLine.nextLine != null){
+                    Debug.Log("Line Fully Displayed. Displaying Next Line.");
+                    textComponent.text = string.Empty; // Clear the text component before displaying the next line
+                    HideDialogueBox(); // Hide the dialogue box before displaying the next line
+                    dialogueManager.setCurrentLine(currentLine.nextLine); // Set the next line as the current line
+                }
+                else{
+                    Debug.Log("Line Fully Displayed and No Next Line. Closing Dialogue Box...");
+                    HideDialogueBox(); // Hide the dialogue box after picking an option
+                }
+            }
         }
         else{
+            Debug.Log("Line Not Fully Displayed. Displaying Full Line...");
             StopAllCoroutines(); // Stop the typing coroutine if the button is pressed before the line is fully displayed
-            textComponent.text = lines[index].content; // Display the full line immediately
+            textComponent.text = currentLine.content; // Display the full line immediately
         }
         Debug.Log("Line Skipped!");
 
@@ -82,10 +93,9 @@ public class DialogueBox : MonoBehaviour
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
         gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
-        lines = new List<DialogueLine>();
-        lines.Add(l); // Add the first line of dialogue to the list
+        currentLine = l;
 
-        index = 0;
+        //index = 0;
         StartCoroutine(TypeLine());
         optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
@@ -96,11 +106,9 @@ public class DialogueBox : MonoBehaviour
         //optionBButton.gameObject.SetActive(false); // Hide option B button
         //optionCButton.gameObject.SetActive(false); // Hide option C button
         gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
-        lines = new List<DialogueLine>();
-        lines.Add(l); // Add the first line of dialogue to the list
+        currentLine = l;
 
-        index = 0;
-        Debug.Log(l.content[0]);
+        //index = 0;
         StartCoroutine(TypeLine());
         optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
@@ -108,29 +116,38 @@ public class DialogueBox : MonoBehaviour
     }
     
     public void PickOptionA(){
-        DialogueLine currentLine = lines[index];
+        DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[0];
         DialogueLine nextLine = chosenLine.nextLine;
-        dialogueManager.setCurrentLine(nextLine);
-        gameObject.SetActive(false); // Hide the dialogue box after picking an option
-        textComponent.text = string.Empty;
+        if (nextLine != null){
+            dialogueManager.setCurrentLine(nextLine);
+        }
+        HideDialogueBox(); // Hide the dialogue box after picking an option
     }
 
     public void PickOptionB(){
-        DialogueLine currentLine = lines[index];
+        DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[1];
         DialogueLine nextLine = chosenLine.nextLine;
-        dialogueManager.setCurrentLine(nextLine);
-        gameObject.SetActive(false); // Hide the dialogue box after picking an option
-        textComponent.text = string.Empty;
+        if (nextLine != null){
+            dialogueManager.setCurrentLine(nextLine);
+        }
+        HideDialogueBox(); // Hide the dialogue box after picking an option
     }
 
     public void PickOptionC(){
-        DialogueLine currentLine = lines[index];
+        DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[2];
         DialogueLine nextLine = chosenLine.nextLine;
-        dialogueManager.setCurrentLine(nextLine);
-        gameObject.SetActive(false); // Hide the dialogue box after picking an option
-        textComponent.text = string.Empty;
+        if (nextLine != null){
+            dialogueManager.setCurrentLine(nextLine);
+        }
+        HideDialogueBox(); // Hide the dialogue box after picking an option
+    }
+
+    public void HideDialogueBox(){
+        Debug.Log("Hiding Dialogue Box");
+        gameObject.SetActive(false); // Hide the dialogue box
+        textComponent.text = string.Empty; // Clear the text component when hiding the dialogue box
     }
 }

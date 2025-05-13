@@ -18,23 +18,17 @@ public class DialogueManager : MonoBehaviour
 
     public void setCurrentLine(DialogueLine line){
         currentLine = line;
-        List<DialogueLine> linearLines =  new List<DialogueLine>();
-        linearLines.Add(currentLine);
-        //Handle consecutive linear lines at once
+        //Handle linear sequences with the correct GUI interface
         if(currentLine.type == DialogueLine.LineType.Linear){
-            while (currentLine.nextLine != null){
-                linearLines.Add(currentLine.nextLine);
-                currentLine = currentLine.nextLine;
-            }
-            linearDialogueBox.StartLinearDialogue(linearLines);
+            linearDialogueBox.StartLinearDialogue(currentLine);
         }
         //Handle two option sequences with the correct GUI interface
         else if(currentLine.type == DialogueLine.LineType.TwoOption){
-            twoOptionDialogueBox.StartTwoOptionDialogue(line);
+            twoOptionDialogueBox.StartTwoOptionDialogue(currentLine);
         }
         //Handle three option sequences with the correct GUI interface
         else if(currentLine.type == DialogueLine.LineType.ThreeOption){
-            threeOptionDialogueBox.StartThreeOptionDialogue(line);
+            threeOptionDialogueBox.StartThreeOptionDialogue(currentLine);
         }
     }
 

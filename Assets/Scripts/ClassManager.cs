@@ -33,11 +33,12 @@ public class ClassManager : MonoBehaviour
         //Sample Two Option Interaction
         line1 = new DialogueLine(" Ok... Fica para a próxima então.", null, null);
         line2 = new DialogueLine(" Obrigado!", null, null);
-        DialogueLine option1 = new DialogueLine("Sim.", line2, null);
-        DialogueLine option2 = new DialogueLine("Não.", line1, null);
+        DialogueLine option1 = new DialogueLine("Sim.", null, null);
+        DialogueLine option2 = new DialogueLine("Não.", null, null);
         DialogueLine option3 = new DialogueLine("Talvez noutro dia.", line1, null);
         line1 = new DialogueLine(" Queres ajudar-me?", null, new DialogueLine[]{option1, option2, option3});
+        DialogueLine line0 = new DialogueLine(" Olá! O meu nome é José!", line1, null);
 
-        return line1;
+        return line0;
     }
 }
