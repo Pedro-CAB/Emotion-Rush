@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
     public float detect_distance;
     private Rigidbody2D rb;
     private Animator animator;
-
-    private InteractiveObject detectedNPC;
+    private Door detectedDoor;
     public DialogueBox dialogueBox;
 
     public bool isStaticScene;
@@ -78,13 +77,13 @@ public class Player : MonoBehaviour
             }
         }
         else{
-            detectedNPC = null;
+            detectedDoor = null;
         }
         RaycastHit2D hit = Physics2D.Raycast(position, direction, detect_distance, 1 << 3); //Raycast to detect objects in the direction of the joystick in Layer 3: NPC's
 
         if (hit)
         {
-            detectedNPC = hit.collider.gameObject.GetComponent<InteractiveObject>();
+            detectedDoor = hit.collider.gameObject.GetComponent<Door>();
         }
     }
 
@@ -128,10 +127,10 @@ public class Player : MonoBehaviour
     }
 
     public void interact(){
-        if (detectedNPC != null){
-            Debug.Log("Interacting with: " + detectedNPC.name);
-            detectedNPC.whenInteracted();
-            //List<string> lines = detectedNPC.whenInteracted();
+        if (detectedDoor != null){
+            Debug.Log("Interacting with: " + detectedDoor.name);
+            detectedDoor.whenInteracted();
+            //List<string> lines = detectedDoor.whenInteracted();
             //dialogueBox.StartLinearDialogue(lines); //Start the dialogue with the lines returned from the NPC
         }
         else{

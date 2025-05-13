@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
         currentLine = line;
         //Handle linear sequences with the correct GUI interface
         if(currentLine.type == DialogueLine.LineType.Linear){
+            currentLine.content = " " + currentLine.content;
             linearDialogueBox.StartLinearDialogue(currentLine);
         }
         //Handle two option sequences with the correct GUI interface

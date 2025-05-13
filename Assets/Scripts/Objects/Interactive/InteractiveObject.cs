@@ -11,7 +11,7 @@ public class InteractiveObject : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("NPC Created!");
+        Debug.Log(gameObject.name + ": InteractiveObject Created!");
         //interactions = new List<DialogueLine>();
         //createDialogueInteractions();
     }
@@ -22,20 +22,10 @@ public class InteractiveObject : MonoBehaviour
         
     }
 
-    /**public void adjustFriendship(int i){
-        if (friendshipLevel + i > maxFriendshipLevel){
-            friendshipLevel = maxFriendshipLevel;
-        } else if (friendshipLevel + i < 0){
-            friendshipLevel = 0;
-        } else {
-            friendshipLevel += i;
-        }
-    }*/
-
-    public void whenInteracted(){ //Called when player interacts with character
+    /**public void whenInteracted(){ //Called when player interacts with character
         Debug.Log(gameObject.name + " interacted back!");
         Debug.Log(dialogueManager.name + " is the dialogue manager!");
         //Debug.Log(interactions[0].content);
         //dialogueManager.setCurrentLine(interactions[0]);
-    }
+    }*/
 }
