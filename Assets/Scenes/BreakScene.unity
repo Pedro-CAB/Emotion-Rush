@@ -7612,6 +7612,7 @@ MonoBehaviour:
   optionCButton: {fileID: 0}
   optionCText: {fileID: 0}
   dialogueManager: {fileID: 1582145401}
+  breakManager: {fileID: 1582145403}
   textSpeed: 0.1
 --- !u!114 &778374041
 MonoBehaviour:
@@ -24627,6 +24628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 69434818}
+  timeLeft: 600
 --- !u!1 &1592765942
 GameObject:
   m_ObjectHideFlags: 0
@@ -24689,6 +24691,7 @@ MonoBehaviour:
   optionCButton: {fileID: 505820160}
   optionCText: {fileID: 1851076465}
   dialogueManager: {fileID: 1582145401}
+  breakManager: {fileID: 1582145403}
   textSpeed: 0.1
 --- !u!114 &1592765945
 MonoBehaviour:
@@ -40723,6 +40726,7 @@ MonoBehaviour:
   optionCButton: {fileID: 0}
   optionCText: {fileID: 0}
   dialogueManager: {fileID: 0}
+  breakManager: {fileID: 1582145403}
   textSpeed: 0.1
 --- !u!114 &2127514862
 MonoBehaviour:
