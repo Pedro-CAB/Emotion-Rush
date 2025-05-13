@@ -40723,7 +40723,7 @@ MonoBehaviour:
   optionCButton: {fileID: 0}
   optionCText: {fileID: 0}
   dialogueManager: {fileID: 0}
-  textSpeed: 0.3
+  textSpeed: 0.1
 --- !u!114 &2127514862
 MonoBehaviour:
   m_ObjectHideFlags: 0
