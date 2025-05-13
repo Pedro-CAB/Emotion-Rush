@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public DialogueBox twoOptionDialogueBox;
     public DialogueBox threeOptionDialogueBox;
 
+    private string trigger; //The object that triggered the dialogue
+
     public void Start()
     {
         linearDialogueBox.gameObject.SetActive(false);
@@ -16,20 +18,21 @@ public class DialogueManager : MonoBehaviour
         threeOptionDialogueBox.gameObject.SetActive(false);
     }
 
-    public void setCurrentLine(DialogueLine line){
+    public void setCurrentLine(DialogueLine line, string triggeredBy = null){
         currentLine = line;
+        trigger = triggeredBy;
         //Handle linear sequences with the correct GUI interface
         if(currentLine.type == DialogueLine.LineType.Linear){
             currentLine.content = " " + currentLine.content;
-            linearDialogueBox.StartLinearDialogue(currentLine);
+            linearDialogueBox.StartLinearDialogue(currentLine, trigger);
         }
         //Handle two option sequences with the correct GUI interface
         else if(currentLine.type == DialogueLine.LineType.TwoOption){
-            twoOptionDialogueBox.StartTwoOptionDialogue(currentLine);
+            twoOptionDialogueBox.StartTwoOptionDialogue(currentLine, trigger);
         }
         //Handle three option sequences with the correct GUI interface
         else if(currentLine.type == DialogueLine.LineType.ThreeOption){
-            threeOptionDialogueBox.StartThreeOptionDialogue(currentLine);
+            threeOptionDialogueBox.StartThreeOptionDialogue(currentLine, trigger);
         }
     }
 

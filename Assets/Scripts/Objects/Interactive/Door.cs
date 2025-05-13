@@ -48,6 +48,6 @@ public class Door : InteractiveObject
     }
 
     public void whenInteracted(){ //Overriding the function from InteractiveObject
-        dialogueManager.setCurrentLine(prompt);
+        dialogueManager.setCurrentLine(prompt, doorName);
     }
 }

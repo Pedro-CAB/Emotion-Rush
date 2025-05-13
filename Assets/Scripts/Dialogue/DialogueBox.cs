@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueBox : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class DialogueBox : MonoBehaviour
     //public List<DialogueLine> lines; // Array of strings to hold the dialogue lines
     public DialogueLine currentLine;
     public float textSpeed; // Speed at which the text is displayed
+
+    private string trigger;
     //private int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +36,8 @@ public class DialogueBox : MonoBehaviour
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
-    public void StartLinearDialogue(DialogueLine l){
+    public void StartLinearDialogue(DialogueLine l, string triggeredBy = null){
+        trigger = triggeredBy; // Store the object that triggered the dialogue
         gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
         currentLine = l;
         //lines = l;
@@ -89,7 +93,8 @@ public class DialogueBox : MonoBehaviour
 
     //Handling Option Dialogue ----------------------------------------------------------------------------------------
 
-    public void StartTwoOptionDialogue(DialogueLine l){
+    public void StartTwoOptionDialogue(DialogueLine l, string triggeredBy = null){
+        trigger = triggeredBy; // Store the object that triggered the dialogue
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
         gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
@@ -101,7 +106,8 @@ public class DialogueBox : MonoBehaviour
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
     }
 
-    public void StartThreeOptionDialogue(DialogueLine l){
+    public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null){
+        trigger = triggeredBy; // Store the object that triggered the dialogue
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
         //optionCButton.gameObject.SetActive(false); // Hide option C button
@@ -121,6 +127,10 @@ public class DialogueBox : MonoBehaviour
         DialogueLine nextLine = chosenLine.nextLine;
         if (nextLine != null){
             dialogueManager.setCurrentLine(nextLine);
+        }
+        if (trigger.Contains("Door")){
+            string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+            SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
         }
         HideDialogueBox(); // Hide the dialogue box after picking an option
     }
