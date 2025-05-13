@@ -20,6 +20,7 @@ public class DialogueBox : MonoBehaviour
     public TextMeshProUGUI optionCText; // Reference to the TextMeshProUGUI component for option C text
 
     public DialogueManager dialogueManager; // Reference to the DialogManager for handling dialogue logic
+    public BreakManager breakManager; // Reference to the BreakManager for handling break logic
 
     //public List<DialogueLine> lines; // Array of strings to hold the dialogue lines
     public DialogueLine currentLine;
@@ -130,6 +131,9 @@ public class DialogueBox : MonoBehaviour
         }
         if (trigger.Contains("Door")){
             string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+            PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+            Debug.Log(breakManager.timeLeft);
+            PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
             SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
         }
         HideDialogueBox(); // Hide the dialogue box after picking an option
