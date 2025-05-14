@@ -129,12 +129,14 @@ public class DialogueBox : MonoBehaviour
         if (nextLine != null){
             dialogueManager.setCurrentLine(nextLine);
         }
-        if (trigger.Contains("Door")){
-            string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-            PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-            Debug.Log(breakManager.timeLeft);
-            PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
-            SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+        if (trigger != null){
+            if (trigger.Contains("Door")){
+                string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                Debug.Log(breakManager.timeLeft);
+                PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+            }
         }
         HideDialogueBox(); // Hide the dialogue box after picking an option
     }

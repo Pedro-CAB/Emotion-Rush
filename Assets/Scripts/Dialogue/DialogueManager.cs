@@ -21,9 +21,9 @@ public class DialogueManager : MonoBehaviour
     public void setCurrentLine(DialogueLine line, string triggeredBy = null){
         currentLine = line;
         trigger = triggeredBy;
+        currentLine.content = " " + currentLine.content;
         //Handle linear sequences with the correct GUI interface
         if(currentLine.type == DialogueLine.LineType.Linear){
-            currentLine.content = " " + currentLine.content;
             linearDialogueBox.StartLinearDialogue(currentLine, trigger);
         }
         //Handle two option sequences with the correct GUI interface
