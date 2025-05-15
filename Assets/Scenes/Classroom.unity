@@ -23292,6 +23292,7 @@ MonoBehaviour:
   optionCButton: {fileID: 0}
   optionCText: {fileID: 0}
   dialogueManager: {fileID: 1582145401}
+  breakManager: {fileID: 0}
   textSpeed: 0.1
 --- !u!114 &778374041
 MonoBehaviour:
@@ -25229,6 +25230,7 @@ GameObject:
   - component: {fileID: 1582145401}
   - component: {fileID: 1582145402}
   - component: {fileID: 1582145403}
+  - component: {fileID: 1582145404}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -25366,6 +25368,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 210098758}
   dialogueManager: {fileID: 1582145401}
+  schedule: {fileID: 1582145404}
+--- !u!114 &1582145404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582145396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1585647713
 GameObject:
   m_ObjectHideFlags: 0
@@ -26543,6 +26558,7 @@ MonoBehaviour:
   optionCButton: {fileID: 505820160}
   optionCText: {fileID: 1851076465}
   dialogueManager: {fileID: 1582145401}
+  breakManager: {fileID: 0}
   textSpeed: 0.1
 --- !u!114 &1592765945
 MonoBehaviour:
@@ -38050,6 +38066,7 @@ MonoBehaviour:
   optionCButton: {fileID: 0}
   optionCText: {fileID: 0}
   dialogueManager: {fileID: 1582145401}
+  breakManager: {fileID: 0}
   textSpeed: 0.3
 --- !u!114 &2127514862
 MonoBehaviour:

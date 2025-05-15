@@ -6,6 +6,8 @@ public class StaticSceneManager : MonoBehaviour
     public Player player;
     public DialogueManager dialogueManager;
 
+    public Schedule schedule;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,12 @@ public class StaticSceneManager : MonoBehaviour
     void Update(){
         if (!dialogueManager.isDialogueActive()){
             SceneManager.LoadScene("BreakScene");
+            if(PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak"){
+                schedule.nextPhase();
+            }
+            else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak"){
+                PlayerPrefs.SetFloat("timeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - 300.0f);
+            }
         }
     }
 

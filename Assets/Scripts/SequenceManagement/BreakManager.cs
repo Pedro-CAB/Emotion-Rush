@@ -6,7 +6,11 @@ public class BreakManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
 
-    public float timeLeft = 600.0f;
+    public float standardBreakTime = 10.0f; //Time that Break Scene Lasts
+
+    public float timeLeft; //Time Remaining in Break Scene
+
+    public Schedule schedule;
 
     void Start(){
         string gameState = PlayerPrefs.GetString("gameState");
@@ -16,7 +20,7 @@ public class BreakManager : MonoBehaviour
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
         else{
-            timeLeft = 600.0f; // Set the initial time left to 10 minutes (600 seconds)
+            timeLeft = standardBreakTime; // Reset Timer
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
     }
@@ -27,8 +31,9 @@ public class BreakManager : MonoBehaviour
         if (timeLeft <= 0.0f)
         {
             PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak"); // Save Current Game State
-            PlayerPrefs.SetFloat("breakTimeLeft", 600.0f); // Restart Timer
+            PlayerPrefs.SetFloat("breakTimeLeft", standardBreakTime); // Restart Timer
             SceneManager.LoadScene("Classroom");
+            schedule.nextPhase();
         }
         else{
             updateTimerText();
