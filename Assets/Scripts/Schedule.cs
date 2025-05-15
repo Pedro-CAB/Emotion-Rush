@@ -12,25 +12,7 @@ public class Schedule : MonoBehaviour
     {
         currentDay = PlayerPrefs.GetInt("currentDay");
         currentWeek = PlayerPrefs.GetInt("currentWeek");
-        int weekDayIndex = currentDay % 5; // Considering only 5 days in a week (Monday to Friday)
-        switch (weekDayIndex)
-        {
-            case 0:
-                currentWeekDay = "Segunda-feira";
-                break;
-            case 1:
-                currentWeekDay = "Terça-feira";
-                break;
-            case 2:
-                currentWeekDay = "Quarta-feira";
-                break;
-            case 3:
-                currentWeekDay = "Quinta-feira";
-                break;
-            case 4:
-                currentWeekDay = "Sexta-feira";
-                break;
-        }
+        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
         currentDayPhase = PlayerPrefs.GetString("currentPhase");
     }
 
@@ -90,6 +72,7 @@ public class Schedule : MonoBehaviour
                 currentWeekDay = "Friday";
                 break;
         }
+        PlayerPrefs.SetString("currentWeekDay", currentWeekDay);
     }
 
 

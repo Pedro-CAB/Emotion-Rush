@@ -20,10 +20,16 @@ public class StaticSceneManager : MonoBehaviour
         if (!dialogueManager.isDialogueActive()){
             SceneManager.LoadScene("BreakScene");
             if(PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak"){
+                if(PlayerPrefs.GetString("currentPhase") == "AfternoonClass"){
+                    SceneManager.LoadScene("Classroom");
+                }
+                else{
+                    SceneManager.LoadScene("BreakScene");
+                }
                 schedule.nextPhase();
             }
             else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak"){
-                PlayerPrefs.SetFloat("timeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - 300.0f);
+                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - 300.0f);
             }
         }
     }

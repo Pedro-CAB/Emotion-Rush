@@ -19,7 +19,7 @@ public class BreakManager : MonoBehaviour
             timeLeft = PlayerPrefs.GetFloat("breakTimeLeft");
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
-        else{
+        else if (gameState == "staticSceneOutsideBreak"){
             timeLeft = standardBreakTime; // Reset Timer
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
