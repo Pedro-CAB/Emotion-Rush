@@ -62,10 +62,20 @@ public class ScoreManager : MonoBehaviour
     }
     void updateIncs()
     {
-        classAIncText.text = displayIncAsString(playerScoreIncrement);
-        classBIncText.text = displayIncAsString(classBIncrement);
-        classCIncText.text = displayIncAsString(classCIncrement);
-        classDIncText.text = displayIncAsString(classDIncrement);
+        if (PlayerPrefs.GetString("currentWeekDay") == "Friday")
+        {
+            classAIncText.text = classAScore.ToString();
+            classBIncText.text = classBScore.ToString();
+            classCIncText.text = classCScore.ToString();
+            classDIncText.text = classDScore.ToString();
+        }
+        else
+        {
+            classAIncText.text = displayIncAsString(playerScoreIncrement);
+            classBIncText.text = displayIncAsString(classBIncrement);
+            classCIncText.text = displayIncAsString(classCIncrement);
+            classDIncText.text = displayIncAsString(classDIncrement);
+        }
     }
 
     string displayIncAsString(int inc)
@@ -114,6 +124,20 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("classBScore", classBScore);
         PlayerPrefs.SetInt("classCScore", classCScore);
         PlayerPrefs.SetInt("classDScore", classDScore);
+        playerScoreIncrement = 0;
+        PlayerPrefs.SetInt("playerScoreIncrement", playerScoreIncrement);
+        if (PlayerPrefs.GetString("currentWeekDay") == "Friday")
+        {
+            resetScores();
+        }
+    }
+
+    void resetScores()
+    { 
+        PlayerPrefs.SetInt("classAScore", 0);
+        PlayerPrefs.SetInt("classBScore", 0);
+        PlayerPrefs.SetInt("classCScore", 0);
+        PlayerPrefs.SetInt("classDScore", 0);
         playerScoreIncrement = 0;
         PlayerPrefs.SetInt("playerScoreIncrement", playerScoreIncrement);
     }
