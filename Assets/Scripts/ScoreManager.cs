@@ -31,9 +31,13 @@ public class ScoreManager : MonoBehaviour
     public Image classCBar;
     public Image classDBar;
 
+    public Schedule schedule;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PlayerPrefs.SetString("gameState", "dayOutcome");
+        PlayerPrefs.SetString("currentPhase", "dayOutcome");
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
         classCScore = PlayerPrefs.GetInt("classCScore");
@@ -46,8 +50,6 @@ public class ScoreManager : MonoBehaviour
         randomizeOtherClassIncrements();
         updateIncs();
         updateBars();
-        saveScores();
-        resetIncrements();
     }
 
 
@@ -88,12 +90,9 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("playerScoreIncrement", playerScoreIncrement);
     }
 
-    void resetIncrements()
+    void resetPlayerIncrement()
     {
         playerScoreIncrement = 0;
-        classBIncrement = 0;
-        classCIncrement = 0;
-        classDIncrement = 0;
     }
 
     void randomizeOtherClassIncrements()
@@ -117,5 +116,24 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("classDScore", classDScore);
         playerScoreIncrement = 0;
         PlayerPrefs.SetInt("playerScoreIncrement", playerScoreIncrement);
+    }
+
+    public void saveAndMenu()
+    {
+        saveScores();
+        resetPlayerIncrement();
+        schedule.nextPhase();
+        schedule.nextDay();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void saveAndContinue()
+    {
+        saveScores();
+        resetPlayerIncrement();
+        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
+        schedule.nextPhase();
+        schedule.nextDay();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom");
     }
 }

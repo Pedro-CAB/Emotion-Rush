@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Schedule : MonoBehaviour
 {
@@ -35,13 +36,27 @@ public class Schedule : MonoBehaviour
         }
         else if (currentDayPhase == "AfternoonClass")
         {
+            currentDayPhase = "DayOutcome";
+            PlayerPrefs.SetString("currentPhase", currentDayPhase);
+            displayDayOutcome();
+        }
+        else if (currentDayPhase == "DayOutcome")
+        {
             currentDayPhase = "MorningClass1";
-            nextDay();
+        }
+        else
+        {
+            currentDayPhase = "MorningClass1";
         }
         PlayerPrefs.SetString("currentPhase", currentDayPhase);
     }
-    
-    void nextDay(){
+
+    void displayDayOutcome()
+    {
+        SceneManager.LoadScene("DayOutcome");
+    }
+
+    public void nextDay(){
         currentDay++;
         if (currentDay > 4) // After Friday, new Week starts
         {
