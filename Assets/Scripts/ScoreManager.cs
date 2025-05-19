@@ -15,6 +15,8 @@ public class ScoreManager : MonoBehaviour
     int classDScore;
     int classDIncrement;
 
+    int classAPosition;
+
     // Values for UI Positioting
     //int firstPositionY = 140;
     //int secondPositionY = 70;
@@ -33,23 +35,48 @@ public class ScoreManager : MonoBehaviour
 
     public Schedule schedule;
 
+    int coinGain;
+    public TextMeshProUGUI coinGainText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        coinGain = 0;
         PlayerPrefs.SetString("gameState", "dayOutcome");
         PlayerPrefs.SetString("currentPhase", "dayOutcome");
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
         classCScore = PlayerPrefs.GetInt("classCScore");
         classDScore = PlayerPrefs.GetInt("classDScore");
+        playerScoreIncrement = PlayerPrefs.GetInt("playerScoreIncrement");
         updateDisplayedResults();
     }
 
     void updateDisplayedResults()
     {
         randomizeOtherClassIncrements();
+        updateClassAPosition();
+        giveCoins();
         updateIncs();
         updateBars();
+    }
+
+    void updateClassAPosition()
+    {
+        int position = 1;
+        if (classAScore < classBScore)
+        {
+            position++;
+        }
+        if (classAScore < classCScore)
+        {
+            position++;
+        }
+        if (classAScore < classDScore)
+        {
+            position++;
+        }
+        classAPosition = position;
     }
 
 
@@ -110,9 +137,7 @@ public class ScoreManager : MonoBehaviour
         classBIncrement = Random.Range(-3, 6);
         classCIncrement = Random.Range(-3, 6);
         classDIncrement = Random.Range(-3, 6);
-        Debug.Log("Class B Increment: " + classBIncrement);
-        Debug.Log("Class C Increment: " + classCIncrement);
-        Debug.Log("Class D Increment: " + classDIncrement);
+
         classBScore = Mathf.Clamp(classBScore + classBIncrement, 0, 70);
         classCScore = Mathf.Clamp(classCScore + classCIncrement, 0, 70);
         classDScore = Mathf.Clamp(classDScore + classDIncrement, 0, 70);
@@ -124,7 +149,6 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("classBScore", classBScore);
         PlayerPrefs.SetInt("classCScore", classCScore);
         PlayerPrefs.SetInt("classDScore", classDScore);
-        playerScoreIncrement = 0;
         PlayerPrefs.SetInt("playerScoreIncrement", playerScoreIncrement);
         if (PlayerPrefs.GetString("currentWeekDay") == "Friday")
         {
@@ -133,7 +157,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     void resetScores()
-    { 
+    {
         PlayerPrefs.SetInt("classAScore", 0);
         PlayerPrefs.SetInt("classBScore", 0);
         PlayerPrefs.SetInt("classCScore", 0);
@@ -148,6 +172,7 @@ public class ScoreManager : MonoBehaviour
         resetPlayerIncrement();
         schedule.nextPhase();
         schedule.nextDay();
+        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
@@ -158,6 +183,42 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         schedule.nextPhase();
         schedule.nextDay();
+        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom");
+    }
+
+    void giveCoins()
+    {
+        // Calculate coin gain based on player score increment and class A position
+        if (playerScoreIncrement >= 0)
+        {
+            coinGain = playerScoreIncrement * (5 - classAPosition);
+        }
+        else if (playerScoreIncrement < 0)
+        {
+            coinGain = 0;
+        }
+
+        //Calculate coin gain based on class A position when in the end of the week
+        if (PlayerPrefs.GetString("currentWeekDay") == "Friday")
+        {
+            if (classAPosition == 1)
+            {
+                coinGain += 30;
+            }
+            else if (classAPosition == 2)
+            {
+                coinGain += 20;
+            }
+            else if (classAPosition == 3)
+            {
+                coinGain += 10;
+            }
+            else if (classAPosition == 4)
+            {
+                coinGain += 0;
+            }
+        }
+        coinGainText.text = "+" + coinGain.ToString();
     }
 }
