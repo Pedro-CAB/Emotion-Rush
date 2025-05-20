@@ -18,7 +18,7 @@ public class CoinSystem : MonoBehaviour
         }
     }
 
-    bool purchase(int cost)
+    public bool purchase(int cost)
     {
         if (isPurchasePossible(cost))
         {
@@ -31,7 +31,7 @@ public class CoinSystem : MonoBehaviour
         }
     }
 
-    bool isPurchasePossible(int cost)
+    public bool isPurchasePossible(int cost)
     { 
         if (cost > PlayerPrefs.GetInt("coins"))
         {
