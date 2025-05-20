@@ -6,7 +6,7 @@ public class BreakManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
 
-    public float standardBreakTime = 10.0f; //Time that Break Scene Lasts
+    public float standardBreakTime = 100.0f; //Time that Break Scene Lasts
 
     public float timeLeft; //Time Remaining in Break Scene
 
