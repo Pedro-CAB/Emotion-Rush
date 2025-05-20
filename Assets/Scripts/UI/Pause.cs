@@ -47,5 +47,6 @@ public class Pause : MonoBehaviour
         Debug.Log("Back to Main Menu");
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
+        //TODO: Delete Unsaved Information if Player Leaves in the Middle of a Day
     }
 }
