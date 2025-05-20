@@ -29,7 +29,7 @@ public class StaticSceneManager : MonoBehaviour
                 schedule.nextPhase();
             }
             else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak"){
-                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - 300.0f);
+                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
             }
         }
     }

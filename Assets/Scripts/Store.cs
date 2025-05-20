@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Store : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Store : MonoBehaviour
     public TextMeshProUGUI interactionUpgradeTitleText;
     public TextMeshProUGUI runningUpgradeTitleText;
     public TextMeshProUGUI coinsUpgradeTitleText;
+
+    public Schedule schedule;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -123,10 +126,11 @@ public class Store : MonoBehaviour
         int coinsUpgradeLevel = PlayerPrefs.GetInt("coinsUpgradeLevel");
 
         if (timeUpgradeLevel < 1)
-        { 
+        {
             timeUpgradeTitleText.text = "Aumentar Intervalo  ";
         }
-        else if (timeUpgradeLevel < 10){
+        else if (timeUpgradeLevel < 10)
+        {
             timeUpgradeTitleText.text = "Aumentar Intervalo " + timeUpgradeLevel.ToString();
         }
         else
@@ -180,7 +184,7 @@ public class Store : MonoBehaviour
         int timeUpgradeCost = 100 * (timeUpgradeLevel + 1);
         if (coinSystem.purchase(timeUpgradeCost) && timeUpgradeLevel < 10)
         {
-            PlayerPrefs.SetInt("timeUpgradeLevel", timeUpgradeLevel + 1);
+            PlayerPrefs.SetInt("unsavedUpgradeLevel", timeUpgradeLevel + 1);
             updatePrices();
             updateLevels();
         }
@@ -192,7 +196,7 @@ public class Store : MonoBehaviour
         int interactionUpgradeCost = 100 * (interactionUpgradeLevel + 1);
         if (coinSystem.purchase(interactionUpgradeCost) && interactionUpgradeLevel < 10)
         {
-            PlayerPrefs.SetInt("interactionUpgradeLevel", interactionUpgradeLevel + 1);
+            PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", interactionUpgradeLevel + 1);
             updatePrices();
             updateLevels();
         }
@@ -204,7 +208,7 @@ public class Store : MonoBehaviour
         int runningUpgradeCost = 100 * (runningUpgradeLevel + 1);
         if (coinSystem.purchase(runningUpgradeCost) && runningUpgradeLevel < 10)
         {
-            PlayerPrefs.SetInt("runningUpgradeLevel", runningUpgradeLevel + 1);
+            PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", runningUpgradeLevel + 1);
             updatePrices();
             updateLevels();
         }
@@ -216,9 +220,36 @@ public class Store : MonoBehaviour
         int coinsUpgradeCost = 100 * (coinsUpgradeLevel + 1);
         if (coinSystem.purchase(coinsUpgradeCost) && coinsUpgradeLevel < 10)
         {
-            PlayerPrefs.SetInt("coinsUpgradeLevel", coinsUpgradeLevel + 1);
+            PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", coinsUpgradeLevel + 1);
             updatePrices();
             updateLevels();
+        }
+    }
+    
+    public void leaveStore()
+    {
+        if (extrasStoreUI == null) //if there is no extras store, upgrade store immediately closes when leaving
+        {
+            PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
+            SceneManager.LoadScene("BreakScene");
+        }
+        else //if there is an extras store, go to store front
+        {
+            if (upgradeStoreUI.activeSelf)
+            {
+                upgradeStoreUI.SetActive(false);
+                storeFrontUI.SetActive(true);
+            }
+            else if (extrasStoreUI.activeSelf)
+            {
+                extrasStoreUI.SetActive(false);
+                storeFrontUI.SetActive(true);
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
+                SceneManager.LoadScene("BreakScene");
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ public class Door : InteractiveObject
                 prompt = new DialogueLine("Esta não é a tua sala.", null, null);
                 break;
             case "BarDoor":
-                prompt = new DialogueLine("Queres entrar no Bar?", null, new DialogueLine[]{option1, option2});
+                prompt = new DialogueLine("Queres entrar na Loja?", null, new DialogueLine[]{option1, option2});
                 break;
             case "AuditoriumDoor":
                 prompt = new DialogueLine("O Auditório está fechado agora.", null, null);

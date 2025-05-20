@@ -156,6 +156,14 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    void saveUpgrades()
+    { 
+        PlayerPrefs.SetInt("timeUpgradeLevel", PlayerPrefs.GetInt("unsavedUpgradeLevel"));
+        PlayerPrefs.SetInt("interactionUpgradeLevel", PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel"));
+        PlayerPrefs.SetInt("runningUpgradeLevel", PlayerPrefs.GetInt("unsavedRunningUpgradeLevel"));
+        PlayerPrefs.SetInt("coinsUpgradeLevel", PlayerPrefs.GetInt("unsavedCoinsUpgradeLevel"));
+    }
+
     void resetScores()
     {
         PlayerPrefs.SetInt("classAScore", 0);
@@ -166,9 +174,18 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("playerScoreIncrement", playerScoreIncrement);
     }
 
+    void resetUpgrades()
+    {
+        PlayerPrefs.SetInt("unsavedUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", 0);
+    }
+
     public void saveAndMenu()
     {
         saveScores();
+        saveUpgrades();
         resetPlayerIncrement();
         schedule.nextPhase();
         schedule.nextDay();
@@ -179,6 +196,7 @@ public class ScoreManager : MonoBehaviour
     public void saveAndContinue()
     {
         saveScores();
+        saveUpgrades();
         resetPlayerIncrement();
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         schedule.nextPhase();
@@ -192,11 +210,11 @@ public class ScoreManager : MonoBehaviour
         // Calculate coin gain based on player score increment and class A position
         if (playerScoreIncrement >= 0)
         {
-            coinGain = playerScoreIncrement * (5 - classAPosition);
+            coinGain = playerScoreIncrement * (5 - classAPosition) + PlayerPrefs.GetInt("coinsUpgradeLevel") * 10;
         }
         else if (playerScoreIncrement < 0)
         {
-            coinGain = 0;
+            coinGain = 0 + PlayerPrefs.GetInt("coinsUpgradeLevel") * 2;
         }
 
         //Calculate coin gain based on class A position when in the end of the week
@@ -204,15 +222,15 @@ public class ScoreManager : MonoBehaviour
         {
             if (classAPosition == 1)
             {
-                coinGain += 30;
+                coinGain += 30 + PlayerPrefs.GetInt("coinsUpgradeLevel") * 10;
             }
             else if (classAPosition == 2)
             {
-                coinGain += 20;
+                coinGain += 20 + PlayerPrefs.GetInt("coinsUpgradeLevel") * 10;
             }
             else if (classAPosition == 3)
             {
-                coinGain += 10;
+                coinGain += 10 + PlayerPrefs.GetInt("coinsUpgradeLevel") * 10;
             }
             else if (classAPosition == 4)
             {

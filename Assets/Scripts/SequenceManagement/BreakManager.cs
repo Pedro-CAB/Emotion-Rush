@@ -13,9 +13,11 @@ public class BreakManager : MonoBehaviour
     public Schedule schedule;
 
     void Start(){
+        standardBreakTime = 300.0f + 60.0f * PlayerPrefs.GetInt("timeUpgradeLevel");
         string gameState = PlayerPrefs.GetString("gameState");
         if (gameState == "staticSceneDuringBreak")
         {
+            Debug.Log("Break Scene Loaded");
             timeLeft = PlayerPrefs.GetFloat("breakTimeLeft");
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }

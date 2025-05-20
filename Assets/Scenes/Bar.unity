@@ -18532,7 +18532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Intera\xE7\xF5es demoram -1 minuto em intervalos."
+  m_text: "Intera\xE7\xF5es demoram -30 segundos em intervalos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
   m_sharedMaterial: {fileID: 7545709033084576918, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
@@ -18559,7 +18559,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.55
+  m_fontSize: 46.65
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25071,7 +25071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Recebe mais dinheiro diariamente.
+  m_text: "Recebes mais dinheiro diariamente e de pr\xE9mio."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
   m_sharedMaterial: {fileID: 7545709033084576918, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
@@ -25098,7 +25098,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.8
+  m_fontSize: 49.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -26502,6 +26502,7 @@ GameObject:
   - component: {fileID: 1582145398}
   - component: {fileID: 1582145397}
   - component: {fileID: 1582145402}
+  - component: {fileID: 1582145405}
   - component: {fileID: 1582145404}
   m_Layer: 5
   m_Name: Canvas
@@ -26635,6 +26636,19 @@ MonoBehaviour:
   interactionUpgradeTitleText: {fileID: 1950892898}
   runningUpgradeTitleText: {fileID: 379537818}
   coinsUpgradeTitleText: {fileID: 689175200}
+  schedule: {fileID: 1582145405}
+--- !u!114 &1582145405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582145396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1585647713
 GameObject:
   m_ObjectHideFlags: 0
@@ -34985,9 +34999,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1582145402}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: PauseGame
+      - m_Target: {fileID: 1582145404}
+        m_TargetAssemblyTypeName: Store, Assembly-CSharp
+        m_MethodName: leaveStore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39621,9 +39635,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1582145396}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1582145404}
+        m_TargetAssemblyTypeName: Store, Assembly-CSharp
+        m_MethodName: upgradeTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

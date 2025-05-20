@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public MovementJoystick movementJoystick;
     public float speed;
+    int runningUpgradeLevel;
 
     public float detect_distance;
     private Rigidbody2D rb;
@@ -26,12 +27,14 @@ public class Player : MonoBehaviour
 
     public Directions staticFacingDirection = Directions.Down;
 
-    
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        runningUpgradeLevel = PlayerPrefs.GetInt("unsavedRunningUpgradeLevel");
+        speed = speed * (1+ runningUpgradeLevel * 0.1f); //Speed is multiplied by the upgrade level
     }
 
     void FixedUpdate()
@@ -50,7 +53,7 @@ public class Player : MonoBehaviour
     void handleJoystickInput(){
         if(movementJoystick.joystickVector.y != 0)
         {
-            rb.linearVelocity = new Vector2(movementJoystick.joystickVector.x * speed, movementJoystick.joystickVector.y * speed);
+            rb.linearVelocity = new Vector2(movementJoystick.joystickVector.x * speed , movementJoystick.joystickVector.y * speed);
         }
 
         else
