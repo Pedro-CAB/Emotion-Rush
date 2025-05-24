@@ -15,9 +15,13 @@ public class DialogueLine
     public DialogueLine[] dialogueOptions;
 
     public DialogueLine nextLine;
+
+    public DialogueLine previousLine;
     public LineType type;
 
     public int score;
+
+    public bool visited;
     public DialogueLine(string content, DialogueLine next = null, DialogueLine[] options = null, LineType type = LineType.Undefined, int score = 0)
     {
         if (type == LineType.Undefined)
@@ -52,6 +56,11 @@ public class DialogueLine
     public void addNextLine(DialogueLine next)
     {
         this.nextLine = next;
+    }
+
+    public void addPreviousLine(DialogueLine previous)
+    {
+        this.previousLine = previous;
     }
 
     public void setOptions(DialogueLine[] options)

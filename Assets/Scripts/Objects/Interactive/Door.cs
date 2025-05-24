@@ -14,7 +14,7 @@ public class Door : InteractiveObject
         doorName = gameObject.name;
         switch(doorName){
             case "LibraryDoor":
-                prompt = new DialogueLine("Queres entrar na Biblioteca?", null, new DialogueLine[]{option1, option2});
+                prompt = new DialogueLine("Queres entrar na Biblioteca?", null, new DialogueLine[]{option1, option2}, DialogueLine.LineType.TwoOption);
                 break;
             case "ClassroomADoor":
                 prompt = new DialogueLine("A tua sala está fechada. Aproveita o intervalo!", null, null);
@@ -25,7 +25,7 @@ public class Door : InteractiveObject
                 prompt = new DialogueLine("Esta não é a tua sala.", null, null);
                 break;
             case "BarDoor":
-                prompt = new DialogueLine("Queres entrar na Loja?", null, new DialogueLine[]{option1, option2});
+                prompt = new DialogueLine("Queres entrar na Loja?", null, new DialogueLine[]{option1, option2}, DialogueLine.LineType.TwoOption);
                 break;
             case "AuditoriumDoor":
                 prompt = new DialogueLine("O Auditório está fechado agora.", null, null);
@@ -34,7 +34,7 @@ public class Door : InteractiveObject
                 prompt = new DialogueLine("O Laboratório está fechado agora.", null, null);
                 break;
             case "PlaygroundDoor":
-                prompt = new DialogueLine("Queres entrar no Recreio?", null, new DialogueLine[]{option1, option2});
+                prompt = new DialogueLine("Queres entrar no Recreio?", null, new DialogueLine[]{option1, option2}, DialogueLine.LineType.TwoOption);
                 break;
             case "FrontEntranceDoor":
             case "LeftEntranceDoor":

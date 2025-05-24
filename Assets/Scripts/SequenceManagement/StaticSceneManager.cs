@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections.Generic;
 public class StaticSceneManager : MonoBehaviour
 {
     public Player player;
@@ -8,61 +8,90 @@ public class StaticSceneManager : MonoBehaviour
 
     public Schedule schedule;
 
+    private string currentSceneName;
+
+    private DialogueSequence dialogueSequence;
+
+    List<DialogueLine> interactions = new List<DialogueLine> { };
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DialogueLine line = createSampleScene();
+        System.Random random = new System.Random(); // Create a new instance of Random
+        currentSceneName = SceneManager.GetActiveScene().name; // Get the name of the current scene
+        createInteractions(); // Create the interactions for the static scene
+        int index = random.Next(interactions.Count);
+        DialogueLine line = interactions[index]; // Get the first interaction line
         player.setStaticScene();
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
     }
 
-    void Update(){
-        if (!dialogueManager.isDialogueActive()){
-            SceneManager.LoadScene("BreakScene");
-            if(PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak"){
-                if(PlayerPrefs.GetString("currentPhase") == "AfternoonClass"){
-                    SceneManager.LoadScene("Classroom");
+    private float dialogueInactiveTime = 0f;
+
+    void Update()
+    {
+        if (!dialogueManager.isDialogueActive())
+        {
+            dialogueInactiveTime += Time.deltaTime;
+            if (dialogueInactiveTime >= 10f)
+            {
+                SceneManager.LoadScene("BreakScene");
+                if (PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak")
+                {
+                    if (PlayerPrefs.GetString("currentPhase") == "AfternoonClass")
+                    {
+                        SceneManager.LoadScene("Classroom");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("BreakScene");
+                    }
+                    schedule.nextPhase();
                 }
-                else{
-                    SceneManager.LoadScene("BreakScene");
+                else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak")
+                {
+                    PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
                 }
-                schedule.nextPhase();
+                dialogueInactiveTime = 0f; // Reset timer after action
             }
-            else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak"){
-                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
-            }
+        }
+        else
+        {
+            dialogueInactiveTime = 0f; // Reset timer if dialogue is active
         }
     }
 
-    public DialogueLine createSampleScene()
+    public void createInteractions()
     {
+        if (currentSceneName == "Classroom")
+        {
+            createClassroomInteractions();
+        }
+        else if (currentSceneName == "Library")
+        {
+            //createLibraryInteractions();
+        }
+        else if (currentSceneName == "Bar")
+        {
+            //createBarInteractions();
+        }
+        else if (currentSceneName == "Auditorium")
+        {
+            //createAuditoriumInteractions();
+        }
+        else if (currentSceneName == "Lab")
+        {
+            //createLabInteractions();
+        }
+        else if (currentSceneName == "Playground")
+        {
+            //createPlaygroundInteractions();
+        }
+    }
 
-
-        //Create Interactions Here
-        //Sample Linear Interaction
-        /**DialogueLine line3 = new DialogueLine(" Espero que funcione! :)", null, null);
-        DialogueLine line2 = new DialogueLine(" Este é um diálogo de teste!", line3, null);
-        DialogueLine line1 = new DialogueLine(" Olá! Tudo bem?", line2, null);*/
-        //interactions.Add(line1);
-
-        DialogueLine yes = new DialogueLine("Sim.", null, null, DialogueLine.LineType.DialogueOption, 1);
-        DialogueLine no = new DialogueLine("Não.", null, null, DialogueLine.LineType.DialogueOption, -1);
-        DialogueLine maybe = new DialogueLine("Talvez noutro dia.", null, null, DialogueLine.LineType.DialogueOption, -1);
-
-        DialogueLine line0 = new DialogueLine("Olá! O meu nome é José!", null, null, DialogueLine.LineType.Linear);
-        DialogueLine line1 = new DialogueLine("Queres ajudar-me?", null, new DialogueLine[] { yes, no, maybe }, DialogueLine.LineType.ThreeOption);
-        line0.addNextLine(line1);
-
-        /**
-        //Sample Two Option Interaction
-        line1 = new DialogueLine("Ok... Fica para a próxima então.", null, null);
-        line2 = new DialogueLine("Obrigado!", null, null);
-        DialogueLine option1 = new DialogueLine("Sim.", null, null, DialogueLine.LineType.DialogueOption, 1);
-        DialogueLine option2 = new DialogueLine("Não.", null, null, DialogueLine.LineType.DialogueOption, -1);
-        DialogueLine option3 = new DialogueLine("Talvez noutro dia.", line1, null, DialogueLine.LineType.DialogueOption, -1);
-        line1 = new DialogueLine("Queres ajudar-me?", null, new DialogueLine[]{option1, option2, option3}, DialogueLine.LineType.ThreeOption, 0);
-        DialogueLine line0 = new DialogueLine("Olá! O meu nome é José!", line1, null);*/
-
-        return line0;
+    public void createClassroomInteractions()
+    {
+        dialogueSequence = new DialogueSequence("Assets/Interactions/Classroom/bad_haircut.json");
+        interactions.Add(dialogueSequence.RootLine);
     }
 }

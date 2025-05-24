@@ -13,7 +13,7 @@ public class DialogueBox : MonoBehaviour
     public Button optionAButton; // Reference to the button for option A
 
     public TextMeshProUGUI optionAText; // Reference to the TextMeshProUGUI component for option A text
-    
+
     public Button optionBButton; // Reference to the button for option B
     public TextMeshProUGUI optionBText; // Reference to the TextMeshProUGUI component for option B text
     public Button optionCButton; // Reference to the button for option C
@@ -37,7 +37,9 @@ public class DialogueBox : MonoBehaviour
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
-    public void StartLinearDialogue(DialogueLine l, string triggeredBy = null){
+    public void StartLinearDialogue(DialogueLine l, string triggeredBy = null)
+    {
+        //DisplayDialogueBox(); // Show the dialogue box when starting the dialogue
         trigger = triggeredBy; // Store the object that triggered the dialogue
         gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
         currentLine = l;
@@ -58,43 +60,57 @@ public class DialogueBox : MonoBehaviour
         }
     }*/
 
-    IEnumerator TypeLine(){
+    IEnumerator TypeLine()
+    {
         //Debug.Log("Typing Line: " + lines[index].content); // Log the current line being typed
         //textComponent.text = currentLine.content;
-        foreach (char letter in currentLine.content.ToCharArray()){
+        textComponent.text = string.Empty; // Clear the text component before typing the new line
+        foreach (char letter in currentLine.content.ToCharArray())
+        {
             textComponent.text += letter; // Display each letter one by one
             yield return new WaitForSeconds(textSpeed); // Wait for the specified text speed before displaying the next letter
         }
     }
 
-    public void SkipDialog(){
-        if (textComponent.text == currentLine.content){ //If previous line is already fully displayed
-            if (currentLine.type == DialogueLine.LineType.Linear){ //Only for linear lines
-                if (currentLine.nextLine != null){
+    public void SkipDialog()
+    {
+        if (textComponent.text == currentLine.content)
+        { //If previous line is already fully displayed
+            if (currentLine.type == DialogueLine.LineType.Linear)
+            { //Only for linear lines
+                if (currentLine.nextLine != null)
+                {
                     Debug.Log("Line Fully Displayed. Displaying Next Line.");
                     textComponent.text = string.Empty; // Clear the text component before displaying the next line
-                    HideDialogueBox(); // Hide the dialogue box before displaying the next line
+                    Debug.Log("Hiding Dialogue Box A");
+                    //HideDialogueBox(); // Hide the dialogue box before displaying the next line
                     dialogueManager.setCurrentLine(currentLine.nextLine); // Set the next line as the current line
                 }
-                else{
+                else
+                {
                     Debug.Log("Line Fully Displayed and No Next Line. Closing Dialogue Box...");
-                    HideDialogueBox(); // Hide the dialogue box after picking an option
+                    Debug.Log("Hiding Dialogue Box B");
+                    //HideDialogueBox(); // Hide the dialogue box after picking an option
                 }
             }
         }
-        else{
+        else
+        {
             Debug.Log("Line Not Fully Displayed. Displaying Full Line...");
             StopAllCoroutines(); // Stop the typing coroutine if the button is pressed before the line is fully displayed
             textComponent.text = currentLine.content; // Display the full line immediately
         }
         Debug.Log("Line Skipped!");
 
- 
+
     }
 
     //Handling Option Dialogue ----------------------------------------------------------------------------------------
 
-    public void StartTwoOptionDialogue(DialogueLine l, string triggeredBy = null){
+    public void StartTwoOptionDialogue(DialogueLine l, string triggeredBy = null)
+    {
+        //DisplayDialogueBox();
+        Debug.Log("DialogueBox: Starting Two Option Dialogue: " + l.content); // Log the content of the dialogue line
         trigger = triggeredBy; // Store the object that triggered the dialogue
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
@@ -107,8 +123,9 @@ public class DialogueBox : MonoBehaviour
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
     }
 
-    public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null){
-        Debug.Log("THREE OPTION DIALOGUE STARTED");
+    public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null)
+    {
+        //DisplayDialogueBox();
         trigger = triggeredBy; // Store the object that triggered the dialogue
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
@@ -122,17 +139,28 @@ public class DialogueBox : MonoBehaviour
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
         optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
     }
-    
-    public void PickOptionA(){
+
+    public void PickOptionA()
+    {
         DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[0];
         PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
         DialogueLine nextLine = chosenLine.nextLine;
-        if (nextLine != null){
+        if (nextLine != null)
+        {
+            //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+            //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+            //foreach (var option in nextLine.dialogueOptions)
+            //{
+            //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+            //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+            //}
             dialogueManager.setCurrentLine(nextLine);
         }
-        if (trigger != null){
-            if (trigger.Contains("Door")){
+        if (trigger != null)
+        {
+            if (trigger.Contains("Door"))
+            {
                 string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                 PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
                 Debug.Log(breakManager.timeLeft);
@@ -140,34 +168,42 @@ public class DialogueBox : MonoBehaviour
                 SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
             }
         }
-        HideDialogueBox(); // Hide the dialogue box after picking an option
+        //Debug.Log("Hiding Dialogue Box C");
+        //HideDialogueBox(); // Hide the dialogue box after picking an option
     }
 
-    public void PickOptionB(){
+    public void PickOptionB()
+    {
         DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[1];
         PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
         DialogueLine nextLine = chosenLine.nextLine;
-        if (nextLine != null){
+        if (nextLine != null)
+        {
             dialogueManager.setCurrentLine(nextLine);
         }
-        HideDialogueBox(); // Hide the dialogue box after picking an option
+        //Debug.Log("Hiding Dialogue Box D");
+        //HideDialogueBox(); // Hide the dialogue box after picking an option
     }
 
-    public void PickOptionC(){
+    public void PickOptionC()
+    {
         DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[2];
         PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
         DialogueLine nextLine = chosenLine.nextLine;
-        if (nextLine != null){
+        if (nextLine != null)
+        {
             dialogueManager.setCurrentLine(nextLine);
         }
-        HideDialogueBox(); // Hide the dialogue box after picking an option
+        //Debug.Log("Hiding Dialogue Box E");
+        //HideDialogueBox(); // Hide the dialogue box after picking an option
     }
 
-    public void HideDialogueBox(){
+    public void HideDialogueBox()
+    {
         Debug.Log("Hiding Dialogue Box");
-        gameObject.SetActive(false); // Hide the dialogue box
+        this.enabled = false; // Disable the dialogue box component
         textComponent.text = string.Empty; // Clear the text component when hiding the dialogue box
     }
 }
