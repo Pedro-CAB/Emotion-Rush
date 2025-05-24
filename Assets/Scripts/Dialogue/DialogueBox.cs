@@ -41,7 +41,7 @@ public class DialogueBox : MonoBehaviour
     {
         //DisplayDialogueBox(); // Show the dialogue box when starting the dialogue
         trigger = triggeredBy; // Store the object that triggered the dialogue
-        gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        enabled = true; // Show the dialogue box when starting the dialogue
         currentLine = l;
         //lines = l;
         //index = 0;
@@ -80,27 +80,21 @@ public class DialogueBox : MonoBehaviour
             { //Only for linear lines
                 if (currentLine.nextLine != null)
                 {
-                    Debug.Log("Line Fully Displayed. Displaying Next Line.");
                     textComponent.text = string.Empty; // Clear the text component before displaying the next line
-                    Debug.Log("Hiding Dialogue Box A");
                     //HideDialogueBox(); // Hide the dialogue box before displaying the next line
                     dialogueManager.setCurrentLine(currentLine.nextLine); // Set the next line as the current line
                 }
                 else
                 {
-                    Debug.Log("Line Fully Displayed and No Next Line. Closing Dialogue Box...");
-                    Debug.Log("Hiding Dialogue Box B");
                     //HideDialogueBox(); // Hide the dialogue box after picking an option
                 }
             }
         }
         else
         {
-            Debug.Log("Line Not Fully Displayed. Displaying Full Line...");
             StopAllCoroutines(); // Stop the typing coroutine if the button is pressed before the line is fully displayed
             textComponent.text = currentLine.content; // Display the full line immediately
         }
-        Debug.Log("Line Skipped!");
 
 
     }
@@ -114,7 +108,8 @@ public class DialogueBox : MonoBehaviour
         trigger = triggeredBy; // Store the object that triggered the dialogue
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
-        gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        //gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        enabled = true; // Enable the dialogue box component to show the dialogue box
         currentLine = l;
 
         //index = 0;
@@ -130,7 +125,8 @@ public class DialogueBox : MonoBehaviour
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
         //optionCButton.gameObject.SetActive(false); // Hide option C button
-        gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        //gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
+        enabled = true; // Show the dialogue box when starting the dialogue
         currentLine = l;
 
         //index = 0;
@@ -168,6 +164,7 @@ public class DialogueBox : MonoBehaviour
                 SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
             }
         }
+        enabled = false; // Disable the dialogue box component after picking an option
         //Debug.Log("Hiding Dialogue Box C");
         //HideDialogueBox(); // Hide the dialogue box after picking an option
     }

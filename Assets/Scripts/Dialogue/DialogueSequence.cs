@@ -14,6 +14,7 @@ public class DialogueSequence : MonoBehaviour
         string jsonText = File.ReadAllText(jsonFilePath);
         JObject rootObj = JObject.Parse(jsonText);
         RootLine = ParseDialogueNode(rootObj);
+        PrintDialogueTree();
     }
 
     // Loads and parses a dialogue JSON file, saving the root DialogueLine
@@ -37,7 +38,7 @@ public class DialogueSequence : MonoBehaviour
 
     // Entry point for parsing the JSON tree
     private DialogueLine ParseDialogueNode(JToken rootNode)
-    {   
+    {
         // Step 1: Build the tree of DialogueNodeData from JSON (bottom-up)
         Dictionary<JToken, DialogueNodeData> nodeMap = new Dictionary<JToken, DialogueNodeData>();
         BuildNodeTree(rootNode, null, nodeMap);
@@ -122,7 +123,7 @@ public class DialogueSequence : MonoBehaviour
         if (nodeData.Children.Count == 0)
             return;
 
-        
+
         var type = nodeData.Line.type;
         if (type == DialogueLine.LineType.Linear || type == DialogueLine.LineType.DialogueOption)
         {
@@ -149,6 +150,43 @@ public class DialogueSequence : MonoBehaviour
         foreach (var child in nodeData.Children)
         {
             ConnectNodeChildren(child);
+        }
+    }
+    
+    // Prints the dialogue tree starting from the RootLine
+    public void PrintDialogueTree()
+    {
+        PrintDialogueLine(RootLine, "", true);
+    }
+
+    // Helper recursive function to print each DialogueLine with indentation
+    private void PrintDialogueLine(DialogueLine line, string indent, bool isLast)
+    {
+        if (line == null) return;
+
+        // Print the current line with a tree branch
+        string branch = indent + (isLast ? "└─ " : "├─ ");
+        Debug.Log(branch + line.content + " [" + line.type + "]");
+
+        // Prepare indentation for children
+        string childIndent = indent + (isLast ? "   " : "│  ");
+
+        // Print options if any
+        var options = line.dialogueOptions;
+        if (options != null && options.Length > 0)
+        {
+            for (int i = 0; i < options.Length; i++)
+            {
+                bool lastOption = (i == options.Length - 1) && (line.nextLine == null);
+                PrintDialogueLine(options[i], childIndent, lastOption);
+            }
+        }
+
+        // Print next line if any (for linear/dialogue option)
+        var next = line.nextLine;
+        if (next != null)
+        {
+            PrintDialogueLine(next, childIndent, true);
         }
     }
 }

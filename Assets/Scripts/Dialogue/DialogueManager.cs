@@ -14,9 +14,14 @@ public class DialogueManager : MonoBehaviour
 
     public void Start()
     {
-        linearDialogueBox.gameObject.SetActive(false);
-        twoOptionDialogueBox.gameObject.SetActive(false);
-        threeOptionDialogueBox.gameObject.SetActive(false);
+        linearDialogueBox.enabled = false; // Disable the linear dialogue box by default
+        twoOptionDialogueBox.enabled = false; // Disable the two option dialogue box by default
+        threeOptionDialogueBox.enabled = false; // Disable the three option dialogue box by default
+    }
+
+    public void Update()
+    {
+        Debug.Log($"Linear: {linearDialogueBox.enabled}, TwoOption: {twoOptionDialogueBox.enabled}, ThreeOption: {threeOptionDialogueBox.enabled}");
     }
 
     /**public void Update()
@@ -48,9 +53,11 @@ public class DialogueManager : MonoBehaviour
         trigger = triggeredBy;
         currentLine.content = " " + currentLine.content;
         Debug.Log("DialogueManager: Setting current line to: " + currentLine.content);
+        Debug.Log("DialogueManager: Type: " + currentLine.type);
         //Handle linear sequences with the correct GUI interface
         if (currentLine.type == DialogueLine.LineType.Linear)
         {
+            Debug.Log("DialogueManager: Starting linear dialogue:" + currentLine.content);
             linearDialogueBox.enabled = true; // Ensure the linear dialogue box is enabled
             twoOptionDialogueBox.enabled = false; // Disable the two option dialogue box
             threeOptionDialogueBox.enabled = false; // Disable the three option dialogue box
@@ -77,6 +84,6 @@ public class DialogueManager : MonoBehaviour
 
     public bool isDialogueActive()
     {
-        return linearDialogueBox.gameObject.activeSelf || twoOptionDialogueBox.gameObject.activeSelf || threeOptionDialogueBox.gameObject.activeSelf;
+        return linearDialogueBox.enabled || twoOptionDialogueBox.enabled || threeOptionDialogueBox.enabled;
     }
 }
