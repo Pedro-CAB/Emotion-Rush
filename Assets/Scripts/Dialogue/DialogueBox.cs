@@ -108,6 +108,7 @@ public class DialogueBox : MonoBehaviour
     }
 
     public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null){
+        Debug.Log("THREE OPTION DIALOGUE STARTED");
         trigger = triggeredBy; // Store the object that triggered the dialogue
         //optionAButton.gameObject.SetActive(false); // Hide option A button
         //optionBButton.gameObject.SetActive(false); // Hide option B button
@@ -125,6 +126,7 @@ public class DialogueBox : MonoBehaviour
     public void PickOptionA(){
         DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[0];
+        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
         DialogueLine nextLine = chosenLine.nextLine;
         if (nextLine != null){
             dialogueManager.setCurrentLine(nextLine);
@@ -144,6 +146,7 @@ public class DialogueBox : MonoBehaviour
     public void PickOptionB(){
         DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[1];
+        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
         DialogueLine nextLine = chosenLine.nextLine;
         if (nextLine != null){
             dialogueManager.setCurrentLine(nextLine);
@@ -154,6 +157,7 @@ public class DialogueBox : MonoBehaviour
     public void PickOptionC(){
         DialogueLine promptLine = currentLine;
         DialogueLine chosenLine = currentLine.dialogueOptions[2];
+        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
         DialogueLine nextLine = chosenLine.nextLine;
         if (nextLine != null){
             dialogueManager.setCurrentLine(nextLine);
