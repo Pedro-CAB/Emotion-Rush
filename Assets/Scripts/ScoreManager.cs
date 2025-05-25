@@ -28,6 +28,8 @@ public class ScoreManager : MonoBehaviour
     public Text classCIncText;
     public Text classDIncText;
 
+    public TextMeshProUGUI feedbackText;
+
     public Image classABar;
     public Image classBBar;
     public Image classCBar;
@@ -57,6 +59,7 @@ public class ScoreManager : MonoBehaviour
         randomizeOtherClassIncrements();
         updateClassAPoints();
         updateClassAPosition();
+        updateFeedback();
         giveCoins();
         updateIncs();
         updateBars();
@@ -110,6 +113,11 @@ public class ScoreManager : MonoBehaviour
             classCIncText.text = displayIncAsString(classCIncrement);
             classDIncText.text = displayIncAsString(classDIncrement);
         }
+    }
+
+    void updateFeedback()
+    {
+        feedbackText.text = PlayerPrefs.GetString("feedback");
     }
 
     string displayIncAsString(int inc)

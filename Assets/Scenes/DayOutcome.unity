@@ -714,7 +714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ajuda
+  m_text: Dicas
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 541d1a4627248f9418b4426aa9bf6898, type: 2}
   m_sharedMaterial: {fileID: -7286486496899664465, guid: 541d1a4627248f9418b4426aa9bf6898, type: 2}
@@ -926,6 +926,7 @@ MonoBehaviour:
   classBIncText: {fileID: 2077082166}
   classCIncText: {fileID: 1945901046}
   classDIncText: {fileID: 1471514897}
+  feedbackText: {fileID: 2023564040}
   classABar: {fileID: 1173676055}
   classBBar: {fileID: 2060557818}
   classCBar: {fileID: 285200203}
