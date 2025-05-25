@@ -29,7 +29,24 @@ Sprint 1 finished the implementation of the core mechanics of the game, focusing
 ### What Needs to Change/Improve
 - Dialogue was not as quick to implement as initially foreseen. Situations like this are to be avoided in the future.
 
-## Sprint 2
+## Sprint 2 (25/04-08/05)
+
+Sprint 2 focused on building the gameplay by developing features related to static and explorable scenes inside the game, as well as transitioning between those scenes. New UI elements were also introduced, both for these features and for others.
+
+### What Was Done
+- Pause UI
+- Break Timer UI
+- Updated Dialogue UI
+- Updated Main Menu UI
+- Break->Class and Class->Break Transitions
+
+### What Went Well
+- Good Time Management allowed for all selected features to be done in time and for some adjustments and fixes to previously implemented features.
+
+### What Needs to Change/Improve
+- Some requirements regarding character cast and unlockable content need to be analyzed and decided upon for future sprints. It is important to decide what to prioritize next sprint, to ensure a demonstration version is ready soon.
+    - Limitations were encountered regarding multiple character sprites that represent a bigger amount of time to be invested into adding multiple characters and animations to the game. This process needs to be as quick and simple as possible.
+    - Interaction Scenes during Breaks still need to be implemented. It is important to think how to implement them in a way that the timer doesn't restart after an interaction ends.
 ## Sprint 3
 ## Sprint 4
 ## Sprint 5
