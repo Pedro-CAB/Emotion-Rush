@@ -32,28 +32,24 @@ public class StaticSceneManager : MonoBehaviour
     {
         if (!dialogueManager.isDialogueActive())
         {
-            dialogueInactiveTime += Time.deltaTime;
-            if (dialogueInactiveTime >= 10f)
+            SceneManager.LoadScene("BreakScene");
+            if (PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak")
             {
-                SceneManager.LoadScene("BreakScene");
-                if (PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak")
+                if (PlayerPrefs.GetString("currentPhase") == "AfternoonClass")
                 {
-                    if (PlayerPrefs.GetString("currentPhase") == "AfternoonClass")
-                    {
-                        SceneManager.LoadScene("Classroom");
-                    }
-                    else
-                    {
-                        SceneManager.LoadScene("BreakScene");
-                    }
-                    schedule.nextPhase();
+                    SceneManager.LoadScene("Classroom");
                 }
-                else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak")
+                else
                 {
-                    PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
+                    SceneManager.LoadScene("BreakScene");
                 }
-                dialogueInactiveTime = 0f; // Reset timer after action
+                schedule.nextPhase();
             }
+            else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak")
+            {
+                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
+            }
+            dialogueInactiveTime = 0f; // Reset timer after action
         }
         else
         {

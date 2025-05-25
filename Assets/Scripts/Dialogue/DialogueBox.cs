@@ -86,7 +86,7 @@ public class DialogueBox : MonoBehaviour
                 }
                 else
                 {
-                    //HideDialogueBox(); // Hide the dialogue box after picking an option
+                    HideDialogueBox(); // Hide the dialogue box after picking an option
                 }
             }
         }
@@ -200,7 +200,7 @@ public class DialogueBox : MonoBehaviour
     public void HideDialogueBox()
     {
         Debug.Log("Hiding Dialogue Box");
-        this.enabled = false; // Disable the dialogue box component
         textComponent.text = string.Empty; // Clear the text component when hiding the dialogue box
+        gameObject.SetActive(false); // Disable the dialogue box component
     }
 }
