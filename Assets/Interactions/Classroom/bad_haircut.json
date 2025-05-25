@@ -9,6 +9,8 @@
         {
           "text": "\"O que se passa?\"",
           "type": "DialogueOption",
+          "feedback": "None",
+          "score": 0,
           "children": [
             {
               "text": "Artur: \"Os meus pais obrigaram-me a cortar o cabelo e ficou horrível!\"",
@@ -17,6 +19,8 @@
                 {
                   "text": "\"Tira isso. Ninguém vai reparar e aposto que até ficou bem.\"",
                   "type": "DialogueOption",
+                  "score":1,
+                  "feedback": "- Acalmaste alguém fazendo-o ver a situação de forma positiva.",
                   "children": [
                     {
                       "text": "Artur: \"Achas? O professor não gosta que usemos chapéu na sala, então se calhar é melhor...\"",
@@ -33,6 +37,8 @@
                 {
                   "text": "Tirar-lhe o gorro à força. \"Tira lá isso!\"",
                   "type": "DialogueOption",
+                  "feedback": "- Pressionar alguém nervoso causou uma confusão...",
+                  "score": -1,
                   "children": [
                     {
                       "text": "Artur: \"Ei! Para com isso! Vais piorar ainda mais!\"",
@@ -59,6 +65,8 @@
         {
           "text": "Ignoro e sento-me no meu lugar.",
           "type": "Linear",
+          "score": 0,
+          "feedback": "None",
           "children": [
             {
               "text": "\"O professor começa a dar a aula e nota o gorro do Artur.\"",
@@ -70,6 +78,8 @@
                   "children": [
                     {
                       "text": "\"Tem calma. É melhor tirares o gorro do que levares um castigo.\"",
+                      "feedback": "- Ajudaste alguém a conter as emoções, evitando um castigo.",
+                      "score": 1,
                       "type": "DialogueOption",
                       "children": [
                         {
@@ -87,6 +97,8 @@
                     {
                       "text": "Tirar-lhe o gorro à força. \"Tira lá isso!\"",
                       "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Pressionar alguém nervoso causou uma confusão...",
                       "children": [
                         {
                           "text": "Artur: \"Ei! Para com isso! Vais piorar ainda mais!\"",

@@ -56,7 +56,8 @@ public class Schedule : MonoBehaviour
         SceneManager.LoadScene("DayOutcome");
     }
 
-    public void nextDay(){
+    public void nextDay()
+    {
         currentDay++;
         if (currentDay > 4) // After Friday, new Week starts
         {
@@ -65,6 +66,7 @@ public class Schedule : MonoBehaviour
         calculateWeekDay();
         PlayerPrefs.SetInt("currentDay", currentDay);
         PlayerPrefs.SetInt("currentWeek", currentWeek);
+        PlayerPrefs.SetString("feedback", "");
     }
 
     void calculateWeekDay(){

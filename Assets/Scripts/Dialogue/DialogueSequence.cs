@@ -93,7 +93,27 @@ public class DialogueSequence : MonoBehaviour
         string typeStr = node.Value<string>("type");
         DialogueLine.LineType type = (DialogueLine.LineType)System.Enum.Parse(typeof(DialogueLine.LineType), typeStr);
 
-        DialogueLine dialogueLine = new DialogueLine(text, null, null, type);
+        // Get score and feedback if present and type is DialogueOption
+        int score = 0;
+        string feedback = null;
+        if (type == DialogueLine.LineType.DialogueOption)
+        {
+            if (node["score"] != null)
+                score = node.Value<int>("score");
+            if (node["feedback"] != null)
+                feedback = node.Value<string>("feedback");
+        }
+
+        DialogueLine dialogueLine;
+        if (type == DialogueLine.LineType.DialogueOption)
+        {
+            dialogueLine = new DialogueLine(text, null, null, type, score, feedback);
+        }
+        else
+        {
+            dialogueLine = new DialogueLine(text, null, null, type);
+        }
+
         DialogueNodeData nodeData = new DialogueNodeData
         {
             Line = dialogueLine,
@@ -122,7 +142,6 @@ public class DialogueSequence : MonoBehaviour
 
         if (nodeData.Children.Count == 0)
             return;
-
 
         var type = nodeData.Line.type;
         if (type == DialogueLine.LineType.Linear || type == DialogueLine.LineType.DialogueOption)

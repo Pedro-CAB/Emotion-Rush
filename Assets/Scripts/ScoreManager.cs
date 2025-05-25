@@ -55,10 +55,17 @@ public class ScoreManager : MonoBehaviour
     void updateDisplayedResults()
     {
         randomizeOtherClassIncrements();
+        updateClassAPoints();
         updateClassAPosition();
         giveCoins();
         updateIncs();
         updateBars();
+    }
+
+    void updateClassAPoints()
+    {
+        PlayerPrefs.SetInt("classAScore", classAScore + playerScoreIncrement);
+        PlayerPrefs.SetInt("playerScoreIncrement", 0);
     }
 
     void updateClassAPosition()
@@ -184,6 +191,7 @@ public class ScoreManager : MonoBehaviour
 
     public void saveAndMenu()
     {
+        PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
@@ -195,6 +203,7 @@ public class ScoreManager : MonoBehaviour
 
     public void saveAndContinue()
     {
+        PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();

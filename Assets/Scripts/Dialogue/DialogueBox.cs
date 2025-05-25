@@ -165,6 +165,17 @@ public class DialogueBox : MonoBehaviour
             }
         }
         enabled = false; // Disable the dialogue box component after picking an option
+        if (chosenLine.feedback != "None")
+        {
+            if (PlayerPrefs.GetString("feedback") == "")
+            {
+                PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
+            }
+            else
+            {
+                PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
+            }
+        }
         //Debug.Log("Hiding Dialogue Box C");
         //HideDialogueBox(); // Hide the dialogue box after picking an option
     }

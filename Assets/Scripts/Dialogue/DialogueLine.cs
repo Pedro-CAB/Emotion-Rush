@@ -22,7 +22,9 @@ public class DialogueLine
     public int score;
 
     public bool visited;
-    public DialogueLine(string content, DialogueLine next = null, DialogueLine[] options = null, LineType type = LineType.Undefined, int score = 0)
+
+    public string feedback; //Geeback for the options selected by the player
+    public DialogueLine(string content, DialogueLine next = null, DialogueLine[] options = null, LineType type = LineType.Undefined, int score = 0, string feedback = "None")
     {
         if (type == LineType.Undefined)
         {
@@ -51,6 +53,7 @@ public class DialogueLine
         this.content = content;
         this.dialogueOptions = options;
         this.score = score;
+        this.feedback = feedback;
     }
 
     public void addNextLine(DialogueLine next)
