@@ -133,8 +133,6 @@ public class Player : MonoBehaviour
         if (detectedDoor != null){
             Debug.Log("Interacting with: " + detectedDoor.name);
             detectedDoor.whenInteracted();
-            //List<string> lines = detectedDoor.whenInteracted();
-            //dialogueBox.StartLinearDialogue(lines); //Start the dialogue with the lines returned from the NPC
         }
         else{
             Debug.Log("No object detected to interact with.");	

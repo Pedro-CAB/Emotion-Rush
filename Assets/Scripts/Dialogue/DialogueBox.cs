@@ -31,44 +31,25 @@ public class DialogueBox : MonoBehaviour
     private string trigger;
 
     public System.Random random;
-    //private int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
         random = new System.Random(); // Initialize the random number generator
-        //gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
     public void StartLinearDialogue(DialogueLine l, string triggeredBy = null)
     {
-        //DisplayDialogueBox(); // Show the dialogue box when starting the dialogue
         trigger = triggeredBy; // Store the object that triggered the dialogue
         enabled = true; // Show the dialogue box when starting the dialogue
         currentLine = l;
-        //lines = l;
-        //index = 0;
         StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
     }
 
-    /**void NextLinearLine(){
-        if (index < lines.Count - 1){
-            index++;
-            textComponent.text = string.Empty; // Clear the text component before displaying the next line
-            StartCoroutine(TypeLine()); // Start the coroutine to type out the next line of dialogue
-        }
-        else{
-            textComponent.text = string.Empty; // Clear the text component when all lines are displayed
-            gameObject.SetActive(false);
-        }
-    }*/
-
     IEnumerator TypeLine()
     {
-        //Debug.Log("Typing Line: " + lines[index].content); // Log the current line being typed
-        //textComponent.text = currentLine.content;
         textComponent.text = string.Empty; // Clear the text component before typing the new line
         foreach (char letter in currentLine.content.ToCharArray())
         {
@@ -111,9 +92,6 @@ public class DialogueBox : MonoBehaviour
         //DisplayDialogueBox();
         Debug.Log("DialogueBox: Starting Two Option Dialogue: " + l.content); // Log the content of the dialogue line
         trigger = triggeredBy; // Store the object that triggered the dialogue
-        //optionAButton.gameObject.SetActive(false); // Hide option A button
-        //optionBButton.gameObject.SetActive(false); // Hide option B button
-        //gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
         enabled = true; // Enable the dialogue box component to show the dialogue box
         currentLine = l;
 
@@ -125,15 +103,9 @@ public class DialogueBox : MonoBehaviour
 
     public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null)
     {
-        //DisplayDialogueBox();
         trigger = triggeredBy; // Store the object that triggered the dialogue
-        //optionAButton.gameObject.SetActive(false); // Hide option A button
-        //optionBButton.gameObject.SetActive(false); // Hide option B button
-        //optionCButton.gameObject.SetActive(false); // Hide option C button
-        //gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
         enabled = true; // Show the dialogue box when starting the dialogue
         currentLine = l;
-        //Debug.Log("DialogueBox: Starting Three Option Dialogue: " + l.content); // Log the content of the dialogue line
         if (l.type == DialogueLine.LineType.EmotionOption)
         {
             List<string> emotions = new List<string> { "Alegria", "Tristeza", "Medo", "Nojo", "Raiva" };
@@ -170,8 +142,6 @@ public class DialogueBox : MonoBehaviour
             optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
             optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
         }
-
-        //index = 0;
     }
 
     public void PickOptionA()
@@ -184,13 +154,6 @@ public class DialogueBox : MonoBehaviour
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
             {
-                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-                //foreach (var option in nextLine.dialogueOptions)
-                //{
-                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-                //}
                 dialogueManager.setCurrentLine(nextLine);
             }
             if (trigger != null)
@@ -216,21 +179,12 @@ public class DialogueBox : MonoBehaviour
                     PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
                 }
             }
-            //Debug.Log("Hiding Dialogue Box C");
-            //HideDialogueBox(); // Hide the dialogue box after picking an option
         }
         else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
             DialogueLine nextLine = currentLine.nextLine;
             if (nextLine != null)
             {
-                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-                //foreach (var option in nextLine.dialogueOptions)
-                //{
-                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-                //}
                 dialogueManager.setCurrentLine(nextLine);
             }
             enabled = false; // Disable the dialogue box component after picking an option
@@ -247,13 +201,6 @@ public class DialogueBox : MonoBehaviour
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
             {
-                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-                //foreach (var option in nextLine.dialogueOptions)
-                //{
-                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-                //}
                 dialogueManager.setCurrentLine(nextLine);
             }
             if (trigger != null)
@@ -279,21 +226,12 @@ public class DialogueBox : MonoBehaviour
                     PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
                 }
             }
-            //Debug.Log("Hiding Dialogue Box C");
-            //HideDialogueBox(); // Hide the dialogue box after picking an option
         }
         else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
             DialogueLine nextLine = currentLine.nextLine;
             if (nextLine != null)
             {
-                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-                //foreach (var option in nextLine.dialogueOptions)
-                //{
-                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-                //}
                 dialogueManager.setCurrentLine(nextLine);
             }
             enabled = false; // Disable the dialogue box component after picking an option
@@ -310,13 +248,6 @@ public class DialogueBox : MonoBehaviour
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
             {
-                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-                //foreach (var option in nextLine.dialogueOptions)
-                //{
-                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-                //}
                 dialogueManager.setCurrentLine(nextLine);
             }
             if (trigger != null)
@@ -342,21 +273,12 @@ public class DialogueBox : MonoBehaviour
                     PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
                 }
             }
-            //Debug.Log("Hiding Dialogue Box C");
-            //HideDialogueBox(); // Hide the dialogue box after picking an option
         }
         else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
             DialogueLine nextLine = currentLine.nextLine;
             if (nextLine != null)
             {
-                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-                //foreach (var option in nextLine.dialogueOptions)
-                //{
-                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-                //}
                 dialogueManager.setCurrentLine(nextLine);
             }
             enabled = false; // Disable the dialogue box component after picking an option
