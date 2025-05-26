@@ -23728,7 +23728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e2db0e4cdd182499a6998d6bcb2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 210098758}
   dialogueManager: {fileID: 718652474}
   schedule: {fileID: 718652472}
 --- !u!114 &718652474
