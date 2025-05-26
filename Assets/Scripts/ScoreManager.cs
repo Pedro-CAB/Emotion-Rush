@@ -17,12 +17,6 @@ public class ScoreManager : MonoBehaviour
 
     int classAPosition;
 
-    // Values for UI Positioting
-    //int firstPositionY = 140;
-    //int secondPositionY = 70;
-    //int thirdPositionY = 0;
-    //int fourthPositionY = -70;
-
     public Text classAIncText;
     public Text classBIncText;
     public Text classCIncText;
