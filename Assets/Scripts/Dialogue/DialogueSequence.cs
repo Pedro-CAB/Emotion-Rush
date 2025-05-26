@@ -40,8 +40,70 @@ public class DialogueSequence : MonoBehaviour
     private DialogueLine ParseDialogueNode(JToken rootNode)
     {
         // Step 1: Build the tree of DialogueNodeData from JSON (bottom-up)
+
         Dictionary<JToken, DialogueNodeData> nodeMap = new Dictionary<JToken, DialogueNodeData>();
-        BuildNodeTree(rootNode, null, nodeMap);
+
+        // New parser: handles all node types, including EmotionOption with children as next lines
+        DialogueNodeData BuildNodeTreeWithEmotionOption(JToken node, DialogueNodeData parent, Dictionary<JToken, DialogueNodeData> map)
+        {
+            string text = node.Value<string>("text");
+            string typeStr = node.Value<string>("type");
+            DialogueLine.LineType type = (DialogueLine.LineType)System.Enum.Parse(typeof(DialogueLine.LineType), typeStr);
+
+            int score = 0;
+            string feedback = null;
+            string answer = null;
+
+            if (type == DialogueLine.LineType.DialogueOption)
+            {
+            if (node["score"] != null)
+                score = node.Value<int>("score");
+            if (node["feedback"] != null)
+                feedback = node.Value<string>("feedback");
+            }
+            else if (type == DialogueLine.LineType.EmotionOption)
+            {
+            if (node["answer"] != null)
+                answer = node.Value<string>("answer");
+            }
+
+            DialogueLine dialogueLine;
+            if (type == DialogueLine.LineType.DialogueOption)
+            {
+            dialogueLine = new DialogueLine(text, null, null, type, score, feedback);
+            }
+            else if (type == DialogueLine.LineType.EmotionOption)
+            {
+            // Treat EmotionOption as a node with children, store answer
+            dialogueLine = new DialogueLine(text, null, null, type, 0, null, answer);
+            }
+            else
+            {
+            dialogueLine = new DialogueLine(text, null, null, type);
+            }
+
+            DialogueNodeData nodeData = new DialogueNodeData
+            {
+            Line = dialogueLine,
+            Parent = parent,
+            JsonNode = node
+            };
+            map[node] = nodeData;
+
+            // Always process children for all node types, including EmotionOption
+            JToken childrenToken = node["children"];
+            if (childrenToken != null && childrenToken.HasValues)
+            {
+            foreach (var child in childrenToken)
+            {
+                DialogueNodeData childData = BuildNodeTreeWithEmotionOption(child, nodeData, map);
+                nodeData.Children.Add(childData);
+            }
+            }
+            return nodeData;
+        }
+
+        BuildNodeTreeWithEmotionOption(rootNode, null, nodeMap);
 
         // Step 2: Set up parent relationships (addPreviousLine)
         foreach (var nodeData in nodeMap.Values)
@@ -136,41 +198,43 @@ public class DialogueSequence : MonoBehaviour
 
     // Connect children to their parent node using addNextLine or setOptions
     private void ConnectNodeChildren(DialogueNodeData nodeData)
+{
+    if (nodeData.Visited) return;
+    nodeData.Visited = true;
+
+    if (nodeData.Children.Count == 0)
+        return;
+
+    var type = nodeData.Line.type;
+    if (type == DialogueLine.LineType.Linear 
+        || type == DialogueLine.LineType.DialogueOption 
+        || type == DialogueLine.LineType.EmotionOption)
     {
-        if (nodeData.Visited) return;
-        nodeData.Visited = true;
-
-        if (nodeData.Children.Count == 0)
-            return;
-
-        var type = nodeData.Line.type;
-        if (type == DialogueLine.LineType.Linear || type == DialogueLine.LineType.DialogueOption)
+        // Only one child, connect as next line
+        if (nodeData.Children.Count == 1)
         {
-            // Only one child, connect as next line
-            if (nodeData.Children.Count == 1)
-            {
-                nodeData.Line.addNextLine(nodeData.Children[0].Line);
-                nodeData.Children[0].Line.addPreviousLine(nodeData.Line);
-            }
-        }
-        else if (type == DialogueLine.LineType.TwoOption || type == DialogueLine.LineType.ThreeOption)
-        {
-            // Multiple children, connect as options
-            DialogueLine[] options = new DialogueLine[nodeData.Children.Count];
-            for (int i = 0; i < nodeData.Children.Count; i++)
-            {
-                options[i] = nodeData.Children[i].Line;
-                nodeData.Children[i].Line.addPreviousLine(nodeData.Line);
-            }
-            nodeData.Line.setOptions(options);
-        }
-
-        // Recursively connect children
-        foreach (var child in nodeData.Children)
-        {
-            ConnectNodeChildren(child);
+            nodeData.Line.addNextLine(nodeData.Children[0].Line);
+            nodeData.Children[0].Line.addPreviousLine(nodeData.Line);
         }
     }
+    else if (type == DialogueLine.LineType.TwoOption || type == DialogueLine.LineType.ThreeOption)
+    {
+        // Multiple children, connect as options
+        DialogueLine[] options = new DialogueLine[nodeData.Children.Count];
+        for (int i = 0; i < nodeData.Children.Count; i++)
+        {
+            options[i] = nodeData.Children[i].Line;
+            nodeData.Children[i].Line.addPreviousLine(nodeData.Line);
+        }
+        nodeData.Line.setOptions(options);
+    }
+
+    // Recursively connect children
+    foreach (var child in nodeData.Children)
+    {
+        ConnectNodeChildren(child);
+    }
+}
     
     // Prints the dialogue tree starting from the RootLine
     public void PrintDialogueTree()

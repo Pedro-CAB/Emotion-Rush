@@ -7,6 +7,8 @@ public class DialogueLine
         Linear,
         TwoOption,
         ThreeOption,
+
+        EmotionOption,
         DialogueOption,
         Undefined
     }
@@ -23,8 +25,10 @@ public class DialogueLine
 
     public bool visited;
 
+    public string answer;
+
     public string feedback; //Geeback for the options selected by the player
-    public DialogueLine(string content, DialogueLine next = null, DialogueLine[] options = null, LineType type = LineType.Undefined, int score = 0, string feedback = "None")
+    public DialogueLine(string content, DialogueLine next = null, DialogueLine[] options = null, LineType type = LineType.Undefined, int score = 0, string feedback = "None", string answer = "None")
     {
         if (type == LineType.Undefined)
         {
@@ -54,6 +58,8 @@ public class DialogueLine
         this.dialogueOptions = options;
         this.score = score;
         this.feedback = feedback;
+        this.answer = answer;
+        Debug.Log("DialogueLine: Created line with content: " + content + ", type: " + type + ", score: " + score + ", feedback: " + feedback + ", answer: " + answer);
     }
 
     public void addNextLine(DialogueLine next)

@@ -14,9 +14,9 @@ public class DialogueManager : MonoBehaviour
 
     public void Start()
     {
-        linearDialogueBox.gameObject.SetActive(false); // Disable the linear dialogue box by default
-        twoOptionDialogueBox.gameObject.SetActive(false); // Disable the two option dialogue box by default
-        threeOptionDialogueBox.gameObject.SetActive(false); // Disable the three option dialogue box by default
+        //linearDialogueBox.gameObject.SetActive(false); // Disable the linear dialogue box by default
+        //twoOptionDialogueBox.gameObject.SetActive(false); // Disable the two option dialogue box by default
+        //threeOptionDialogueBox.gameObject.SetActive(false); // Disable the three option dialogue box by default
         
         //twoOptionDialogueBox.enabled = false; // Disable the two option dialogue box by default
         //threeOptionDialogueBox.enabled = false; // Disable the three option dialogue box by default
@@ -36,7 +36,9 @@ public class DialogueManager : MonoBehaviour
             /**linearDialogueBox.enabled = true; // Ensure the linear dialogue box is enabled
             twoOptionDialogueBox.enabled = false; // Disable the two option dialogue box
             threeOptionDialogueBox.enabled = false; // Disable the three option dialogue box**/
+            //Debug.Log("LinearDialogueBox:" + linearDialogueBox.gameObject.activeSelf);
             linearDialogueBox.gameObject.SetActive(true); // Show the linear dialogue box
+            //Debug.Log("LinearDialogueBox:" + linearDialogueBox.gameObject.activeSelf);
             twoOptionDialogueBox.gameObject.SetActive(false); // Hide the two option dialogue box
             threeOptionDialogueBox.gameObject.SetActive(false); // Hide the three option dialogue box
             linearDialogueBox.StartLinearDialogue(currentLine, trigger);
@@ -54,7 +56,7 @@ public class DialogueManager : MonoBehaviour
             twoOptionDialogueBox.StartTwoOptionDialogue(currentLine, trigger);
         }
         //Handle three option sequences with the correct GUI interface
-        else if (currentLine.type == DialogueLine.LineType.ThreeOption)
+        else if (currentLine.type == DialogueLine.LineType.ThreeOption || currentLine.type == DialogueLine.LineType.EmotionOption)
         {
             /**threeOptionDialogueBox.enabled = true; // Ensure the three option dialogue box is enabled
             linearDialogueBox.enabled = false; // Disable the linear dialogue box
@@ -68,6 +70,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool isDialogueActive()
     {
+        //return true;
         return linearDialogueBox.gameObject.activeSelf || twoOptionDialogueBox.gameObject.activeSelf || threeOptionDialogueBox.gameObject.activeSelf;
     }
 }

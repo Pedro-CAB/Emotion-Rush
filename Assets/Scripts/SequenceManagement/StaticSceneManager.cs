@@ -52,42 +52,17 @@ public class StaticSceneManager : MonoBehaviour
 
     public void createInteractions()
     {
-        if (currentSceneName == "Classroom")
-        {
-            createClassroomInteractions();
-        }
-        else if (currentSceneName == "Library")
-        {
-            //createLibraryInteractions();
-        }
-        else if (currentSceneName == "Bar")
-        {
-            //createBarInteractions();
-        }
-        else if (currentSceneName == "Auditorium")
-        {
-            //createAuditoriumInteractions();
-        }
-        else if (currentSceneName == "Lab")
-        {
-            //createLabInteractions();
-        }
-        else if (currentSceneName == "Playground")
-        {
-            //createPlaygroundInteractions();
-        }
+        createSpecificInteractions(currentSceneName);
     }
 
-    public void createClassroomInteractions()
+    public void createSpecificInteractions(string sceneName)
     {
-        string folderPath = "Assets/Interactions/Classroom";
+        string folderPath = "Assets/Interactions/" + sceneName;
         string[] files = System.IO.Directory.GetFiles(folderPath, "*.json");
         foreach (string file in files)
         {
             DialogueSequence seq = new DialogueSequence(file);
             interactions.Add(seq.RootLine);
         }
-        //dialogueSequence = new DialogueSequence("Assets/Interactions/Classroom/bad_haircut.json");
-        //interactions.Add(dialogueSequence.RootLine);
     }
 }

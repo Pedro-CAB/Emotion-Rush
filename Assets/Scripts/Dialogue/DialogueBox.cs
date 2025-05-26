@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+using System.Linq;
 
 public class DialogueBox : MonoBehaviour
 {
@@ -27,11 +29,14 @@ public class DialogueBox : MonoBehaviour
     public float textSpeed; // Speed at which the text is displayed
 
     private string trigger;
+
+    public System.Random random;
     //private int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
+        random = new System.Random(); // Initialize the random number generator
         //gameObject.SetActive(false); // Hide the dialogue box at the start
     }
 
@@ -128,84 +133,234 @@ public class DialogueBox : MonoBehaviour
         //gameObject.SetActive(true); // Show the dialogue box when starting the dialogue
         enabled = true; // Show the dialogue box when starting the dialogue
         currentLine = l;
+        //Debug.Log("DialogueBox: Starting Three Option Dialogue: " + l.content); // Log the content of the dialogue line
+        if (l.type == DialogueLine.LineType.EmotionOption)
+        {
+            List<string> emotions = new List<string> { "Alegria", "Tristeza", "Medo", "Nojo", "Raiva" };
+            emotions.Remove(l.answer);
+            List<string> shuffledEmotions = emotions.OrderBy(i => Guid.NewGuid()).ToList();
+            List<string> options = new List<string> { };
+            int correctIndex = random.Next(0, 3);
+            if (correctIndex == 0)
+            {
+                StartCoroutine(TypeLine());
+                optionAText.text = l.answer;
+                optionBText.text = shuffledEmotions[0]; // Set the text for option B button
+                optionCText.text = shuffledEmotions[1]; // Set the text for option C button
+            }
+            else if (correctIndex == 1)
+            {
+                StartCoroutine(TypeLine());
+                optionAText.text = shuffledEmotions[0]; // Set the text for option A button
+                optionBText.text = l.answer;
+                optionCText.text = shuffledEmotions[1]; // Set the text for option C button
+            }
+            else if (correctIndex == 2)
+            {
+                StartCoroutine(TypeLine());
+                optionAText.text = shuffledEmotions[0]; // Set the text for option A button
+                optionBText.text = shuffledEmotions[1]; // Set the text for option B button
+                optionCText.text = l.answer;
+            }
+        }
+        else
+        {
+            StartCoroutine(TypeLine());
+            optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
+            optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
+            optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
+        }
 
         //index = 0;
-        StartCoroutine(TypeLine());
-        optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
-        optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
-        optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
     }
 
     public void PickOptionA()
     {
-        DialogueLine promptLine = currentLine;
-        DialogueLine chosenLine = currentLine.dialogueOptions[0];
-        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
-        DialogueLine nextLine = chosenLine.nextLine;
-        if (nextLine != null)
+        if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
-            //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
-            //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
-            //foreach (var option in nextLine.dialogueOptions)
-            //{
-            //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
-            //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
-            //}
-            dialogueManager.setCurrentLine(nextLine);
+            DialogueLine promptLine = currentLine;
+            DialogueLine chosenLine = currentLine.dialogueOptions[0];
+            PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
+            DialogueLine nextLine = chosenLine.nextLine;
+            if (nextLine != null)
+            {
+                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+                //foreach (var option in nextLine.dialogueOptions)
+                //{
+                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+                //}
+                dialogueManager.setCurrentLine(nextLine);
+            }
+            if (trigger != null)
+            {
+                if (trigger.Contains("Door"))
+                {
+                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    Debug.Log(breakManager.timeLeft);
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+                }
+            }
+            enabled = false; // Disable the dialogue box component after picking an option
+            if (chosenLine.feedback != "None")
+            {
+                if (PlayerPrefs.GetString("feedback") == "")
+                {
+                    PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
+                }
+                else
+                {
+                    PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
+                }
+            }
+            //Debug.Log("Hiding Dialogue Box C");
+            //HideDialogueBox(); // Hide the dialogue box after picking an option
         }
-        if (trigger != null)
+        else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
-            if (trigger.Contains("Door"))
+            DialogueLine nextLine = currentLine.nextLine;
+            if (nextLine != null)
             {
-                string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                Debug.Log(breakManager.timeLeft);
-                PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
-                SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+                //foreach (var option in nextLine.dialogueOptions)
+                //{
+                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+                //}
+                dialogueManager.setCurrentLine(nextLine);
             }
+            enabled = false; // Disable the dialogue box component after picking an option
         }
-        enabled = false; // Disable the dialogue box component after picking an option
-        if (chosenLine.feedback != "None")
-        {
-            if (PlayerPrefs.GetString("feedback") == "")
-            {
-                PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
-            }
-            else
-            {
-                PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
-            }
-        }
-        //Debug.Log("Hiding Dialogue Box C");
-        //HideDialogueBox(); // Hide the dialogue box after picking an option
     }
 
     public void PickOptionB()
     {
-        DialogueLine promptLine = currentLine;
-        DialogueLine chosenLine = currentLine.dialogueOptions[1];
-        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
-        DialogueLine nextLine = chosenLine.nextLine;
-        if (nextLine != null)
+        if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
-            dialogueManager.setCurrentLine(nextLine);
+            DialogueLine promptLine = currentLine;
+            DialogueLine chosenLine = currentLine.dialogueOptions[1];
+            PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
+            DialogueLine nextLine = chosenLine.nextLine;
+            if (nextLine != null)
+            {
+                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+                //foreach (var option in nextLine.dialogueOptions)
+                //{
+                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+                //}
+                dialogueManager.setCurrentLine(nextLine);
+            }
+            if (trigger != null)
+            {
+                if (trigger.Contains("Door"))
+                {
+                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    Debug.Log(breakManager.timeLeft);
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+                }
+            }
+            enabled = false; // Disable the dialogue box component after picking an option
+            if (chosenLine.feedback != "None")
+            {
+                if (PlayerPrefs.GetString("feedback") == "")
+                {
+                    PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
+                }
+                else
+                {
+                    PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
+                }
+            }
+            //Debug.Log("Hiding Dialogue Box C");
+            //HideDialogueBox(); // Hide the dialogue box after picking an option
         }
-        //Debug.Log("Hiding Dialogue Box D");
-        //HideDialogueBox(); // Hide the dialogue box after picking an option
+        else if (currentLine.type == DialogueLine.LineType.EmotionOption)
+        {
+            DialogueLine nextLine = currentLine.nextLine;
+            if (nextLine != null)
+            {
+                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+                //foreach (var option in nextLine.dialogueOptions)
+                //{
+                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+                //}
+                dialogueManager.setCurrentLine(nextLine);
+            }
+            enabled = false; // Disable the dialogue box component after picking an option
+        }
     }
 
     public void PickOptionC()
     {
-        DialogueLine promptLine = currentLine;
-        DialogueLine chosenLine = currentLine.dialogueOptions[2];
-        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
-        DialogueLine nextLine = chosenLine.nextLine;
-        if (nextLine != null)
+        if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
-            dialogueManager.setCurrentLine(nextLine);
+            DialogueLine promptLine = currentLine;
+            DialogueLine chosenLine = currentLine.dialogueOptions[2];
+            PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
+            DialogueLine nextLine = chosenLine.nextLine;
+            if (nextLine != null)
+            {
+                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+                //foreach (var option in nextLine.dialogueOptions)
+                //{
+                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+                //}
+                dialogueManager.setCurrentLine(nextLine);
+            }
+            if (trigger != null)
+            {
+                if (trigger.Contains("Door"))
+                {
+                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    Debug.Log(breakManager.timeLeft);
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+                }
+            }
+            enabled = false; // Disable the dialogue box component after picking an option
+            if (chosenLine.feedback != "None")
+            {
+                if (PlayerPrefs.GetString("feedback") == "")
+                {
+                    PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
+                }
+                else
+                {
+                    PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
+                }
+            }
+            //Debug.Log("Hiding Dialogue Box C");
+            //HideDialogueBox(); // Hide the dialogue box after picking an option
         }
-        //Debug.Log("Hiding Dialogue Box E");
-        //HideDialogueBox(); // Hide the dialogue box after picking an option
+        else if (currentLine.type == DialogueLine.LineType.EmotionOption)
+        {
+            DialogueLine nextLine = currentLine.nextLine;
+            if (nextLine != null)
+            {
+                //Debug.Log("Next Line after Option A Picked: " + nextLine.content); // Log the content of the next line
+                //Debug.Log("Type: " + nextLine.type); // Log the type of the next line
+                //foreach (var option in nextLine.dialogueOptions)
+                //{
+                //    Debug.Log("Option: " + option.content); // Log the content of each option in the next line
+                //    Debug.Log("Option Type: " + option.type); // Log the type of each option in the next line
+                //}
+                dialogueManager.setCurrentLine(nextLine);
+            }
+            enabled = false; // Disable the dialogue box component after picking an option
+        }
     }
 
     public void HideDialogueBox()
