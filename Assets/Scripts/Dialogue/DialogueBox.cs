@@ -39,7 +39,6 @@ public class DialogueBox : MonoBehaviour
     {
         textComponent.text = string.Empty;
         random = new System.Random(); // Initialize the random number generator
-        DontDestroyOnLoad(buttonPushSound); // Ensure the button sound persists across scenes
     }
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
