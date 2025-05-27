@@ -1,0 +1,137 @@
+{
+  "text": "O jogo acaba com o último golo da Turma B. Os teus colegas caem no chão de cansaço. A outra equipa festeja ruidosamente o 3 - 2.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Estás parado no meio do campo, a recuperar o fôlego. O apito ainda ecoa na tua cabeça. Tinhas esperança de ganhar.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "\"O que estás a sentir agora?\"",
+          "type": "EmotionOption",
+          "answer": "Tristeza",
+          "children": [
+            {
+              "text": "O Miguel, teu colega de equipa, aproxima-se: \"Foi por pouco. Jogámos bem, mas eles marcaram no fim.\"",
+              "type": "ThreeOption",
+              "children": [
+                {
+                  "text": "\"Ya... mas demos tudo. Fica para a próxima.\"",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Reavaliar a situação com foco no esforço ajuda a lidar com a tristeza.",
+                  "children": [
+                    {
+                      "text": "Miguel: \"É isso mesmo. Agora bora beber água antes que rebente.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Enquanto saem do campo, o Rafael da outra equipa passa e grita: \"Já viram quem manda aqui?!\"",
+                          "type": "ThreeOption",
+                          "children": [
+                            {
+                              "text": "\"Boa jogada, Rafael. Jogaram bem.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Respondeste com respeito, apesar do tom provocador.",
+                              "children": [
+                                {
+                                  "text": "Rafael fica meio surpreendido, mas acena: \"Obrigado.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Pff, foi pura sorte.\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Desvalorizaste o outro grupo, criando tensão.",
+                              "children": [
+                                {
+                                  "text": "Rafael: \"Pois, diz isso à bola que entrou três vezes na vossa baliza.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Finges que nem ouviste e continuas a andar.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Optaste por não alimentar a provocação.",
+                              "children": [
+                                {
+                                  "text": "Miguel: \"Boa... não vale a pena dar conversa agora.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "\"Sempre a mesma coisa... ninguém me passa a bola!\"",
+                  "type": "DialogueOption",
+                  "score": -1,
+                  "feedback": "- Atribuir culpas pode afastar os colegas.",
+                  "children": [
+                    {
+                      "text": "Miguel: \"Estás a falar a sério? Estiveste a correr metade do jogo à frente...\"",
+                      "type": "TwoOption",
+                      "children": [
+                        {
+                          "text": "\"Desculpa, falei sem pensar.\"",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Reconheceste o erro e acalmaste a situação.",
+                          "children": [
+                            {
+                              "text": "Miguel acena: \"Tá-se bem. Bora, já passou.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "\"Não interessa. Nunca me passam mesmo.\"",
+                          "type": "DialogueOption",
+                          "score": -1,
+                          "feedback": "- Insistir na queixa aumenta o conflito.",
+                          "children": [
+                            {
+                              "text": "Miguel revira os olhos e vai embora sem dizer nada.",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "Não dizes nada. Só dás um toque no ombro ao Miguel e saem juntos do campo.",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Mostraste contenção e apoio silencioso.",
+                  "children": [
+                    {
+                      "text": "Miguel sorri e diz: \"Somos equipa na vitória e na derrota.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Ao longe, o professor de Educação Física assinala que o tempo de intervalo está a acabar.",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

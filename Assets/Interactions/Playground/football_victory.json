@@ -1,0 +1,157 @@
+{
+  "text": "O apito improvisado com uma garrafa vazia assinala o fim do jogo. A bola rola para o lado e o teu grupo salta de alegria.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Ganhámos! 3 a 2 contra a turma B! Estás a suar, mas com um sorriso enorme na cara.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "\"O que estás a sentir agora?\"",
+          "type": "EmotionOption",
+          "answer": "Alegria",
+          "children": [
+            {
+              "text": "O Tomás dá-te um toque no ombro: \"Grande passe naquele segundo golo, meu! Foste mesmo top.\"",
+              "type": "ThreeOption",
+              "children": [
+                {
+                  "text": "\"Obrigado! Mas o remate foi teu, sem isso não valia de nada.\"",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Mostraste gratidão e partilhaste o mérito com o colega.",
+                  "children": [
+                    {
+                      "text": "Tomás sorri: \"Assim é que é! Somos equipa.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "A turma adversária começa a aproximar-se e alguém diz: \"Boa jogada, mas tiveram sorte.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Foi mérito, não sorte. Jogámos bem os dois lados.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Reavaliaste a situação com respeito pelos dois lados.",
+                              "children": [
+                                {
+                                  "text": "Um colega da outra turma: \"Tá bem, jogaram mesmo bem hoje.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Sorte? Têm é inveja porque perderam!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- A tua resposta criou tensão desnecessária.",
+                              "children": [
+                                {
+                                  "text": "A cara do outro muda: \"Olha lá como falas.\" O ambiente fica pesado.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "Sais a correr e gritas: \"Tomem lá! Somos os melhores!\"",
+                  "type": "DialogueOption",
+                  "score": -1,
+                  "feedback": "- Expressaste a emoção de forma desrespeitosa.",
+                  "children": [
+                    {
+                      "text": "O professor de Educação Física, que observava ao longe, levanta a voz: \"Respeito pelos adversários!\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "O Tomás murmura: \"Eh pá, não era preciso...\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Estava só a brincar, relaxa.\"",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "- Tentaste suavizar a situação, mas sem corrigir o comportamento.",
+                              "children": [
+                                {
+                                  "text": "Tomás: \"Pois... mas cuidado, já viste como o professor ficou.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Desculpa, exagerei.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Reconheceste o erro e mostraste maturidade.",
+                              "children": [
+                                {
+                                  "text": "Tomás: \"Tranquilo. Bora lá beber água que estou cheio de sede!\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "Ficas calado, a sorrir e dás um toque de punho ao Tomás.",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Partilhaste a alegria com um gesto simples e respeitoso.",
+                  "children": [
+                    {
+                      "text": "Tomás devolve o gesto e diz: \"Jogámos mesmo bem hoje.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Enquanto todos se afastam, o João, que falhou um golo fácil, parece mais afastado do grupo.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"João, aquele remate quase que entrava! Jogaste bem.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Encorajaste alguém que estava em baixo.",
+                              "children": [
+                                {
+                                  "text": "João sorri: \"Obrigado! Fico à espera da próxima!\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ignoras e continuas com os outros.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "- Não fizeste nada de errado, mas também não ajudaste quem precisava.",
+                              "children": [
+                                {
+                                  "text": "João senta-se sozinho. Talvez tenha ficado mais afetado do que parece.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
