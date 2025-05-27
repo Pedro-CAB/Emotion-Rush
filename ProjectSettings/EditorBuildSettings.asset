@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Library.unity
     guid: 544d90ffc0418a04d9ba1d29fe3599f9
   - enabled: 1
-    path: Assets/Scenes/Playground.unity
+    path: Assets/Scenes/Auditorium.unity
     guid: 5c3ef0310f767d4479acf8dd6763f95a
   - enabled: 1
     path: Assets/Scenes/DayOutcome.unity
