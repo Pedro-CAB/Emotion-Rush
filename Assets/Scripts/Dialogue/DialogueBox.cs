@@ -31,11 +31,15 @@ public class DialogueBox : MonoBehaviour
     private string trigger;
 
     public System.Random random;
+
+    public AudioSource buttonPushSound; // Reference to the AudioSource for playing button sounds
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
         random = new System.Random(); // Initialize the random number generator
+        DontDestroyOnLoad(buttonPushSound); // Ensure the button sound persists across scenes
     }
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
@@ -60,6 +64,7 @@ public class DialogueBox : MonoBehaviour
 
     public void SkipDialog()
     {
+        buttonPushSound.Play(); // Play the button sound when skipping dialogue
         if (textComponent.text == currentLine.content)
         { //If previous line is already fully displayed
             if (currentLine.type == DialogueLine.LineType.Linear)
@@ -146,6 +151,7 @@ public class DialogueBox : MonoBehaviour
 
     public void PickOptionA()
     {
+        buttonPushSound.Play(); // Play the button sound when picking an option
         if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
             DialogueLine promptLine = currentLine;
@@ -197,7 +203,8 @@ public class DialogueBox : MonoBehaviour
                     {
                         PlayerPrefs.SetString("identifiedEmotions", currentLine.answer); // Save the identified emotions of the day
                     }
-                    else {
+                    else
+                    {
                         PlayerPrefs.SetString("identifiedEmotions", PlayerPrefs.GetString("identifiedEmotions") + ", " + currentLine.answer); // Append the identified emotions of the day
                     }
                 }
@@ -208,6 +215,7 @@ public class DialogueBox : MonoBehaviour
 
     public void PickOptionB()
     {
+        buttonPushSound.Play(); // Play the button sound when picking an option
         if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
             DialogueLine promptLine = currentLine;
@@ -254,6 +262,7 @@ public class DialogueBox : MonoBehaviour
 
     public void PickOptionC()
     {
+        buttonPushSound.Play(); // Play the button sound when picking an option
         if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
             DialogueLine promptLine = currentLine;

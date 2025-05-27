@@ -44,10 +44,10 @@ public class Store : MonoBehaviour
         int runningUpgradeLevel = PlayerPrefs.GetInt("runningUpgradeLevel");
         int coinsUpgradeLevel = PlayerPrefs.GetInt("coinsUpgradeLevel");
 
-        int timeUpgradeCost = 100 * (timeUpgradeLevel + 1);
-        int interactionUpgradeCost = 100 * (interactionUpgradeLevel + 1);
-        int runningUpgradeCost = 100 * (runningUpgradeLevel + 1);
-        int coinsUpgradeCost = 100 * (coinsUpgradeLevel + 1);
+        int timeUpgradeCost = 50 * (timeUpgradeLevel + 1);
+        int interactionUpgradeCost = 50 * (interactionUpgradeLevel + 1);
+        int runningUpgradeCost = 50 * (runningUpgradeLevel + 1);
+        int coinsUpgradeCost = 50 * (coinsUpgradeLevel + 1);
 
         if (timeUpgradeLevel < 10)
         {

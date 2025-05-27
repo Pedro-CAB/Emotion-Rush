@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 public class StaticSceneManager : MonoBehaviour
 {
-    public Player player;
     public DialogueManager dialogueManager;
 
     public Schedule schedule;
@@ -22,7 +21,7 @@ public class StaticSceneManager : MonoBehaviour
         createInteractions(); // Create the interactions for the static scene
         int index = random.Next(interactions.Count);
         DialogueLine line = interactions[index].RootLine; // Get the first interaction line
-        player.setStaticScene();
+        //player.setStaticScene();
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
     }
 
