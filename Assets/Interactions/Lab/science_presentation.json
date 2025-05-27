@@ -1,0 +1,309 @@
+{
+  "text": "A professora chama-te para a frente da sala para fazeres a tua apresentação de Ciências.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Enquanto te levantas, sentes as mãos a suar e o coração a bater mais rápido.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Que emoção estás a sentir neste momento?",
+          "type": "EmotionOption",
+          "answer": "Medo",
+          "children": [
+            {
+              "text": "Professora: \"Quando estiveres pronto, podes começar.\"",
+              "type": "ThreeOption",
+              "children": [
+                {
+                  "text": "Respirar fundo antes de começar a falar.",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Usaste uma estratégia para te acalmares antes de agir.",
+                  "children": [
+                    {
+                      "text": "Respiras fundo, tentas focar-te no que estudaste e começas a apresentação.",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Durante a apresentação, ouves alguns colegas a cochichar.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Tentar ignorar e continuar focado.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mantiveste o foco apesar da distração.",
+                              "children": [
+                                {
+                                  "text": "Continuas a falar e tentas manter a voz firme.",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                      "text": "Ao olhares para os teus colegas, começas a esquecer partes do que querias dizer.",
+                                      "type": "ThreeOption",
+                                      "children": [
+                                        {
+                                          "text": "Focar o olhar na parede ao fundo da sala, para diminuir os nervos.",
+                                          "type": "DialogueOption",
+                                          "score": 1,
+                                          "feedback": "- Mudaste o teu foco para lidar com o nervosismo.",
+                                          "children": [
+                                            {
+                                              "text": "Consegues retomar o raciocínio e continuar com a apresentação.",
+                                              "type": "Linear",
+                                              "children": [
+                                                {
+                                                  "text": "Quase a terminar, reparas que os teus colegas estão todos a olhar para ti.",
+                                                  "type": "TwoOption",
+                                                  "children": [
+                                                    {
+                                                      "text": "\"Terminar com confiança e agradecer a atenção da turma.\"",
+                                                      "type": "DialogueOption",
+                                                      "score": 1,
+                                                      "feedback": "- Reavaliaste a situação e acabaste com segurança.",
+                                                      "children": [
+                                                        {
+                                                          "text": "A turma bate palmas e a professora sorri com orgulho.",
+                                                          "type": "Linear"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "text": "\"Terminar rapidamente e voltar a correr para o lugar.\"",
+                                                      "type": "DialogueOption",
+                                                      "score": 0,
+                                                      "feedback": "- O nervosismo fez-te apressar a apresentação.",
+                                                      "children": [
+                                                        {
+                                                          "text": "Acabas depressa e sentas-te cansado, mas aliviado.",
+                                                          "type": "Linear"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": "\"Pedir para começar de novo e ignorar os colegas.\"",
+                                          "type": "DialogueOption",
+                                          "score": 1,
+                                          "feedback": "- Suprimiste o nervosismo para te concentrares.",
+                                          "children": [
+                                            {
+                                              "text": "Professora: \"Claro, tenta com calma.\" Voltas ao início, não ligando para os teus colegas e apresentando o melhor que consegues.",
+                                              "type": "Linear"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": "\"Atirar os papéis para o chão e dizer: 'Não consigo!'\"",
+                                          "type": "DialogueOption",
+                                          "score": -1,
+                                          "feedback": "- Evitar uma situação que te deixa nervoso fez-te ser penalizado numa nota.",
+                                          "children": [
+                                            {
+                                              "text": "Professora: \"Vou ter que te descontar na nota e quero falar contigo mais tarde.\"",
+                                              "type": "Linear"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Parar de falar e perguntar: 'Estão a gozar comigo?'\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Reagir por impulso criou tensão na sala.",
+                              "children": [
+                                {
+                                  "text": "Professora: \"Volta para o teu lugar e acalma-te. Eu já te chamo novamente para apresentar.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "\"Começar logo a falar, mesmo a gaguejar.\"",
+                  "type": "DialogueOption",
+                  "score": 0,
+                  "feedback": "None",
+                  "children": [
+                    {
+                      "text": "Começas a falar rapidamente e tropeças nas palavras ao início.",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Durante a apresentação, ouves alguns colegas a cochichar.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Tentar ignorar e continuar focado.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mantiveste o foco apesar da distração.",
+                              "children": [
+                                {
+                                  "text": "Continuas a falar e tentas manter a voz firme.",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                      "text": "Começas a esquecer partes do que querias dizer.",
+                                      "type": "ThreeOption",
+                                      "children": [
+                                        {
+                                          "text": "\"Olhar para os apontamentos discretamente.\"",
+                                          "type": "DialogueOption",
+                                          "score": 1,
+                                          "feedback": "- Usaste um recurso para te orientar sem te descontrolares.",
+                                          "children": [
+                                            {
+                                              "text": "Consegues retomar o raciocínio e continuar com a apresentação.",
+                                              "type": "Linear",
+                                              "children": [
+                                                {
+                                                  "text": "Quase a terminar, reparas que os teus colegas estão mais atentos do que esperavas.",
+                                                  "type": "TwoOption",
+                                                  "children": [
+                                                    {
+                                                      "text": "\"Terminar com confiança e agradecer a atenção da turma.\"",
+                                                      "type": "DialogueOption",
+                                                      "score": 1,
+                                                      "feedback": "- Reavaliaste a situação e acabaste com segurança.",
+                                                      "children": [
+                                                        {
+                                                          "text": "A turma bate palmas e a professora sorri com orgulho.",
+                                                          "type": "Linear"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "text": "\"Terminar rapidamente e voltar a correr para o lugar.\"",
+                                                      "type": "DialogueOption",
+                                                      "score": 0,
+                                                      "feedback": "None",
+                                                      "children": [
+                                                        {
+                                                          "text": "Acabas depressa e sentas-te com ar cansado, mas aliviado.",
+                                                          "type": "Linear"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": "\"Pedir para começar de novo com ar frustrado.\"",
+                                          "type": "DialogueOption",
+                                          "score": 0,
+                                          "feedback": "None",
+                                          "children": [
+                                            {
+                                              "text": "Professora: \"Claro, tenta com calma.\" Voltas ao início, mais nervoso.",
+                                              "type": "Linear"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": "\"Atirar os papéis para o chão e dizer: 'Não consigo!'\"",
+                                          "type": "DialogueOption",
+                                          "score": -1,
+                                          "feedback": "- Reagiste com frustração e desistência.",
+                                          "children": [
+                                            {
+                                              "text": "Professora: \"Temos de conversar depois, mas respira fundo por agora.\"",
+                                              "type": "Linear"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Parar de falar e perguntar: 'Estão a gozar comigo?'\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Reagir por impulso criou tensão na sala.",
+                              "children": [
+                                {
+                                  "text": "Professora: \"Concentra-te na tua apresentação, por favor.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "\"Dizer à professora que não queres apresentar.\"",
+                  "type": "DialogueOption",
+                  "score": -1,
+                  "feedback": "- Evitaste lidar com a situação, o que te prejudicou.",
+                  "children": [
+                    {
+                      "text": "Professora: \"Tudo bem, mas vamos ter de conversar depois da aula.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Enquanto voltas para o lugar, ouves alguns colegas a cochichar.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Ignorá-los e prestar atenção na próxima apresentação.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mudaste o foco para te distraíres dos comentários dos teus colegas.",
+                              "children": [
+                                {
+                                  "text": "Apesar do desconforto, consegues manter a calma e a aula continua.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Olhar para eles com ar zangado.\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Reagiste de forma impulsiva e aumentaste o desconforto.",
+                              "children": [
+                                {
+                                  "text": "Os colegas riem ainda mais e sentes-te pior, o que aumenta o teu nervosismo.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -16,17 +16,17 @@
               "type": "ThreeOption",
               "children": [
                 {
-                  "text": "\"Ya... mas demos tudo. Fica para a próxima.\"",
+                  "text": "\"Sim... Tentamos o nosso melhor. Fica para a próxima.\"",
                   "type": "DialogueOption",
                   "score": 1,
                   "feedback": "- Reavaliar a situação com foco no esforço ajuda a lidar com a tristeza.",
                   "children": [
                     {
-                      "text": "Miguel: \"É isso mesmo. Agora bora beber água antes que rebente.\"",
+                      "text": "Miguel: \"É isso mesmo. Vamos mas é beber água que estou cheio de sede.\"",
                       "type": "Linear",
                       "children": [
                         {
-                          "text": "Enquanto saem do campo, o Rafael da outra equipa passa e grita: \"Já viram quem manda aqui?!\"",
+                          "text": "Enquanto saem do campo, o Rafael, da outra equipa, passa e grita: \"Já viram quem manda aqui?!\"",
                           "type": "ThreeOption",
                           "children": [
                             {
@@ -36,7 +36,7 @@
                               "feedback": "- Respondeste com respeito, apesar do tom provocador.",
                               "children": [
                                 {
-                                  "text": "Rafael fica meio surpreendido, mas acena: \"Obrigado.\"",
+                                  "text": "O Rafael fica meio surpreendido, mas acena: \"Obrigado.\"",
                                   "type": "Linear"
                                 }
                               ]
@@ -60,7 +60,7 @@
                               "feedback": "- Optaste por não alimentar a provocação.",
                               "children": [
                                 {
-                                  "text": "Miguel: \"Boa... não vale a pena dar conversa agora.\"",
+                                  "text": "Miguel: \"Boa... Não vale a pena dar conversa agora.\"",
                                   "type": "Linear"
                                 }
                               ]
@@ -78,7 +78,7 @@
                   "feedback": "- Atribuir culpas pode afastar os colegas.",
                   "children": [
                     {
-                      "text": "Miguel: \"Estás a falar a sério? Estiveste a correr metade do jogo à frente...\"",
+                      "text": "Miguel: \"Estás a falar a sério? Eles estavam sempre a cobrir-te...\"",
                       "type": "TwoOption",
                       "children": [
                         {
@@ -88,13 +88,13 @@
                           "feedback": "- Reconheceste o erro e acalmaste a situação.",
                           "children": [
                             {
-                              "text": "Miguel acena: \"Tá-se bem. Bora, já passou.\"",
+                              "text": "Miguel acena: \"Tudo bem. Ninguém gosta de perder.\"",
                               "type": "Linear"
                             }
                           ]
                         },
                         {
-                          "text": "\"Não interessa. Nunca me passam mesmo.\"",
+                          "text": "\"Não interessa. Vocês tinham de ser mais rápidos.\"",
                           "type": "DialogueOption",
                           "score": -1,
                           "feedback": "- Insistir na queixa aumenta o conflito.",

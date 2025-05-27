@@ -1,0 +1,116 @@
+{
+  "text": "Durante a aula de Educação Física, a turma é dividida em duas equipas. O jogo está equilibrado, mas uma jogada levanta polémica.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "O Afonso cruza a bola para ti, mas antes de chegares a rematar, o Diogo corta o lance e grita: \"Fora de jogo!\"",
+      "type": "ThreeOption",
+      "children": [
+        {
+          "text": "\"Fora de jogo? Nem pensar! Estava em linha.\"",
+          "type": "DialogueOption",
+          "score": -1,
+          "feedback": "- Reagir com confronto direto pode gerar tensão.",
+          "children": [
+            {
+              "text": "Diogo: \"Estás a gozar? Estavas quase dentro da baliza!\"",
+              "type": "TwoOption",
+              "children": [
+                {
+                  "text": "\"Ok, ok... não vale a pena discutir.\"",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Decidiste parar antes que a discussão escalasse.",
+                  "children": [
+                    {
+                      "text": "Diogo acena com a cabeça. O jogo recomeça.",
+                      "type": "Linear"
+                    }
+                  ]
+                },
+                {
+                  "text": "\"Tens sempre de arranjar confusão, não sabes jogar!\"",
+                  "type": "DialogueOption",
+                  "score": -1,
+                  "feedback": "- Atacar pessoalmente só piora a situação.",
+                  "children": [
+                    {
+                      "text": "O professor apita e manda os dois saírem por uns minutos.",
+                      "type": "Linear"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "\"Tudo bem. Vamos só continuar a jogar.\"",
+          "type": "DialogueOption",
+          "score": 1,
+          "feedback": "- Suprimiste a frustração para manter o espírito de equipa.",
+          "children": [
+            {
+              "text": "O Diogo encolhe os ombros: \"Pronto, então segue.\"",
+              "type": "Linear"
+            }
+          ]
+        },
+        {
+          "text": "Ficas calado e sorris de lado enquanto voltas à tua posição.",
+          "type": "DialogueOption",
+          "score": 1,
+          "feedback": "- Geriste a emoção sem conflito.",
+          "children": [
+            {
+              "text": "O jogo prossegue com menos tensão.",
+              "type": "Linear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Mais tarde, marcas um golo. A tua equipa festeja.",
+      "type": "ThreeOption",
+      "children": [
+        {
+          "text": "Levantas os braços e gritas: \"É assim que se faz!\"",
+          "type": "DialogueOption",
+          "score": 1,
+          "feedback": "- Expressaste alegria de forma positiva.",
+          "children": [
+            {
+              "text": "Afonso: \"Grande jogada! Vamos ganhar isto.\"",
+              "type": "Linear"
+            }
+          ]
+        },
+        {
+          "text": "Olhas para o Diogo e dizes: \"Vê lá se aprendes a marcar.\"",
+          "type": "DialogueOption",
+          "score": -1,
+          "feedback": "- Provocar o outro cria conflito desnecessário.",
+          "children": [
+            {
+              "text": "Diogo: \"Ah pois é? Vamos ver no próximo lance.\"",
+              "type": "Linear"
+            }
+          ]
+        },
+        {
+          "text": "Dás um salto discreto e sorris, sem dizer nada.",
+          "type": "DialogueOption",
+          "score": 1,
+          "feedback": "- Controlaste a emoção, focando-te no jogo.",
+          "children": [
+            {
+              "text": "O jogo segue, com a tua equipa mais motivada.",
+              "type": "Linear"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
