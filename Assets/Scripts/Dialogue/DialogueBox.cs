@@ -184,6 +184,24 @@ public class DialogueBox : MonoBehaviour
             {
                 dialogueManager.setCurrentLine(nextLine);
             }
+            if (currentLine.answer == optionAText.text)
+            {
+                PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
+                if (PlayerPrefs.GetString("identifiedEmotions").Contains(currentLine.answer))
+                {
+                    // Do nothing if the emotion has already been identified
+                }
+                else
+                {
+                    if (PlayerPrefs.GetString("identifiedEmotions") == "")
+                    {
+                        PlayerPrefs.SetString("identifiedEmotions", currentLine.answer); // Save the identified emotions of the day
+                    }
+                    else {
+                        PlayerPrefs.SetString("identifiedEmotions", PlayerPrefs.GetString("identifiedEmotions") + ", " + currentLine.answer); // Append the identified emotions of the day
+                    }
+                }
+            }
             enabled = false; // Disable the dialogue box component after picking an option
         }
     }
@@ -226,6 +244,10 @@ public class DialogueBox : MonoBehaviour
             {
                 dialogueManager.setCurrentLine(nextLine);
             }
+            if (currentLine.answer == optionBText.text)
+            {
+                PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
+            }
             enabled = false; // Disable the dialogue box component after picking an option
         }
     }
@@ -261,6 +283,10 @@ public class DialogueBox : MonoBehaviour
             if (nextLine != null)
             {
                 dialogueManager.setCurrentLine(nextLine);
+            }
+            if (currentLine.answer == optionCText.text)
+            {
+                PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
             }
             enabled = false; // Disable the dialogue box component after picking an option
         }

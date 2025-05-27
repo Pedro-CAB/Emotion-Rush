@@ -67,6 +67,7 @@ public class Schedule : MonoBehaviour
         PlayerPrefs.SetInt("currentDay", currentDay);
         PlayerPrefs.SetInt("currentWeek", currentWeek);
         PlayerPrefs.SetString("feedback", "");
+        PlayerPrefs.SetString("identifiedEmotions", "");
     }
 
     void calculateWeekDay(){

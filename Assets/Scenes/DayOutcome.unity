@@ -714,7 +714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dicas
+  m_text: Resumo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 541d1a4627248f9418b4426aa9bf6898, type: 2}
   m_sharedMaterial: {fileID: -7286486496899664465, guid: 541d1a4627248f9418b4426aa9bf6898, type: 2}
