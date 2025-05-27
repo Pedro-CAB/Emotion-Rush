@@ -88,7 +88,7 @@
                                           ]
                                         },
                                         {
-                                          "text": "\"Pedir para começar de novo e ignorar os colegas.\"",
+                                          "text": "Pedir para começar de novo e ignorar os colegas.",
                                           "type": "DialogueOption",
                                           "score": 1,
                                           "feedback": "- Suprimiste o nervosismo para te concentrares.",
@@ -208,13 +208,13 @@
                                           ]
                                         },
                                         {
-                                          "text": "\"Pedir para começar de novo com ar frustrado.\"",
+                                          "text": "Pedir para começar de novo com ar frustrado.",
                                           "type": "DialogueOption",
                                           "score": 0,
                                           "feedback": "None",
                                           "children": [
                                             {
-                                              "text": "Professora: \"Claro, tenta com calma.\" Voltas ao início, mais nervoso.",
+                                              "text": "Professora: \"Não se enerve. Eu deixo-o recomeçar desta vez.\" Voltas ao início, mais nervoso.",
                                               "type": "Linear"
                                             }
                                           ]
