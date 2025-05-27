@@ -6,25 +6,36 @@ public class BreakManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
 
-    public float standardBreakTime = 100.0f; //Time that Break Scene Lasts
+    private  float standardBreakTime; //Time that Break Scene Lasts
 
-    public float timeLeft; //Time Remaining in Break Scene
+    private float timeLeft; //Time Remaining in Break Scene
 
     public Schedule schedule;
 
-    void Start(){
+    void Start()
+    {
+        Debug.Log("standardBreakTime: " + standardBreakTime);
+        Debug.Log("timeLeft: " + timeLeft);
         standardBreakTime = 300.0f + 60.0f * PlayerPrefs.GetInt("timeUpgradeLevel");
         string gameState = PlayerPrefs.GetString("gameState");
         if (gameState == "staticSceneDuringBreak")
         {
-            Debug.Log("Break Scene Loaded");
+            //Debug.Log("Break Scene Loaded");
             timeLeft = PlayerPrefs.GetFloat("breakTimeLeft");
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
-        else if (gameState == "staticSceneOutsideBreak"){
+        else if (gameState == "staticSceneOutsideBreak")
+        {
             timeLeft = standardBreakTime; // Reset Timer
             PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
+        Debug.Log("standardBreakTime: " + standardBreakTime);
+        Debug.Log("timeLeft: " + timeLeft);
+    }
+
+    public float getTimeLeft()
+    {
+        return timeLeft;
     }
 
     // Update is called once per frame

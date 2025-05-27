@@ -1,12 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public AudioSource buttonPushSound;
+
+    public GameObject mainMenuUI;
+    public GameObject areYouSureUI;
     public GameObject newGameButton;
     public GameObject loadGameButton;
     public void Start()
     {
+        areYouSureUI.SetActive(false);
         if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
         {
             loadGameButton.SetActive(false);
@@ -16,22 +23,49 @@ public class MainMenu : MonoBehaviour
             loadGameButton.SetActive(true);
         }
     }
+
+    public void AreYouSure()
+    {
+        buttonPushSound.Play();
+        if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
+        {
+            NewGame();
+        }
+        else
+        {
+            areYouSureUI.SetActive(true);
+            mainMenuUI.SetActive(false);
+        }
+    }
+
+    public void NotSure()
+    {
+        buttonPushSound.Play();
+        areYouSureUI.SetActive(false);
+        mainMenuUI.SetActive(true);
+    }
+
     public void NewGame()
     {
-        Debug.Log("New Game Started");
+        buttonPushSound.Play();
         resetSave();
-        //string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Playground" };
+        StartCoroutine(WaitAndContinue(0.47f));
+
+        IEnumerator WaitAndContinue(float time)
+        {
+            yield return new WaitForSeconds(time);
+        }
         randomizeDayBeginning();
     }
 
     public void LoadGame()
     {
+        buttonPushSound.Play();
         randomizeDayBeginning();
     }
 
     public void resetSave()
     {
-        SceneManager.LoadScene("StaticScene");
         PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
@@ -58,8 +92,7 @@ public class MainMenu : MonoBehaviour
 
     public void randomizeDayBeginning()
     {
-        //string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Playground" };
-        string[] classScenes = { "Classroom" };
+        string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Gym" };
         System.Random random = new System.Random();
         int index = random.Next(classScenes.Length);
         string randomScene = classScenes[index];
@@ -68,11 +101,14 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Game Quit");
+        buttonPushSound.Play();
+        //Debug.Log("Game Quit");
         Application.Quit();
     }
 
-    public void Options(){
-        Debug.Log("Options Menu Opened");
+    public void Options()
+    {
+        buttonPushSound.Play();
+        //Debug.Log("Options Menu Opened");
     }
 }

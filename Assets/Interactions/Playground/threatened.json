@@ -1,0 +1,79 @@
+{
+  "text": "Enquanto estavas no recreio, um rapaz vem até ti e empurra-te.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Rúben: \"O campo de futebol é nosso! Sai daqui se não queres problemas!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Que emoção achas que o Rúben está a sentir?",
+          "type": "EmotionOption",
+          "answer": "Raiva",
+          "children": [
+            {
+              "text": "Rúben: \"Estás a ouvir? Vê lá se queres apanhar!\"",
+              "type": "ThreeOption",
+              "children": [
+                {
+                  "text": "\"Ignorar e ir embora do recreio sem dizer nada.\"",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Suprimiste a tua emoção para evitar conflito.",
+                  "children": [
+                    {
+                      "text": "Rúben: \"Ahah! Estão a ver? Este campo é todo nosso malta!\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Ninguém se magoou, mas agora não tens onde jogar com os teus amigos neste intervalo...",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "\"Gritar e empurrar de volta: 'Achas que isto é tudo teu?!'\"",
+                  "type": "DialogueOption",
+                  "score": -1,
+                  "feedback": "- Responder com gritos e empurrões não parece ter ajudado...",
+                  "children": [
+                    {
+                      "text": "Tu e o rapaz começam a lutar até um funcionário vos separar e vos pôr de castigo...",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "E no final de contas, ninguém conseguiu jogar no campo durante o recreio...",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "\"Ignorar e focar-me em procurar um funcionário. 'Este rapaz está-me a ameaçar!'\"",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Focaste-te em pedir ajuda em vez de aumentar o conflito.",
+                  "children": [
+                    {
+                      "text": "O Rúben parece surpreendido quando pedes ajuda e foge a correr.",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Agora toda a gente pode jogar no campo de futebol à vontade!",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

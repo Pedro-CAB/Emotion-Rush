@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 public class StaticSceneManager : MonoBehaviour
 {
-    public Player player;
     public DialogueManager dialogueManager;
 
     public Schedule schedule;
@@ -12,7 +11,7 @@ public class StaticSceneManager : MonoBehaviour
 
     private DialogueSequence dialogueSequence;
 
-    List<DialogueLine> interactions = new List<DialogueLine> { };
+    List<DialogueSequence> interactions = new List<DialogueSequence> { };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +20,8 @@ public class StaticSceneManager : MonoBehaviour
         currentSceneName = SceneManager.GetActiveScene().name; // Get the name of the current scene
         createInteractions(); // Create the interactions for the static scene
         int index = random.Next(interactions.Count);
-        DialogueLine line = interactions[index]; // Get the first interaction line
-        player.setStaticScene();
+        DialogueLine line = interactions[index].RootLine; // Get the first interaction line
+        //player.setStaticScene();
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
     }
 
@@ -52,42 +51,17 @@ public class StaticSceneManager : MonoBehaviour
 
     public void createInteractions()
     {
-        if (currentSceneName == "Classroom")
-        {
-            createClassroomInteractions();
-        }
-        else if (currentSceneName == "Library")
-        {
-            //createLibraryInteractions();
-        }
-        else if (currentSceneName == "Bar")
-        {
-            //createBarInteractions();
-        }
-        else if (currentSceneName == "Auditorium")
-        {
-            //createAuditoriumInteractions();
-        }
-        else if (currentSceneName == "Lab")
-        {
-            //createLabInteractions();
-        }
-        else if (currentSceneName == "Playground")
-        {
-            //createPlaygroundInteractions();
-        }
+        createSpecificInteractions(currentSceneName);
     }
 
-    public void createClassroomInteractions()
+    public void createSpecificInteractions(string sceneName)
     {
-        string folderPath = "Assets/Interactions/Classroom";
+        string folderPath = "Assets/Interactions/" + sceneName;
         string[] files = System.IO.Directory.GetFiles(folderPath, "*.json");
         foreach (string file in files)
         {
             DialogueSequence seq = new DialogueSequence(file);
-            interactions.Add(seq.RootLine);
+            interactions.Add(seq);
         }
-        //dialogueSequence = new DialogueSequence("Assets/Interactions/Classroom/bad_haircut.json");
-        //interactions.Add(dialogueSequence.RootLine);
     }
 }

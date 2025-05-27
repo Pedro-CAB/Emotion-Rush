@@ -7,7 +7,7 @@ public class InteractButton : MonoBehaviour
 
     public void Pressed()
     {
-        Debug.Log("Button Pressed");
+        //Debug.Log("Button Pressed");
         player.interact();
     }
 }

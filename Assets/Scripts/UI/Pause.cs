@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
     public GameObject unpausedUI;
 
     public GameObject areYouSureUI;
+    public AudioSource buttonPushSound; // Reference to the AudioSource for playing button sounds
 
     void Start()
     {
@@ -17,34 +18,39 @@ public class Pause : MonoBehaviour
     }
 
     public void ResumeGame(){
-        Debug.Log("Game Resumed");
+        buttonPushSound.Play();
+        //Debug.Log("Game Resumed");
         Time.timeScale = 1;
         pausedUI.SetActive(false);
         unpausedUI.SetActive(true);
     }
 
     public void PauseGame(){
+        buttonPushSound.Play();
         Time.timeScale = 0;
-        Debug.Log("Game Paused");
+        //Debug.Log("Game Paused");
         pausedUI.SetActive(true);
         unpausedUI.SetActive(false);
     }
 
     public void AreYouSure()
     {
+        buttonPushSound.Play();
         areYouSureUI.SetActive(true);
         pausedUI.SetActive(false);
     }
 
     public void NotSure()
     {
+        buttonPushSound.Play();
         areYouSureUI.SetActive(false);
         pausedUI.SetActive(true);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Back to Main Menu");
+        buttonPushSound.Play();
+        //Debug.Log("Back to Main Menu");
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
 
