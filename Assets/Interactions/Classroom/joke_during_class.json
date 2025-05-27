@@ -1,9 +1,9 @@
 {
-  "text": "Estás na aula de História. A professora escreve no quadro, de costas para a turma.",
+  "text": "Estás na aula de Português e a professora escreveu a origem de uma palavra em latim no quadro.",
   "type": "Linear",
   "children": [
     {
-      "text": "Colega (em voz baixa): \"A sério, isto parece um feitiço de Harry Potter!\"",
+      "text": "Colega (em voz baixa): \"A sério, isto parece um feitiço qualquer!\"",
       "type": "Linear",
       "children": [
         {
@@ -35,7 +35,7 @@
                               "feedback": "- Fizeste os outros refletirem sobre as consequências.",
                               "children": [
                                 {
-                                  "text": "Colega: \"Ya... tens razão. Bora focar.\"",
+                                  "text": "Colega: \"Pois... Tens razão. Vamos fazer silêncio.\"",
                                   "type": "Linear",
                                   "children": [
                                     {
