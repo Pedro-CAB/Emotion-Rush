@@ -24,7 +24,51 @@
                   "children": [
                     {
                       "text": "Diogo acena com a cabeça. O jogo recomeça.",
-                      "type": "Linear"
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Mais tarde, marcas um golo. A tua equipa festeja.",
+                          "type": "ThreeOption",
+                          "children": [
+                            {
+                              "text": "Levantas os braços e gritas: \"É assim que se faz!\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Expressaste alegria de forma positiva.",
+                              "children": [
+                                {
+                                  "text": "Afonso: \"Grande jogada! Vamos ganhar isto.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Olhas para o Diogo e dizes: \"Vê lá se aprendes a marcar.\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Provocar o outro cria conflito desnecessário.",
+                              "children": [
+                                {
+                                  "text": "Diogo: \"Ah pois é? Vamos ver no próximo lance.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Dás um salto discreto e sorris, sem dizer nada.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Controlaste a emoção, focando-te no jogo.",
+                              "children": [
+                                {
+                                  "text": "O jogo segue, com a tua equipa mais motivada.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 },
@@ -52,7 +96,51 @@
           "children": [
             {
               "text": "O Diogo encolhe os ombros: \"Pronto, então segue.\"",
-              "type": "Linear"
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "Mais tarde, marcas um golo. A tua equipa festeja.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Levantas os braços e gritas: \"É assim que se faz!\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Expressaste alegria de forma positiva.",
+                      "children": [
+                        {
+                          "text": "Afonso: \"Grande jogada! Vamos ganhar isto.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Olhas para o Diogo e dizes: \"Vê lá se aprendes a marcar.\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Provocar o outro cria conflito desnecessário.",
+                      "children": [
+                        {
+                          "text": "Diogo: \"Ah pois é? Vamos ver no próximo lance.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Dás um salto discreto e sorris, sem dizer nada.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste a emoção, focando-te no jogo.",
+                      "children": [
+                        {
+                          "text": "O jogo segue, com a tua equipa mais motivada.",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -64,49 +152,51 @@
           "children": [
             {
               "text": "O jogo prossegue com menos tensão.",
-              "type": "Linear"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "text": "Mais tarde, marcas um golo. A tua equipa festeja.",
-      "type": "ThreeOption",
-      "children": [
-        {
-          "text": "Levantas os braços e gritas: \"É assim que se faz!\"",
-          "type": "DialogueOption",
-          "score": 1,
-          "feedback": "- Expressaste alegria de forma positiva.",
-          "children": [
-            {
-              "text": "Afonso: \"Grande jogada! Vamos ganhar isto.\"",
-              "type": "Linear"
-            }
-          ]
-        },
-        {
-          "text": "Olhas para o Diogo e dizes: \"Vê lá se aprendes a marcar.\"",
-          "type": "DialogueOption",
-          "score": -1,
-          "feedback": "- Provocar o outro cria conflito desnecessário.",
-          "children": [
-            {
-              "text": "Diogo: \"Ah pois é? Vamos ver no próximo lance.\"",
-              "type": "Linear"
-            }
-          ]
-        },
-        {
-          "text": "Dás um salto discreto e sorris, sem dizer nada.",
-          "type": "DialogueOption",
-          "score": 1,
-          "feedback": "- Controlaste a emoção, focando-te no jogo.",
-          "children": [
-            {
-              "text": "O jogo segue, com a tua equipa mais motivada.",
-              "type": "Linear"
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "Mais tarde, marcas um golo. A tua equipa festeja.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Levantas os braços e gritas: \"É assim que se faz!\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Expressaste alegria de forma positiva.",
+                      "children": [
+                        {
+                          "text": "Afonso: \"Grande jogada! Vamos ganhar isto.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Olhas para o Diogo e dizes: \"Vê lá se aprendes a marcar.\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Provocar o outro cria conflito desnecessário.",
+                      "children": [
+                        {
+                          "text": "Diogo: \"Ah pois é? Vamos ver no próximo lance.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Dás um salto discreto e sorris, sem dizer nada.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste a emoção, focando-te no jogo.",
+                      "children": [
+                        {
+                          "text": "O jogo segue, com a tua equipa mais motivada.",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

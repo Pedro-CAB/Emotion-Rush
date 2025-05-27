@@ -19,7 +19,51 @@
               "children": [
                 {
                   "text": "Tomás: \"Só estava a tentar ajudar.\"",
-                  "type": "Linear"
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Confia em mim!\" e rematas com força.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Mostraste confiança e foco na superação.",
+                          "children": [
+                            {
+                              "text": "A bola entra! Todos festejam o empate.",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Passas a bola para o lado, evitando arriscar.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rematas de qualquer forma, mas falhas outra vez.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estás quase. Continua!\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             },
@@ -31,7 +75,51 @@
               "children": [
                 {
                   "text": "Tomás: \"Acontece. Da próxima entra.\"",
-                  "type": "Linear"
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Confia em mim!\" e rematas com força.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Mostraste confiança e foco na superação.",
+                          "children": [
+                            {
+                              "text": "A bola entra! Todos festejam o empate.",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Passas a bola para o lado, evitando arriscar.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rematas de qualquer forma, mas falhas outra vez.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estás quase. Continua!\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             },
@@ -43,49 +131,51 @@
               "children": [
                 {
                   "text": "O professor observa e faz um sinal de aprovação.",
-                  "type": "Linear"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
-          "type": "ThreeOption",
-          "children": [
-            {
-              "text": "\"Confia em mim!\" e rematas com força.",
-              "type": "DialogueOption",
-              "score": 1,
-              "feedback": "- Mostraste confiança e foco na superação.",
-              "children": [
-                {
-                  "text": "A bola entra! Todos festejam o empate.",
-                  "type": "Linear"
-                }
-              ]
-            },
-            {
-              "text": "Passas a bola para o lado, evitando arriscar.",
-              "type": "DialogueOption",
-              "score": 0,
-              "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
-              "children": [
-                {
-                  "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
-                  "type": "Linear"
-                }
-              ]
-            },
-            {
-              "text": "Rematas de qualquer forma, mas falhas outra vez.",
-              "type": "DialogueOption",
-              "score": 0,
-              "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
-              "children": [
-                {
-                  "text": "Tomás: \"Estás quase. Continua!\"",
-                  "type": "Linear"
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Confia em mim!\" e rematas com força.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Mostraste confiança e foco na superação.",
+                          "children": [
+                            {
+                              "text": "A bola entra! Todos festejam o empate.",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Passas a bola para o lado, evitando arriscar.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rematas de qualquer forma, mas falhas outra vez.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estás quase. Continua!\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

@@ -156,19 +156,15 @@ public class DialogueBox : MonoBehaviour
             {
                 dialogueManager.setCurrentLine(nextLine);
             }
-            if (trigger != null)
+            if (trigger != null && trigger.Contains("Door"))
             {
-                if (trigger.Contains("Door"))
-                {
-                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.getTimeLeft());
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
-                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
-                }
+                string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                Debug.Log(breakManager.getTimeLeft());
+                PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
+                SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
             }
-            enabled = false; // Disable the dialogue box component after picking an option
-            if (chosenLine.feedback != "None")
+            else if (chosenLine.feedback != "None")
             {
                 if (PlayerPrefs.GetString("feedback") == "")
                 {
@@ -179,6 +175,7 @@ public class DialogueBox : MonoBehaviour
                     PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
                 }
             }
+            enabled = false; // Disable the dialogue box component after picking an option
         }
         else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
@@ -203,19 +200,13 @@ public class DialogueBox : MonoBehaviour
             {
                 dialogueManager.setCurrentLine(nextLine);
             }
-            if (trigger != null)
+            if (trigger != null && trigger.Contains("Door"))
             {
-                if (trigger.Contains("Door"))
-                {
-                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.getTimeLeft());
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
-                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
-                }
+                //Player answered "No" to the door prompt
+                //Do nothing and close the dialogue box.
+                HideDialogueBox(); // Hide the dialogue box after picking an option
             }
-            enabled = false; // Disable the dialogue box component after picking an option
-            if (chosenLine.feedback != "None")
+            else if (chosenLine.feedback != "None")
             {
                 if (PlayerPrefs.GetString("feedback") == "")
                 {
@@ -226,6 +217,7 @@ public class DialogueBox : MonoBehaviour
                     PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
                 }
             }
+            enabled = false; // Disable the dialogue box component after picking an option
         }
         else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
@@ -249,17 +241,6 @@ public class DialogueBox : MonoBehaviour
             if (nextLine != null)
             {
                 dialogueManager.setCurrentLine(nextLine);
-            }
-            if (trigger != null)
-            {
-                if (trigger.Contains("Door"))
-                {
-                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.getTimeLeft());
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
-                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
-                }
             }
             enabled = false; // Disable the dialogue box component after picking an option
             if (chosenLine.feedback != "None")
