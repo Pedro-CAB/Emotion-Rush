@@ -35,6 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DayOutcome.unity
     guid: bfc0c2e75600fd7499cfb6e64ebbfbb9
+  - enabled: 1
+    path: Assets/Scenes/Playground.unity
+    guid: 87398db6a6088e54d9fee9bf581e5de3
+  - enabled: 1
+    path: Assets/Scenes/Gym.unity
+    guid: 69456a72765e27b4faa7d6bb98e67819
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 0f6e47a45a338654da4c7fdb15e4942d, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: dcce103193e0c3143905c93837d6d9f2, type: 2}

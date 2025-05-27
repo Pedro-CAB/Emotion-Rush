@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour
     }
 
     public void ResumeGame(){
-        Debug.Log("Game Resumed");
+        //Debug.Log("Game Resumed");
         Time.timeScale = 1;
         pausedUI.SetActive(false);
         unpausedUI.SetActive(true);
@@ -25,7 +25,7 @@ public class Pause : MonoBehaviour
 
     public void PauseGame(){
         Time.timeScale = 0;
-        Debug.Log("Game Paused");
+        //Debug.Log("Game Paused");
         pausedUI.SetActive(true);
         unpausedUI.SetActive(false);
     }
@@ -44,7 +44,7 @@ public class Pause : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Back to Main Menu");
+        //Debug.Log("Back to Main Menu");
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
 

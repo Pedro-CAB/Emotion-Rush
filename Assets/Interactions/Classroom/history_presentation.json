@@ -136,7 +136,7 @@
                   ]
                 },
                 {
-                  "text": "\"Começar logo a falar, mesmo a gaguejar.\"",
+                  "text": "Começar logo a falar, mesmo a gaguejar.",
                   "type": "DialogueOption",
                   "score": 0,
                   "feedback": "None",
@@ -238,7 +238,7 @@
                               ]
                             },
                             {
-                              "text": "\"Parar de falar e perguntar: 'Estão a gozar comigo?'\"",
+                              "text": "Parar de falar e perguntar: \"Estão a gozar comigo?\"",
                               "type": "DialogueOption",
                               "score": -1,
                               "feedback": "- Reagir por impulso criou tensão na sala.",
@@ -256,7 +256,7 @@
                   ]
                 },
                 {
-                  "text": "\"Dizer à professora que não queres apresentar.\"",
+                  "text": "Dizer à professora que não queres apresentar.",
                   "type": "DialogueOption",
                   "score": -1,
                   "feedback": "- Evitaste lidar com a situação, o que te prejudicou.",

@@ -12,7 +12,7 @@ public class StaticSceneManager : MonoBehaviour
 
     private DialogueSequence dialogueSequence;
 
-    List<DialogueLine> interactions = new List<DialogueLine> { };
+    List<DialogueSequence> interactions = new List<DialogueSequence> { };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +21,7 @@ public class StaticSceneManager : MonoBehaviour
         currentSceneName = SceneManager.GetActiveScene().name; // Get the name of the current scene
         createInteractions(); // Create the interactions for the static scene
         int index = random.Next(interactions.Count);
-        DialogueLine line = interactions[index]; // Get the first interaction line
+        DialogueLine line = interactions[index].RootLine; // Get the first interaction line
         player.setStaticScene();
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
     }
@@ -62,7 +62,7 @@ public class StaticSceneManager : MonoBehaviour
         foreach (string file in files)
         {
             DialogueSequence seq = new DialogueSequence(file);
-            interactions.Add(seq.RootLine);
+            interactions.Add(seq);
         }
     }
 }

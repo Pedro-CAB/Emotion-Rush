@@ -7,7 +7,7 @@
       "type": "Linear",
       "children": [
         {
-          "text": "\"O que estás a sentir agora?\"",
+          "text": "O que estás a sentir agora?",
           "type": "EmotionOption",
           "answer": "Alegria",
           "children": [

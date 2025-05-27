@@ -90,7 +90,6 @@ public class DialogueBox : MonoBehaviour
     public void StartTwoOptionDialogue(DialogueLine l, string triggeredBy = null)
     {
         //DisplayDialogueBox();
-        Debug.Log("DialogueBox: Starting Two Option Dialogue: " + l.content); // Log the content of the dialogue line
         trigger = triggeredBy; // Store the object that triggered the dialogue
         enabled = true; // Enable the dialogue box component to show the dialogue box
         currentLine = l;
@@ -112,6 +111,7 @@ public class DialogueBox : MonoBehaviour
             emotions.Remove(l.answer);
             List<string> shuffledEmotions = emotions.OrderBy(i => Guid.NewGuid()).ToList();
             List<string> options = new List<string> { };
+            random = new System.Random(); // Initialize the random number generator
             int correctIndex = random.Next(0, 3);
             if (correctIndex == 0)
             {
@@ -162,8 +162,8 @@ public class DialogueBox : MonoBehaviour
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                     PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.timeLeft);
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                    Debug.Log(breakManager.getTimeLeft());
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
                     SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
                 }
             }
@@ -209,8 +209,8 @@ public class DialogueBox : MonoBehaviour
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                     PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.timeLeft);
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                    Debug.Log(breakManager.getTimeLeft());
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
                     SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
                 }
             }
@@ -256,8 +256,8 @@ public class DialogueBox : MonoBehaviour
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                     PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.timeLeft);
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.timeLeft); // Save the current break time left
+                    Debug.Log(breakManager.getTimeLeft());
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
                     SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
                 }
             }

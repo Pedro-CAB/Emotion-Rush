@@ -131,11 +131,11 @@ public class Player : MonoBehaviour
 
     public void interact(){
         if (detectedDoor != null){
-            Debug.Log("Interacting with: " + detectedDoor.name);
+            //Debug.Log("Interacting with: " + detectedDoor.name);
             detectedDoor.whenInteracted();
         }
         else{
-            Debug.Log("No object detected to interact with.");	
+            //Debug.Log("No object detected to interact with.");	
         }
     }
 

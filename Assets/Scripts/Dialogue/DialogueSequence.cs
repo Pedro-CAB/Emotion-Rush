@@ -7,11 +7,14 @@ public class DialogueSequence : MonoBehaviour
 {
     // The root DialogueLine of the interaction (first line of the JSON)
     public DialogueLine RootLine { get; private set; }
+    public string JsonFilePath { get; private set; }
 
     // Constructor that loads and parses a dialogue JSON file, setting the RootLine
     public DialogueSequence(string jsonFilePath)
     {
         string jsonText = File.ReadAllText(jsonFilePath);
+        JsonFilePath = jsonFilePath;
+        //Debug.Log("Loading dialogue from: " + jsonFilePath);
         JObject rootObj = JObject.Parse(jsonText);
         RootLine = ParseDialogueNode(rootObj);
         PrintDialogueTree();
@@ -249,7 +252,7 @@ public class DialogueSequence : MonoBehaviour
 
         // Print the current line with a tree branch
         string branch = indent + (isLast ? "└─ " : "├─ ");
-        Debug.Log(branch + line.content + " [" + line.type + "]");
+        //Debug.Log(branch + line.content + " [" + line.type + "]");
 
         // Prepare indentation for children
         string childIndent = indent + (isLast ? "   " : "│  ");

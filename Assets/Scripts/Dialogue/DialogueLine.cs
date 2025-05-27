@@ -59,7 +59,7 @@ public class DialogueLine
         this.score = score;
         this.feedback = feedback;
         this.answer = answer;
-        Debug.Log("DialogueLine: Created line with content: " + content + ", type: " + type + ", score: " + score + ", feedback: " + feedback + ", answer: " + answer);
+        //Debug.Log("DialogueLine: Created line with content: " + content + ", type: " + type + ", score: " + score + ", feedback: " + feedback + ", answer: " + answer);
     }
 
     public void addNextLine(DialogueLine next)

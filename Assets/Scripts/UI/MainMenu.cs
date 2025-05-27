@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     }
     public void NewGame()
     {
-        Debug.Log("New Game Started");
+        //Debug.Log("New Game Started");
         resetSave();
         //string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Playground" };
         randomizeDayBeginning();
@@ -31,7 +31,6 @@ public class MainMenu : MonoBehaviour
 
     public void resetSave()
     {
-        SceneManager.LoadScene("StaticScene");
         PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
@@ -58,8 +57,7 @@ public class MainMenu : MonoBehaviour
 
     public void randomizeDayBeginning()
     {
-        //string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Playground" };
-        string[] classScenes = { "Classroom" };
+        string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Gym" };
         System.Random random = new System.Random();
         int index = random.Next(classScenes.Length);
         string randomScene = classScenes[index];
@@ -68,11 +66,11 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Game Quit");
+        //Debug.Log("Game Quit");
         Application.Quit();
     }
 
     public void Options(){
-        Debug.Log("Options Menu Opened");
+        //Debug.Log("Options Menu Opened");
     }
 }

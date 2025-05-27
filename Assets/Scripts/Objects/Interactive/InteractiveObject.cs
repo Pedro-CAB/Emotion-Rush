@@ -11,6 +11,6 @@ public class InteractiveObject : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log(gameObject.name + ": InteractiveObject Created!");
+        //Debug.Log(gameObject.name + ": InteractiveObject Created!");
     }
 }
