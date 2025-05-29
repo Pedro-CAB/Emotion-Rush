@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 public class StaticSceneManager : MonoBehaviour
 {
     public DialogueManager dialogueManager;
@@ -13,13 +15,18 @@ public class StaticSceneManager : MonoBehaviour
 
     List<DialogueSequence> interactions = new List<DialogueSequence> { };
 
+    public InteractionLoader interactionLoader;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    IEnumerator Start()
     {
         System.Random random = new System.Random(); // Create a new instance of Random
         currentSceneName = SceneManager.GetActiveScene().name; // Get the name of the current scene
-        createInteractions(); // Create the interactions for the static scene
+        yield return createSpecificInteractions(currentSceneName);
+
         int index = random.Next(interactions.Count);
+        Debug.Log("Selected interaction index: " + index);
+        Debug.Log("Interaction count: " + interactions.Count);
         DialogueLine line = interactions[index].RootLine; // Get the first interaction line
         //player.setStaticScene();
         dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
@@ -54,14 +61,11 @@ public class StaticSceneManager : MonoBehaviour
         createSpecificInteractions(currentSceneName);
     }
 
-    public void createSpecificInteractions(string sceneName)
+
+    public IEnumerator createSpecificInteractions(string sceneName)
     {
-        string folderPath = "Assets/Interactions/" + sceneName;
-        string[] files = System.IO.Directory.GetFiles(folderPath, "*.json");
-        foreach (string file in files)
-        {
-            DialogueSequence seq = new DialogueSequence(file);
-            interactions.Add(seq);
-        }
+        yield return interactionLoader.LoadInteractionFiles(sceneName);
+        interactions = interactionLoader.GetInteractions(); // Get the interactions from the InteractionLoader
+        Debug.Log("Loaded interactions for " + sceneName + " scene:" + interactions.Count);
     }
 }
