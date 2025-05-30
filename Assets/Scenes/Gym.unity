@@ -25331,6 +25331,7 @@ GameObject:
   - component: {fileID: 1264670517}
   - component: {fileID: 1264670516}
   - component: {fileID: 1264670515}
+  - component: {fileID: 1264670520}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -25352,6 +25353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1313425816}
   schedule: {fileID: 1410622795}
+  interactionLoader: {fileID: 1264670520}
 --- !u!114 &1264670516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25438,6 +25440,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1264670520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264670514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65cf1285ee0d5b4abd776d21025e2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions: []
 --- !u!1 &1310381424
 GameObject:
   m_ObjectHideFlags: 0

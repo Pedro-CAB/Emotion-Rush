@@ -10,14 +10,18 @@ public class DialogueSequence : MonoBehaviour
     public string JsonFilePath { get; private set; }
 
     // Constructor that loads and parses a dialogue JSON file, setting the RootLine
-    public DialogueSequence(string jsonFilePath)
+    public DialogueSequence(string jsonContent)
     {
-        string jsonText = File.ReadAllText(jsonFilePath);
-        JsonFilePath = jsonFilePath;
-        //Debug.Log("Loading dialogue from: " + jsonFilePath);
-        JObject rootObj = JObject.Parse(jsonText);
+        JObject rootObj = JObject.Parse(jsonContent);
         RootLine = ParseDialogueNode(rootObj);
         PrintDialogueTree();
+    }
+
+    // Loads and parses dialogue JSON content, saving the root DialogueLine
+    public void LoadFromJsonContent(string jsonContent)
+    {
+        JObject rootObj = JObject.Parse(jsonContent);
+        RootLine = ParseDialogueNode(rootObj);
     }
 
     // Loads and parses a dialogue JSON file, saving the root DialogueLine
