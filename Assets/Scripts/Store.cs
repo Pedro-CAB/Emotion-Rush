@@ -22,7 +22,6 @@ public class Store : MonoBehaviour
     public TextMeshProUGUI coinsUpgradeTitleText;
 
     public Schedule schedule;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (extrasStoreUI == null)

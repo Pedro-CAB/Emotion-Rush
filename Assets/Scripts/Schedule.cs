@@ -18,7 +18,7 @@ public class Schedule : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scheduleUI.SetActive(true);
+        scheduleUI.gameObject.SetActive(true);
         int week = PlayerPrefs.GetInt("currentWeek");
         string weekStr = "Semana " + week.ToString();
         currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
@@ -68,7 +68,7 @@ public class Schedule : MonoBehaviour
         }
         else
         {
-            scheduleUI.SetActive(false);
+            scheduleUI.gameObject.SetActive(false);
         }
 
         if (currentSceneName == "Classroom")
@@ -111,7 +111,7 @@ public class Schedule : MonoBehaviour
     private System.Collections.IEnumerator HideScheduleUIAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        scheduleUI.SetActive(false);
+        scheduleUI.gameObject.SetActive(false);
     }
 
     public void nextPhase(){

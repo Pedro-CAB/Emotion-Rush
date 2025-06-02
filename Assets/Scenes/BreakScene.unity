@@ -7552,15 +7552,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101551714}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: PickOptionB
-        m_Mode: 1
+        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+        m_MethodName: PickOption
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: C
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &655607634
@@ -26160,15 +26160,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101551714}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: PickOptionB
-        m_Mode: 1
+        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+        m_MethodName: PickOption
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1670852095
@@ -26879,15 +26879,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 219776812}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: PickOptionB
-        m_Mode: 1
+        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+        m_MethodName: PickOption
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1808160211
@@ -28040,15 +28040,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 219776812}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: PickOptionA
-        m_Mode: 1
+        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+        m_MethodName: PickOption
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1975480480
@@ -28115,15 +28115,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101551714}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: PickOptionA
-        m_Mode: 1
+        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+        m_MethodName: PickOption
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1975480482
