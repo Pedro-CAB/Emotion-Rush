@@ -4,12 +4,25 @@ using UnityEngine.SceneManagement;
 
 public class BreakManager : MonoBehaviour
 {
-    public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
+    /// <summary>
+    /// TextMeshProUGUI component where timer is displayed.
+    /// </summary>
+    public TextMeshProUGUI timerText;
 
-    private  float standardBreakTime; //Time that Break Scene Lasts
+    /// <summary>
+    /// Time that Break Scene Lasts
+    /// </summary>
+    private float standardBreakTime;
 
-    private float timeLeft; //Time Remaining in Break Scene
+    /// <summary>
+    /// Time Remaining in Break Scene
+    /// </summary>
+    private float timeLeft;
 
+    /// <summary>
+    /// Schedule component that manages the game phases.
+    /// This is used to transition to the next phase after the break ends.
+    /// </summary>
     public Schedule schedule;
 
     void Start()
@@ -33,12 +46,6 @@ public class BreakManager : MonoBehaviour
         Debug.Log("timeLeft: " + timeLeft);
     }
 
-    public float getTimeLeft()
-    {
-        return timeLeft;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (timeLeft <= 0.0f)
@@ -53,6 +60,18 @@ public class BreakManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the time left in the break scene.
+    /// </summary>
+    /// <returns>Time left in the break scene.</returns>
+    public float getTimeLeft()
+    {
+        return timeLeft;
+    }
+
+    /// <summary>
+    /// Updates the value displayed in the timer.
+    /// </summary>
     void updateTimerText(){
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0.0f)

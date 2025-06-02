@@ -4,30 +4,56 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    /// <summary>
+    /// Joystick GUI component for player movement.
+    /// </summary>
     public MovementJoystick movementJoystick;
+    /// <summary>
+    /// Base Movement speed of the player.
+    /// </summary>
     public float speed;
+    /// <summary>
+    /// Running Upgrade Level of the player.
+    /// This is used to increase the player's speed based on the upgrade level.
+    /// </summary>
     int runningUpgradeLevel;
 
+    /// <summary>
+    /// How far the player can detect objects in front of them.
+    /// This is used for detecting doors and other interactive objects.
+    /// </summary>
     public float detect_distance;
+
+    /// <summary>
+    /// Player's Rigidbody2D component for physics interactions.
+    /// </summary>
     private Rigidbody2D rb;
+
+    /// <summary>
+    /// Player's Animator component for handling animations.
+    /// </summary>
     private Animator animator;
+
+    /// <summary>
+    /// Current door being detected by the player.
+    /// </summary>
     private Door detectedDoor;
-    public DialogueBox dialogueBox;
 
-    public bool isStaticScene;
-
-    public enum Directions{
+    /// <summary>
+    /// Datatype representing the possible directions the player can face.
+    /// </summary>
+    public enum Directions
+    {
         Up, //0
         Down, //1
         Left, //2
         Right //3
     }
 
+    /// <summary>
+    /// Initial Direction the player is facing.
+    /// </summary>
     Directions facingDirection = Directions.Down;
-
-    public Directions staticFacingDirection = Directions.Down;
-
-
 
     void Start()
     {
@@ -39,17 +65,14 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isStaticScene){
-            handleAnimations();
-        }
-        else{
-            handleJoystickInput();
-            handleObjectDetection();
-            handleAnimations();
-        }
+        handleJoystickInput();
+        handleObjectDetection();
+        handleAnimations();
     }
 
-    //Receiving input from joystick and translating it to player movement
+    /// <summary>
+    /// Translates joystick input into player movement.
+    /// </summary>
     void handleJoystickInput(){
         if(movementJoystick.joystickVector.y != 0)
         {
@@ -62,6 +85,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Defines what the player is detecting in front of them, depending on the direction they are facing.
+    /// </summary>
     void handleObjectDetection(){
         Vector3 position = transform.position; //Get Player position
         Vector3 direction = movementJoystick.joystickVector; //Get direction from joystick
@@ -90,62 +116,49 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Handle animation parameters for animator
+    /// <summary>
+    /// Handles player animations based on movement and direction.
+    /// </summary>
     void handleAnimations(){
-        if (!isStaticScene){
-            float x = movementJoystick.joystickVector.x;
-            float y = movementJoystick.joystickVector.y;
-            //Check if the player is moving
-            if(x != 0 || y != 0){
-                animator.SetBool("isMoving", true);
-            }
-            else{
-                animator.SetBool("isMoving", false);
-            }
-            
-            //Check the direction the player is facing
-            if(Mathf.Abs(x) > Mathf.Abs(y)){
-                if (x > 0){
-                    facingDirection = Directions.Right;
-                }
-                else{
-                    facingDirection = Directions.Left;
-                }
-            }
-            else if(Mathf.Abs(y) >= Mathf.Abs(x)){
-                if (y > 0){
-                    facingDirection = Directions.Up;
-                }
-                else{
-                    facingDirection = Directions.Down;
-                }
-            }
+        float x = movementJoystick.joystickVector.x;
+        float y = movementJoystick.joystickVector.y;
+        //Check if the player is moving
+        if(x != 0 || y != 0){
+            animator.SetBool("isMoving", true);
         }
         else{
-            //Debug.Log("Static Scene: " + staticFacingDirection);
-            facingDirection = staticFacingDirection; //Set the direction the player is facing
+            animator.SetBool("isMoving", false);
+        }
+        
+        //Check the direction the player is facing
+        if(Mathf.Abs(x) > Mathf.Abs(y)){
+            if (x > 0){
+                facingDirection = Directions.Right;
+            }
+            else{
+                facingDirection = Directions.Left;
+            }
+        }
+        else if(Mathf.Abs(y) >= Mathf.Abs(x)){
+            if (y > 0){
+                facingDirection = Directions.Up;
+            }
+            else{
+                facingDirection = Directions.Down;
+            }
         }
 
         animator.SetInteger("direction", (int)facingDirection);
     }
 
-    public void interact(){
-        if (detectedDoor != null){
-            //Debug.Log("Interacting with: " + detectedDoor.name);
+    /// <summary>
+    /// Handles player interaction with detected objects.
+    /// </summary>
+    public void interact()
+    {
+        if (detectedDoor != null)
+        {
             detectedDoor.whenInteracted();
         }
-        else{
-            //Debug.Log("No object detected to interact with.");	
-        }
-    }
-
-    public void setStaticScene(){
-        isStaticScene = true;
-        animator.SetBool("isStaticScene", true);
-    }
-
-    public void setBreakScene(){
-        isStaticScene = false;
-        animator.SetBool("isStaticScene", false);
     }
 }
