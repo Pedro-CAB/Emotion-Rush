@@ -72,7 +72,6 @@ public class Door : InteractiveObject
     /// </summary>
     public void whenInteracted()
     {
-        //Overriding the function from InteractiveObject
         dialogueManager.setCurrentLine(prompt, doorName);
     }
 }
