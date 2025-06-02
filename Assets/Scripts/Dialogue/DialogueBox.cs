@@ -221,17 +221,26 @@ public class DialogueBox : MonoBehaviour
             optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
         }
     }
-
+    
+    /// <summary>
+    /// Processes the player's choice picked from the available buttons.
+    /// </summary>
+    /// <param name="option">String containing the option the player picked between A, B or C.</param>
     public void PickOption(string option)
     {
         StopAllCoroutines();
         buttonPushSound.Play(); // Play the button sound when picking an option
         int optionIndex = 0;
-        if (option == "A") {
+        if (option == "A")
+        {
             optionIndex = 0; // Option A corresponds to index 0
-        } else if (option == "B") {
+        }
+        else if (option == "B")
+        {
             optionIndex = 1; // Option B corresponds to index 1
-        } else if (option == "C") {
+        }
+        else if (option == "C")
+        {
             optionIndex = 2; // Option C corresponds to index 2
         }
 
@@ -247,7 +256,8 @@ public class DialogueBox : MonoBehaviour
             }
             if (trigger != null && trigger.Contains("Door"))
             {
-                if (option == "A") {
+                if (option == "A")
+                {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                     PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
                     Debug.Log(breakManager.getTimeLeft());

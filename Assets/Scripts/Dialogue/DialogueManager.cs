@@ -1,16 +1,41 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles dialogue logic.
+/// </summary>
 public class DialogueManager : MonoBehaviour
 {
+    /// <summary>
+    /// Stores the current dialogue line being processed.
+    /// </summary>
     private DialogueLine currentLine;
 
+    /// <summary>
+    /// The DialogueBox object for Linear dialogue lines.
+    /// </summary>
     public DialogueBox linearDialogueBox;
+
+    /// <summary>
+    /// The DialogueBox object for TwoOption dialogue lines.
+    /// </summary>
     public DialogueBox twoOptionDialogueBox;
+
+    /// <summary>
+    /// The DialogueBox object for ThreeOption and EmotionOption dialogue lines.
+    /// </summary>
     public DialogueBox threeOptionDialogueBox;
 
+    /// <summary>
+    /// GameObject that triggered the dialogue.
+    /// </summary>
+    private string trigger;
 
-    private string trigger; //The object that triggered the dialogue
-
+    /// <summary>
+    /// Sets the Current Line of dialogue to be displayed in the appropriate DialogueBox.
+    /// Updates the GUI accordingly.
+    /// </summary>
+    /// <param name="line"></param>
+    /// <param name="triggeredBy"></param>
     public void setCurrentLine(DialogueLine line, string triggeredBy = null)
     {
         currentLine = line;
@@ -46,6 +71,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if dialogue is currently happening.
+    /// </summary>
+    /// <returns>True if dialogue is happening. False otherwise.</returns>
     public bool isDialogueActive()
     {
         return linearDialogueBox.gameObject.activeSelf || twoOptionDialogueBox.gameObject.activeSelf || threeOptionDialogueBox.gameObject.activeSelf;
