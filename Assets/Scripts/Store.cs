@@ -21,6 +21,7 @@ public class Store : MonoBehaviour
     public TextMeshProUGUI runningUpgradeTitleText;
     public TextMeshProUGUI coinsUpgradeTitleText;
 
+    public AudioSource buttonPushSound;
     public Schedule schedule;
     void Start()
     {
@@ -179,6 +180,7 @@ public class Store : MonoBehaviour
 
     public void upgradeTime()
     {
+        buttonPushSound.Play();
         int timeUpgradeLevel = PlayerPrefs.GetInt("timeUpgradeLevel");
         int timeUpgradeCost = 100 * (timeUpgradeLevel + 1);
         if (coinSystem.purchase(timeUpgradeCost) && timeUpgradeLevel < 10)
@@ -191,6 +193,7 @@ public class Store : MonoBehaviour
 
     public void upgradeInteraction()
     {
+        buttonPushSound.Play();
         int interactionUpgradeLevel = PlayerPrefs.GetInt("interactionUpgradeLevel");
         int interactionUpgradeCost = 100 * (interactionUpgradeLevel + 1);
         if (coinSystem.purchase(interactionUpgradeCost) && interactionUpgradeLevel < 10)
@@ -203,6 +206,7 @@ public class Store : MonoBehaviour
 
     public void upgradeRunning()
     {
+        buttonPushSound.Play();
         int runningUpgradeLevel = PlayerPrefs.GetInt("runningUpgradeLevel");
         int runningUpgradeCost = 100 * (runningUpgradeLevel + 1);
         if (coinSystem.purchase(runningUpgradeCost) && runningUpgradeLevel < 10)
@@ -215,6 +219,7 @@ public class Store : MonoBehaviour
 
     public void upgradeCoins()
     {
+        buttonPushSound.Play();
         int coinsUpgradeLevel = PlayerPrefs.GetInt("coinsUpgradeLevel");
         int coinsUpgradeCost = 100 * (coinsUpgradeLevel + 1);
         if (coinSystem.purchase(coinsUpgradeCost) && coinsUpgradeLevel < 10)
