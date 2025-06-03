@@ -36,11 +36,13 @@ public class ScoreManager : MonoBehaviour
     int coinGain;
     public TextMeshProUGUI coinGainText;
 
+    public GameStateMachine stateMachine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         coinGain = 0;
-        PlayerPrefs.SetString("gameState", "dayOutcome");
+        stateMachine.endDay();
         PlayerPrefs.SetString("currentPhase", "dayOutcome");
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
@@ -208,6 +210,7 @@ public class ScoreManager : MonoBehaviour
         schedule.nextPhase();
         schedule.nextDay();
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
+        stateMachine.toMainMenu();
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
@@ -217,11 +220,13 @@ public class ScoreManager : MonoBehaviour
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
-        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
+        stateMachine.startDay();
+        //PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         schedule.nextPhase();
         schedule.nextDay();
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom");
+        stateMachine.startDay();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom"); //TODO: Randomize next scene
     }
 
     void giveCoins()

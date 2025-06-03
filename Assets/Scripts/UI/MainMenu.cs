@@ -11,8 +11,11 @@ public class MainMenu : MonoBehaviour
     public GameObject areYouSureUI;
     public GameObject newGameButton;
     public GameObject loadGameButton;
+
+    GameStateMachine stateMachine;
     public void Start()
     {
+        stateMachine.toMainMenu();
         areYouSureUI.SetActive(false);
         cleanPrefs();
         if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
@@ -70,7 +73,7 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     public void cleanPrefs()
     {
-        PlayerPrefs.SetString("gameState", "mainMenu");
+        stateMachine.toMainMenu();
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
         PlayerPrefs.SetString("feedback", "");
         PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", 0);
@@ -83,7 +86,6 @@ public class MainMenu : MonoBehaviour
     public void resetPrefsForNewGame()
     {
         PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
-        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
         PlayerPrefs.SetInt("currentDay", 0);
         PlayerPrefs.SetInt("currentWeek", 0);
@@ -104,6 +106,8 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("coinsUpgradeLevel", 0);
         PlayerPrefs.SetInt("playerScoreIncrement", 0);
         PlayerPrefs.SetInt("savedGameExists", -1);
+
+        stateMachine.startDay();
     }
 
     public void randomizeDayBeginning()

@@ -86,6 +86,11 @@ public class DialogueBox : MonoBehaviour
     /// </summary>
     public AudioSource buttonPushSound;
 
+    /// <summary>
+    /// StateMachine component that manages the game state transitions.
+    /// </summary>
+    public GameStateMachine stateMachine;
+
     void Start()
     {
         textComponent.text = string.Empty;
@@ -259,7 +264,8 @@ public class DialogueBox : MonoBehaviour
                 if (option == "A")
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    stateMachine.initiateStaticSceneDuringBreak(); // Change Game State to staticSceneDuringBreak
                     Debug.Log(breakManager.getTimeLeft());
                     PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
                     SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
