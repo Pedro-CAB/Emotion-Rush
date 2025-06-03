@@ -8,6 +8,8 @@ public class InteractionLoader : MonoBehaviour
 {
     public List<DialogueSequence> interactions = new List<DialogueSequence>();
 
+    private bool debugMode = false;
+
     [System.Serializable]
     public class FileListWrapper
     {
@@ -21,21 +23,21 @@ public class InteractionLoader : MonoBehaviour
 
     public IEnumerator LoadInteractionFiles(string sceneName)
     {
-        interactions.Clear(); // limpa antes de carregar
+        interactions.Clear(); // Clear before loading new interactions
 
         string basePath = Path.Combine(Application.streamingAssetsPath, "Interactions", sceneName);
         string listPath = Path.Combine(basePath, "filelist.json");
 
         string listJson;
 
-        // 1. Ler filelist.json
+        // 1. Read filelist.json
 #if UNITY_ANDROID
         UnityWebRequest listRequest = UnityWebRequest.Get(listPath);
         yield return listRequest.SendWebRequest();
 
         if (listRequest.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Erro ao carregar lista de ficheiros: " + listRequest.error);
+            Debug.LogError("Error loading file list: " + listRequest.error);
             yield break;
         }
 
@@ -43,7 +45,7 @@ public class InteractionLoader : MonoBehaviour
 #else
         if (!File.Exists(listPath))
         {
-            Debug.LogError("filelist.json não encontrado: " + listPath);
+            Debug.LogError("filelist.json not found: " + listPath);
             yield break;
         }
 
@@ -78,7 +80,7 @@ public class InteractionLoader : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"Ficheiro não encontrado: {filePath}");
+                Debug.LogError($"File not found: {filePath}");
                 continue;
             }
 #endif

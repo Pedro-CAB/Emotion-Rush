@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Store : MonoBehaviour
 {
+    public SequenceManager sequenceManager;
     public GameObject storeFrontUI;
     public GameObject upgradeStoreUI;
 
@@ -21,7 +22,7 @@ public class Store : MonoBehaviour
     public TextMeshProUGUI runningUpgradeTitleText;
     public TextMeshProUGUI coinsUpgradeTitleText;
 
-    public AudioSource buttonPushSound;
+    public AudioPlayer audioPlayer;
 
     /// <summary>
     /// Base Cost Multiplier for Upgrades.
@@ -195,13 +196,12 @@ public class Store : MonoBehaviour
 
     public void upgradeTime()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         int timeUpgradeLevel = PlayerPrefs.GetInt("timeUpgradeLevel");
         int unsavedTimeUpgradeLevel = PlayerPrefs.GetInt("unsavedTimeUpgradeLevel");
         int timeUpgradeCost = upgradeCostMultiplier * (timeUpgradeLevel + unsavedTimeUpgradeLevel + 1);
         if (coinSystem.purchase(timeUpgradeCost) && timeUpgradeLevel < 10)
         {
-            Debug.Log("Time Upgrade Bought!");
             PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", timeUpgradeLevel + unsavedTimeUpgradeLevel + 1);
             updatePrices();
             updateLevels();
@@ -210,13 +210,12 @@ public class Store : MonoBehaviour
 
     public void upgradeInteraction()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         int interactionUpgradeLevel = PlayerPrefs.GetInt("interactionUpgradeLevel");
         int unsavedInteractionUpgradeLevel = PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel");
         int interactionUpgradeCost = upgradeCostMultiplier * (interactionUpgradeLevel + unsavedInteractionUpgradeLevel + 1);
         if (coinSystem.purchase(interactionUpgradeCost) && interactionUpgradeLevel < 10)
         {
-            Debug.Log("Interaction Upgrade Bought!");
             PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", interactionUpgradeLevel + unsavedInteractionUpgradeLevel + 1);
             updatePrices();
             updateLevels();
@@ -225,13 +224,12 @@ public class Store : MonoBehaviour
 
     public void upgradeRunning()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         int runningUpgradeLevel = PlayerPrefs.GetInt("runningUpgradeLevel");
         int unsavedRunningUpgradeLevel = PlayerPrefs.GetInt("unsavedRunningUpgradeLevel");
         int runningUpgradeCost = upgradeCostMultiplier * (runningUpgradeLevel + unsavedRunningUpgradeLevel + 1);
         if (coinSystem.purchase(runningUpgradeCost) && runningUpgradeLevel < 10)
         {
-            Debug.Log("Running Upgrade Bought!");
             PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", runningUpgradeLevel + unsavedRunningUpgradeLevel + 1);
             updatePrices();
             updateLevels();
@@ -240,13 +238,12 @@ public class Store : MonoBehaviour
 
     public void upgradeCoins()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         int coinsUpgradeLevel = PlayerPrefs.GetInt("coinsUpgradeLevel");
         int unsavedCoinsUpgradeLevel = PlayerPrefs.GetInt("unsavedCoinsUpgradeLevel");
         int coinsUpgradeCost = upgradeCostMultiplier * (coinsUpgradeLevel + unsavedCoinsUpgradeLevel + 1);
         if (coinSystem.purchase(coinsUpgradeCost) && coinsUpgradeLevel < 10)
         {
-            Debug.Log("Coins Upgrade Bought!");
             PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", coinsUpgradeLevel + unsavedCoinsUpgradeLevel + 1);
             updatePrices();
             updateLevels();
@@ -264,12 +261,12 @@ public class Store : MonoBehaviour
                 //TODO: Load Next Static Scene, as Break is over
                 //TODO: Delete the two lines below
                 PlayerPrefs.SetFloat("breakTimeLeft", breakTimeLeft);
-                SceneManager.LoadScene("BreakScene");
+                sequenceManager.endStaticSceneDuringBreakAndBreak();
             }
             else
             {
                 PlayerPrefs.SetFloat("breakTimeLeft", breakTimeLeft);
-                SceneManager.LoadScene("BreakScene");
+                sequenceManager.endStaticSceneDuringBreak();
             }
         }
         else //if there is an extras store, go to store front
@@ -287,7 +284,7 @@ public class Store : MonoBehaviour
             else
             {
                 PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
-                SceneManager.LoadScene("BreakScene");
+                sequenceManager.endStaticSceneDuringBreak();
             }
         }
     }

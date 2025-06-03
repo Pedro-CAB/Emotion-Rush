@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 using System;
 using System.Linq;
 public class ScoreManager : MonoBehaviour
 {
+    public SequenceManager sequenceManager;
     public bool isOutcomeMenu; //Set as true in the outcome menu scene
 
     public CoinSystem coinSystem;
@@ -38,11 +40,12 @@ public class ScoreManager : MonoBehaviour
     int coinGain;
     public TextMeshProUGUI coinGainText;
 
+    public AudioPlayer audioPlayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         coinGain = 0;
-        PlayerPrefs.SetString("gameState", "dayOutcome");
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
         classCScore = PlayerPrefs.GetInt("classCScore");
@@ -202,27 +205,27 @@ public class ScoreManager : MonoBehaviour
 
     public void saveAndMenu()
     {
+        audioPlayer.playButtonPushSound();
         PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
-        schedule.nextPhase();
-        schedule.nextDay();
         coinSystem.saveDailyCoins(coinGain);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        sequenceManager.toMainMenu();
     }
 
     public void saveAndContinue()
     {
+        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        audioPlayer.playButtonPushSound();
         PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
-        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
-        schedule.nextPhase();
-        schedule.nextDay();
+        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         coinSystem.saveDailyCoins(coinGain);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom");
+        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        sequenceManager.startDay();
     }
 
     void giveCoins()

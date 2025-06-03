@@ -32,36 +32,32 @@ public class BreakManager : SequenceManager
 
     void Start()
     {
+        loadState();
         isTimerRunning = false;
         updateTimerText();
         StartCoroutine(WaitBeforeStartingTimer(2f)); // Wait 2 seconds before starting the timer
         //Debug.Log("standardBreakTime: " + standardBreakTime);
         //Debug.Log("timeLeft: " + timeLeft);
         standardBreakTime = 300.0f + 60.0f * PlayerPrefs.GetInt("timeUpgradeLevel");
-        string gameState = PlayerPrefs.GetString("gameState");
-        if (gameState == "staticSceneDuringBreak")
+        //Debug.Log("Game State is " + gameState);
+        if (gameState == "ongoingBreakScene")
         {
-            //Debug.Log("Break Scene Loaded");
+            //Debug.Log("Loading Break Scene from Static Scene During Break");
             timeLeft = PlayerPrefs.GetFloat("breakTimeLeft");
-            PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
-        else if (gameState == "staticSceneOutsideBreak")
+        else if (gameState == "startingBreakScene")
         {
+            //Debug.Log("Loading Break Scene from Static Scene Outside Break");
             timeLeft = standardBreakTime; // Reset Timer
-            PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
-        //Debug.Log("standardBreakTime: " + standardBreakTime);
-        //Debug.Log("timeLeft: " + timeLeft);
     }
 
     void Update()
     {
         if (timeLeft <= 0.0f)
         {
-            PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak"); // Save Current Game State
             PlayerPrefs.SetFloat("breakTimeLeft", standardBreakTime); // Restart Timer
-            SceneManager.LoadScene("Classroom");
-            schedule.nextPhase();
+            endBreak();
         }
         else{
             updateTimerText();

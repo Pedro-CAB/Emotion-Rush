@@ -806,6 +806,9 @@ GameObject:
   - component: {fileID: 131444855}
   - component: {fileID: 131444854}
   - component: {fileID: 131444858}
+  - component: {fileID: 131444859}
+  - component: {fileID: 131444860}
+  - component: {fileID: 131444861}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -908,8 +911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6b598dc47ed094694bca75c60723f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sequenceManager: {fileID: 131444861}
   isOutcomeMenu: 1
-  coinSystem: {fileID: 0}
+  coinSystem: {fileID: 131444859}
   classAIncText: {fileID: 1147198523}
   classBIncText: {fileID: 2077082166}
   classCIncText: {fileID: 1945901046}
@@ -919,8 +923,52 @@ MonoBehaviour:
   classBBar: {fileID: 2060557818}
   classCBar: {fileID: 285200203}
   classDBar: {fileID: 383738444}
-  schedule: {fileID: 0}
+  schedule: {fileID: 131444860}
   coinGainText: {fileID: 967042092}
+  audioPlayer: {fileID: 1978084446}
+--- !u!114 &131444859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131444849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2687a7d2b1bb3f49bfa53d05899aec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCoinText: {fileID: 0}
+--- !u!114 &131444860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131444849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeekDayText: {fileID: 0}
+  currentPhaseText: {fileID: 0}
+  currentRoomText: {fileID: 0}
+  scheduleUI: {fileID: 0}
+--- !u!114 &131444861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131444849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b45f837155fa84dbadc3dec46a86f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  schedule: {fileID: 131444860}
+  gameState: 
 --- !u!1 &135713369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,6 +1105,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135713369}
   m_CullTransparentMesh: 1
+--- !u!1 &188783880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188783881}
+  - component: {fileID: 188783882}
+  m_Layer: 0
+  m_Name: SchoolBellSFXPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &188783881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188783880}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.190674, y: 311.622, z: -3.796255}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1457893479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &188783882
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188783880}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
+  m_Resource: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &252156203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,6 +3163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1404514210}
+  - {fileID: 188783881}
   m_Father: {fileID: 1978084445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1462772380
@@ -3945,6 +4123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978084445}
+  - component: {fileID: 1978084446}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -3969,6 +4148,21 @@ Transform:
   - {fileID: 1457893479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1978084446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978084444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59226152b7c92d43ac8a2bddabb798b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMusic: {fileID: 1160886784}
+  buttonPushSound: {fileID: 1404514211}
+  schoolBellSound: {fileID: 188783882}
 --- !u!1 &1996663835
 GameObject:
   m_ObjectHideFlags: 0

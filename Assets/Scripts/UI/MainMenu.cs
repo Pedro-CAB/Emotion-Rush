@@ -4,8 +4,8 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
-
-    public AudioSource buttonPushSound;
+    public SequenceManager sequenceManager;
+    public AudioPlayer audioPlayer;
 
     public GameObject mainMenuUI;
     public GameObject areYouSureUI;
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void AreYouSure()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
         {
             NewGame();
@@ -41,28 +41,27 @@ public class MainMenu : MonoBehaviour
 
     public void NotSure()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         areYouSureUI.SetActive(false);
         mainMenuUI.SetActive(true);
     }
 
     public void NewGame()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         resetPrefsForNewGame();
         StartCoroutine(WaitAndContinue(0.47f));
+        sequenceManager.startDay();
 
         IEnumerator WaitAndContinue(float time)
         {
             yield return new WaitForSeconds(time);
         }
-        randomizeDayBeginning();
     }
 
     public void LoadGame()
     {
-        buttonPushSound.Play();
-        randomizeDayBeginning();
+        audioPlayer.playButtonPushSound();
     }
 
     /// <summary>
@@ -84,7 +83,7 @@ public class MainMenu : MonoBehaviour
     public void resetPrefsForNewGame()
     {
         PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
-        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
+        PlayerPrefs.SetString("gameState", "mainMenu");
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
         PlayerPrefs.SetInt("currentDay", 0);
         PlayerPrefs.SetInt("currentWeek", 0);
@@ -108,25 +107,16 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("savedGameExists", -1);
     }
 
-    public void randomizeDayBeginning()
-    {
-        string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Gym" };
-        System.Random random = new System.Random();
-        int index = random.Next(classScenes.Length);
-        string randomScene = classScenes[index];
-        SceneManager.LoadScene(randomScene);
-    }
-
     public void QuitGame()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         //Debug.Log("Game Quit");
         Application.Quit();
     }
 
     public void Options()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         //Debug.Log("Options Menu Opened");
     }
 }

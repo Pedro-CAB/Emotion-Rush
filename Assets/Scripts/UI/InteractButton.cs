@@ -5,9 +5,11 @@ public class InteractButton : MonoBehaviour
 {
     public Player player;
 
+    public AudioPlayer audioPlayer;
+
     public void Pressed()
     {
-        //Debug.Log("Button Pressed");
+        audioPlayer.playButtonPushSound();
         player.interact();
     }
 }

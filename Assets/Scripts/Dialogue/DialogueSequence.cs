@@ -27,7 +27,7 @@ public class DialogueSequence : MonoBehaviour
     {
         JObject rootObj = JObject.Parse(jsonContent);
         RootLine = ParseDialogueNode(rootObj);
-        PrintDialogueTree();
+        //PrintDialogueTree();
     }
 
     /// <summary>
@@ -226,7 +226,7 @@ public class DialogueSequence : MonoBehaviour
 
         // Print the current line with a tree branch
         string branch = indent + (isLast ? "└─ " : "├─ ");
-        Debug.Log(branch + line.content + " [" + line.type + "]");
+        //Debug.Log(branch + line.content + " [" + line.type + "]");
 
         // Prepare indentation for children
         string childIndent = indent + (isLast ? "   " : "│  ");

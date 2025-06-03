@@ -174,7 +174,7 @@ MonoBehaviour:
   pausedUI: {fileID: 2032521396}
   unpausedUI: {fileID: 1917311688}
   areYouSureUI: {fileID: 296773664}
-  buttonPushSound: {fileID: 738844748}
+  audioPlayer: {fileID: 967539487}
 --- !u!222 &55543487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19041,7 +19041,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1391309662}
   breakManager: {fileID: 0}
   textSpeed: 0.05
-  buttonPushSound: {fileID: 738844748}
+  audioPlayer: {fileID: 967539487}
 --- !u!224 &458032305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24593,7 +24593,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 36705106908efa54c9bfc07e8323eabc, type: 3}
   m_Resource: {fileID: 8300000, guid: 36705106908efa54c9bfc07e8323eabc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -24734,7 +24734,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1391309662}
   breakManager: {fileID: 0}
   textSpeed: 0.05
-  buttonPushSound: {fileID: 738844748}
+  audioPlayer: {fileID: 967539487}
 --- !u!224 &762437806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25286,6 +25286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967539486}
+  - component: {fileID: 967539487}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -25310,6 +25311,21 @@ Transform:
   - {fileID: 1966440077}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967539487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967539485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59226152b7c92d43ac8a2bddabb798b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMusic: {fileID: 725728012}
+  buttonPushSound: {fileID: 738844748}
+  schoolBellSound: {fileID: 1183560139}
 --- !u!1 &990087723
 GameObject:
   m_ObjectHideFlags: 0
@@ -25651,6 +25667,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146416218}
   m_CullTransparentMesh: 1
+--- !u!1 &1183560137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183560138}
+  - component: {fileID: 1183560139}
+  m_Layer: 0
+  m_Name: SchoolBellSFXPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183560138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183560137}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.190674, y: 311.622, z: -3.796255}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1966440077}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1183560139
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183560137}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
+  m_Resource: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1287786493
 GameObject:
   m_ObjectHideFlags: 0
@@ -25820,8 +25965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e2db0e4cdd182499a6998d6bcb2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 1391309662}
   schedule: {fileID: 2094535477}
+  dialogueManager: {fileID: 1391309662}
   interactionLoader: {fileID: 1306748206}
 --- !u!114 &1306748202
 MonoBehaviour:
@@ -39840,6 +39985,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 738844749}
+  - {fileID: 1183560138}
   m_Father: {fileID: 967539486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025022698
@@ -39883,7 +40029,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1391309662}
   breakManager: {fileID: 0}
   textSpeed: 0.05
-  buttonPushSound: {fileID: 738844748}
+  audioPlayer: {fileID: 967539487}
 --- !u!224 &2025022700
 RectTransform:
   m_ObjectHideFlags: 0

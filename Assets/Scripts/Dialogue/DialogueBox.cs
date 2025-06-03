@@ -82,9 +82,9 @@ public class DialogueBox : MonoBehaviour
     public System.Random random;
 
     /// <summary>
-    /// AudioSource component for playing button push sound effect.
+    /// AudioPlayer component that manages audio playback in the game.
     /// </summary>
-    public AudioSource buttonPushSound;
+    public AudioPlayer audioPlayer;
 
     void Start()
     {
@@ -127,7 +127,7 @@ public class DialogueBox : MonoBehaviour
     /// </summary>
     public void SkipDialog()
     {
-        buttonPushSound.Play(); // Play the button sound when skipping dialogue
+        audioPlayer.playButtonPushSound(); // Play the button sound when skipping dialogue
         if (textComponent.text == currentLine.content)
         { //If previous line is already fully displayed
             if (currentLine.type == DialogueLine.LineType.Linear)
@@ -229,7 +229,7 @@ public class DialogueBox : MonoBehaviour
     public void PickOption(string option)
     {
         StopAllCoroutines();
-        buttonPushSound.Play(); // Play the button sound when picking an option
+        audioPlayer.playButtonPushSound(); // Play the button sound when picking an option
         int optionIndex = 0;
         if (option == "A")
         {
@@ -259,16 +259,16 @@ public class DialogueBox : MonoBehaviour
                 if (option == "A")
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                    PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
                     Debug.Log(breakManager.getTimeLeft());
                     PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
-                    SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+                    breakManager.initiateStaticSceneDuringBreak(roomName);
                 }
                 else if (option == "B")
                 {
                     //Player answered "No" to the door prompt
                     //Do nothing and close the dialogue box.
-                    HideDialogueBox(); // Hide the dialogue box after picking an option
+                    HideDialogueBox();
                 }
             }
             else if (chosenLine.feedback != "None")
