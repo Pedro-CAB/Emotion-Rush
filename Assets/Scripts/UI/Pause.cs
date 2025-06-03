@@ -28,10 +28,10 @@ public class Pause : MonoBehaviour
     public void PauseGame(){
         buttonPushSound.Play();
         Time.timeScale = 0;
-        //Debug.Log("Game Paused");
         pausedUI.SetActive(true);
         unpausedUI.SetActive(false);
     }
+
 
     public void AreYouSure()
     {

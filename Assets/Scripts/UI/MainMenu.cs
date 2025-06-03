@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public void Start()
     {
         areYouSureUI.SetActive(false);
+        cleanPrefs();
         if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
         {
             loadGameButton.SetActive(false);
@@ -48,7 +49,7 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         buttonPushSound.Play();
-        resetSave();
+        resetPrefsForNewGame();
         StartCoroutine(WaitAndContinue(0.47f));
 
         IEnumerator WaitAndContinue(float time)
@@ -64,7 +65,22 @@ public class MainMenu : MonoBehaviour
         randomizeDayBeginning();
     }
 
-    public void resetSave()
+    /// <summary>
+    /// Cleans Contents of PlayerPrefs that should not be saved between game sessions.
+    /// </summary>
+    public void cleanPrefs()
+    {
+        PlayerPrefs.SetString("gameState", "mainMenu");
+        PlayerPrefs.SetString("currentPhase", "MorningClass1");
+        PlayerPrefs.SetString("feedback", "");
+        PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", 0);
+        PlayerPrefs.SetInt("playerScoreIncrement", 0);
+    }
+
+    public void resetPrefsForNewGame()
     {
         PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");

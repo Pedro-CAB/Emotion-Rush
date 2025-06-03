@@ -21,10 +21,22 @@ public class Schedule : MonoBehaviour
         scheduleUI.gameObject.SetActive(true);
         int week = PlayerPrefs.GetInt("currentWeek");
         string weekStr = "Semana " + week.ToString();
-        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
         string dayPhase = PlayerPrefs.GetString("currentPhase");
         currentDayPhase = PlayerPrefs.GetString("currentPhase");
-        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        updateCurrentWeekDay();
+        updateCurrentDayPhase();
+        updateCurrentRoom();
+        
+        StartCoroutine(HideScheduleUIAfterDelay(2f));
+
+    }
+    /// <summary>
+    /// Updates Current Week Day GUI Text based on the currentWeekDay variable in Player Prefs.
+    /// </summary>
+    private void updateCurrentWeekDay()
+    {
+        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
         if (currentWeekDay == "Monday")
         {
             currentWeekDayText.text = "Segunda-feira";
@@ -45,32 +57,36 @@ public class Schedule : MonoBehaviour
         {
             currentWeekDayText.text = "Sexta-feira";
         }
+    }
 
+    private void updateCurrentDayPhase()
+    {
+        string dayPhase = PlayerPrefs.GetString("currentPhase");
         if (dayPhase == "MorningClass1")
         {
-            dayPhase = "Aula I"; // Default starting phase
+            currentPhaseText.text = "Aula I";
         }
         else if (dayPhase == "MorningBreak")
         {
-            dayPhase = "Intervalo da Manhã";
+            currentPhaseText.text = "Intervalo da Manhã";
         }
         else if (dayPhase == "MorningClass2")
         {
-            dayPhase = "Aula II";
+            currentPhaseText.text = "Aula II";
         }
         else if (dayPhase == "LunchBreak")
         {
-            dayPhase = "Intervalo do Almoço";
+            currentPhaseText.text = "Intervalo do Almoço";
         }
         else if (dayPhase == "AfternoonClass")
         {
-            dayPhase = "Aula III";
+            currentPhaseText.text = "Aula III";
         }
-        else
-        {
-            scheduleUI.gameObject.SetActive(false);
-        }
+    }
 
+    private void updateCurrentRoom()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
         if (currentSceneName == "Classroom")
         {
             currentRoomText.text = "Sala A";
@@ -99,13 +115,6 @@ public class Schedule : MonoBehaviour
         {
             currentRoomText.text = "Recreio";
         }
-        else
-        {
-            currentRoomText.text = "Sala Desconhecida";
-        }
-        
-        StartCoroutine(HideScheduleUIAfterDelay(1.5f));
-
     }
 
     private System.Collections.IEnumerator HideScheduleUIAfterDelay(float delay)
