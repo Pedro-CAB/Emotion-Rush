@@ -27196,7 +27196,7 @@ MonoBehaviour:
   interactionUpgradeTitleText: {fileID: 1950892898}
   runningUpgradeTitleText: {fileID: 379537818}
   coinsUpgradeTitleText: {fileID: 689175200}
-  buttonPushSound: {fileID: 0}
+  buttonPushSound: {fileID: 1315482483}
   schedule: {fileID: 0}
 --- !u!1 &1582479458
 GameObject:

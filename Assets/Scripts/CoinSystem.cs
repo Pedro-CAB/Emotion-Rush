@@ -15,7 +15,7 @@ public class CoinSystem : MonoBehaviour
     {
         if (currentCoinText != null)
         {
-            currentCoinText.text = PlayerPrefs.GetInt("coins").ToString();
+            currentCoinText.text = (PlayerPrefs.GetInt("coins") - PlayerPrefs.GetInt("unsavedCoinsSpent")).ToString();
         }
     }
 
@@ -28,7 +28,7 @@ public class CoinSystem : MonoBehaviour
     {
         if (isPurchasePossible(cost))
         {
-            changeCoinAmount(-cost);
+            deductCoinAmount(cost);
             return true;
         }
         else
@@ -44,7 +44,7 @@ public class CoinSystem : MonoBehaviour
     /// <param name="cost">Cost of the Item to Purchase.</param>
     public bool isPurchasePossible(int cost)
     {
-        if (cost > PlayerPrefs.GetInt("coins"))
+        if (cost > (PlayerPrefs.GetInt("coins") - PlayerPrefs.GetInt("unsavedCoinsSpent")))
         {
             return false;
         }
@@ -55,15 +55,42 @@ public class CoinSystem : MonoBehaviour
     }
 
     /// <summary>
-    /// Changes the amount of coins the player has by the given amount.
-    /// If the amount is negative, it will deduct coins; if positive, it will add coins.
+    /// Adjusts the Saved Coins according to what the player earned and spent during the day.
+    /// Saves the amount after the adjustment and resets unsaved coins spent.
     /// </summary>
-    /// <param name="amount">Amount of coins to deduct or add to the player.</param>
-    void changeCoinAmount(int amount)
+    /// <param name="dailyCoins">Coins won in current in-game day.</param>
+    public void saveDailyCoins(int dailyCoins)
     {
+        int unsavedCoinsSpent = PlayerPrefs.GetInt("unsavedCoinsSpent");
         int currentCoins = PlayerPrefs.GetInt("coins");
-        currentCoins += amount;
-        PlayerPrefs.SetInt("coins", currentCoins);
+
+        // Update the coins with the daily earnings and unsaved spent coins
+        PlayerPrefs.SetInt("coins", currentCoins + dailyCoins - unsavedCoinsSpent);
+        PlayerPrefs.SetInt("unsavedCoinsSpent", 0);
+
+        // Update the UI to reflect the new coin amount
+        updateCurrentCoinUI();
+    }
+
+    /// <summary>
+    /// Deducts the amount of coins the player has by the given amount.
+    /// Money spent will only be saved at the end of in-game day.
+    /// </summary>
+    /// <param name="amount">Amount of coins to deduct from the player.</param>
+    void deductCoinAmount(int amount)
+    {
+        PlayerPrefs.SetInt("unsavedCoinsSpent", PlayerPrefs.GetInt("unsavedCoinsSpent") + amount);
+        updateCurrentCoinUI();
+    }
+
+    /// <summary>
+    /// Increases the amount of coins the player has by the given amount.
+    /// Money gained is instantly saved, as it is always gained at the end of in-game day.
+    /// </summary>
+    /// <param name="amount">Amount of coins to deduct from the player.</param>
+    void increaseCoinAmount(int amount)
+    {
+        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + amount);
         updateCurrentCoinUI();
     }
 }

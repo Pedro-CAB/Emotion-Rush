@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-public class StaticSceneManager : MonoBehaviour
+public class StaticSceneManager : SequenceManager
 {
     public DialogueManager dialogueManager;
 
-    public Schedule schedule;
+    //public Schedule schedule;
 
     private string currentSceneName;
 

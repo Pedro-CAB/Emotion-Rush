@@ -7,6 +7,8 @@ public class ScoreManager : MonoBehaviour
 {
     public bool isOutcomeMenu; //Set as true in the outcome menu scene
 
+    public CoinSystem coinSystem;
+
     // Scores and Increments for Each Class
     int classAScore;
     int playerScoreIncrement; // Daily Score Increment based on player choices
@@ -41,7 +43,6 @@ public class ScoreManager : MonoBehaviour
     {
         coinGain = 0;
         PlayerPrefs.SetString("gameState", "dayOutcome");
-        PlayerPrefs.SetString("currentPhase", "dayOutcome");
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
         classCScore = PlayerPrefs.GetInt("classCScore");
@@ -175,7 +176,7 @@ public class ScoreManager : MonoBehaviour
 
     void saveUpgrades()
     { 
-        PlayerPrefs.SetInt("timeUpgradeLevel", PlayerPrefs.GetInt("unsavedUpgradeLevel"));
+        PlayerPrefs.SetInt("timeUpgradeLevel", PlayerPrefs.GetInt("unsavedTimeUpgradeLevel"));
         PlayerPrefs.SetInt("interactionUpgradeLevel", PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel"));
         PlayerPrefs.SetInt("runningUpgradeLevel", PlayerPrefs.GetInt("unsavedRunningUpgradeLevel"));
         PlayerPrefs.SetInt("coinsUpgradeLevel", PlayerPrefs.GetInt("unsavedCoinsUpgradeLevel"));
@@ -193,7 +194,7 @@ public class ScoreManager : MonoBehaviour
 
     void resetUpgrades()
     {
-        PlayerPrefs.SetInt("unsavedUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", 0);
@@ -207,7 +208,7 @@ public class ScoreManager : MonoBehaviour
         resetPlayerIncrement();
         schedule.nextPhase();
         schedule.nextDay();
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
+        coinSystem.saveDailyCoins(coinGain);
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
@@ -220,7 +221,7 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
         schedule.nextPhase();
         schedule.nextDay();
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
+        coinSystem.saveDailyCoins(coinGain);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom");
     }
 

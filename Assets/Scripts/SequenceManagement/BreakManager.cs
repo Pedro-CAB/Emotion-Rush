@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class BreakManager : MonoBehaviour
+public class BreakManager : SequenceManager
 {
     /// <summary>
     /// TextMeshProUGUI component where timer is displayed.
@@ -23,7 +23,7 @@ public class BreakManager : MonoBehaviour
     /// Schedule component that manages the game phases.
     /// This is used to transition to the next phase after the break ends.
     /// </summary>
-    public Schedule schedule;
+    //public Schedule schedule;
 
     /// <summary>
     /// Defines whether the timer is running or not.

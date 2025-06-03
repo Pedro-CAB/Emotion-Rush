@@ -55,6 +55,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
 
         //Delete Unsaved Data if Player Leaves in the Middle of a Day
+        /**
         PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
         PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
@@ -63,6 +64,6 @@ public class Pause : MonoBehaviour
         PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", 0);
-        PlayerPrefs.SetString("feedback", "");
+        PlayerPrefs.SetString("feedback", "");*/
     }
 }

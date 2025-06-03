@@ -805,7 +805,6 @@ GameObject:
   - component: {fileID: 131444856}
   - component: {fileID: 131444855}
   - component: {fileID: 131444854}
-  - component: {fileID: 131444850}
   - component: {fileID: 131444858}
   m_Layer: 5
   m_Name: Canvas
@@ -814,22 +813,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &131444850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131444849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWeekDayText: {fileID: 0}
-  currentPhaseText: {fileID: 0}
-  currentRoomText: {fileID: 0}
-  scheduleUI: {fileID: 0}
 --- !u!114 &131444854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,6 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOutcomeMenu: 1
+  coinSystem: {fileID: 0}
   classAIncText: {fileID: 1147198523}
   classBIncText: {fileID: 2077082166}
   classCIncText: {fileID: 1945901046}
@@ -935,7 +919,7 @@ MonoBehaviour:
   classBBar: {fileID: 2060557818}
   classCBar: {fileID: 285200203}
   classDBar: {fileID: 383738444}
-  schedule: {fileID: 131444850}
+  schedule: {fileID: 0}
   coinGainText: {fileID: 967042092}
 --- !u!1 &135713369
 GameObject:

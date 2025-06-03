@@ -9,8 +9,8 @@ public class Schedule : MonoBehaviour
     int currentWeek;
 
     public TextMeshProUGUI currentWeekDayText; // Reference to the TextMeshProUGUI component for displaying the current week day
-    public TextMeshProUGUI currentPhaseText; // Reference to the TextMeshProUGUI component for displaying the current day
-    public TextMeshProUGUI currentRoomText; // Reference to the TextMeshProUGUI component for displaying the current day
+    public TextMeshProUGUI currentPhaseText; // Reference to the TextMeshProUGUI component for displaying the current day phase
+    public TextMeshProUGUI currentRoomText; // Reference to the TextMeshProUGUI component for displaying the current room
 
     public GameObject scheduleUI; // Reference to the UI GameObject that contains the schedule information
 
@@ -18,15 +18,15 @@ public class Schedule : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scheduleUI.gameObject.SetActive(true);
+        //scheduleUI.gameObject.SetActive(true);
         int week = PlayerPrefs.GetInt("currentWeek");
         string weekStr = "Semana " + week.ToString();
         string dayPhase = PlayerPrefs.GetString("currentPhase");
         currentDayPhase = PlayerPrefs.GetString("currentPhase");
 
-        updateCurrentWeekDay();
-        updateCurrentDayPhase();
-        updateCurrentRoom();
+        updateWeekDayUI();
+        updateDayPhaseUI();
+        updateRoomUI();
         
         StartCoroutine(HideScheduleUIAfterDelay(2f));
 
@@ -34,7 +34,7 @@ public class Schedule : MonoBehaviour
     /// <summary>
     /// Updates Current Week Day GUI Text based on the currentWeekDay variable in Player Prefs.
     /// </summary>
-    private void updateCurrentWeekDay()
+    private void updateWeekDayUI()
     {
         currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
         if (currentWeekDay == "Monday")
@@ -59,7 +59,7 @@ public class Schedule : MonoBehaviour
         }
     }
 
-    private void updateCurrentDayPhase()
+    private void updateDayPhaseUI()
     {
         string dayPhase = PlayerPrefs.GetString("currentPhase");
         if (dayPhase == "MorningClass1")
@@ -68,7 +68,7 @@ public class Schedule : MonoBehaviour
         }
         else if (dayPhase == "MorningBreak")
         {
-            currentPhaseText.text = "Intervalo da Manhã";
+            currentPhaseText.text = "Intervalo - Manhã";
         }
         else if (dayPhase == "MorningClass2")
         {
@@ -76,7 +76,7 @@ public class Schedule : MonoBehaviour
         }
         else if (dayPhase == "LunchBreak")
         {
-            currentPhaseText.text = "Intervalo do Almoço";
+            currentPhaseText.text = "Intervalo - Almoço";
         }
         else if (dayPhase == "AfternoonClass")
         {
@@ -84,7 +84,7 @@ public class Schedule : MonoBehaviour
         }
     }
 
-    private void updateCurrentRoom()
+    private void updateRoomUI()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         if (currentSceneName == "Classroom")
@@ -146,7 +146,7 @@ public class Schedule : MonoBehaviour
         {
             currentDayPhase = "DayOutcome";
             PlayerPrefs.SetString("currentPhase", currentDayPhase);
-            displayDayOutcome();
+            SceneManager.LoadScene("DayOutcome");
         }
         else if (currentDayPhase == "DayOutcome")
         {

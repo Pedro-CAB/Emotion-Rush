@@ -73,6 +73,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetString("gameState", "mainMenu");
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
         PlayerPrefs.SetString("feedback", "");
+        PlayerPrefs.SetInt("unsavedCoinsSpent", 0);
         PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
@@ -90,6 +91,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetString("currentWeekDay", "Monday");
         PlayerPrefs.SetString("feedback", "");
         PlayerPrefs.SetInt("coins", 0);
+        PlayerPrefs.SetInt("unsavedCoinsSpent", 0);
         PlayerPrefs.SetInt("classAScore", 0);
         PlayerPrefs.SetInt("classBScore", 0);
         PlayerPrefs.SetInt("classCScore", 0);
