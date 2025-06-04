@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 using System;
 using System.Linq;
 public class ScoreManager : MonoBehaviour
 {
+    public SequenceManager sequenceManager;
     public bool isOutcomeMenu; //Set as true in the outcome menu scene
+
+    public CoinSystem coinSystem;
 
     // Scores and Increments for Each Class
     int classAScore;
@@ -36,12 +40,12 @@ public class ScoreManager : MonoBehaviour
     int coinGain;
     public TextMeshProUGUI coinGainText;
 
+    public AudioPlayer audioPlayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         coinGain = 0;
-        PlayerPrefs.SetString("gameState", "dayOutcome");
-        PlayerPrefs.SetString("currentPhase", "dayOutcome");
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
         classCScore = PlayerPrefs.GetInt("classCScore");
@@ -63,7 +67,8 @@ public class ScoreManager : MonoBehaviour
 
     void updateClassAPoints()
     {
-        PlayerPrefs.SetInt("classAScore", classAScore + playerScoreIncrement);
+        classAScore = classAScore + playerScoreIncrement;
+        PlayerPrefs.SetInt("classAScore", classAScore);
         PlayerPrefs.SetInt("playerScoreIncrement", 0);
     }
 
@@ -89,7 +94,7 @@ public class ScoreManager : MonoBehaviour
     void updateBars()
     {
         float total = classAScore + classBScore + classCScore + classDScore;
-        classABar.fillAmount = (float)classAScore / total; 
+        classABar.fillAmount = (float)classAScore / total;
         classBBar.fillAmount = (float)classBScore / total;
         classCBar.fillAmount = (float)classCScore / total;
         classDBar.fillAmount = (float)classDScore / total;
@@ -175,7 +180,7 @@ public class ScoreManager : MonoBehaviour
 
     void saveUpgrades()
     { 
-        PlayerPrefs.SetInt("timeUpgradeLevel", PlayerPrefs.GetInt("unsavedUpgradeLevel"));
+        PlayerPrefs.SetInt("timeUpgradeLevel", PlayerPrefs.GetInt("unsavedTimeUpgradeLevel"));
         PlayerPrefs.SetInt("interactionUpgradeLevel", PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel"));
         PlayerPrefs.SetInt("runningUpgradeLevel", PlayerPrefs.GetInt("unsavedRunningUpgradeLevel"));
         PlayerPrefs.SetInt("coinsUpgradeLevel", PlayerPrefs.GetInt("unsavedCoinsUpgradeLevel"));
@@ -193,7 +198,7 @@ public class ScoreManager : MonoBehaviour
 
     void resetUpgrades()
     {
-        PlayerPrefs.SetInt("unsavedUpgradeLevel", 0);
+        PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
         PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", 0);
@@ -201,27 +206,27 @@ public class ScoreManager : MonoBehaviour
 
     public void saveAndMenu()
     {
+        audioPlayer.playButtonPushSound();
         PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
-        schedule.nextPhase();
-        schedule.nextDay();
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        coinSystem.saveDailyCoins(coinGain);
+        sequenceManager.toMainMenu();
     }
 
     public void saveAndContinue()
     {
+        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        audioPlayer.playButtonPushSound();
         PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
-        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
-        schedule.nextPhase();
-        schedule.nextDay();
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + coinGain);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Classroom");
+        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        coinSystem.saveDailyCoins(coinGain);
+        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        sequenceManager.startDay();
     }
 
     void giveCoins()

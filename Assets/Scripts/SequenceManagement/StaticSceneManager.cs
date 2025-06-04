@@ -3,11 +3,9 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-public class StaticSceneManager : MonoBehaviour
+public class StaticSceneManager : SequenceManager
 {
     public DialogueManager dialogueManager;
-
-    public Schedule schedule;
 
     private string currentSceneName;
 
@@ -34,24 +32,23 @@ public class StaticSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (!dialogueManager.isDialogueActive())
+        if (!dialogueManager.isDialogueActive()) //if dialogue is over
         {
-            SceneManager.LoadScene("BreakScene");
-            if (PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak")
+            if (PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak") //if it was a static scene outside a break
             {
-                if (PlayerPrefs.GetString("currentPhase") == "AfternoonClass")
+                if (PlayerPrefs.GetString("currentPhase") == "AfternoonClass") //if it was the last class of the day
                 {
-                    SceneManager.LoadScene("Classroom");
+                    endDay();
                 }
                 else
                 {
-                    SceneManager.LoadScene("BreakScene");
+                    initiateBreak();
                 }
-                schedule.nextPhase();
             }
             else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak")
             {
                 PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
+                endStaticSceneDuringBreak();
             }
         }
     }

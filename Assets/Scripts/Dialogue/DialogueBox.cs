@@ -8,33 +8,84 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Linq;
 
+/// <summary>
+/// DialogueBox is a MonoBehaviour that manages the display and interaction of dialogue boxes in the game.
+/// It handles both linear dialogue and option-based dialogue, allowing players to interact with characters and make choices that affect the game state.
+/// It includes methods for starting dialogue lines, typing them out, picking options, and hiding the dialogue box.
+/// </summary>
 public class DialogueBox : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent; // Reference to the TextMeshProUGUI component for displaying text
+    /// <summary>
+    /// TextMeshProUGUI component that contains the Dialogue Prompt presented to the player.
+    /// </summary>
+    public TextMeshProUGUI textComponent;
 
-    public Button optionAButton; // Reference to the button for option A
+    /// <summary>
+    /// Button component for the option A in dialogue options.
+    /// </summary>
+    public Button optionAButton;
 
-    public TextMeshProUGUI optionAText; // Reference to the TextMeshProUGUI component for option A text
+    /// <summary>
+    /// TextMeshProUGUI component for the text of option A in dialogue options.
+    /// </summary>
+    public TextMeshProUGUI optionAText;
 
-    public Button optionBButton; // Reference to the button for option B
-    public TextMeshProUGUI optionBText; // Reference to the TextMeshProUGUI component for option B text
-    public Button optionCButton; // Reference to the button for option C
-    public TextMeshProUGUI optionCText; // Reference to the TextMeshProUGUI component for option C text
+    /// <summary>
+    /// Button component for the option B in dialogue options.
+    /// </summary>
+    public Button optionBButton;
 
-    public DialogueManager dialogueManager; // Reference to the DialogManager for handling dialogue logic
-    public BreakManager breakManager; // Reference to the BreakManager for handling break logic
+    /// <summary>
+    /// TextMeshProUGUI component for the text of option B in dialogue options.
+    /// </summary>
+    public TextMeshProUGUI optionBText;
 
-    //public List<DialogueLine> lines; // Array of strings to hold the dialogue lines
+    /// <summary>
+    /// Button component for the option C in dialogue options.
+    /// </summary>
+    public Button optionCButton;
+
+    /// <summary>
+    /// TextMeshProUGUI component for the text of option C in dialogue options.
+    /// </summary>
+    public TextMeshProUGUI optionCText;
+
+    /// <summary>
+    /// DialogueManager component that manages the dialogue logic in current scene.
+    /// </summary>
+    public DialogueManager dialogueManager;
+
+    /// <summary>
+    /// BreakManager component that manages the break scene logic in the game.
+    /// </summary>
+    public BreakManager breakManager;
+
+    /// <summary>
+    /// DialogueLine struct where the current line to be displayed is stored.
+    /// </summary>
     public DialogueLine currentLine;
-    public float textSpeed; // Speed at which the text is displayed
 
+    /// <summary>
+    /// Speed at which the text is typed in the dialogue box.
+    /// </summary>
+    public float textSpeed;
+
+    /// <summary>
+    /// Stores the name of the object that triggered the current dialogue, if there is one.
+    /// Used for Door interactions.
+    /// </summary>
     private string trigger;
 
+    /// <summary>
+    /// Component for generating random numbers used for randomizing options in Emotion Identification segments.
+    /// </summary>
     public System.Random random;
 
-    public AudioSource buttonPushSound; // Reference to the AudioSource for playing button sounds
+    /// <summary>
+    /// AudioPlayer component that manages audio playback in the game.
+    /// </summary>
+    public AudioPlayer audioPlayer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
@@ -43,6 +94,11 @@ public class DialogueBox : MonoBehaviour
 
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
+    /// <summary>
+    /// Start DIsplaying a Linear Dialogue Box and Typing a Linear Dialogue Line on it.
+    /// </summary>
+    /// <param name="l">Linear Line to be typed and displayed.</param>
+    /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
     public void StartLinearDialogue(DialogueLine l, string triggeredBy = null)
     {
         trigger = triggeredBy; // Store the object that triggered the dialogue
@@ -51,6 +107,10 @@ public class DialogueBox : MonoBehaviour
         StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
     }
 
+    /// <summary>
+    /// Coroutine that types out lines of dialogue one character at a time.
+    /// </summary>
+    /// <returns> IEnumerator that types out the line.</returns>
     IEnumerator TypeLine()
     {
         textComponent.text = string.Empty; // Clear the text component before typing the new line
@@ -61,9 +121,13 @@ public class DialogueBox : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows whole line if the line wasn't fully typed yet, or skips to next line when line is linear and fully displayed.
+    /// If line is complete but not linear, it does nothing.
+    /// </summary>
     public void SkipDialog()
     {
-        buttonPushSound.Play(); // Play the button sound when skipping dialogue
+        audioPlayer.playButtonPushSound(); // Play the button sound when skipping dialogue
         if (textComponent.text == currentLine.content)
         { //If previous line is already fully displayed
             if (currentLine.type == DialogueLine.LineType.Linear)
@@ -91,6 +155,11 @@ public class DialogueBox : MonoBehaviour
 
     //Handling Option Dialogue ----------------------------------------------------------------------------------------
 
+    /// <summary>
+    /// Starts displaying a Two Option Dialogue Box and typing a Two Option Dialogue Prompt for it.
+    /// </summary>
+    /// <param name="l">DialogueLine struct containing information on the line to be displayed.</param>
+    /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
     public void StartTwoOptionDialogue(DialogueLine l, string triggeredBy = null)
     {
         //DisplayDialogueBox();
@@ -104,6 +173,11 @@ public class DialogueBox : MonoBehaviour
         optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
     }
 
+    /// <summary>
+    /// Starts displaying a Three Option Dialogue Box and typing a Two Option Dialogue Prompt for it.
+    /// </summary>
+    /// <param name="l">DialogueLine struct containing information on the line to be displayed.</param>
+    /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
     public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null)
     {
         trigger = triggeredBy; // Store the object that triggered the dialogue
@@ -147,14 +221,33 @@ public class DialogueBox : MonoBehaviour
             optionCText.text = l.dialogueOptions[2].content; // Set the text for option C button
         }
     }
-
-    public void PickOptionA()
+    
+    /// <summary>
+    /// Processes the player's choice picked from the available buttons.
+    /// </summary>
+    /// <param name="option">String containing the option the player picked between A, B or C.</param>
+    public void PickOption(string option)
     {
-        buttonPushSound.Play(); // Play the button sound when picking an option
+        StopAllCoroutines();
+        audioPlayer.playButtonPushSound(); // Play the button sound when picking an option
+        int optionIndex = 0;
+        if (option == "A")
+        {
+            optionIndex = 0; // Option A corresponds to index 0
+        }
+        else if (option == "B")
+        {
+            optionIndex = 1; // Option B corresponds to index 1
+        }
+        else if (option == "C")
+        {
+            optionIndex = 2; // Option C corresponds to index 2
+        }
+
         if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
         {
             DialogueLine promptLine = currentLine;
-            DialogueLine chosenLine = currentLine.dialogueOptions[0];
+            DialogueLine chosenLine = currentLine.dialogueOptions[optionIndex];
             PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
@@ -163,11 +256,19 @@ public class DialogueBox : MonoBehaviour
             }
             if (trigger != null && trigger.Contains("Door"))
             {
-                string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                Debug.Log(breakManager.getTimeLeft());
-                PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
-                SceneManager.LoadScene(roomName); // Load the scene corresponding to the room name
+                if (option == "A")
+                {
+                    string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                    //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
+                    breakManager.initiateStaticSceneDuringBreak(roomName);
+                }
+                else if (option == "B")
+                {
+                    //Player answered "No" to the door prompt
+                    //Do nothing and close the dialogue box.
+                    HideDialogueBox();
+                }
             }
             else if (chosenLine.feedback != "None")
             {
@@ -189,7 +290,10 @@ public class DialogueBox : MonoBehaviour
             {
                 dialogueManager.setCurrentLine(nextLine);
             }
-            if (currentLine.answer == optionAText.text)
+
+            string selectedOptionText = option == "A" ? optionAText.text : option == "B" ? optionBText.text : optionCText.text;
+
+            if (currentLine.answer == selectedOptionText)
             {
                 PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
                 if (PlayerPrefs.GetString("identifiedEmotions").Contains(currentLine.answer))
@@ -207,94 +311,6 @@ public class DialogueBox : MonoBehaviour
                         PlayerPrefs.SetString("identifiedEmotions", PlayerPrefs.GetString("identifiedEmotions") + ", " + currentLine.answer); // Append the identified emotions of the day
                     }
                 }
-            }
-            enabled = false; // Disable the dialogue box component after picking an option
-        }
-    }
-
-    public void PickOptionB()
-    {
-        buttonPushSound.Play(); // Play the button sound when picking an option
-        if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
-        {
-            DialogueLine promptLine = currentLine;
-            DialogueLine chosenLine = currentLine.dialogueOptions[1];
-            PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
-            DialogueLine nextLine = chosenLine.nextLine;
-            if (nextLine != null)
-            {
-                dialogueManager.setCurrentLine(nextLine);
-            }
-            if (trigger != null && trigger.Contains("Door"))
-            {
-                //Player answered "No" to the door prompt
-                //Do nothing and close the dialogue box.
-                HideDialogueBox(); // Hide the dialogue box after picking an option
-            }
-            else if (chosenLine.feedback != "None")
-            {
-                if (PlayerPrefs.GetString("feedback") == "")
-                {
-                    PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
-                }
-                else
-                {
-                    PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
-                }
-            }
-            enabled = false; // Disable the dialogue box component after picking an option
-        }
-        else if (currentLine.type == DialogueLine.LineType.EmotionOption)
-        {
-            DialogueLine nextLine = currentLine.nextLine;
-            if (nextLine != null)
-            {
-                dialogueManager.setCurrentLine(nextLine);
-            }
-            if (currentLine.answer == optionBText.text)
-            {
-                PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
-            }
-            enabled = false; // Disable the dialogue box component after picking an option
-        }
-    }
-
-    public void PickOptionC()
-    {
-        buttonPushSound.Play(); // Play the button sound when picking an option
-        if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
-        {
-            DialogueLine promptLine = currentLine;
-            DialogueLine chosenLine = currentLine.dialogueOptions[2];
-            PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
-            DialogueLine nextLine = chosenLine.nextLine;
-            if (nextLine != null)
-            {
-                dialogueManager.setCurrentLine(nextLine);
-            }
-            enabled = false; // Disable the dialogue box component after picking an option
-            if (chosenLine.feedback != "None")
-            {
-                if (PlayerPrefs.GetString("feedback") == "")
-                {
-                    PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
-                }
-                else
-                {
-                    PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
-                }
-            }
-        }
-        else if (currentLine.type == DialogueLine.LineType.EmotionOption)
-        {
-            DialogueLine nextLine = currentLine.nextLine;
-            if (nextLine != null)
-            {
-                dialogueManager.setCurrentLine(nextLine);
-            }
-            if (currentLine.answer == optionCText.text)
-            {
-                PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
             }
             enabled = false; // Disable the dialogue box component after picking an option
         }

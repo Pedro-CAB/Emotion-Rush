@@ -5,12 +5,12 @@ using TMPro;
 public class Schedule : MonoBehaviour
 {
     int currentDay;
-    string currentWeekDay; // Monday, Tuesday, Wednesday, Thursday, Friday
-    int currentWeek;
+    [HideInInspector] public string currentWeekDay; // Monday, Tuesday, Wednesday, Thursday, Friday
+    [HideInInspector] public int currentWeek;
 
     public TextMeshProUGUI currentWeekDayText; // Reference to the TextMeshProUGUI component for displaying the current week day
-    public TextMeshProUGUI currentPhaseText; // Reference to the TextMeshProUGUI component for displaying the current day
-    public TextMeshProUGUI currentRoomText; // Reference to the TextMeshProUGUI component for displaying the current day
+    public TextMeshProUGUI currentPhaseText; // Reference to the TextMeshProUGUI component for displaying the current day phase
+    public TextMeshProUGUI currentRoomText; // Reference to the TextMeshProUGUI component for displaying the current room
 
     public GameObject scheduleUI; // Reference to the UI GameObject that contains the schedule information
 
@@ -18,107 +18,167 @@ public class Schedule : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scheduleUI.SetActive(true);
-        int week = PlayerPrefs.GetInt("currentWeek");
-        string weekStr = "Semana " + week.ToString();
-        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
+        //scheduleUI.gameObject.SetActive(true);
+        currentWeek = PlayerPrefs.GetInt("currentWeek");
+        string weekStr = "Semana " + currentWeek.ToString();
         string dayPhase = PlayerPrefs.GetString("currentPhase");
         currentDayPhase = PlayerPrefs.GetString("currentPhase");
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
+
+        updateWeekDayUI();
+        updateDayPhaseUI();
+        updateRoomUI();
+
+        if (scheduleUI != null)
+        {
+            StartCoroutine(HideScheduleUIAfterDelay(2f));   
+        }
+
+    }
+    /// <summary>
+    /// Updates Current Week Day GUI Text based on the currentWeekDay variable in Player Prefs.
+    /// Does nothing if GUI element doesn't exist.
+    /// </summary>
+    private void updateWeekDayUI()
+    {
+        if (currentWeekDayText != null)
+        {
+            currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
+            if (currentWeekDay == "Monday")
+            {
+                currentWeekDayText.text = "Segunda-feira";
+            }
+            else if (currentWeekDay == "Tuesday")
+            {
+                currentWeekDayText.text = "Terça-feira";
+            }
+            else if (currentWeekDay == "Wednesday")
+            {
+                currentWeekDayText.text = "Quarta-feira";
+            }
+            else if (currentWeekDay == "Thursday")
+            {
+                currentWeekDayText.text = "Quinta-feira";
+            }
+            else if (currentWeekDay == "Friday")
+            {
+                currentWeekDayText.text = "Sexta-feira";
+            }   
+        }
+    }
+
+    public void updateWeekDay()
+    {
+        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
+        Debug.Log("updateWeekDay :: Current Week Day: " + currentWeekDay);
         if (currentWeekDay == "Monday")
         {
-            currentWeekDayText.text = "Segunda-feira";
+            currentWeekDay = "Tuesday";
         }
         else if (currentWeekDay == "Tuesday")
         {
-            currentWeekDayText.text = "Terça-feira";
+            currentWeekDay = "Wednesday";
         }
         else if (currentWeekDay == "Wednesday")
         {
-            currentWeekDayText.text = "Quarta-feira";
+            currentWeekDay = "Thursday";
         }
         else if (currentWeekDay == "Thursday")
         {
-            currentWeekDayText.text = "Quinta-feira";
+            currentWeekDay = "Friday";
         }
         else if (currentWeekDay == "Friday")
         {
-            currentWeekDayText.text = "Sexta-feira";
+            currentWeekDay = "Monday";
+            currentWeek++;
         }
 
-        if (dayPhase == "MorningClass1")
-        {
-            dayPhase = "Aula I"; // Default starting phase
-        }
-        else if (dayPhase == "MorningBreak")
-        {
-            dayPhase = "Intervalo da Manhã";
-        }
-        else if (dayPhase == "MorningClass2")
-        {
-            dayPhase = "Aula II";
-        }
-        else if (dayPhase == "LunchBreak")
-        {
-            dayPhase = "Intervalo do Almoço";
-        }
-        else if (dayPhase == "AfternoonClass")
-        {
-            dayPhase = "Aula III";
-        }
-        else
-        {
-            scheduleUI.SetActive(false);
-        }
+        Debug.Log("updateWeekDay :: Current Week Day: " + currentWeekDay);
+        Debug.Log("updateWeekDay :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
 
-        if (currentSceneName == "Classroom")
+        PlayerPrefs.SetString("currentWeekDay", currentWeekDay);
+    }
+    /// <summary>
+    /// Updates Current Day Phase GUI Text based on the currentPhase variable in Player Prefs.
+    /// Does nothing if GUI element doesn't exist.
+    /// </summary>
+    private void updateDayPhaseUI()
+    {
+        if (currentPhaseText != null)
         {
-            currentRoomText.text = "Sala A";
+            string dayPhase = PlayerPrefs.GetString("currentPhase");
+            if (dayPhase == "MorningClass1")
+            {
+                currentPhaseText.text = "Aula I";
+            }
+            else if (dayPhase == "MorningBreak")
+            {
+                currentPhaseText.text = "Intervalo - Manhã";
+            }
+            else if (dayPhase == "MorningClass2")
+            {
+                currentPhaseText.text = "Aula II";
+            }
+            else if (dayPhase == "LunchBreak")
+            {
+                currentPhaseText.text = "Intervalo - Almoço";
+            }
+            else if (dayPhase == "AfternoonClass")
+            {
+                currentPhaseText.text = "Aula III";
+            }
         }
-        else if (currentSceneName == "Library")
+    }
+    /// <summary>
+    /// Updates Current Room GUI Text based on the currentPhase variable in Player Prefs.
+    /// Does nothing if GUI element doesn't exist.
+    /// </summary>
+    private void updateRoomUI()
+    {
+        if (currentRoomText != null)
         {
-            currentRoomText.text = "Biblioteca";
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (currentSceneName == "Classroom")
+            {
+                currentRoomText.text = "Sala A";
+            }
+            else if (currentSceneName == "Library")
+            {
+                currentRoomText.text = "Biblioteca";
+            }
+            else if (currentSceneName == "Auditorium")
+            {
+                currentRoomText.text = "Auditório";
+            }
+            else if (currentSceneName == "Lab")
+            {
+                currentRoomText.text = "Laboratório";
+            }
+            else if (currentSceneName == "Gym")
+            {
+                currentRoomText.text = "Campo Desportivo";
+            }
+            else if (currentSceneName == "BreakScene")
+            {
+                currentRoomText.text = "Livre";
+            }
+            else if (currentSceneName == "Playground")
+            {
+                currentRoomText.text = "Recreio";
+            }   
         }
-        else if (currentSceneName == "Auditorium")
-        {
-            currentRoomText.text = "Auditório";
-        }
-        else if (currentSceneName == "Lab")
-        {
-            currentRoomText.text = "Laboratório";
-        }
-        else if (currentSceneName == "Gym")
-        {
-            currentRoomText.text = "Campo Desportivo";
-        }
-        else if (currentSceneName == "BreakScene")
-        {
-            currentRoomText.text = "Livre";
-        }
-        else if (currentSceneName == "Playground")
-        {
-            currentRoomText.text = "Recreio";
-        }
-        else
-        {
-            currentRoomText.text = "Sala Desconhecida";
-        }
-        
-        StartCoroutine(HideScheduleUIAfterDelay(1.5f));
-
     }
 
     private System.Collections.IEnumerator HideScheduleUIAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        scheduleUI.SetActive(false);
+        scheduleUI.gameObject.SetActive(false);
     }
 
     public void nextPhase(){
-        Debug.Log("Current Phase: " + currentDayPhase);
+        Debug.Log("Phase Set From: " + currentDayPhase);
         if (currentDayPhase == "MorningClass1")
         {
-            Debug.Log("Advancing to Morning Break");
             currentDayPhase = "MorningBreak";
         }
         else if (currentDayPhase == "MorningBreak")
@@ -136,8 +196,6 @@ public class Schedule : MonoBehaviour
         else if (currentDayPhase == "AfternoonClass")
         {
             currentDayPhase = "DayOutcome";
-            PlayerPrefs.SetString("currentPhase", currentDayPhase);
-            displayDayOutcome();
         }
         else if (currentDayPhase == "DayOutcome")
         {
@@ -147,50 +205,15 @@ public class Schedule : MonoBehaviour
         {
             currentDayPhase = "MorningClass1";
         }
+        Debug.Log("To: " + currentDayPhase);
         PlayerPrefs.SetString("currentPhase", currentDayPhase);
-    }
-
-    void displayDayOutcome()
-    {
-        SceneManager.LoadScene("DayOutcome");
     }
 
     public void nextDay()
     {
-        currentDay++;
-        if (currentDay > 4) // After Friday, new Week starts
-        {
-            currentWeek++;
-        }
-        calculateWeekDay();
-        PlayerPrefs.SetInt("currentDay", currentDay);
+        updateWeekDay();
         PlayerPrefs.SetInt("currentWeek", currentWeek);
         PlayerPrefs.SetString("feedback", "");
         PlayerPrefs.SetString("identifiedEmotions", "");
     }
-
-    void calculateWeekDay(){
-        int weekDayIndex = currentDay % 5;
-        switch (weekDayIndex)
-        {
-            case 0:
-                currentWeekDay = "Monday";
-                break;
-            case 1:
-                currentWeekDay = "Tuesday";
-                break;
-            case 2:
-                currentWeekDay = "Wednesday";
-                break;
-            case 3:
-                currentWeekDay = "Thursday";
-                break;
-            case 4:
-                currentWeekDay = "Friday";
-                break;
-        }
-        PlayerPrefs.SetString("currentWeekDay", currentWeekDay);
-    }
-
-
 }

@@ -4,11 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
+    public SequenceManager sequenceManager; // Reference to the SequenceManager for managing game state
     public GameObject pausedUI;
     public GameObject unpausedUI;
 
     public GameObject areYouSureUI;
-    public AudioSource buttonPushSound; // Reference to the AudioSource for playing button sounds
+    public AudioPlayer audioPlayer; // Reference to the AudioPlayer for playing scene music and sounds
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class Pause : MonoBehaviour
     }
 
     public void ResumeGame(){
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         //Debug.Log("Game Resumed");
         Time.timeScale = 1;
         pausedUI.SetActive(false);
@@ -26,43 +27,31 @@ public class Pause : MonoBehaviour
     }
 
     public void PauseGame(){
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         Time.timeScale = 0;
-        //Debug.Log("Game Paused");
         pausedUI.SetActive(true);
         unpausedUI.SetActive(false);
     }
 
+
     public void AreYouSure()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         areYouSureUI.SetActive(true);
         pausedUI.SetActive(false);
     }
 
     public void NotSure()
     {
-        buttonPushSound.Play();
+        audioPlayer.playButtonPushSound();
         areYouSureUI.SetActive(false);
         pausedUI.SetActive(true);
     }
 
     public void QuitGame()
     {
-        buttonPushSound.Play();
-        //Debug.Log("Back to Main Menu");
-        SceneManager.LoadScene("MainMenu");
+        audioPlayer.playButtonPushSound();
+        sequenceManager.toMainMenu();
         Time.timeScale = 1;
-
-        //Delete Unsaved Data if Player Leaves in the Middle of a Day
-        PlayerPrefs.SetFloat("breakTimeLeft", 300.0f);
-        PlayerPrefs.SetString("currentPhase", "MorningClass1");
-        PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak");
-        PlayerPrefs.SetInt("playerScoreIncrement", 0);
-        PlayerPrefs.SetInt("unsavedTimeUpgradeLevel", 0);
-        PlayerPrefs.SetInt("unsavedInteractionUpgradeLevel", 0);
-        PlayerPrefs.SetInt("unsavedRunningUpgradeLevel", 0);
-        PlayerPrefs.SetInt("unsavedCoinsUpgradeLevel", 0);
-        PlayerPrefs.SetString("feedback", "");
     }
 }

@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Classroom.unity
     guid: b0996602eca89884e96559583f0106ae
   - enabled: 1
-    path: Assets/Scenes/Bar.unity
+    path: Assets/Scenes/Store.unity
     guid: 86acde42ee041554e8c6f3e3a4e31992
   - enabled: 1
     path: Assets/Scenes/Library.unity
@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gym.unity
     guid: 69456a72765e27b4faa7d6bb98e67819
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 0d28a7765b293cb4c84ba73802c85d48
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 0f6e47a45a338654da4c7fdb15e4942d, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: dcce103193e0c3143905c93837d6d9f2, type: 2}

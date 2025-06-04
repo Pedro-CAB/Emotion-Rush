@@ -2,62 +2,94 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class BreakManager : MonoBehaviour
+public class BreakManager : SequenceManager
 {
-    public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
+    /// <summary>
+    /// TextMeshProUGUI component where timer is displayed.
+    /// </summary>
+    public TextMeshProUGUI timerText;
 
-    private  float standardBreakTime; //Time that Break Scene Lasts
+    /// <summary>
+    /// Time that Break Scene Lasts
+    /// </summary>
+    private float standardBreakTime;
 
-    private float timeLeft; //Time Remaining in Break Scene
+    /// <summary>
+    /// Time Remaining in Break Scene
+    /// </summary>
+    private float timeLeft;
 
-    public Schedule schedule;
+    /// <summary>
+    /// Schedule component that manages the game phases.
+    /// This is used to transition to the next phase after the break ends.
+    /// </summary>
+    //public Schedule schedule;
+
+    /// <summary>
+    /// Defines whether the timer is running or not.
+    /// </summary>
+    private bool isTimerRunning = false;
 
     void Start()
     {
-        Debug.Log("standardBreakTime: " + standardBreakTime);
-        Debug.Log("timeLeft: " + timeLeft);
+        loadState();
+        isTimerRunning = false;
+        updateTimerText();
+        StartCoroutine(WaitBeforeStartingTimer(2f)); // Wait 2 seconds before starting the timer
+        //Debug.Log("standardBreakTime: " + standardBreakTime);
+        //Debug.Log("timeLeft: " + timeLeft);
         standardBreakTime = 300.0f + 60.0f * PlayerPrefs.GetInt("timeUpgradeLevel");
-        string gameState = PlayerPrefs.GetString("gameState");
-        if (gameState == "staticSceneDuringBreak")
+        //Debug.Log("Game State is " + gameState);
+        if (gameState == "ongoingBreakScene")
         {
-            //Debug.Log("Break Scene Loaded");
+            //Debug.Log("Loading Break Scene from Static Scene During Break");
             timeLeft = PlayerPrefs.GetFloat("breakTimeLeft");
-            PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
-        else if (gameState == "staticSceneOutsideBreak")
+        else if (gameState == "startingBreakScene")
         {
+            //Debug.Log("Loading Break Scene from Static Scene Outside Break");
             timeLeft = standardBreakTime; // Reset Timer
-            PlayerPrefs.SetString("gameState", "breakScene"); // Save Current Game State
         }
-        Debug.Log("standardBreakTime: " + standardBreakTime);
-        Debug.Log("timeLeft: " + timeLeft);
     }
 
-    public float getTimeLeft()
-    {
-        return timeLeft;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (timeLeft <= 0.0f)
         {
-            PlayerPrefs.SetString("gameState", "staticSceneOutsideBreak"); // Save Current Game State
             PlayerPrefs.SetFloat("breakTimeLeft", standardBreakTime); // Restart Timer
-            SceneManager.LoadScene("Classroom");
-            schedule.nextPhase();
+            endBreak();
         }
         else{
             updateTimerText();
         }
     }
 
+    private System.Collections.IEnumerator WaitBeforeStartingTimer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isTimerRunning = true;
+    }
+
+    /// <summary>
+    /// Gets the time left in the break scene.
+    /// </summary>
+    /// <returns>Time left in the break scene.</returns>
+    public float getTimeLeft()
+    {
+        return timeLeft;
+    }
+
+    /// <summary>
+    /// Updates the value displayed in the timer and decreases the time left, if the timer is running.
+    /// </summary>
     void updateTimerText(){
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0.0f)
+        if (isTimerRunning)
         {
-            timeLeft = 0.0f;
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0.0f)
+            {
+                timeLeft = 0.0f;
+            }
         }
         int minutesLeft = Mathf.FloorToInt(timeLeft / 60.0f);
         int secondsLeft = Mathf.FloorToInt(timeLeft % 60.0f);
