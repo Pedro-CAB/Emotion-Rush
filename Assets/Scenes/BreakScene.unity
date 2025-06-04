@@ -926,6 +926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   schedule: {fileID: 597458987}
+  gameState: 
+  audioPlayer: {fileID: 1891680434}
   timerText: {fileID: 69434818}
 --- !u!1 &210098755
 GameObject:
@@ -2555,6 +2557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeekDay: 
+  currentWeek: 0
   currentWeekDayText: {fileID: 32388510}
   currentPhaseText: {fileID: 1892086574}
   currentRoomText: {fileID: 671880140}
@@ -19817,7 +19821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6aabb4300589340af460bbd0c22e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceManager: {fileID: 0}
+  sequenceManager: {fileID: 206399149}
   pausedUI: {fileID: 261991532}
   unpausedUI: {fileID: 456546474}
   areYouSureUI: {fileID: 1550583494}
@@ -28244,7 +28248,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
   m_Resource: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

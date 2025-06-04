@@ -26536,7 +26536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6aabb4300589340af460bbd0c22e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceManager: {fileID: 0}
+  sequenceManager: {fileID: 1582145405}
   pausedUI: {fileID: 549954115}
   unpausedUI: {fileID: 846667662}
   areYouSureUI: {fileID: 1680086613}
@@ -27361,6 +27361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   schedule: {fileID: 1582145406}
   gameState: 
+  audioPlayer: {fileID: 363210541}
 --- !u!114 &1582145406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27373,6 +27374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeekDay: 
+  currentWeek: 0
   currentWeekDayText: {fileID: 0}
   currentPhaseText: {fileID: 0}
   currentRoomText: {fileID: 0}
