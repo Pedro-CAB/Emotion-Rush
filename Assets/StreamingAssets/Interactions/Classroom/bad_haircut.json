@@ -69,7 +69,7 @@
           "feedback": "None",
           "children": [
             {
-              "text": "\"O professor começa a dar a aula e nota o gorro do Artur.\"",
+              "text": "O professor começa a dar a aula e nota o gorro do Artur.",
               "type": "Linear",
               "children": [
                 {
