@@ -2463,6 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   schedule: {fileID: 1412603524}
   gameState: 
+  audioPlayer: {fileID: 0}
 --- !u!114 &1412603524
 MonoBehaviour:
   m_ObjectHideFlags: 0

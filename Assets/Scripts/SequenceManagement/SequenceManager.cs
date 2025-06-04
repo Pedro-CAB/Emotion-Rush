@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SequenceManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class SequenceManager : MonoBehaviour
     /// </summary>
     [HideInInspector] public string gameState; // "mainMenu", "dayOutcome", "staticSceneOutsideBreak", "startingBreakScene", "ongoingBreakScene", "staticSceneDuringBreak"
 
+    public AudioPlayer audioPlayer; // Reference to the AudioPlayer for playing scene music and sounds
     public void loadState()
     {
         gameState = PlayerPrefs.GetString("gameState");
@@ -111,28 +113,30 @@ public class SequenceManager : MonoBehaviour
 
     public void endStaticSceneDuringBreak()
     {
-        Debug.Log("Ending Static Scene During Break");
-        loadState();
-        if (gameState == "staticSceneDuringBreak")
-        {
-            gameState = "ongoingBreakScene";
-            SceneManager.LoadScene("BreakScene");
-            saveState();
+            //audioPlayer.playSchoolBellSound();
+            Debug.Log("Ending Static Scene During Break");
+            loadState();
+            if (gameState == "staticSceneDuringBreak")
+            {
+                gameState = "ongoingBreakScene";
+                SceneManager.LoadScene("BreakScene");
+                saveState();
         }
     }
 
     public void endStaticSceneDuringBreakAndBreak()
     {
-        Debug.Log("Ending Static Scene During Break and Ending Break Scene");
-        loadState();
-        if (gameState == "staticSceneDuringBreak")
-        {
-            string randomScene = randomizeStaticScene();
-            gameState = "staticSceneOutsideBreak";
-            SceneManager.LoadScene(randomScene);
-            saveState();
-            schedule.nextPhase();
-        }
+            //audioPlayer.playSchoolBellSound();
+            Debug.Log("Ending Static Scene During Break and Ending Break Scene");
+            loadState();
+            if (gameState == "staticSceneDuringBreak")
+            {
+                string randomScene = randomizeStaticScene();
+                gameState = "staticSceneOutsideBreak";
+                SceneManager.LoadScene(randomScene);
+                saveState();
+                schedule.nextPhase();
+            }
     }
 
     public void endDay()
@@ -150,7 +154,7 @@ public class SequenceManager : MonoBehaviour
 
     public string randomizeStaticScene()
     {
-        string[] classScenes = { "Classroom", "Library", "Auditorium", "Lab", "Gym" };
+        string[] classScenes = { "Classroom", "Auditorium", "Lab", "Gym" };
         System.Random random = new System.Random();
         int index = random.Next(classScenes.Length);
         string randomScene = classScenes[index];

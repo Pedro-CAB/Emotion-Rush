@@ -24519,6 +24519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   schedule: {fileID: 1149997035}
   gameState: 
+  audioPlayer: {fileID: 0}
   dialogueManager: {fileID: 878541034}
   interactionLoader: {fileID: 939384987}
 --- !u!114 &939384989
@@ -25709,7 +25710,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
   m_Resource: {fileID: 8300000, guid: 16e49bc938367434499f268a2510b264, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -39297,11 +39298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6aabb4300589340af460bbd0c22e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceManager: {fileID: 0}
+  sequenceManager: {fileID: 939384988}
   pausedUI: {fileID: 93445520}
   unpausedUI: {fileID: 795819705}
   areYouSureUI: {fileID: 1890228853}
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: 1011444634}
 --- !u!222 &1903475908
 CanvasRenderer:
   m_ObjectHideFlags: 0

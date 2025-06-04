@@ -58,7 +58,7 @@
                                                   "type": "TwoOption",
                                                   "children": [
                                                     {
-                                                      "text": "\"Terminar com confiança e agradecer a atenção da turma.\"",
+                                                      "text": "Terminar com confiança e agradecer a atenção da turma.",
                                                       "type": "DialogueOption",
                                                       "score": 1,
                                                       "feedback": "- Reavaliaste a situação e acabaste com segurança.",
@@ -70,7 +70,7 @@
                                                       ]
                                                     },
                                                     {
-                                                      "text": "\"Terminar rapidamente e voltar a correr para o lugar.\"",
+                                                      "text": "Terminar rapidamente e voltar a correr para o lugar.",
                                                       "type": "DialogueOption",
                                                       "score": 0,
                                                       "feedback": "- O nervosismo fez-te apressar a apresentação.",
@@ -100,7 +100,7 @@
                                           ]
                                         },
                                         {
-                                          "text": "\"Atirar os papéis para o chão e dizer: 'Não consigo!'\"",
+                                          "text": "Atirar os papéis para o chão e dizer: 'Não consigo!'",
                                           "type": "DialogueOption",
                                           "score": -1,
                                           "feedback": "- Evitar uma situação que te deixa nervoso fez-te ser penalizado numa nota.",
@@ -118,7 +118,7 @@
                               ]
                             },
                             {
-                              "text": "\"Parar de falar e perguntar: 'Estão a gozar comigo?'\"",
+                              "text": "Parar de falar e perguntar: 'Estão a gozar comigo?'",
                               "type": "DialogueOption",
                               "score": -1,
                               "feedback": "- Reagir por impulso criou tensão na sala.",
@@ -136,7 +136,7 @@
                   ]
                 },
                 {
-                  "text": "\"Começar logo a falar, mesmo a gaguejar.\"",
+                  "text": "Começar logo a falar, mesmo a gaguejar.",
                   "type": "DialogueOption",
                   "score": 0,
                   "feedback": "None",
@@ -150,7 +150,7 @@
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "\"Tentar ignorar e continuar focado.\"",
+                              "text": "Tentar ignorar e continuar focado.",
                               "type": "DialogueOption",
                               "score": 1,
                               "feedback": "- Mantiveste o foco apesar da distração.",
@@ -164,7 +164,7 @@
                                       "type": "ThreeOption",
                                       "children": [
                                         {
-                                          "text": "\"Olhar para os apontamentos discretamente.\"",
+                                          "text": "Olhar para os apontamentos discretamente.",
                                           "type": "DialogueOption",
                                           "score": 1,
                                           "feedback": "- Usaste um recurso para te orientar sem te descontrolares.",
@@ -178,7 +178,7 @@
                                                   "type": "TwoOption",
                                                   "children": [
                                                     {
-                                                      "text": "\"Terminar com confiança e agradecer a atenção da turma.\"",
+                                                      "text": "Terminar com confiança e agradecer a atenção da turma.",
                                                       "type": "DialogueOption",
                                                       "score": 1,
                                                       "feedback": "- Reavaliaste a situação e acabaste com segurança.",
@@ -190,7 +190,7 @@
                                                       ]
                                                     },
                                                     {
-                                                      "text": "\"Terminar rapidamente e voltar a correr para o lugar.\"",
+                                                      "text": "Terminar rapidamente e voltar a correr para o lugar.",
                                                       "type": "DialogueOption",
                                                       "score": 0,
                                                       "feedback": "None",
@@ -220,7 +220,7 @@
                                           ]
                                         },
                                         {
-                                          "text": "\"Atirar os papéis para o chão e dizer: 'Não consigo!'\"",
+                                          "text": "Atirar os papéis para o chão e dizer: 'Não consigo!'",
                                           "type": "DialogueOption",
                                           "score": -1,
                                           "feedback": "- Reagiste com frustração e desistência.",
@@ -238,7 +238,7 @@
                               ]
                             },
                             {
-                              "text": "\"Parar de falar e perguntar: 'Estão a gozar comigo?'\"",
+                              "text": "Parar de falar e perguntar: 'Estão a gozar comigo?'",
                               "type": "DialogueOption",
                               "score": -1,
                               "feedback": "- Reagir por impulso criou tensão na sala.",
@@ -256,7 +256,7 @@
                   ]
                 },
                 {
-                  "text": "\"Dizer à professora que não queres apresentar.\"",
+                  "text": "Dizer à professora que não queres apresentar.",
                   "type": "DialogueOption",
                   "score": -1,
                   "feedback": "- Evitaste lidar com a situação, o que te prejudicou.",
@@ -270,7 +270,7 @@
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "\"Ignorá-los e prestar atenção na próxima apresentação.\"",
+                              "text": "Ignorá-los e prestar atenção na próxima apresentação.",
                               "type": "DialogueOption",
                               "score": 1,
                               "feedback": "- Mudaste o foco para te distraíres dos comentários dos teus colegas.",
@@ -282,7 +282,7 @@
                               ]
                             },
                             {
-                              "text": "\"Olhar para eles com ar zangado.\"",
+                              "text": "Olhar para eles com ar zangado.",
                               "type": "DialogueOption",
                               "score": -1,
                               "feedback": "- Reagiste de forma impulsiva e aumentaste o desconforto.",
