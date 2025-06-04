@@ -2340,6 +2340,7 @@ GameObject:
   - component: {fileID: 1412603517}
   - component: {fileID: 1412603521}
   - component: {fileID: 1412603523}
+  - component: {fileID: 1412603524}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2460,7 +2461,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b45f837155fa84dbadc3dec46a86f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  schedule: {fileID: 0}
+  schedule: {fileID: 1412603524}
+  gameState: 
+--- !u!114 &1412603524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412603515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48394c756848aeb45ad04bc87e75be27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeekDay: 
+  currentWeek: 0
+  currentWeekDayText: {fileID: 0}
+  currentPhaseText: {fileID: 0}
+  currentRoomText: {fileID: 0}
+  scheduleUI: {fileID: 0}
 --- !u!1 &1532763455
 GameObject:
   m_ObjectHideFlags: 0

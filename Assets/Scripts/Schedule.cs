@@ -5,8 +5,8 @@ using TMPro;
 public class Schedule : MonoBehaviour
 {
     int currentDay;
-    string currentWeekDay; // Monday, Tuesday, Wednesday, Thursday, Friday
-    int currentWeek;
+    [HideInInspector] public string currentWeekDay; // Monday, Tuesday, Wednesday, Thursday, Friday
+    [HideInInspector] public int currentWeek;
 
     public TextMeshProUGUI currentWeekDayText; // Reference to the TextMeshProUGUI component for displaying the current week day
     public TextMeshProUGUI currentPhaseText; // Reference to the TextMeshProUGUI component for displaying the current day phase
@@ -19,10 +19,11 @@ public class Schedule : MonoBehaviour
     void Start()
     {
         //scheduleUI.gameObject.SetActive(true);
-        int week = PlayerPrefs.GetInt("currentWeek");
-        string weekStr = "Semana " + week.ToString();
+        currentWeek = PlayerPrefs.GetInt("currentWeek");
+        string weekStr = "Semana " + currentWeek.ToString();
         string dayPhase = PlayerPrefs.GetString("currentPhase");
         currentDayPhase = PlayerPrefs.GetString("currentPhase");
+        currentWeekDay = PlayerPrefs.GetString("currentWeekDay");
 
         updateWeekDayUI();
         updateDayPhaseUI();

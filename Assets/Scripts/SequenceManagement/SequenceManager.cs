@@ -35,13 +35,30 @@ public class SequenceManager : MonoBehaviour
         return true;
     }
 
-    public bool startDay()
+    public void startDay()
     {
         Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         Debug.Log("Starting Day");
         loadState();
-        bool condition = gameState == "mainMenu" || gameState == "dayOutcome";
-        if (condition)
+        Debug.Log("GameState: " + gameState);
+        Debug.Log("Current Week: " + schedule.currentWeek);
+        Debug.Log("Current Week Day: " + schedule.currentWeekDay);
+        if (gameState == "mainMenu")
+        {
+            gameState = "staticSceneOutsideBreak";
+            if (schedule.currentWeekDay == "Monday" && schedule.currentWeek == 0)
+            {
+                SceneManager.LoadScene("Tutorial");
+                saveState();
+            }
+            else
+            {
+                string randomScene = randomizeStaticScene();
+                SceneManager.LoadScene(randomScene);
+                saveState();
+            }
+        }
+        else if (gameState == "dayOutcome")
         {
             gameState = "staticSceneOutsideBreak";
             string randomScene = randomizeStaticScene();
@@ -50,29 +67,25 @@ public class SequenceManager : MonoBehaviour
             schedule.nextPhase();
             schedule.nextDay();
         }
-        return condition;
     }
 
-    public bool initiateBreak()
+    public void initiateBreak()
     {
         Debug.Log("Starting Break Scene");
         loadState();
-        bool condition = gameState == "staticSceneOutsideBreak";
-        if (condition)
+        if (gameState == "staticSceneOutsideBreak")
         {
             gameState = "startingBreakScene";
             SceneManager.LoadScene("BreakScene");
             saveState();
             schedule.nextPhase();
         }
-        return condition;
     }
 
-    public bool endBreak()
+    public void endBreak()
     {
         Debug.Log("Ending Break Scene");
         loadState();
-        bool condition = gameState == "startingBreakScene" || gameState == "ongoingBreakScene";
         if (gameState == "startingBreakScene" || gameState == "ongoingBreakScene")
         {
             gameState = "staticSceneOutsideBreak";
@@ -81,44 +94,38 @@ public class SequenceManager : MonoBehaviour
             saveState();
             schedule.nextPhase();
         }
-        return condition;
     }
 
-    public bool initiateStaticSceneDuringBreak(string sceneName)
+    public void initiateStaticSceneDuringBreak(string sceneName)
     {
         Debug.Log("Initiating static scene during break: " + sceneName);
         loadState();
-        bool condition = gameState == "startingBreakScene" || gameState == "ongoingBreakScene";
-        if (condition)
+        if (gameState == "startingBreakScene" || gameState == "ongoingBreakScene")
         {
             gameState = "staticSceneDuringBreak";
             SceneManager.LoadScene(sceneName);
             Debug.Log("GameState: " + gameState);
             saveState();
         }
-        return condition;
     }
 
-    public bool endStaticSceneDuringBreak()
+    public void endStaticSceneDuringBreak()
     {
         Debug.Log("Ending Static Scene During Break");
         loadState();
-        bool condition = gameState == "staticSceneDuringBreak";
-        if (condition)
+        if (gameState == "staticSceneDuringBreak")
         {
             gameState = "ongoingBreakScene";
             SceneManager.LoadScene("BreakScene");
             saveState();
         }
-        return condition;
     }
 
-    public bool endStaticSceneDuringBreakAndBreak()
+    public void endStaticSceneDuringBreakAndBreak()
     {
         Debug.Log("Ending Static Scene During Break and Ending Break Scene");
         loadState();
-        bool condition = gameState == "staticSceneDuringBreak";
-        if (condition)
+        if (gameState == "staticSceneDuringBreak")
         {
             string randomScene = randomizeStaticScene();
             gameState = "staticSceneOutsideBreak";
@@ -126,22 +133,19 @@ public class SequenceManager : MonoBehaviour
             saveState();
             schedule.nextPhase();
         }
-        return condition;
     }
 
-    public bool endDay()
+    public void endDay()
     {
         Debug.Log("Ending Day");
         loadState();
-        bool condition = gameState == "staticSceneOutsideBreak";
-        if (condition)
+        if (gameState == "staticSceneOutsideBreak")
         {
             gameState = "dayOutcome";
             SceneManager.LoadScene("DayOutcome");
             saveState();
             schedule.nextPhase();
         }
-        return condition;
     }
 
     public string randomizeStaticScene()

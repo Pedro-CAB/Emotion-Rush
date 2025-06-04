@@ -8,8 +8,6 @@ public class InteractionLoader : MonoBehaviour
 {
     public List<DialogueSequence> interactions = new List<DialogueSequence>();
 
-    private bool debugMode = false;
-
     [System.Serializable]
     public class FileListWrapper
     {
