@@ -285,14 +285,11 @@ public class DialogueBox : MonoBehaviour
         }
         else if (currentLine.type == DialogueLine.LineType.EmotionOption)
         {
-            DialogueLine nextLine = currentLine.nextLine;
-            if (nextLine != null)
-            {
-                dialogueManager.setCurrentLine(nextLine);
-            }
-
             string selectedOptionText = option == "A" ? optionAText.text : option == "B" ? optionBText.text : optionCText.text;
-
+            Debug.Log("CurrentLine Content: " + currentLine.content);
+            Debug.Log("Option Index: " + optionIndex);
+            Debug.Log("Selected Option Text: " + selectedOptionText);
+            Debug.Log("Current Line Answer: " + currentLine.answer);
             if (currentLine.answer == selectedOptionText)
             {
                 PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + 1); // Increment the player's score for the correct answer
@@ -313,6 +310,12 @@ public class DialogueBox : MonoBehaviour
                 }
             }
             enabled = false; // Disable the dialogue box component after picking an option
+
+            DialogueLine nextLine = currentLine.nextLine;
+            if (nextLine != null)
+            {
+                dialogueManager.setCurrentLine(nextLine);
+            }
         }
     }
 
