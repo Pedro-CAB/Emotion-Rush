@@ -260,7 +260,6 @@ public class DialogueBox : MonoBehaviour
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                     //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    Debug.Log(breakManager.getTimeLeft());
                     PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
                     breakManager.initiateStaticSceneDuringBreak(roomName);
                 }

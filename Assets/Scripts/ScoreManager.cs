@@ -67,7 +67,8 @@ public class ScoreManager : MonoBehaviour
 
     void updateClassAPoints()
     {
-        PlayerPrefs.SetInt("classAScore", classAScore + playerScoreIncrement);
+        classAScore = classAScore + playerScoreIncrement;
+        PlayerPrefs.SetInt("classAScore", classAScore);
         PlayerPrefs.SetInt("playerScoreIncrement", 0);
     }
 
@@ -93,7 +94,7 @@ public class ScoreManager : MonoBehaviour
     void updateBars()
     {
         float total = classAScore + classBScore + classCScore + classDScore;
-        classABar.fillAmount = (float)classAScore / total; 
+        classABar.fillAmount = (float)classAScore / total;
         classBBar.fillAmount = (float)classBScore / total;
         classCBar.fillAmount = (float)classCScore / total;
         classDBar.fillAmount = (float)classDScore / total;
