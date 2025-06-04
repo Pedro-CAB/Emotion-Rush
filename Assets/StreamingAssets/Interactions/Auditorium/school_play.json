@@ -1,0 +1,145 @@
+{
+  "text": "Estás no palco do auditório com a tua turma a apresentar uma peça de teatro. As luzes estão apontadas para vocês e o público observa em silêncio.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "De repente, o teu colega João esquece-se das falas e fica parado, a olhar para o chão. Vês-lhe as mãos a tremer.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o teu coração a bater mais depressa e as palmas das mãos a suar.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Medo",
+              "children": [
+                {
+                  "text": "O João olha para ti, claramente nervoso. Tens de decidir como agir.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Sussurrar a próxima fala ao João, sem mostrar nervosismo.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Contiveste os nervos para a peça de teatro correr bem.",
+                      "children": [
+                        {
+                          "text": "O João sorri de alívio e continua a peça. Ficas com algum medo de te esqueceres das tuas falas.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Se me esquecer de algo, ninguém vai dar conta.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Ignoraste os teus medos.",
+                              "children": [
+                                {
+                                  "text": "A peça termina sem mais problemas e o público aplaude.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Falar mais rápido as tuas falas para sair do palco.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Deixaste o medo afetar a tua atuação.",
+                              "children": [
+                                {
+                                  "text": "As pessoas parecem não ter entendido muito bem o que disseste. A peça continua, mas podia ter sido melhor se ficasses mais calmo.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ignoras o que aconteceu e continuas a tua parte da peça.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Suprimiste a emoção e evitaste aumentar o nervosismo.",
+                      "children": [
+                        {
+                          "text": "O João acaba por recuperar sozinho, mas fica um pouco atrapalhado.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "No final, perguntar ao João se está tudo bem.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mostraste preocupação e apoio após a situação.",
+                              "children": [
+                                {
+                                  "text": "O João agradece e diz que para a próxima vai treinar mais as falas.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Decides não falar sobre o assunto.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "No fim da peça, sais do auditório e vais para a aula seguinte.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficas nervoso e dizes em voz alta: \"João, é a tua fala agora!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Reagiste de forma desregulada e aumentaste a pressão sobre o colega.",
+                      "children": [
+                        {
+                          "text": "O João fica ainda mais nervoso e o público começa a murmurar.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Percebendo o erro, tentas acalmar o João com um sorriso.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Tentaste corrigir a situação e apoiar o colega.",
+                              "children": [
+                                {
+                                  "text": "O João recupera um pouco e a peça continua.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Continuas a pressionar o João para falar.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Mantiveste uma atitude desregulada e aumentaste o desconforto.",
+                              "children": [
+                                {
+                                  "text": "O João acaba por não conseguir continuar e o professor intervém.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

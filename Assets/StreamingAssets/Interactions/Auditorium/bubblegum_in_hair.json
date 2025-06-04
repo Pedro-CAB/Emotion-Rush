@@ -1,0 +1,145 @@
+{
+  "text": "Estás no auditório com os teus colegas a assistir a um filme. O ambiente está escuro e todos estão atentos ao ecrã.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "De repente, vês o Rafael a colar discretamente uma pastilha elástica no cabelo da Maria, que está sentada à tua frente.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "O teu coração acelera e sentes-te inquieto na cadeira.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Raiva",
+              "children": [
+                {
+                  "text": "O Rafael ri-se baixinho com outro colega. Tens de decidir o que fazer.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Chamas imediatamente a atenção do Rafael em voz alta.",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Gritar e ser agressivo não resolve nada.",
+                      "children": [
+                        {
+                          "text": "Alguns colegas olham para ti e a professora pede silêncio.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Decides levantar-te e avisar discretamente a professora.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Corrigiste a impulsividade e procuraste ajuda de um adulto.",
+                              "children": [
+                                {
+                                  "text": "A professora agradece e resolve a situação com calma.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficas calado e tentas ignorar o que aconteceu.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Suprimiste a tua emoção perante algo que te enervou.",
+                              "children": [
+                                {
+                                  "text": "O filme continua, mas sentes-te inquieto pelo resto da sessão.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Aproximas-te da Maria e sussurras que ela tem pastilha elástica no cabelo.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Ajudaste uma colega de forma discreta e calma.",
+                      "children": [
+                        {
+                          "text": "A Maria agradece e tenta remover a pastilha sem chamar atenção.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "No final do filme, decides contar à professora o que viste.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mantiveste-te calmo até ao fim.",
+                              "children": [
+                                {
+                                  "text": "A professora fala com o Rafael e resolve a situação.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Não contas a ninguém e segues com o teu dia.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Evitaste um conflito.",
+                              "children": [
+                                {
+                                  "text": "A Maria agradece, mas ficas a pensar se devias ter feito mais.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ignoras o que viste e continuas a ver o filme.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Suprimiste a tua emoção e evitaste o conflito.",
+                      "children": [
+                        {
+                          "text": "A Maria só percebe o que aconteceu no final e fica muito triste.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Vamos chamar a professora. Ela ajuda-te a tirar isso.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mudaste o foco de alguém que estava triste.",
+                              "children": [
+                                {
+                                  "text": "A Maria agradece e vai contigo procurar a professora.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Continuas sem dizer nada e vais para casa.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Evitaste um conflito que te enervou.",
+                              "children": [
+                                {
+                                  "text": "Sentes-te um bocado mal pela Maria, mas pelo menos não aconteceu nenhuma confusão...",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

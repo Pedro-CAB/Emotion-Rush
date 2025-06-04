@@ -1,0 +1,163 @@
+{
+  "text": "Estás no auditório durante uma cerimónia. De repente, o teu colega Tiago começa a ficar muito pálido e leva a mão à barriga.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Tiago: \"Acho que não me estou a sentir bem...\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "O Tiago levanta-se a correr e acaba por vomitar mesmo ali ao lado das cadeiras.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Sentes um cheiro forte e ficas com o estômago às voltas.",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "O que estás a sentir neste momento?",
+                  "type": "EmotionOption",
+                  "answer": "Nojo",
+                  "children": [
+                    {
+                      "text": "O Tiago está envergonhado e precisa de ajuda.",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "Respiras fundo, tentas não pensar no cheiro e vais chamar um funcionário.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "Foste ajudar apesar do nojo.",
+                          "children": [
+                            {
+                              "text": "Funcionário: \"Obrigado por avisares, já trato disto.\"",
+                              "type": "Linear",
+                              "children": [
+                                {
+                                  "text": "Voltas para o teu lugar e vês o Tiago ainda envergonhado.",
+                                  "type": "TwoOption",
+                                  "children": [
+                                    {
+                                      "text": "Dizes ao Tiago que não faz mal, que pode acontecer a qualquer um.",
+                                      "type": "DialogueOption",
+                                      "score": 1,
+                                      "feedback": "Ajudaste o colega a sentir-se melhor.",
+                                      "children": [
+                                        {
+                                          "text": "Tiago: \"Obrigado, estava mesmo envergonhado.\"",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "text": "Ficas calado e não dizes nada ao Tiago.",
+                                      "type": "DialogueOption",
+                                      "score": 0,
+                                      "feedback": "",
+                                      "children": [
+                                        {
+                                          "text": "O Tiago continua cabisbaixo o resto da cerimónia.",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Ficas calado e tentas ignorar o que aconteceu.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "Conseguiste controlar o nojo.",
+                          "children": [
+                            {
+                              "text": "O Tiago é ajudado por outra pessoa, mas tu consegues manter a calma.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "No final, perguntas ao Tiago se está melhor.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "Mostraste preocupação.",
+                                  "children": [
+                                    {
+                                      "text": "Tiago: \"Sim, obrigado por perguntares.\"",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Decides não falar com o Tiago sobre o que aconteceu.",
+                                  "type": "DialogueOption",
+                                  "score": 0,
+                                  "feedback": "",
+                                  "children": [
+                                    {
+                                      "text": "O Tiago parece continuar desconfortável.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Fazes uma cara feia e afastas-te rapidamente, comentando com outros colegas.",
+                          "type": "DialogueOption",
+                          "score": -1,
+                          "feedback": "Reagiste mal ao desconforto.",
+                          "children": [
+                            {
+                              "text": "Colega: \"Que nojo! Ainda bem que não fui eu.\"",
+                              "type": "Linear",
+                              "children": [
+                                {
+                                  "text": "O Tiago ouve os comentários e fica ainda mais envergonhado.",
+                                  "type": "TwoOption",
+                                  "children": [
+                                    {
+                                      "text": "Percebendo que exageraste, vais pedir desculpa ao Tiago.",
+                                      "type": "DialogueOption",
+                                      "score": 1,
+                                      "feedback": "Tentaste corrigir uma atitude desrespeitosa tua.",
+                                      "children": [
+                                        {
+                                          "text": "Tiago: \"Obrigado por vires falar comigo.\"",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "text": "Continuas a rir e a comentar com os colegas.",
+                                      "type": "DialogueOption",
+                                      "score": -1,
+                                      "feedback": "Mantiveste uma atitude desrespeitosa.",
+                                      "children": [
+                                        {
+                                          "text": "O Tiago fica ainda mais desconfortável e triste.",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

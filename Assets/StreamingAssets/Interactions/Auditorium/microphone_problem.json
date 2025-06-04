@@ -1,0 +1,211 @@
+{
+  "text": "Estás no auditório a assistir a um discurso importante da diretora. O público está atento e a sala está silenciosa.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Diretora: \"Quero agradecer a todos por estarem presentes nesta cerimónia tão especial para a nossa escola.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "De repente, o microfone avaria e começa a fazer ruídos estranhos. A diretora tenta continuar, mas o som falha completamente.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Diretora: \"Peço desculpa, parece que estamos com problemas técnicos...\"",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "Alguns alunos começam a rir e a comentar baixinho.",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Colega: \"Isto está a ficar engraçado!\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Sentes uma enorme vontade de rir, contagiado com o riso dos teus colegas.",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "O que estás a sentir neste momento?",
+                              "type": "EmotionOption",
+                              "answer": "Alegria",
+                              "children": [
+                                {
+                                  "text": "A diretora faz uma pausa e olha para o público, visivelmente desconfortável.",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                      "text": "Professor: \"Silêncio, por favor. Vamos respeitar a diretora.\"",
+                                      "type": "Linear",
+                                      "children": [
+                                        {
+                                          "text": "Tens de decidir como reagir.",
+                                          "type": "ThreeOption",
+                                          "children": [
+                                            {
+                                              "text": "Rio-me alto com os outros colegas.",
+                                              "type": "DialogueOption",
+                                              "score": -1,
+                                              "feedback": "- Reagiste de forma descontrolada.",
+                                              "children": [
+                                                {
+                                                  "text": "Diretora: \"Vamos tentar continuar...\"",
+                                                  "type": "Linear",
+                                                  "children": [
+                                                    {
+                                                      "text": "Professor: \"Por favor, silêncio!\"",
+                                                      "type": "Linear",
+                                                      "children": [
+                                                        {
+                                                          "text": "Colega: \"Agora é que ficou mesmo estranho...\"",
+                                                          "type": "Linear",
+                                                          "children": [
+                                                            {
+                                                              "text": "Já chega. Tento conter o riso.",
+                                                              "type": "DialogueOption",
+                                                              "score": 1,
+                                                              "feedback": "- Suprimiste a emoção e corrigiste o comportamento.",
+                                                              "children": [
+                                                                {
+                                                                  "text": "Diretora: \"Obrigada pela compreensão. Vou tentar continuar.\"",
+                                                                  "type": "Linear",
+                                                                  "children": [
+                                                                    {
+                                                                    "text": "Os teus colegas também se acalmam e a cerimónia prossegue.",
+                                                                    "type": "Linear"
+                                                                    }
+                                                                    ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "text": "Continuas a rir e a fazer comentários.",
+                                                              "type": "DialogueOption",
+                                                              "score": -1,
+                                                              "feedback": "- Mantiveste uma atitude desregulada e aumentaste o desconforto.",
+                                                              "children": [
+                                                                {
+                                                                  "text": "Professor: \"Se não consegues respeitar, vais ter de sair.\"",
+                                                                  "type": "Linear"
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "Ficas calado e tentas ignorar a situação.",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "- Suprimiste a emoção e evitaste contribuir para o desconforto.",
+                                              "children": [
+                                                {
+                                                  "text": "Diretora: \"Obrigada a quem está a manter o respeito. Vou tentar continuar.\"",
+                                                  "type": "Linear",
+                                                  "children": [
+                                                    {
+                                                      "text": "Colega: \"Ainda bem que já está tudo mais calmo.\"",
+                                                      "type": "Linear",
+                                                      "children": [
+                                                        {
+                                                          "text": "No final, elogias a diretora pela forma como lidou com a situação.",
+                                                          "type": "DialogueOption",
+                                                          "score": 1,
+                                                          "feedback": "- Mostraste empatia e reforçaste o apoio.",
+                                                          "children": [
+                                                            {
+                                                              "text": "Diretora: \"Muito obrigada, fico contente por teres gostado.\"",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "text": "Decides não dizer nada a ninguém sobre o assunto.",
+                                                          "type": "DialogueOption",
+                                                          "score": 0,
+                                                          "feedback": "",
+                                                          "children": [
+                                                            {
+                                                              "text": "O dia segue normalmente.",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "Olhas para a diretora e fazes-lhe um sinal de apoio com um sorriso.",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "- Usaste reavaliação cognitiva para apoiar a diretora.",
+                                              "children": [
+                                                {
+                                                  "text": "Diretora: \"Obrigada pelo apoio!\"",
+                                                  "type": "Linear",
+                                                  "children": [
+                                                    {
+                                                      "text": "Colega: \"Boa, ajudaste a diretora a sentir-se melhor.\"",
+                                                      "type": "Linear",
+                                                      "children": [
+                                                        {
+                                                          "text": "No final, vais ter com a diretora e dizes-lhe que gostaste do discurso.",
+                                                          "type": "DialogueOption",
+                                                          "score": 1,
+                                                          "feedback": "- Reforçaste o apoio e a empatia.",
+                                                          "children": [
+                                                            {
+                                                              "text": "Diretora: \"Muito obrigada, fico contente por teres gostado.\"",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "text": "Decides não falar mais sobre o assunto.",
+                                                          "type": "DialogueOption",
+                                                          "score": 0,
+                                                          "feedback": "- Não pioraste nem melhoraste a situação.",
+                                                          "children": [
+                                                            {
+                                                              "text": "O dia segue normalmente.",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
