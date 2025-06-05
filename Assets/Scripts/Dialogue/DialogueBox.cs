@@ -185,7 +185,7 @@ public class DialogueBox : MonoBehaviour
         currentLine = l;
         if (l.type == DialogueLine.LineType.EmotionOption)
         {
-            List<string> emotions = new List<string> { "Alegria", "Tristeza", "Medo", "Nojo", "Raiva" };
+            List<string> emotions = new List<string> { "Alegria", "Tristeza", "Medo", "Nojo", "Raiva", "Desprezo", "Surpresa" };
             emotions.Remove(l.answer);
             List<string> shuffledEmotions = emotions.OrderBy(i => Guid.NewGuid()).ToList();
             List<string> options = new List<string> { };

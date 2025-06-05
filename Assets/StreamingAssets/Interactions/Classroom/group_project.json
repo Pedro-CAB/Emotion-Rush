@@ -1,0 +1,157 @@
+{
+  "text": "Estás a trabalhar em grupo numa atividade de aula. Cada colega tem uma tarefa, mas ainda faltam fazer algumas partes e o grupo começa a discutir sobre quem deve fazer o quê.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Carolina: \"Eu já fiz a parte mais difícil, agora alguém que faça o resto!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "João: \"Não é justo, a minha parte foi mais difícil!\"",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Sentes o ambiente a ficar pesado e o teu corpo tenso.",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "O que estás a sentir neste momento?",
+                  "type": "EmotionOption",
+                  "answer": "Raiva",
+                  "children": [
+                    {
+                      "text": "O grupo olha para ti à espera de uma reação.",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Malta, foquem-se. Digam o que cada um fez e dividimos o que falta.\"",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Contiveste-te e mantiveste a calma.",
+                          "children": [
+                            {
+                              "text": "A Carolina explica que fez a Introdução e a primeira parte, enquanto que o João colocou as imagens e fez a conclusão.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "\"Todos trabalhamos bem. Não há motivo para chatices.\"",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Destacaste o trabalho de todos para acalmar ânimos.",
+                                  "children": [
+                                    {
+                                      "text": "Carolina: \"Tens razão! Nem tinha pensado no trabalho que a parte do João dava!\"",
+                                      "type": "Linear",
+                                      "children": [
+                                        {
+                                        "text": "João: \"Acho que estamos todos cansados. Desculpa Carolina, vamos lá acabar isto.\"",
+                                        "type": "Linear"
+                                        }
+                                        ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "\"Então fui eu que tive mais trabalho! Vocês é que deviam fazer o resto!\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- Aumentaste a tensão ao agir impulsivamente.",
+                                  "children": [
+                                    {
+                                      "text": "O trabalho fica tenso e a aula acaba antes de o conseguirem terminar. Agora vão ter trabalho extra em casa...",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Ignoras o conflito e continuas a fazer a tua parte.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "Conseguiste manter a calma.",
+                          "children": [
+                            {
+                              "text": "Os dois continuam a discutir várias vezes, enquanto tu adiantas a tua parte.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "\"Façam uma pausa e voltem ao trabalho depois de se acalmarem.\"",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Mudar o foco dos teus colegas deixou-os mais calmos.",
+                                  "children": [
+                                    {
+                                      "text": "Depois de alguns minutos, o grupo volta ao trabalho e termina o trabalho na aula. Menos trabalho para fazer em casa!",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Ficas em silêncio a trabalhar.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Ignoraste um conflito para ele não piorar.",
+                                  "children": [
+                                    {
+                                      "text": "Consegues terminar a tua parte, mas vais ter que fazer trabalho extra para adiantar a parte dos teus amigos, que passaram o tempo a discutir.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Ficas irritado e dizes: \"Se não querem trabalhar, faço tudo sozinho!\"",
+                          "type": "DialogueOption",
+                          "score": -1,
+                          "feedback": "- Aumentaste o conflito.",
+                          "children": [
+                            {
+                              "text": "A Carolina e o João começam a gritar contigo também.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "\"Malta, vamos todos fazer uma pausa para nos acalmar.\"",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Tentaste corrigir o erro.",
+                                  "children": [
+                                    {
+                                      "text": "Alguns minutos depois, o grupo volta ao trabalho de forma mais calma, e as coisas fluem muito melhor.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Manténs a tua posição e trabalhas sozinho.",
+                                  "type": "DialogueOption",
+                                  "score": 0,
+                                  "feedback": "- Isolaste-te e ficaste sobrecarregado de trabalho.",
+                                  "children": [
+                                    {
+                                      "text": "Acabas por ficar sobrecarregado de trabalho e não o acabas a tempo...",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

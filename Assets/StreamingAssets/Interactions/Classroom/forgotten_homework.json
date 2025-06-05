@@ -1,0 +1,145 @@
+{
+  "text": "A aula começa e o professor entra na sala com uma pilha de folhas.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Professor: \"Bom dia! Quero que entreguem o trabalho de casa que pedi ontem.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o coração a bater mais rápido e as mãos a suar. Percebes que te esqueceste completamente do trabalho.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Medo",
+              "children": [
+                {
+                  "text": "O professor começa a recolher os trabalhos fila a fila.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Levanto a mão e explico ao professor que me esqueci.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "Foste honesto e enfrentaste a situação.",
+                      "children": [
+                        {
+                          "text": "Professor: \"Agradeço a sinceridade. Da próxima vez tenta apontar os trabalhos no caderno.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Prometes ao professor que vais ter mais atenção.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Mostraste responsabilidade.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"É assim mesmo, obrigado.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficas calado e não dizes mais nada.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "A aula segue normalmente.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficas calado e esperas que o professor não repare.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "Conseguiste controlar a ansiedade.",
+                      "children": [
+                        {
+                          "text": "O professor chega à tua mesa e percebe que não tens o trabalho.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Dizes que te esqueceste e pedes desculpa.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Assumiste o erro.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"Obrigado por dizeres a verdade.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Inventas uma desculpa para não entregar o trabalho.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "Mentiste para evitar o problema.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"Espero que para a próxima sejas honesto.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficas nervoso e tentas copiar o trabalho de um colega à pressa.",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "Tentaste resolver de forma errada.",
+                      "children": [
+                        {
+                          "text": "Colega: \"Não devias copiar, podes ter problemas.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Desistes de copiar e assumes o erro.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Corrigiste a atitude.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"Obrigado por seres sincero.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Continuas a copiar mesmo assim.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "Insististe no erro.",
+                              "children": [
+                                {
+                                  "text": "O professor apanha-te a copiar e ficas sem nota.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
