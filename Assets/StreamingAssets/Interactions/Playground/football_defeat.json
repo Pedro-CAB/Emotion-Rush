@@ -12,11 +12,11 @@
           "answer": "Tristeza",
           "children": [
             {
-              "text": "O Miguel, teu colega de equipa, aproxima-se: \"Foi por pouco. Jogámos bem, mas eles marcaram no fim.\"",
+              "text": "O Miguel aproxima-se: \"Foi por pouco. Jogámos bem, mas eles marcaram no fim.\"",
               "type": "ThreeOption",
               "children": [
                 {
-                  "text": "\"Sim... Tentamos o nosso melhor. Fica para a próxima.\"",
+                  "text": "\"Tentamos o nosso melhor. Fica para a próxima.\"",
                   "type": "DialogueOption",
                   "score": 1,
                   "feedback": "- Reavaliar a situação com foco no esforço ajuda a lidar com a tristeza.",
