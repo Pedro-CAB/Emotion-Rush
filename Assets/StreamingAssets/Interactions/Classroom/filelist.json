@@ -5,6 +5,7 @@
         "joke_during_class.json",
         "forgotten_homework.json",
         "surprise_test.json",
-        "group_project.json"
+        "group_project.json",
+        "teacher_question.json"
     ]
 }

@@ -1,6 +1,9 @@
 {
     "files":[
         "bad_football_play.json",
-        "football_fail.json"
+        "football_fail.json",
+        "foul_play_football.json",
+        "handball_null_point.json",
+        "picked_last_for_a_team.json"
     ]
 }

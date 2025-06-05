@@ -1,0 +1,151 @@
+{
+  "text": "A turma está no ginásio a formar equipas para jogar basquetebol. Os capitães vão escolhendo colegas um a um.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Ficas a ver os outros serem escolhidos até sobrares só tu.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes-te a ficar pequeno e com vontade de desaparecer.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Tristeza",
+              "children": [
+                {
+                  "text": "O jogo vai começar e tens de decidir como agir.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Provavelmente foi só azar. Focas-te em jogar o melhor que podes.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Superaste a tristeza e esforçaste-te.",
+                      "children": [
+                        {
+                          "text": "No final, o Miguel, da outra equipa, elogia-te por jogares bem.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Para a próxima vejam lá se me escolhem logo!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Deixaste a tua tristeza levar a melhor.",
+                              "children": [
+                                {
+                                  "text": "O Miguel ignora-te. Talvez não tenha sido a melhor forma de conseguir ser escolhido...",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Obrigado! Foi um bom jogo.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "- Deixaste a tristeza de lado.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ninguém quer jogar comigo então vou jogar mal de propósito.",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Deixaste a tua tristeza levar a melhor.",
+                      "children": [
+                        {
+                          "text": "Luís:\"O que é que estás a fazer? Nem estás a tentar!\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Desculpa. Eu não gosto que me escolham por último.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Explicas-te o que te incomoda de forma calma.",
+                              "children": [
+                                {
+                                  "text": "Luís: \"Vai haver sempre alguém a ser o último. Isso não quer dizer nada.\"",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                    "text": "Ganhas um pouco mais de vontade de jogar e aproveitas o resto da aula.",
+                                    "type": "Linear"
+                                    }
+                                    ]
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Estou farto deste jogo! Só quero ir embora!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Reagiste impulsivamente.",
+                              "children": [
+                                {
+                                  "text": "A aula passa devagar e ninguém percebeu porque estavas assim tão desanimado.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficas irritado e dizes em voz alta: \"Nunca me escolhem! Também não quero jogar!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Reagiste de forma desregulada.",
+                      "children": [
+                        {
+                          "text": "O professor pede-te para te acalmares.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Respiras fundo e decides jogar mesmo assim.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Conseguiste recuperar a calma.",
+                              "children": [
+                                {
+                                  "text": "O jogo segue normalmente.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Recusas jogar e ficas de fora.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Isolaste-te por estares triste.",
+                              "children": [
+                                {
+                                  "text": "Ficas a ver o jogo do banco, triste.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
