@@ -1,0 +1,163 @@
+{
+  "text": "Estás no laboratório e o professor pede para limpares um recipiente que ficou com restos de uma experiência anterior.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "A Sofia aproxima-se e faz uma careta.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sofia: \"Isto cheira mesmo mal... Consegues ajudar-me a limpar isto?\"",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Sentes o cheiro intenso e o estômago a revirar-se.",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "O que estás a sentir neste momento?",
+                  "type": "EmotionOption",
+                  "answer": "Nojo",
+                  "children": [
+                    {
+                      "text": "A Sofia olha para ti à espera de resposta.",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "Tapar o nariz com um lenço e ajudar.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Evitaste algo nojento...",
+                          "children": [
+                            {
+                              "text": "Sofia: \"Ai, isto é mesmo malcheiroso! Podes limpar tu?\"",
+                              "type": "ThreeOption",
+                              "children": [
+                                {
+                                  "text": "Continuar a limpar sozinho.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Mas resolveste o problema sozinho!",
+                                  "children": [
+                                    {
+                                      "text": "Demoraste mais tempo a limpar o material sozinho, mas pelo menos resolveste o problema.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Gritar: \"Não vou fazer isto sozinho!\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- E o problema ficou por resolver.",
+                                  "children": [
+                                    {
+                                      "text": "Tu e a Sofia deixam o material sujo na sala. O professor descobre e diminui a vossa nota no trabalho.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Arranjar um lenço para a Sofia.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Mas resolveste o problema com um colega!",
+                                  "children": [
+                                    {
+                                      "text": "A aula segue normalmente.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Ignoras e afastas-te.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Ignoraste algo nojento...",
+                          "children": [
+                            {
+                              "text": "A Sofia fica maldisposta com o cheiro e vomita.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "\"Que nojo! Agora pioraste o cheiro!\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- E agravaste a situação.",
+                                  "children": [
+                                    {
+                                      "text": "O professor chama uma funcionária para limpar e diminui a tua nota no trabalho.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Afastá-la do mau cheiro e pedir ajuda.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Mas ajudaste quando as coisas se complicaram!",
+                                  "children": [
+                                    {
+                                      "text": "Uma funcionária ajuda-vos a limpar o laboratório, enquanto pedes desculpa à Sofia por a ter ignorado.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "\"Que nojo, não vou tocar nisso!\"",
+                          "type": "DialogueOption",
+                          "score": -1,
+                          "feedback": "- Cedeste ao nojo reagindo impulsivamente...",
+                          "children": [
+                            {
+                              "text": "A Sofia fica a limpar sozinha, com ar de enjoada.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "Pedes desculpa e vais ajudar.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Tentaste corrigir o teu erro.",
+                                  "children": [
+                                    {
+                                      "text": "A Sogia agradece e o laboratório fica limpo antes do professor voltar.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Finges não notar e vais embora.",
+                                  "type": "DialogueOption",
+                                  "score": 0,
+                                  "feedback": "Mantiveste a atitude negativa.",
+                                  "children": [
+                                    {
+                                      "text": "O professor repara e pede-te para ajudar da próxima vez, diminuindo a tua nota do trabalho.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

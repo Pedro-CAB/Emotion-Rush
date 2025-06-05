@@ -1,0 +1,107 @@
+{
+  "text": "Vais entregar um livro à biblioteca. A funcionária olha para o sistema e diz:",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Funcionária: \"Tens uma multa porque entregaste o livro atrasado.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o rosto a aquecer e o coração a bater mais depressa. Tens a certeza que não te atrasaste a entregar o livro.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Raiva",
+              "children": [
+                {
+                  "text": "A funcionária espera a tua reação.",
+                  "type": "TwoOption",
+                  "children": [
+                    {
+                      "text": "\"Deve haver algum engano. Tem a certeza?\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Explicaste a situação calmamente...",
+                      "children": [
+                        {
+                          "text": "Funcionária: \"Deixa-me confirmar... Oh! Tens razão, desculpa.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Não há problema, acontece.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- E resolveste a situação com calma.",
+                              "children": [
+                                {
+                                  "text": "Entregas o livro à funcionária rapidamente e a situação fica resolvida.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Já queria ver se me enganava, é?\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Mas acabaste por te exaltar e perder a razão.",
+                              "children": [
+                                {
+                                  "text": "A funcionária não gosta da forma como falaste e parece ficar triste, mas recebe o teu livro e manda-te embora. Podias ter resolvido a situação sem te chatear...",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"O quê?! Não seja mentirosa!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Exaltaste-te por causa de uma injustiça...",
+                      "children": [
+                        {
+                          "text": "Funcionária: \"Calma! Aqui diz que está atrasado!\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Perdão. Pode confirmar novamente?\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Tentaste explicar calmamente o que se passava.",
+                              "children": [
+                                {
+                                  "text": "A funcionária percebeu que estava a ver no sítio errado e pede-te desculpa, mas pede-te para manteres a calma quando isto acontecer.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Não está nada atrasado! Pare de mentir!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- E insististe agressivamente...",
+                              "children": [
+                                {
+                                  "text": "A funcionária recusa-se a verificar novamente e diz que vai fazer queixa tua à direção. A situação é resolvida mais tarde, mas toda esta confusão podia ter sido evitada...",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

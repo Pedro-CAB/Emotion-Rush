@@ -1,5 +1,9 @@
 {
     "files":[
-        "science_presentation.json"
+        "science_presentation.json",
+        "cleaning_material.json",
+        "problems_using_material.json",
+        "experiment_success.json",
+        "teacher_question.json"
     ]
 }

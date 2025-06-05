@@ -1,5 +1,7 @@
 {
     "files":[
-        "class_meeting_speak.json"
+        "class_meeting_speak.json",
+        "computer_game.json",
+        "book_delivery.json"
     ]
 }
