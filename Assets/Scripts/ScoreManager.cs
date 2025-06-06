@@ -63,6 +63,7 @@ public class ScoreManager : MonoBehaviour
         giveCoins();
         updateIncs();
         updateBars();
+        playerScoreIncrement = 0;
     }
 
     void updateClassAPoints()
@@ -70,7 +71,6 @@ public class ScoreManager : MonoBehaviour
         classAScore = classAScore + playerScoreIncrement;
         PlayerPrefs.SetInt("classAScore", classAScore);
         PlayerPrefs.SetInt("playerScoreIncrement", 0);
-        playerScoreIncrement = 0;
     }
 
     void updateClassAPosition()
@@ -263,5 +263,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
         coinGainText.text = "+" + coinGain.ToString();
+        Debug.Log("Coin Gain: " + coinGain);
     }
 }

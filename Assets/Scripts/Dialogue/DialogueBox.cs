@@ -249,6 +249,7 @@ public class DialogueBox : MonoBehaviour
             DialogueLine promptLine = currentLine;
             DialogueLine chosenLine = currentLine.dialogueOptions[optionIndex];
             PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
+            Debug.Log("Player Score Increment: " + PlayerPrefs.GetInt("playerScoreIncrement"));
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
             {

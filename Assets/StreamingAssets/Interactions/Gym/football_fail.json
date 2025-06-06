@@ -3,7 +3,7 @@
   "type": "Linear",
   "children": [
     {
-      "text": "A bola vem mesmo para ti, estás isolado e prestes a marcar... Mas falhas por pouco.",
+      "text": "Falhas um remate por muito pouco. O que sentes?",
       "type": "EmotionOption",
       "answer": "Tristeza",
       "children": [
@@ -124,7 +124,7 @@
               ]
             },
             {
-              "text": "Fazes um gesto com a mão e voltas a correr para a defesa.",
+              "text": "Ignoras e voltas a correr para a defesa.",
               "type": "DialogueOption",
               "score": 1,
               "feedback": "- Suprimiste a frustração e seguiste o jogo.",
