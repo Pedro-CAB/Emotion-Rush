@@ -9,6 +9,8 @@ public class Pause : MonoBehaviour
     public GameObject unpausedUI;
 
     public GameObject areYouSureUI;
+
+    public GameObject helpUI;
     public AudioPlayer audioPlayer; // Reference to the AudioPlayer for playing scene music and sounds
 
     void Start()
@@ -16,6 +18,7 @@ public class Pause : MonoBehaviour
         pausedUI.SetActive(false);
         unpausedUI.SetActive(true);
         areYouSureUI.SetActive(false);
+        helpUI.SetActive(false);
     }
 
     public void ResumeGame(){
@@ -31,6 +34,20 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0;
         pausedUI.SetActive(true);
         unpausedUI.SetActive(false);
+    }
+
+    public void ShowHelp()
+    {
+        audioPlayer.playButtonPushSound();
+        helpUI.SetActive(true);
+        pausedUI.SetActive(false);
+    }
+
+    public void HideHelp()
+    {
+        audioPlayer.playButtonPushSound();
+        helpUI.SetActive(false);
+        pausedUI.SetActive(true);
     }
 
 
