@@ -62,6 +62,13 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         audioPlayer.playButtonPushSound();
+        StartCoroutine(WaitAndContinue(0.47f));
+        sequenceManager.startDay();
+
+        IEnumerator WaitAndContinue(float time)
+        {
+            yield return new WaitForSeconds(time);
+        }
     }
 
     /// <summary>

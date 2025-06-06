@@ -70,6 +70,7 @@ public class ScoreManager : MonoBehaviour
         classAScore = classAScore + playerScoreIncrement;
         PlayerPrefs.SetInt("classAScore", classAScore);
         PlayerPrefs.SetInt("playerScoreIncrement", 0);
+        playerScoreIncrement = 0;
     }
 
     void updateClassAPosition()

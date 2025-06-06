@@ -84,8 +84,8 @@
                                   ]
                                 },
                                 {
-                                  "text": "Não falas mais com o Rui.",
-                                  "type": "\"Anda para aqui que eu ajudo-te.\"",
+                                  "text": "\"Anda para aqui que eu ajudo-te.\"",
+                                  "type": "Linear",
                                   "score": 0,
                                   "feedback": "- E ajudaste quem precisava.",
                                   "children": [
