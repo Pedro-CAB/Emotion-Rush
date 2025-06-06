@@ -27,7 +27,7 @@
                           "text": "\"Malta, foquem-se. Digam o que cada um fez e dividimos o que falta.\"",
                           "type": "DialogueOption",
                           "score": 1,
-                          "feedback": "- Contiveste-te e mantiveste a calma.",
+                          "feedback": "- Mantiveste a calma...",
                           "children": [
                             {
                               "text": "A Carolina explica que fez a Introdução e a primeira parte, enquanto que o João colocou as imagens e fez a conclusão.",
@@ -37,7 +37,7 @@
                                   "text": "\"Todos trabalhamos bem. Não há motivo para chatices.\"",
                                   "type": "DialogueOption",
                                   "score": 1,
-                                  "feedback": "- Destacaste o trabalho de todos para acalmar ânimos.",
+                                  "feedback": "- E mudaste o foco para o trabalho de cada um.",
                                   "children": [
                                     {
                                       "text": "Carolina: \"Tens razão! Nem tinha pensado no trabalho que a parte do João dava!\"",
@@ -55,7 +55,7 @@
                                   "text": "\"Então fui eu que tive mais trabalho! Vocês é que deviam fazer o resto!\"",
                                   "type": "DialogueOption",
                                   "score": -1,
-                                  "feedback": "- Aumentaste a tensão ao agir impulsivamente.",
+                                  "feedback": "   - Mas zangaste-te ao fim de algum tempo...",
                                   "children": [
                                     {
                                       "text": "O trabalho fica tenso e a aula acaba antes de o conseguirem terminar. Agora vão ter trabalho extra em casa...",
@@ -68,10 +68,10 @@
                           ]
                         },
                         {
-                          "text": "Ignoras o conflito e continuas a fazer a tua parte.",
+                          "text": "Ignorar e continuar a minha parte.",
                           "type": "DialogueOption",
                           "score": 1,
-                          "feedback": "Conseguiste manter a calma.",
+                          "feedback": "- Evitaste envolver-te numa discussão...",
                           "children": [
                             {
                               "text": "Os dois continuam a discutir várias vezes, enquanto tu adiantas a tua parte.",
@@ -81,7 +81,7 @@
                                   "text": "\"Façam uma pausa e voltem ao trabalho depois de se acalmarem.\"",
                                   "type": "DialogueOption",
                                   "score": 1,
-                                  "feedback": "- Mudar o foco dos teus colegas deixou-os mais calmos.",
+                                  "feedback": "   - E mudaste o foco dos teus amigos para os acalmar.",
                                   "children": [
                                     {
                                       "text": "Depois de alguns minutos, o grupo volta ao trabalho e termina o trabalho na aula. Menos trabalho para fazer em casa!",
@@ -90,10 +90,10 @@
                                   ]
                                 },
                                 {
-                                  "text": "Ficas em silêncio a trabalhar.",
+                                  "text": "Ficar em silêncio a trabalhar.",
                                   "type": "DialogueOption",
                                   "score": 1,
-                                  "feedback": "- Ignoraste um conflito para ele não piorar.",
+                                  "feedback": "   - E mantiveste-te calmo enquanto ela acontecia.",
                                   "children": [
                                     {
                                       "text": "Consegues terminar a tua parte, mas vais ter que fazer trabalho extra para adiantar a parte dos teus amigos, que passaram o tempo a discutir.",
@@ -106,10 +106,10 @@
                           ]
                         },
                         {
-                          "text": "Ficas irritado e dizes: \"Se não querem trabalhar, faço tudo sozinho!\"",
+                          "text": "Gritar: \"Se não querem trabalhar, faço tudo sozinho!\"",
                           "type": "DialogueOption",
                           "score": -1,
-                          "feedback": "- Aumentaste o conflito.",
+                          "feedback": "- Pioraste uma discussão...",
                           "children": [
                             {
                               "text": "A Carolina e o João começam a gritar contigo também.",
@@ -119,7 +119,7 @@
                                   "text": "\"Malta, vamos todos fazer uma pausa para nos acalmar.\"",
                                   "type": "DialogueOption",
                                   "score": 1,
-                                  "feedback": "- Tentaste corrigir o erro.",
+                                  "feedback": "   - Mas mudaste o teu foco para te acalmares.",
                                   "children": [
                                     {
                                       "text": "Alguns minutos depois, o grupo volta ao trabalho de forma mais calma, e as coisas fluem muito melhor.",
@@ -128,10 +128,10 @@
                                   ]
                                 },
                                 {
-                                  "text": "Manténs a tua posição e trabalhas sozinho.",
+                                  "text": "Insistir em trabalhar sozinho.",
                                   "type": "DialogueOption",
                                   "score": 0,
-                                  "feedback": "- Isolaste-te e ficaste sobrecarregado de trabalho.",
+                                  "feedback": "- E isolaste-te e ficaste sobrecarregado...",
                                   "children": [
                                     {
                                       "text": "Acabas por ficar sobrecarregado de trabalho e não o acabas a tempo...",

@@ -20,20 +20,20 @@
                   "type": "ThreeOption",
                   "children": [
                     {
-                      "text": "Sussurrar a próxima fala ao João, sem mostrar nervosismo.",
+                      "text": "Sussurrar-lhe a próxima fala.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Contiveste os nervos para a peça de teatro correr bem.",
+                      "feedback": "- Contiveste os nervos...",
                       "children": [
                         {
                           "text": "O João sorri de alívio e continua a peça. Ficas com algum medo de te esqueceres das tuas falas.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Se me esquecer de algo, ninguém vai dar conta.",
+                              "text": "Se me esquecer de algo, ninguém vai notar.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Ignoraste os teus medos.",
+                              "feedback": "   - E enfrentaste os teus medos!",
                               "children": [
                                 {
                                   "text": "A peça termina sem mais problemas e o público aplaude.",
@@ -42,10 +42,10 @@
                               ]
                             },
                             {
-                              "text": "Falar mais rápido as tuas falas para sair do palco.",
+                              "text": "Falar mais rápido e sair do palco.",
                               "type": "DialogueOption",
                               "score": -1,
-                              "feedback": "- Deixaste o medo afetar a tua atuação.",
+                              "feedback": "   - Mas deixaste o medo afetar-te...",
                               "children": [
                                 {
                                   "text": "As pessoas parecem não ter entendido muito bem o que disseste. A peça continua, mas podia ter sido melhor se ficasses mais calmo.",
@@ -58,20 +58,20 @@
                       ]
                     },
                     {
-                      "text": "Ignoras o que aconteceu e continuas a tua parte da peça.",
+                      "text": "Ignorar o que aconteceu e continuar.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Suprimiste a emoção e evitaste aumentar o nervosismo.",
+                      "feedback": "- Suprimiste o nervosismo...",
                       "children": [
                         {
                           "text": "O João acaba por recuperar sozinho, mas fica um pouco atrapalhado.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "No final, perguntar ao João se está tudo bem.",
+                              "text": "Assegurar ao João que ninguém deu conta do erro.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Mostraste preocupação e apoio após a situação.",
+                              "feedback": "   - E mudaste o foco de um amigo para o animar!",
                               "children": [
                                 {
                                   "text": "O João agradece e diz que para a próxima vai treinar mais as falas.",
@@ -80,7 +80,7 @@
                               ]
                             },
                             {
-                              "text": "Decides não falar sobre o assunto.",
+                              "text": "Não falar sobre o assunto.",
                               "type": "DialogueOption",
                               "score": 0,
                               "feedback": "",
@@ -96,23 +96,23 @@
                       ]
                     },
                     {
-                      "text": "Ficas nervoso e dizes em voz alta: \"João, é a tua fala agora!\"",
+                      "text": "Gritar: \"João, é a tua fala agora!\"",
                       "type": "DialogueOption",
                       "score": -1,
-                      "feedback": "- Reagiste de forma desregulada e aumentaste a pressão sobre o colega.",
+                      "feedback": "- Enervaste-te com um amigo...",
                       "children": [
                         {
                           "text": "O João fica ainda mais nervoso e o público começa a murmurar.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Percebendo o erro, tentas acalmar o João com um sorriso.",
+                              "text": "Acalmá-lo e pedir desculpa.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Tentaste corrigir a situação e apoiar o colega.",
+                              "feedback": "   - Mas corrigiste o comportamento para o ajudar!",
                               "children": [
                                 {
-                                  "text": "O João recupera um pouco e a peça continua.",
+                                  "text": "O João recupera um pouco e a peça continua. As pessoas parecem confusas com o teu grito mas ignoram e continuam a assistir.",
                                   "type": "Linear"
                                 }
                               ]
@@ -121,10 +121,10 @@
                               "text": "Continuas a pressionar o João para falar.",
                               "type": "DialogueOption",
                               "score": -1,
-                              "feedback": "- Mantiveste uma atitude desregulada e aumentaste o desconforto.",
+                              "feedback": "   - E pressionaste-o demasiado...",
                               "children": [
                                 {
-                                  "text": "O João acaba por não conseguir continuar e o professor intervém.",
+                                  "text": "O João acaba por não conseguir continuar, saindo a correr do palco e a peça tem que ser interrompida.",
                                   "type": "Linear"
                                 }
                               ]

@@ -23,7 +23,7 @@
                       "text": "Gritar \"Isso não é justo! Fizeste batota!\"",
                       "type": "DialogueOption",
                       "score": -1,
-                      "feedback": "- Reagiste impulsivamente e gritaste com alguém.",
+                      "feedback": "- Reagiste aos gritos...",
                       "children": [
                         {
                           "text": "O auditório fica em silêncio e todos olham para ti. O professor pede-te para te acalmares.",
@@ -34,10 +34,10 @@
                               "type": "TwoOption",
                               "children": [
                                 {
-                                  "text": "Pedir desculpa e esperar pelo fim da cerimónia para falar com a professora.",
+                                  "text": "Pedir desculpa e falar com a professora no fim.",
                                   "type": "DialogueOption",
                                   "score": 1,
-                                  "feedback": "- Corrigiste o teu comportamento depois de te enervares.",
+                                  "feedback": "   - Mas contiveste-te rapidamente!",
                                   "children": [
                                     {
                                       "text": "A professora ouve-te com atenção e promete averiguar a situação.",
@@ -46,10 +46,10 @@
                                   ]
                                 },
                                 {
-                                  "text": "Continuas a protestar em voz alta.",
+                                  "text": "Continuar a protestar em voz alta.",
                                   "type": "DialogueOption",
                                   "score": -1,
-                                  "feedback": "- Mantiveste uma atitude desregulada e aumentaste o conflito.",
+                                  "feedback": "   - E enervaste-te tanto que ninguém te ouviu...",
                                   "children": [
                                     {
                                       "text": "O professor pede-te para sair do auditório.",
@@ -64,20 +64,20 @@
                       ]
                     },
                     {
-                      "text": "Respiras fundo e esperas para falar com a professora de Matemática no final.",
+                      "text": "Respirar fundo e falar com a professora no fim.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Suprimiste as emoções para não gerar confusão.",
+                      "feedback": "- Tentaste suprimir os teus nervos...",
                       "children": [
                         {
                           "text": "O tempo passa devagar. O Fábio volta a sentar-se perto de ti, a sorrir.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Ignorar e falar com a professora no fim.",
+                              "text": "Ignorar e aguardar a professora.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Mantiveste as emoções sobre controlo até ao fim.",
+                              "feedback": "   - E mantiveste as emoções controladas!",
                               "children": [
                                 {
                                   "text": "A professora agradece a tua calma e diz que vai investigar a situação.",
@@ -89,7 +89,7 @@
                               "text": "Agarrá-lo e gritar: \"Seu grande batoteiro!\"",
                               "type": "DialogueOption",
                               "score": -1,
-                              "feedback": "- Falhaste em conter as tuas emoções.",
+                              "feedback": "   - Mas acabaste por te chatear...",
                               "children": [
                                 {
                                   "text": "A professora não percebe o que se passou e manda-te sair do auditório.",
@@ -105,17 +105,17 @@
                       "text": "Se não fosse ele a ganhar, eram outros. Talvez até seja mentira.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Acalmaste-te olhando para uma situação doutra forma.",
+                      "feedback": "- Acalmaste-te olhando para uma situação doutra forma...",
                       "children": [
                         {
                           "text": "A tensão no teu corpo diminui e sentes-te mais leve.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Decides manter-te calmo e esquecer o que ouviste.",
+                              "text": "Manter-me calmo e esquecer o que ouvi.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Arranjaste forma de esquecer algo que te enervou.",
+                              "feedback": "   - E esqueceste algo que te enervou!",
                               "children": [
                                 {
                                   "text": "Consegues aproveitar o resto da cerimónia sem te sentires incomodado.",
@@ -124,10 +124,10 @@
                               ]
                             },
                             {
-                              "text": "Falar com a professora sobre o que o Miguel te contou.",
+                              "text": "Falar com a professora.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Mantiveste a calma e resolveste um problema.",
+                              "feedback": "   - E expressaste o problema calmamente!",
                               "children": [
                                 {
                                   "text": "A professora ouve-te e agradece a tua preocupação. Explicar as coisas de forma calma ajudou a manter o ambiente tranquilo.",

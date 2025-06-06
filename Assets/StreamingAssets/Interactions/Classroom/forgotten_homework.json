@@ -20,20 +20,20 @@
                   "type": "ThreeOption",
                   "children": [
                     {
-                      "text": "Levanto a mão e explico ao professor que me esqueci.",
+                      "text": "Explicar a situação.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "Foste honesto e enfrentaste a situação.",
+                      "feedback": "- Enfrentaste uma situação calmamente...",
                       "children": [
                         {
-                          "text": "Professor: \"Agradeço a sinceridade. Da próxima vez tenta apontar os trabalhos no caderno.\"",
+                          "text": "Professor: \"Agradeço a sinceridade mas vou ter que te penalizar na nota. Da próxima vez tenta apontar os trabalhos no caderno.\"",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Prometes ao professor que vais ter mais atenção.",
+                              "text": "\"Prometo que vou ter mais atenção.\"",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "Mostraste responsabilidade.",
+                              "feedback": "   - E não te enervaste!",
                               "children": [
                                 {
                                   "text": "Professor: \"É assim mesmo, obrigado.\"",
@@ -42,13 +42,13 @@
                               ]
                             },
                             {
-                              "text": "Ficas calado e não dizes mais nada.",
+                              "text": "\"Não é justo! Quando são os outros não levam castigo!\"",
                               "type": "DialogueOption",
-                              "score": 0,
-                              "feedback": "",
+                              "score": -1,
+                              "feedback": "   - Mas acabaste por te irritar.",
                               "children": [
                                 {
-                                  "text": "A aula segue normalmente.",
+                                  "text": "O professor não gosta da tua atitude e manda-te sair da sala para te acalmares um pouco.",
                                   "type": "Linear"
                                 }
                               ]
@@ -58,35 +58,35 @@
                       ]
                     },
                     {
-                      "text": "Ficas calado e esperas que o professor não repare.",
+                      "text": "Ficar calado e esperar pelo professor.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "Conseguiste controlar a ansiedade.",
+                      "feedback": "- Evitaste uma situação tensa...",
                       "children": [
                         {
                           "text": "O professor chega à tua mesa e percebe que não tens o trabalho.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Dizes que te esqueceste e pedes desculpa.",
+                              "text": "\"Esqueci-me. Desculpe.\"",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "Assumiste o erro.",
+                              "feedback": " - E assumiste um erro calmamente.",
                               "children": [
                                 {
-                                  "text": "Professor: \"Obrigado por dizeres a verdade.\"",
+                                  "text": "Professor: \"Para a próxima dizes logo que não fizeste, quando eu perguntar. Vou ter que te descer a nota por causa disso.\"",
                                   "type": "Linear"
                                 }
                               ]
                             },
                             {
-                              "text": "Inventas uma desculpa para não entregar o trabalho.",
+                              "text": "\"Não me apeteceu fazer! Não me pode obrigar!\"",
                               "type": "DialogueOption",
                               "score": -1,
-                              "feedback": "Mentiste para evitar o problema.",
+                              "feedback": "   - Mas cedeste aos nervos e gritaste.",
                               "children": [
                                 {
-                                  "text": "Professor: \"Espero que para a próxima sejas honesto.\"",
+                                  "text": "O professor  não gosta da tua atitude e manda-te sair da sala para te acalmares um pouco.",
                                   "type": "Linear"
                                 }
                               ]
@@ -96,20 +96,20 @@
                       ]
                     },
                     {
-                      "text": "Ficas nervoso e tentas copiar o trabalho de um colega à pressa.",
+                      "text": "Puxar o trabalho da Joana.",
                       "type": "DialogueOption",
                       "score": -1,
-                      "feedback": "Tentaste resolver de forma errada.",
+                      "feedback": "- Foste agressivo para tentar resolver um problema...",
                       "children": [
                         {
-                          "text": "Colega: \"Não devias copiar, podes ter problemas.\"",
+                          "text": "O professor vê-te a puxar o trabalho e manda-te parar, antes que te dê 0 na nota.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Desistes de copiar e assumes o erro.",
+                              "text": "Desistir e admitir o esquecimento.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "Corrigiste a atitude.",
+                              "feedback": "   - Mas arrependeste-te e pediste desculpa.",
                               "children": [
                                 {
                                   "text": "Professor: \"Obrigado por seres sincero.\"",
@@ -118,13 +118,13 @@
                               ]
                             },
                             {
-                              "text": "Continuas a copiar mesmo assim.",
+                              "text": "\"Este trabalho é meu!\"",
                               "type": "DialogueOption",
                               "score": -1,
-                              "feedback": "Insististe no erro.",
+                              "feedback": "   - E continuaste mesmo depois de te pedirem para parar.",
                               "children": [
                                 {
-                                  "text": "O professor apanha-te a copiar e ficas sem nota.",
+                                  "text": "O professor dá-te 0 no trabalho e manda-te sair da sala.",
                                   "type": "Linear"
                                 }
                               ]

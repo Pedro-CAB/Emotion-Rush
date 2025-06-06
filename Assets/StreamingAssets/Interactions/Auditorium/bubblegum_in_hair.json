@@ -20,20 +20,20 @@
                   "type": "ThreeOption",
                   "children": [
                     {
-                      "text": "Chamas imediatamente a atenção do Rafael em voz alta.",
+                      "text": "Gritar e agarrá-lo: \"Eu vi isso! Para!\"",
                       "type": "DialogueOption",
                       "score": -1,
-                      "feedback": "- Gritar e ser agressivo não resolve nada.",
+                      "feedback": "- Respondeste agressivamente a uma provocação...",
                       "children": [
                         {
                           "text": "Alguns colegas olham para ti e a professora pede silêncio.",
                           "type": "TwoOption",
                           "children": [
                             {
-                              "text": "Decides levantar-te e avisar discretamente a professora.",
+                              "text": "Avisar a professora do que aconteceu.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Corrigiste a impulsividade e procuraste ajuda de um adulto.",
+                              "feedback": "   - Mas corrigiste a impulsividade e procuraste ajuda!",
                               "children": [
                                 {
                                   "text": "A professora agradece e resolve a situação com calma.",
@@ -42,10 +42,10 @@
                               ]
                             },
                             {
-                              "text": "Ficas calado e tentas ignorar o que aconteceu.",
+                              "text": "Continuar a agarrar: \"Achas que és engraçado é?\"",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Suprimiste a tua emoção perante algo que te enervou.",
+                              "feedback": "   - E continuaste agressivo até ao fim...",
                               "children": [
                                 {
                                   "text": "O filme continua, mas sentes-te inquieto pelo resto da sessão.",
@@ -61,7 +61,7 @@
                       "text": "Aproximas-te da Maria e sussurras que ela tem pastilha elástica no cabelo.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Ajudaste uma colega de forma discreta e calma.",
+                      "feedback": "- Controlaste-te e ajudaste discretamente...",
                       "children": [
                         {
                           "text": "A Maria agradece e tenta remover a pastilha sem chamar atenção.",
@@ -71,7 +71,7 @@
                               "text": "No final do filme, decides contar à professora o que viste.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Mantiveste-te calmo até ao fim.",
+                              "feedback": "   - E foste pedir ajuda sem te exaltares!",
                               "children": [
                                 {
                                   "text": "A professora fala com o Rafael e resolve a situação.",
@@ -83,7 +83,7 @@
                               "text": "Não contas a ninguém e segues com o teu dia.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Evitaste um conflito.",
+                              "feedback": "   - E evitaste agravar a situação!",
                               "children": [
                                 {
                                   "text": "A Maria agradece, mas ficas a pensar se devias ter feito mais.",
@@ -99,7 +99,7 @@
                       "text": "Ignoras o que viste e continuas a ver o filme.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Suprimiste a tua emoção e evitaste o conflito.",
+                      "feedback": "- Suprimiste a tua emoção...",
                       "children": [
                         {
                           "text": "A Maria só percebe o que aconteceu no final e fica muito triste.",
@@ -109,7 +109,7 @@
                               "text": "\"Vamos chamar a professora. Ela ajuda-te a tirar isso.\"",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Mudaste o foco de alguém que estava triste.",
+                              "feedback": "   - E mudaste o foco de alguém que estava triste!",
                               "children": [
                                 {
                                   "text": "A Maria agradece e vai contigo procurar a professora.",
@@ -121,7 +121,7 @@
                               "text": "Continuas sem dizer nada e vais para casa.",
                               "type": "DialogueOption",
                               "score": 1,
-                              "feedback": "- Evitaste um conflito que te enervou.",
+                              "feedback": "   - E evitaste um conflito que te enervou!",
                               "children": [
                                 {
                                   "text": "Sentes-te um bocado mal pela Maria, mas pelo menos não aconteceu nenhuma confusão...",
