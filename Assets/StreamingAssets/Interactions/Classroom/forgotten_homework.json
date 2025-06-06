@@ -1,0 +1,145 @@
+{
+  "text": "A aula começa e o professor entra na sala com uma pilha de folhas.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Professor: \"Bom dia! Quero que entreguem o trabalho de casa que pedi ontem.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o coração a bater mais rápido e as mãos a suar. Percebes que te esqueceste completamente do trabalho.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Medo",
+              "children": [
+                {
+                  "text": "O professor começa a recolher os trabalhos fila a fila.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Explicar a situação.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Enfrentaste uma situação calmamente...",
+                      "children": [
+                        {
+                          "text": "Professor: \"Agradeço a sinceridade mas vou ter que te penalizar na nota. Da próxima vez tenta apontar os trabalhos no caderno.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Prometo que vou ter mais atenção.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "   - E não te enervaste!",
+                              "children": [
+                                {
+                                  "text": "Professor: \"É assim mesmo, obrigado.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Não é justo! Quando são os outros não levam castigo!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "   - Mas acabaste por te irritar.",
+                              "children": [
+                                {
+                                  "text": "O professor não gosta da tua atitude e manda-te sair da sala para te acalmares um pouco.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficar calado e esperar pelo professor.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Evitaste uma situação tensa...",
+                      "children": [
+                        {
+                          "text": "O professor chega à tua mesa e percebe que não tens o trabalho.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Esqueci-me. Desculpe.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": " - E assumiste um erro calmamente.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"Para a próxima dizes logo que não fizeste, quando eu perguntar. Vou ter que te descer a nota por causa disso.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Não me apeteceu fazer! Não me pode obrigar!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "   - Mas cedeste aos nervos e gritaste.",
+                              "children": [
+                                {
+                                  "text": "O professor  não gosta da tua atitude e manda-te sair da sala para te acalmares um pouco.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Puxar o trabalho da Joana.",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Foste agressivo para tentar resolver um problema...",
+                      "children": [
+                        {
+                          "text": "O professor vê-te a puxar o trabalho e manda-te parar, antes que te dê 0 na nota.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Desistir e admitir o esquecimento.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "   - Mas arrependeste-te e pediste desculpa.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"Obrigado por seres sincero.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Este trabalho é meu!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "   - E continuaste mesmo depois de te pedirem para parar.",
+                              "children": [
+                                {
+                                  "text": "O professor dá-te 0 no trabalho e manda-te sair da sala.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

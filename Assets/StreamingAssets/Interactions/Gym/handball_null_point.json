@@ -1,0 +1,151 @@
+{
+  "text": "Estás a jogar andebol no ginásio. O jogo está renhido e a tua equipa está empatada nos últimos minutos.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Marcas um golo importante, mas alguns colegas da outra equipa dizem que pisaste a área e não contou.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o coração a bater forte e vontade de levantar a voz e gritar para lhes mostrar que tens razão.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Raiva",
+              "children": [
+                {
+                  "text": "As duas equipas começam a discutir sobre o golo.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "\"Vamos perguntar ao professor o que ele acha.\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Tentaste dispersar a tua raiva deixando outra pessoa decidir.",
+                      "children": [
+                        {
+                          "text": "Professor:\"Estavas a pisar a área, portanto não contou.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Que azar! Nem percebi que fiz isso!\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Contiveste a raiva e aceitaste a situação.",
+                              "children": [
+                                {
+                                  "text": "O jogo segue normalmente e o professor elogia a tua calma.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"O professor deve estar a ver mal, só pode!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- A raiva levou a melhor e causaste um conflito!",
+                              "children": [
+                                {
+                                  "text": "O professor manda-te ficar no banco.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ignoras a discussão e preparas-te para continuar a jogar.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste a raiva afastando-te da situação.",
+                      "children": [
+                        {
+                          "text": "O jogo continua, mas alguns colegas ainda discutem.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Não vale a pena. Vamos focar-nos em marcar novamente.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Trocaste o foco da equipa para os acalmar.",
+                              "children": [
+                                {
+                                  "text": "Rafael: \"Isso! Não vale a pena discutir.\"",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                    "text": "No fim de contas, a equipa acaba por marcar e dar a volta ao jogo!",
+                                    "type": "Linear"
+                                    }
+                                    ]
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficas calado até ao fim do jogo.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Continuaste a evitar a discussão",
+                              "children": [
+                                {
+                                  "text": "O jogo termina empatado, sem nenhuma das equipas a conseguir concentrar-se em marcar.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Eu sei o que faço! Eu não pisei a área!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Aumentaste o conflito.",
+                      "children": [
+                        {
+                          "text": "O professor pede calma a todos e diz que o golo não contou.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Perdão, eu realmente achei que não tinha pisado...\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Tentaste corrigir o erro.",
+                              "children": [
+                                {
+                                  "text": "O professor aceita o teu pedido de desculpas e retoma o jogo, que termina empatado alguns minutos depois.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"O professor deve ter visto mal! Eu sei que não pisei!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Alimentaste a discussão e causaste problemas.",
+                              "children": [
+                                {
+                                  "text": "O professor manda-te ficar no banco o resto da aula. A tua equipa acaba por perder o jogo.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

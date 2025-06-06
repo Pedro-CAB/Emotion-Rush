@@ -63,6 +63,7 @@ public class ScoreManager : MonoBehaviour
         giveCoins();
         updateIncs();
         updateBars();
+        playerScoreIncrement = 0;
     }
 
     void updateClassAPoints()
@@ -262,5 +263,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
         coinGainText.text = "+" + coinGain.ToString();
+        Debug.Log("Coin Gain: " + coinGain);
     }
 }

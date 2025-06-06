@@ -1,0 +1,170 @@
+{
+  "text": "A aula está a decorrer normalmente quando o professor pousa uns papéis na secretária e sorri.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Professor: \"Eu sei que não vos avisei... Mas hoje vamos fazer um teste! Não precisam de ficar nervosos, é só para ver como estão a acompanhar a matéria.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes um frio na barriga e ouves vários colegas a suspirar, nervosos com o anúncio do professor. No meio da turma, o Ricardo, que costuma tirar boas notas, parece ser dos poucos que está calmo.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Surpresa",
+              "children": [
+                {
+                  "text": "Enquanto o professor distribui os testes, ouves o Ricardo a comentar em voz baixa:",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Ricardo: \"Isto é só para apanhar os burros da turma. Que perda de tempo.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Sentes-te incomodado com o comentário. Que coisa horrível de se dizer...",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "O que é que o Ricardo te fez sentir?",
+                              "type": "EmotionOption",
+                              "answer": "Desprezo",
+                              "children": [
+                                {
+                                  "text": "O professor começa a passar pelas mesas.",
+                                  "type": "ThreeOption",
+                                  "children": [
+                                    {
+                                      "text": "Ignoras o comentário e concentras-te no teste.",
+                                      "type": "DialogueOption",
+                                      "score": 1,
+                                      "feedback": "Focaste-te no que era importante.",
+                                      "children": [
+                                        {
+                                          "text": "Consegues responder ao teste com calma.",
+                                          "type": "TwoOption",
+                                          "children": [
+                                            {
+                                              "text": "No final, dás uma palavra de apoio a um colega que ficou afetado.",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "Ajudaste alguém a sentir-se melhor.",
+                                              "children": [
+                                                {
+                                                  "text": "Colega: \"Obrigado, precisava mesmo de ouvir isso.\"",
+                                                  "type": "Linear"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "Decides não falar mais sobre o assunto.",
+                                              "type": "DialogueOption",
+                                              "score": 0,
+                                              "feedback": "",
+                                              "children": [
+                                                {
+                                                  "text": "O dia segue normalmente.",
+                                                  "type": "Linear"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "text": "Respondes ao Ricardo: \"Não devias falar assim dos outros.\"",
+                                      "type": "DialogueOption",
+                                      "score": 1,
+                                      "feedback": "Defendeste os colegas de forma respeitosa.",
+                                      "children": [
+                                        {
+                                          "text": "Ricardo: \"Estava só a brincar, calma...\"",
+                                          "type": "TwoOption",
+                                          "children": [
+                                            {
+                                              "text": "Ficas calado e concentras-te no teste.",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "Mantiveste a calma.",
+                                              "children": [
+                                                {
+                                                  "text": "O teste decorre sem mais problemas.",
+                                                  "type": "Linear"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "Continuas a discutir com o Ricardo.",
+                                              "type": "DialogueOption",
+                                              "score": -1,
+                                              "feedback": "Entraste em conflito desnecessário.",
+                                              "children": [
+                                                {
+                                                  "text": "O professor pede silêncio e chama-vos à atenção.",
+                                                  "type": "Linear"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "text": "Riste e concordas com o comentário do Ricardo.",
+                                      "type": "DialogueOption",
+                                      "score": -1,
+                                      "feedback": "Alinhaste num comentário desrespeitoso.",
+                                      "children": [
+                                        {
+                                          "text": "Alguns colegas ficam magoados e o ambiente piora.",
+                                          "type": "TwoOption",
+                                          "children": [
+                                            {
+                                              "text": "Percebendo o erro, pedes desculpa aos colegas.",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "Tentaste corrigir o erro.",
+                                              "children": [
+                                                {
+                                                  "text": "Colega: \"Obrigado por reconheceres.\"",
+                                                  "type": "Linear"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "Ignoras e continuas a rir.",
+                                              "type": "DialogueOption",
+                                              "score": -1,
+                                              "feedback": "Mantiveste a atitude desrespeitosa.",
+                                              "children": [
+                                                {
+                                                  "text": "O professor percebe e chama-vos à atenção.",
+                                                  "type": "Linear"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

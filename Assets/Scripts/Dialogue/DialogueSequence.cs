@@ -25,6 +25,7 @@ public class DialogueSequence : MonoBehaviour
     /// <param name="jsonContent">JSON string that represents the dialogue structure.</param>
     public DialogueSequence(string jsonContent)
     {
+        Debug.Log(jsonContent);
         JObject rootObj = JObject.Parse(jsonContent);
         RootLine = ParseDialogueNode(rootObj);
         //PrintDialogueTree();

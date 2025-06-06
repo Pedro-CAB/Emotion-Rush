@@ -185,7 +185,7 @@ public class DialogueBox : MonoBehaviour
         currentLine = l;
         if (l.type == DialogueLine.LineType.EmotionOption)
         {
-            List<string> emotions = new List<string> { "Alegria", "Tristeza", "Medo", "Nojo", "Raiva" };
+            List<string> emotions = new List<string> { "Alegria", "Tristeza", "Medo", "Nojo", "Raiva", "Desprezo", "Surpresa" };
             emotions.Remove(l.answer);
             List<string> shuffledEmotions = emotions.OrderBy(i => Guid.NewGuid()).ToList();
             List<string> options = new List<string> { };
@@ -249,6 +249,7 @@ public class DialogueBox : MonoBehaviour
             DialogueLine promptLine = currentLine;
             DialogueLine chosenLine = currentLine.dialogueOptions[optionIndex];
             PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
+            Debug.Log("Player Score Increment: " + PlayerPrefs.GetInt("playerScoreIncrement"));
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
             {

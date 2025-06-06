@@ -138,7 +138,11 @@ public class Schedule : MonoBehaviour
         if (currentRoomText != null)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-            if (currentSceneName == "Classroom")
+            if (currentSceneName == "Classroom" || currentSceneName == "Tutorial")
+            {
+                currentRoomText.text = "Sala de Aula";
+            }
+            else if (currentSceneName == "RoomA")
             {
                 currentRoomText.text = "Sala A";
             }

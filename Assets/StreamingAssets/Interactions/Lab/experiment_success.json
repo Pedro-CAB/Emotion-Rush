@@ -1,0 +1,145 @@
+{
+  "text": "Estás no laboratório com o teu grupo a terminar uma experiência difícil. De repente, o resultado esperado acontece e todos reagem.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Joana: \"Conseguimos! Finalmente funcionou!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes uma forte vontade de festejar e um grande entusiasmo.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Alegria",
+              "children": [
+                {
+                  "text": "O grupo olha para ti à espera da tua reação.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Sorris para todos e dizes: \"Conseguimos!\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Celebraste uma conquista moderadamente.",
+                      "children": [
+                        {
+                          "text": "Lucas: \"Foi mesmo bom trabalharmos juntos!\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Bom trabalho a todos, malta!\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Reconheceste o trabalho de todos.",
+                              "children": [
+                                {
+                                  "text": "Todos ficam contentes e motivados.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Foi tudo graças a mim!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Exageraste no orgulho.",
+                              "children": [
+                                {
+                                  "text": "Os teus colegas olham-te com desagrado. Exageraste um bocado e poderias ter sido mais humilde.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Saltar e gritar alto pela sala.",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "Exageraste na alegria.",
+                      "children": [
+                        {
+                          "text": "Professor: \"Meninos, pouco barulho!\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Pedes desculpa e acalmas-te.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Corrigiste o comportamento exagerado.",
+                              "children": [
+                                {
+                                  "text": "O grupo volta a celebrar de forma mais calma até ao fim da aula.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Deixe-nos festejar! Somos os maiores!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Perdeste o controlo.",
+                              "children": [
+                                {
+                                  "text": "O professor cansa-se e expulsa-te da sala por alguns minutos para te acalmares.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficas calado e apenas sorris.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste o teu entusiasmo.",
+                      "children": [
+                        {
+                          "text": "Colega: \"Foi um ótimo trabalho!\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Bom trabalho a todos, malta!\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Reconheceste o trabalho de todos.",
+                              "children": [
+                                {
+                                  "text": "Todos ficam contentes e motivados.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Foi tudo graças a mim!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Exageraste no orgulho.",
+                              "children": [
+                                {
+                                  "text": "Os teus colegas olham-te com desagrado. Exageraste um bocado e poderias ter sido mais humilde.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

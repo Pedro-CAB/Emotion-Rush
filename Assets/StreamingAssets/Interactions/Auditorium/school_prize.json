@@ -23,7 +23,7 @@
                       "text": "\"Obrigado! Foi um trabalho de equipa e aprendi imenso.\"",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Mostraste gratidão e regulaste bem a tua emoção.",
+                      "feedback": "- Mostraste gratidão e regulaste o entusiasmo.",
                       "children": [
                         {
                           "text": "Diretora: \"Excelente atitude. Um verdadeiro exemplo para todos!\"",
@@ -38,10 +38,10 @@
                       ]
                     },
                     {
-                      "text": "Levantas o troféu no ar e gritas: \"Eu sou o maior!\"",
+                      "text": "Levantar o troféu no ar e gritar: \"Eu sou o maior!\"",
                       "type": "DialogueOption",
                       "score": -1,
-                      "feedback": "- A tua reação foi exagerada e chamaste atenção desnecessária.",
+                      "feedback": "- Reagiste com demasiado entusiasmo...",
                       "children": [
                         {
                           "text": "Alguns colegas riem-se, mas ouves comentários como \"Calma...\" e \"Que exagero.\"",
@@ -56,10 +56,10 @@
                       ]
                     },
                     {
-                      "text": "Sorris timidamente, recebes o prémio e sais logo do palco.",
+                      "text": "Sorrir e receber o prémio rápido.",
                       "type": "DialogueOption",
                       "score": 1,
-                      "feedback": "- Controlaste a tua emoção com discrição e respeito.",
+                      "feedback": "- Controlaste o entusiasmo discretamente.",
                       "children": [
                         {
                           "text": "Diretora: \"Parabéns! Continua com o bom trabalho.\"",

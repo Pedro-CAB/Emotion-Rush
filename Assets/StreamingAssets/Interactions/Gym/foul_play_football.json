@@ -1,0 +1,151 @@
+{
+  "text": "Estás a jogar futebol no ginásio com a turma. A tua equipa está a perder 1-0.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "De repente, o Fábio, da outra equipa, faz uma rasteira ao Pedro, mas o professor não assinala.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "O Pedro levanta-se do chão, com uma expressão fechada e carrancuda, parecendo que vai gritar com alguém a qualquer momento.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que é que o Pedro está a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Raiva",
+              "children": [
+                {
+                  "text": "Os colegas começam a discutir sobre a falta sem parar.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "\"Não percam tempo! Vamos usar o tempo que falta para ganhar!\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Mudaste o foco de alguém que estava irritado.",
+                      "children": [
+                        {
+                          "text": "A tua equipa acalma-se e volta ao jogo, mas alguns colegas ainda parecem irritados.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Esqueçam o assunto, equipa! Vamos ganhar isto!\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Promoveste o espírito de equipa.",
+                              "children": [
+                                {
+                                  "text": "Pedro: \"Sim! Ainda temos tempo, malta!\"",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                    "text": "A tua equipa fica motivada e acaba por marcar, dando a volta ao jogo.",
+                                    "type": "Linear"
+                                    }
+                                    ]
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Gritar: \"Param de ser uns chorões e foquem-se em jogar!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Gritar só alimenta a Raiva.",
+                              "children": [
+                                {
+                                  "text": "A equipa continua muito tensa e dividida, não conseguindo marcar e perdendo o jogo.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ignoras a discussão e continuas a jogar.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste a raiva e evitaste discutir.",
+                      "children": [
+                        {
+                          "text": "O jogo segue, mas alguns colegas continuam a discutir.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Não percam tempo! Vamos usar o tempo que falta para ganhar!\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Ajudaste a aliviar o ambiente.",
+                              "children": [
+                                    {
+                                    "text": "A tua equipa fica motivada e acaba por marcar, terminando o jogo num empate.",
+                                    "type": "Linear"
+                                    }
+                                    ]
+                            },
+                            {
+                              "text": "Ficas calado até ao fim do jogo.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "O jogo termina num empate, mas há muita tensão no ar.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Eles são batoteiros e vocês não jogam nada!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Descarregaste a raiva e aumentaste a tensão.",
+                      "children": [
+                        {
+                          "text": "O professor pede para se acalmarem e continuar o jogo.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Pedir desculpa e sair para beber água.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Tentaste corrigir o erro.",
+                              "children": [
+                                {
+                                  "text": "Ir beber água distraiu-te e acalmou-te antes de voltares ao jogo, a tempo de empatar o resultado.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Mas ele fez falta! Não é justo! A culpa é do Fábio!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Mantiveste o conflito.",
+                              "children": [
+                                {
+                                  "text": "O professor manda-te sair do jogo e passas o resto da aula no banco.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

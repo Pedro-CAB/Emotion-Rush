@@ -1,0 +1,107 @@
+{
+  "text": "Estás na biblioteca com o Artur a jogar no computador. O jogo está animado e começam a rir-se cada vez mais alto.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Artur: \"Isto está mesmo divertido!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o coração a bater mais rápido e a vontade de rir aumenta.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Alegria",
+              "children": [
+                {
+                  "text": "Funcionária:\"Façam menos barulho, meninos!\"",
+                  "type": "TwoOption",
+                  "children": [
+                    {
+                      "text": "Respirar fundo e baixar o tom de voz.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste a tua animação...",
+                      "children": [
+                        {
+                          "text": "A funcionária agradece-vos e afasta-se.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Já se foi embora! Já podemos falar à vontade de novo!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Mas não por muito tempo...",
+                              "children": [
+                                {
+                                  "text": "A funcionária regressa e pede-vos para sair. Se se tivessem portado melhor, podiam ter ficado a jogar mais tempo...",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Se fizermos menos barulho jogamos mais tempo.\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- E conseguiste divertir-te na mesma!",
+                              "children": [
+                                {
+                                  "text": "O Artur concorda e vocês passam um bom tempo a jogar juntos.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Ai que chatice! Já não se pode rir?\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- O teu entusiasmo descontrolou-se...",
+                      "children": [
+                        {
+                          "text": "Funcionária: \"Se não conseguem estar em silêncio, vão ter de sair.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Pedir desculpa.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mas corrigiste o comportamento.",
+                              "children": [
+                                {
+                                  "text": "A funcionária deixa-vos ficar, mas fica atenta. Tu e o Artur acabam por jogar juntos mais algum tempo.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "\"Deixe-nos jogar em paz!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- E não fizeste nada para o controlar.",
+                              "children": [
+                                {
+                                  "text": "A funcionária pede-vos para sair imediatamente.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

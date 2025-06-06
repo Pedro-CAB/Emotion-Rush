@@ -1,0 +1,145 @@
+{
+  "text": "A aula está a decorrer e o professor olha para ti depois de explicar um tema complicado.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Professor: \"Podes responder a esta pergunta para a turma?\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o coração a bater mais rápido e ficas com medo de errar à frente de todos.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Medo",
+              "children": [
+                {
+                  "text": "Todos os colegas olham para ti à espera da resposta.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Respiras fundo e tentas responder o melhor que consegues.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "Enfrentaste o medo.",
+                      "children": [
+                        {
+                          "text": "Professor: \"Muito bem, o importante é tentar.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Agradeces ao professor e sentes-te mais confiante.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Superaste a insegurança.",
+                              "children": [
+                                {
+                                  "text": "Colega: \"Boa resposta!\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficas calado depois de responder.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "A aula segue normalmente.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Ficas calado e não respondes.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "Conseguiste controlar a ansiedade.",
+                      "children": [
+                        {
+                          "text": "Professor: \"Não faz mal, podes tentar da próxima vez.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Prometes a ti mesmo tentar na próxima aula.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Mostraste vontade de melhorar.",
+                              "children": [
+                                {
+                                  "text": "Sentes-te mais motivado para estudar.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficas calado o resto da aula.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "O dia segue normalmente.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Respondes de forma precipitada e erras, ficando frustrado.",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "Deixaste a ansiedade tomar conta.",
+                      "children": [
+                        {
+                          "text": "Colega: \"Não faz mal, acontece a todos.\"",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Aceitas o erro e tentas aprender com ele.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "Mostraste resiliência.",
+                              "children": [
+                                {
+                                  "text": "Professor: \"O importante é tentar.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficas calado e não participas mais.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "",
+                              "children": [
+                                {
+                                  "text": "A aula segue normalmente.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
