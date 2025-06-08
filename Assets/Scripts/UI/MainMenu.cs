@@ -95,6 +95,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetString("currentPhase", "MorningClass1");
         PlayerPrefs.SetInt("currentDay", 0);
         PlayerPrefs.SetInt("currentWeek", 0);
+        Debug.Log("resetPrefsForNewGame :: Current Week Day: Monday ");
         PlayerPrefs.SetString("currentWeekDay", "Monday");
         PlayerPrefs.SetString("feedback", "");
         PlayerPrefs.SetString("identifiedEmotions", "");

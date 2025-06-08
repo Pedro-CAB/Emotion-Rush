@@ -95,7 +95,7 @@ public class Schedule : MonoBehaviour
 
         Debug.Log("updateWeekDay :: Current Week Day: " + currentWeekDay);
         Debug.Log("updateWeekDay :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
-
+        Debug.Log("updateWeekDay :: Current Week Day: " + currentWeekDay);
         PlayerPrefs.SetString("currentWeekDay", currentWeekDay);
     }
     /// <summary>

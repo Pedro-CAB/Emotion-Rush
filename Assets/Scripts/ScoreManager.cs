@@ -218,15 +218,15 @@ public class ScoreManager : MonoBehaviour
 
     public void saveAndContinue()
     {
-        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        Debug.Log("saveAndContinue :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         audioPlayer.playButtonPushSound();
         PlayerPrefs.SetInt("savedGameExists", 0);
         saveScores();
         saveUpgrades();
         resetPlayerIncrement();
-        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        Debug.Log("saveAndContinue :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         coinSystem.saveDailyCoins(coinGain);
-        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        Debug.Log("saveAndContinue :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         sequenceManager.startDay();
     }
 

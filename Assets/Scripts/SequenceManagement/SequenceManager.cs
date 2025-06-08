@@ -39,16 +39,16 @@ public class SequenceManager : MonoBehaviour
 
     public void startDay()
     {
-        Debug.Log("Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
+        Debug.Log("startDay :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         Debug.Log("Starting Day");
         loadState();
         Debug.Log("GameState: " + gameState);
         Debug.Log("Current Week: " + schedule.currentWeek);
-        Debug.Log("Current Week Day: " + schedule.currentWeekDay);
+        Debug.Log("startDay :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         if (gameState == "mainMenu")
         {
             gameState = "staticSceneOutsideBreak";
-            if (schedule.currentWeekDay == "Monday" && schedule.currentWeek == 0)
+            if (PlayerPrefs.GetString("currentWeekDay") == "Monday" && schedule.currentWeek == 0 && PlayerPrefs.GetInt("savedGameExists") == -1)
             {
                 SceneManager.LoadScene("Tutorial");
                 saveState();
@@ -58,6 +58,7 @@ public class SequenceManager : MonoBehaviour
                 string randomScene = randomizeStaticScene();
                 SceneManager.LoadScene(randomScene);
                 saveState();
+                schedule.nextDay();
             }
         }
         else if (gameState == "dayOutcome")
