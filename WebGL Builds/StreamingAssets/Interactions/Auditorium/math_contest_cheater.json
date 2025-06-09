@@ -1,0 +1,151 @@
+{
+  "text": "Estás no Auditório da escola. A cerimónia de entrega de prémios do concurso de Matemática está a decorrer. Vês colegas a receberem troféus e diplomas no palco.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Miguel (ao teu lado): \"Ouvi dizer que o Fábio, que ganhou o primeiro prémio, fez batota.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Sentes o teu corpo a ficar tenso e as mãos a fechar-se em punhos.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Raiva",
+              "children": [
+                {
+                  "text": "A cerimónia continua e o Fábio sorri no palco.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "Gritar \"Isso não é justo! Fizeste batota!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Reagiste aos gritos...",
+                      "children": [
+                        {
+                          "text": "O auditório fica em silêncio e todos olham para ti. O professor pede-te para te acalmares.",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "Enquanto te sentas, sentes o rosto quente e o coração a bater depressa.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "Pedir desculpa e falar com a professora no fim.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "   - Mas contiveste-te rapidamente!",
+                                  "children": [
+                                    {
+                                      "text": "A professora ouve-te com atenção e promete averiguar a situação.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Continuar a protestar em voz alta.",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "   - E enervaste-te tanto que ninguém te ouviu...",
+                                  "children": [
+                                    {
+                                      "text": "O professor pede-te para sair do auditório.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Respirar fundo e falar com a professora no fim.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Tentaste suprimir os teus nervos...",
+                      "children": [
+                        {
+                          "text": "O tempo passa devagar. O Fábio volta a sentar-se perto de ti, a sorrir.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Ignorar e aguardar a professora.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "   - E mantiveste as emoções controladas!",
+                              "children": [
+                                {
+                                  "text": "A professora agradece a tua calma e diz que vai investigar a situação.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Agarrá-lo e gritar: \"Seu grande batoteiro!\"",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "   - Mas acabaste por te chatear...",
+                              "children": [
+                                {
+                                  "text": "A professora não percebe o que se passou e manda-te sair do auditório.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Se não fosse ele a ganhar, eram outros. Talvez até seja mentira.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Acalmaste-te olhando para uma situação doutra forma...",
+                      "children": [
+                        {
+                          "text": "A tensão no teu corpo diminui e sentes-te mais leve.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Manter-me calmo e esquecer o que ouvi.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "   - E esqueceste algo que te enervou!",
+                              "children": [
+                                {
+                                  "text": "Consegues aproveitar o resto da cerimónia sem te sentires incomodado.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Falar com a professora.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "   - E expressaste o problema calmamente!",
+                              "children": [
+                                {
+                                  "text": "A professora ouve-te e agradece a tua preocupação. Explicar as coisas de forma calma ajudou a manter o ambiente tranquilo.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

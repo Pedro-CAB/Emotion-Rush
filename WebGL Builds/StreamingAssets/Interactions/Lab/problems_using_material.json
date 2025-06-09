@@ -1,0 +1,151 @@
+{
+  "text": "Estás no laboratório a preparar uma experiência. O teu colega Rui está com dificuldades a usar o material.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "A Luísa começa a rir-se e faz um comentário.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Luísa: \"Nem sabes usar um esguicho? Que básico!\"",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Vês o Rui a ficar vermelho e a baixar a cabeça. Sentes que a Luísa está a exagerar e não gostas quando as pessoas falam assim.",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "O que estás a sentir neste momento?",
+                  "type": "EmotionOption",
+                  "answer": "Desprezo",
+                  "children": [
+                    {
+                      "text": "O Rui olha para ti à espera de apoio.",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Para com isso. Toda a gente se engana às vezes.\"",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Defendeste um colega calmamente...",
+                          "children": [
+                            {
+                              "text": "Luísa: \"Estava só a brincar...\"",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "\"Se percebes tanto disto podias era tê-lo ajudado!\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- Mas no fim perdeste a calma.",
+                                  "children": [
+                                    {
+                                      "text": "A Luísa parece não gostar do teu comentário e afasta-se. Talvez houvesse uma forma melhor de resolver o desentendimento...",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "\"Tenta explicar-lhe como se faz.\"",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- E acalmaste quem o insultou.",
+                                  "children": [
+                                    {
+                                      "text": "A Luísa e o Rui ficam a conversar os dois, até ele conseguir entender melhor o que fazer.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Ignorar e continuar o trabalho.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Tentaste controlar o desprezo sentido...",
+                          "children": [
+                            {
+                              "text": "O Rui tenta continuar, mas fica desconfortável com a Luísa a rir-se dele.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "\"Que chata, Luísa! Ninguém te perguntou nada!\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- Mas acabaste por não conseguir...",
+                                  "children": [
+                                    {
+                                      "text": "Uma discussão entre ti e a Luísa começa. O Rui acaba por não aprender o que estava a fazer de errado e o professor dá um sermão aos três.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "\"Anda para aqui que eu ajudo-te.\"",
+                                  "type": "Linear",
+                                  "score": 0,
+                                  "feedback": "- E ajudaste quem precisava.",
+                                  "children": [
+                                    {
+                                      "text": "O Rui afasta-se da Luísa e vem ter contigo para aprender. Graças a ti, ele superou as dificuldades dele.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "\"Um esguicho? Toda a gente sabe usar isso!\"",
+                          "type": "DialogueOption",
+                          "score": -1,
+                          "feedback": "- Ajudaste a ridicularizar um colega...",
+                          "children": [
+                            {
+                              "text": "O Rui sai da sala a chorar e a Luísa afasta-se a rir.",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "Pedir desculpa ao Rui.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Mas arrependeste-te e pediste desculpa.",
+                                  "children": [
+                                    {
+                                      "text": "Algum tempo depois, tu e o Rui fazem as pazes. Esta confusão podia ter sido evitada...",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "\"Ai, que chorão!\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- E continuaste mesmo ao vê-lo ficar triste.",
+                                  "children": [
+                                    {
+                                      "text": "O professor chama-te à atenção e expulsa-te da sala, antes de ir ajudar o Rui.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

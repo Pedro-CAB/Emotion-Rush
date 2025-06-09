@@ -1,0 +1,105 @@
+{
+  "text": "Estás no recreio, junto aos bancos perto do campo de futebol. Estás a comer um lanche quando o Tiago se aproxima.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Tiago: \"Já deste os parabéns ao Afonso? Faz anos hoje!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Vês o Afonso a rir-se com um grupo de colegas. Lembras-te que, quando fizeste anos, ele nem te disse nada.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "\"O que achas que estás a sentir agora?\"",
+              "type": "EmotionOption",
+              "answer": "Tristeza",
+              "children": [
+                {
+                  "text": "Tiago: \"A sério? Deve ter-se esquecido. Isso acontece.\"",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "\"Pois... Vou lá na mesma. Não vale a pena ficar preso a isso.\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Reavaliaste a situação e escolheste seguir em frente.",
+                      "children": [
+                        {
+                          "text": "Vais ter com o Afonso.",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "\"Parabéns, Afonso! Tudo de bom!\"",
+                              "type": "Linear",
+                              "children": [
+                                {
+                                  "text": "Afonso: \"Obrigado! E olha, desculpa não te ter dito nada no teu dia. Estava mesmo distraído...\"",
+                                  "type": "TwoOption",
+                                  "children": [
+                                    {
+                                      "text": "\"Na boa, acontece. Está tudo bem.\"",
+                                      "type": "DialogueOption",
+                                      "score": 1,
+                                      "feedback": "- Foste compreensivo e preservaste a relação.",
+                                      "children": [
+                                        {
+                                          "text": "Afonso: \"És fixe. Bora combinar algo no fim de semana!\"",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "text": "\"Pois... não esperava muito mesmo.\"",
+                                      "type": "DialogueOption",
+                                      "score": -1,
+                                      "feedback": "- Respondeste com mágoa e criaste tensão desnecessária.",
+                                      "children": [
+                                        {
+                                          "text": "Afonso: \"Ok... se calhar não devia ter dito nada.\"",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Então ele que fique à espera dos meus parabéns.\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Agiste por mágoa e deixaste que isso te afastasse.",
+                      "children": [
+                        {
+                          "text": "Tiago: \"Epá... faz como quiseres, mas não ganhas nada com isso.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Nem me lembrava disso. Vou lá dar os parabéns.\"",
+                      "type": "DialogueOption",
+                      "score": 0,
+                      "feedback": "- Agiste com leveza, mas sem refletir muito sobre a situação.",
+                      "children": [
+                        {
+                          "text": "Afonso: \"Obrigado! Fixe da tua parte.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

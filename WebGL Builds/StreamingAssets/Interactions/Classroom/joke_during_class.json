@@ -1,0 +1,112 @@
+{
+  "text": "Estás na aula de Português e a professora escreveu a origem de uma palavra em latim no quadro.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Colega (em voz baixa): \"A sério, isto parece um feitiço qualquer!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Alguns colegas começam a rir-se. A professora vira-se lentamente, com ar sério.",
+          "type": "TwoOption",
+          "children": [
+            {
+              "text": "Tentas conter o riso e olhas para o caderno.",
+              "type": "DialogueOption",
+              "score": 1,
+              "feedback": "- Controlaste a tua reação e mantiveste a concentração.",
+              "children": [
+                {
+                  "text": "Professora: \"Se alguém quiser fazer comédia, escolha outro sítio.\"",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Colega: \"Calma, era só uma piada...\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Outro colega ainda se ri baixinho.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "\"Já chega, senão vamos todos levar com castigo.\"",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Fizeste os outros refletirem sobre as consequências.",
+                              "children": [
+                                {
+                                  "text": "Colega: \"Pois... Tens razão. Vamos fazer silêncio.\"",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                      "text": "A sala acalma-se e a aula continua.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Soltas uma gargalhada sem querer.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Perder o controlo aumentou a tensão da aula.",
+                              "children": [
+                                {
+                                  "text": "Professora: \"Último aviso. A seguir, é saída da sala.\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Riste-te com os outros, não consegues evitar.",
+              "type": "DialogueOption",
+              "score": -1,
+              "feedback": "- Participaste no comportamento que perturbava a aula.",
+              "children": [
+                {
+                  "text": "Professora: \"Muito engraçado. Queres partilhar com toda a turma?\"",
+                  "type": "TwoOption",
+                  "children": [
+                    {
+                      "text": "\"Desculpe, foi sem querer.\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Admitiste o erro e tentaste corrigir a situação.",
+                      "children": [
+                        {
+                          "text": "Professora: \"Muito bem. Vamos continuar.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Não é para tanto...\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Desvalorizaste a situação e pioraste o ambiente.",
+                      "children": [
+                        {
+                          "text": "Professora: \"Então falamos no fim da aula.\"",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "text": "É intervalo e estás no recreio com alguns colegas. O ambiente é descontraído, alguns jogam à bola, outros conversam.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "O Rafael aproxima-se e diz-te em voz alta: \"Olhem quem está aqui! O nosso génio do futebol... que tropeça na própria sombra!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Os outros riem-se. Sorris de forma forçada, mas sentes-te desconfortável.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir agora?",
+              "type": "EmotionOption",
+              "answer": "Tristeza",
+              "children": [
+                {
+                  "text": "O Rafael continua a rir-se: \"Calma, é só uma piada! Não fiques assim.\"",
+                  "type": "TwoOption",
+                  "children": [
+                    {
+                      "text": "\"Não teve graça nenhuma.\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Expressaste o que sentias de forma controlada.",
+                      "children": [
+                        {
+                          "text": "Rafael: \"Pronto, desculpa lá. Só estava a brincar.\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "O ambiente acalma um pouco, mas continua tenso.",
+                              "type": "ThreeOption",
+                              "children": [
+                                {
+                                  "text": "\"Olha, se calhar nem todos acham graça às mesmas coisas.\"",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Foste assertivo e ajudaste os outros a refletir.",
+                                  "children": [
+                                    {
+                                      "text": "Hugo: \"Se calhar era melhor mudarmos de assunto.\"",
+                                      "type": "Linear",
+                                      "children": [
+                                        {
+                                          "text": "Todos concordam e a conversa segue normalmente.",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "Ignoras e mudas de grupo.",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Regulaste as tuas emoções ao afastar-te do desconforto.",
+                                  "children": [
+                                    {
+                                      "text": "Juntas-te a um outro grupo. Um colega comenta: \"Ainda bem que vieste, estávamos a falar do jogo de ontem!\"",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "\"Pois, por isso é que nem tens amigos a sério.\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- Respondeste com ataque, aumentando o conflito.",
+                                  "children": [
+                                    {
+                                      "text": "Rafael: \"Estás com dor de cotovelo ou quê?\" O ambiente fica tenso.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "\"Sim, sim, piadinha mesmo engraçada...\"",
+                      "type": "DialogueOption",
+                      "score": 0,
+                      "feedback": "- Disseste algo irónico sem criar confronto direto.",
+                      "children": [
+                        {
+                          "text": "Rafael: \"Estás mesmo sensível hoje... mas ok.\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "Hugo:\"Calma malta, toda a gente tropeça de vez em quando!\"",
+                              "type": "TwoOption",
+                              "children": [
+                                {
+                                  "text": "(a rir) \"Tens razão! Cuidado para não tropeçarem também!\"",
+                                  "type": "DialogueOption",
+                                  "score": 1,
+                                  "feedback": "- Respondeste a piadas com outra piada, para aliviar o clima.",
+                                  "children": [
+                                    {
+                                      "text": "O ambiente volta ao normal e a conversa prossegue.",
+                                      "type": "Linear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": "\"Essa piada nem original é. Acham que são engraçados?\"",
+                                  "type": "DialogueOption",
+                                  "score": -1,
+                                  "feedback": "- Levaste algumas piadas a peito, causando uma discussão.",
+                                  "children": [
+                                    {
+                                      "text": "Rafael: \"Era só uma brincadeira. Não precisas de agir assim.\"",
+                                      "type": "Linear",
+                                      "children": [
+                                        {
+                                          "text": "O ambiente fica tenso e os colegas afastam-se da conversa.",
+                                          "type": "Linear"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

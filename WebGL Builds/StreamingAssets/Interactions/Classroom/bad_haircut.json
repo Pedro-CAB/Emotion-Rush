@@ -1,0 +1,130 @@
+{
+  "text": "Antes da aula começar vês que o Artur está a usar um gorro, sentado ao teu lado.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Ele parece nervoso com alguma coisa enquanto se esconde atrás da mesa.",
+      "type": "TwoOption",
+      "children": [
+        {
+          "text": "\"O que se passa?\"",
+          "type": "DialogueOption",
+          "feedback": "None",
+          "score": 0,
+          "children": [
+            {
+              "text": "Artur: \"Os meus pais obrigaram-me a cortar o cabelo e ficou horrível!\"",
+              "type": "TwoOption",
+              "children": [
+                {
+                  "text": "\"Tira isso. Ninguém vai reparar e aposto que até ficou bem.\"",
+                  "type": "DialogueOption",
+                  "score":1,
+                  "feedback": "- Acalmaste alguém fazendo-o ver a situação de forma positiva.",
+                  "children": [
+                    {
+                      "text": "Artur: \"Achas? O professor não gosta que usemos chapéu na sala, então se calhar é melhor...\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "O Artur tira o gorro discretamente e quase ninguém percebe. A aula continua sem problemas.",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "Tirar-lhe o gorro à força. \"Tira lá isso!\"",
+                  "type": "DialogueOption",
+                  "feedback": "- Pressionar alguém nervoso causou uma confusão...",
+                  "score": -1,
+                  "children": [
+                    {
+                      "text": "Artur: \"Ei! Para com isso! Vais piorar ainda mais!\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "O gorro cai da cabeça do Artur, revelando o seu cabelo cortado. Ele sai da sala a correr e a chorar.",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "A aula é interrompida até o Artur regressar. O professor diz que quer ter uma conversa séria com vocês dois no fim da aula.",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Ignoro e sento-me no meu lugar.",
+          "type": "Linear",
+          "score": 0,
+          "feedback": "None",
+          "children": [
+            {
+              "text": "O professor começa a dar a aula e nota o gorro do Artur.",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "Professor:\"Tire isso da cabeça que está calor.\"",
+                  "type": "TwoOption",
+                  "children": [
+                    {
+                      "text": "\"Tem calma. É melhor tirares o gorro do que levares um castigo.\"",
+                      "feedback": "- Ajudaste alguém a conter as emoções, evitando um castigo.",
+                      "score": 1,
+                      "type": "DialogueOption",
+                      "children": [
+                        {
+                          "text": "Artur: \"Tens razão... Não vale a pena arranjar problemas.\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "O Artur tira o gorro discretamente, revelando um corte de cabelo novo. A aula continua sem problemas.",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Tirar-lhe o gorro à força. \"Tira lá isso!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Pressionar alguém nervoso causou uma confusão...",
+                      "children": [
+                        {
+                          "text": "Artur: \"Ei! Para com isso! Vais piorar ainda mais!\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "O gorro cai da cabeça do Artur, revelando o seu cabelo cortado. Ele sai da sala a correr e a chorar.",
+                              "type": "Linear",
+                              "children": [
+                                {
+                                  "text": "A aula é interrompida até o Artur regressar. O professor diz que quer ter uma conversa séria com vocês dois no fim da aula.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "text": "Estás numa reunião de turma na biblioteca da escola. O professor olha para ti e pergunta qual a tua opinião sobre um novo projeto escolar.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Sentes o olhar de todos os colegas sobre ti e o coração começa a bater mais rápido.",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Que emoção estás a sentir neste momento?",
+          "type": "EmotionOption",
+          "answer": "Medo",
+          "children": [
+            {
+              "text": "Professor: \"Podes partilhar connosco o que pensas?\"",
+              "type": "ThreeOption",
+              "children": [
+                {
+                  "text": "Respirar fundo e organizar as ideias antes de responder.",
+                  "type": "DialogueOption",
+                  "score": 1,
+                  "feedback": "- Acalmaste-te para responder com clareza.",
+                  "children": [
+                    {
+                      "text": "Respiras fundo, pensas um pouco e partilhas a tua opinião de forma calma.",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Alguns colegas trocam olhares, mas ouvem-te com atenção.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Focar-me no professor e ignorar os olhares dos colegas.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mantiveste o foco e não te deixaste afetar pela pressão.",
+                              "children": [
+                                {
+                                  "text": "Consegues terminar a tua resposta com confiança e o professor agradece a tua participação.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Ficar calado depois de responder, evitando contacto visual.",
+                              "type": "DialogueOption",
+                              "score": 0,
+                              "feedback": "None",
+                              "children": [
+                                {
+                                  "text": "O professor agradece, mas sentes-te ainda um pouco nervoso.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "Responder rapidamente, mesmo sem pensar muito.",
+                  "type": "DialogueOption",
+                  "score": 0,
+                  "feedback": "None",
+                  "children": [
+                    {
+                      "text": "Dizes a primeira coisa que te vem à cabeça, sentindo-te um pouco atrapalhado.",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Alguns colegas riem discretamente.",
+                          "type": "TwoOption",
+                          "children": [
+                            {
+                              "text": "Ignorar e tentar ouvir o próximo colega.",
+                              "type": "DialogueOption",
+                              "score": 1,
+                              "feedback": "- Mudaste o foco para não te deixares afetar.",
+                              "children": [
+                                {
+                                  "text": "Consegues acalmar-te e a reunião continua.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            },
+                            {
+                              "text": "Olhar para os colegas com ar desconfortável.",
+                              "type": "DialogueOption",
+                              "score": -1,
+                              "feedback": "- Mostraste desconforto, o que aumentou a tensão.",
+                              "children": [
+                                {
+                                  "text": "Sentes-te ainda mais nervoso e tens dificuldade em te concentrar no resto da reunião.",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "text": "Dizer que preferes não responder porque estás nervoso.",
+                  "type": "DialogueOption",
+                  "score": -1,
+                  "feedback": "- Evitaste a situação, perdendo uma oportunidade de te expressares.",
+                  "children": [
+                    {
+                      "text": "O professor compreende, mas incentiva-te a tentar participar numa próxima vez.",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Ficas a ouvir o resto da reunião em silêncio, sentindo-te um pouco frustrado.",
+                          "type": "Linear"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

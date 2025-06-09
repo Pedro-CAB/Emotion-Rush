@@ -1,0 +1,52 @@
+{
+  "text": "Professor: \"Sejam bem-vindos à Escola das Emoções! Vocês são os alunos da turma A.\"",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Professor: \"Esta escola não é uma escola normal.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "Professor: \"Aqui, os alunos que conseguem lidar melhor com as suas emoções ganham pontos para a turma e recebem moedas ao fim do dia!\"",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Professor: \"Como ganhar essas moedas? É fácil! Cada dia na Escola das Emoções tem três aulas e dois intervalos.\"",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "Professor:\"Durante as aulas, muitas vezes vão acontecer situações onde vocês podem aprender a identificar as vossas emoções e as emoções dos outros e lidar com elas.\"",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Professor: \"Nos intervalos, vocês têm algum tempo para visitar o Recreio e a Biblioteca para resolverem situações extras com os vossos colegas!.\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Professor:\"Quando identificarem emoções ou lidarem com elas corretamente, vocês recebem pontos! Ao fim do dia, saberão quantos pontos ganharam e receberão algumas dicas do porquê!\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "Professor: \"Além disso, vocês também ganharão moedas que vos deixam melhorar o vosso personagem na Loja, durante os intervalos!\"",
+                              "type": "Linear",
+                              "children": [
+                                {
+                                  "text": "Professor: \"Com o tempo, todos vocês vão ser mestres das emoções! Divirtam-se e boa sorte!\"",
+                                  "type": "Linear"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

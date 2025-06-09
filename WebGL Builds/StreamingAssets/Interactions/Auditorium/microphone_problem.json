@@ -1,0 +1,211 @@
+{
+  "text": "Estás no auditório a assistir a um discurso importante da diretora. O público está atento e a sala está silenciosa.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Diretora: \"Quero agradecer a todos por estarem presentes nesta cerimónia tão especial para a nossa escola.\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "De repente, o microfone avaria e começa a fazer ruídos estranhos. A diretora tenta continuar, mas o som falha completamente.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "Diretora: \"Peço desculpa, parece que estamos com problemas técnicos...\"",
+              "type": "Linear",
+              "children": [
+                {
+                  "text": "Alguns alunos começam a rir e a comentar baixinho.",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "João: \"Isto está a ficar engraçado!\"",
+                      "type": "Linear",
+                      "children": [
+                        {
+                          "text": "Sentes uma enorme vontade de rir, contagiado com o riso dos teus colegas.",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "O que estás a sentir neste momento?",
+                              "type": "EmotionOption",
+                              "answer": "Alegria",
+                              "children": [
+                                {
+                                  "text": "A diretora faz uma pausa e olha para o público, visivelmente desconfortável.",
+                                  "type": "Linear",
+                                  "children": [
+                                    {
+                                      "text": "Professor: \"Silêncio, por favor. Vamos respeitar a diretora.\"",
+                                      "type": "Linear",
+                                      "children": [
+                                        {
+                                          "text": "Tens de decidir como reagir.",
+                                          "type": "ThreeOption",
+                                          "children": [
+                                            {
+                                              "text": "Rir-me alto com os outros colegas.",
+                                              "type": "DialogueOption",
+                                              "score": -1,
+                                              "feedback": "- Reagiste de forma descontrolada...",
+                                              "children": [
+                                                {
+                                                  "text": "Diretora: \"Vamos tentar continuar...\"",
+                                                  "type": "Linear",
+                                                  "children": [
+                                                    {
+                                                      "text": "Professor: \"Por favor, silêncio!\"",
+                                                      "type": "Linear",
+                                                      "children": [
+                                                        {
+                                                          "text": "João: \"Agora é que ficou mesmo estranho...\"",
+                                                          "type": "Linear",
+                                                          "children": [
+                                                            {
+                                                              "text": "Conter o riso.",
+                                                              "type": "DialogueOption",
+                                                              "score": 1,
+                                                              "feedback": "   - Mas contiveste-te ao passar dos limites!",
+                                                              "children": [
+                                                                {
+                                                                  "text": "Diretora: \"Obrigada pela compreensão. Vou tentar continuar.\"",
+                                                                  "type": "Linear",
+                                                                  "children": [
+                                                                    {
+                                                                    "text": "Os teus colegas também se acalmam e a cerimónia prossegue.",
+                                                                    "type": "Linear"
+                                                                    }
+                                                                    ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "text": "Continuar a rir e a fazer comentários.",
+                                                              "type": "DialogueOption",
+                                                              "score": -1,
+                                                              "feedback": "   - E passaste dos limites...",
+                                                              "children": [
+                                                                {
+                                                                  "text": "Professor: \"Se não consegues respeitar, vais ter de sair.\"",
+                                                                  "type": "Linear"
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "Ficar calado e tentar ignorar a situação.",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "- Controlaste o teu entusiasmo...",
+                                              "children": [
+                                                {
+                                                  "text": "Diretora: \"Obrigada a quem está a manter o respeito. Vou tentar continuar.\"",
+                                                  "type": "Linear",
+                                                  "children": [
+                                                    {
+                                                      "text": "Sentes alguma vontade de te rir, enquanto outros colegas também continuam a tentar conter-se.",
+                                                      "type": "Linear",
+                                                      "children": [
+                                                        {
+                                                          "text": "Tentar pensar noutra coisa.",
+                                                          "type": "DialogueOption",
+                                                          "score": 1,
+                                                          "feedback": "   - E distraíste-te para conseguires fazê-lo!",
+                                                          "children": [
+                                                            {
+                                                              "text": "Desvias o olhar para a janela para te distrair do que te estava a fazer rir tanto, conseguindo manter o respeito. A diretora agradece e continua a falar.",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "text": "Provocar os colegas do lado.",
+                                                          "type": "DialogueOption",
+                                                          "score": -1,
+                                                          "feedback": "   - Mas acabaste por ceder ao riso...",
+                                                          "children": [
+                                                            {
+                                                              "text": "O dia segue normalmente.",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "text": "\"Não faz mal, professora. Acontece a todos.\"",
+                                              "type": "DialogueOption",
+                                              "score": 1,
+                                              "feedback": "- Apoiaste a diretora, tirando o foco do problema...",
+                                              "children": [
+                                                {
+                                                  "text": "Diretora: \"Obrigada! Acho que já resolvi o problema.\"",
+                                                  "type": "Linear",
+                                                  "children": [
+                                                    {
+                                                      "text": "Alguns colegas ainda se estão a rir baixinho.",
+                                                      "type": "Linear",
+                                                      "children": [
+                                                        {
+                                                          "text": "Manter silêncio e aguardar.",
+                                                          "type": "DialogueOption",
+                                                          "score": 1,
+                                                          "feedback": "   - E contiveste o riso para não incomodar!",
+                                                          "children": [
+                                                            {
+                                                              "text": "A diretora agradece a todos pela paciência e continua a discursar.",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "text": "Gritar: \"Vocês acham que são engraçadinhos é?\"",
+                                                          "type": "DialogueOption",
+                                                          "score": 0,
+                                                          "feedback": "   - Mas enervaste-te com o riso dos outros...",
+                                                          "children": [
+                                                            {
+                                                              "text": "O dia segue normalmente.",
+                                                              "type": "Linear"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

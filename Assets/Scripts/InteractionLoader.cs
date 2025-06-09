@@ -29,7 +29,7 @@ public class InteractionLoader : MonoBehaviour
         string listJson;
 
         // 1. Read filelist.json
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_WEBGL
         UnityWebRequest listRequest = UnityWebRequest.Get(listPath);
         yield return listRequest.SendWebRequest();
 
@@ -58,7 +58,7 @@ public class InteractionLoader : MonoBehaviour
             string filePath = Path.Combine(basePath, filename);
             string json = null;
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_WEBGL
             UnityWebRequest fileRequest = UnityWebRequest.Get(filePath);
             yield return fileRequest.SendWebRequest();
 

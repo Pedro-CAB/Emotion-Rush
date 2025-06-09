@@ -1,0 +1,85 @@
+{
+  "text": "Estás no auditório da escola. Os lugares estão quase todos ocupados, os professores e colegas aplaudem enquanto a diretora fala ao microfone.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Diretora: \"E o prémio de melhor trabalho de grupo vai para... O Grupo 1 da Turma A!\"",
+      "type": "Linear",
+      "children": [
+        {
+          "text": "É o teu grupo! Levantas-te com os aplausos, entusiasmado para receber o prémio.",
+          "type": "Linear",
+          "children": [
+            {
+              "text": "O que estás a sentir neste momento?",
+              "type": "EmotionOption",
+              "answer": "Alegria",
+              "children": [
+                {
+                  "text": "Caminhas até ao palco e recebes o prémio das mãos da diretora.",
+                  "type": "ThreeOption",
+                  "children": [
+                    {
+                      "text": "\"Obrigado! Foi um trabalho de equipa e aprendi imenso.\"",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Mostraste gratidão e regulaste o entusiasmo.",
+                      "children": [
+                        {
+                          "text": "Diretora: \"Excelente atitude. Um verdadeiro exemplo para todos!\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "Os colegas continuam a bater palmas com mais entusiasmo.",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Levantar o troféu no ar e gritar: \"Eu sou o maior!\"",
+                      "type": "DialogueOption",
+                      "score": -1,
+                      "feedback": "- Reagiste com demasiado entusiasmo...",
+                      "children": [
+                        {
+                          "text": "Alguns colegas riem-se, mas ouves comentários como \"Calma...\" e \"Que exagero.\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "A diretora: \"Parabéns, mas lembra-te que a humildade também faz parte da vitória.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Sorrir e receber o prémio rápido.",
+                      "type": "DialogueOption",
+                      "score": 1,
+                      "feedback": "- Controlaste o entusiasmo discretamente.",
+                      "children": [
+                        {
+                          "text": "Diretora: \"Parabéns! Continua com o bom trabalho.\"",
+                          "type": "Linear",
+                          "children": [
+                            {
+                              "text": "Vários colegas elogiam-te enquanto voltas ao teu lugar.",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

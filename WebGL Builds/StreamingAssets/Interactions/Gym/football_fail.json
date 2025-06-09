@@ -1,0 +1,187 @@
+{
+  "text": "Na aula de Educação Física, as equipas são escolhidas pelos capitães. Ficas na equipa do Tomás e estás a jogar bem.",
+  "type": "Linear",
+  "children": [
+    {
+      "text": "Falhas um remate por muito pouco. O que sentes?",
+      "type": "EmotionOption",
+      "answer": "Tristeza",
+      "children": [
+        {
+          "text": "Tomás: \"Quase! Era só encostar...\"",
+          "type": "ThreeOption",
+          "children": [
+            {
+              "text": "\"Já sei, não precisas de repetir.\"",
+              "type": "DialogueOption",
+              "score": -1,
+              "feedback": "- Reagiste com irritação, o que pode afastar os colegas.",
+              "children": [
+                {
+                  "text": "Tomás: \"Só estava a tentar ajudar.\"",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Confia em mim!\" e rematas com força.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Mostraste confiança e foco na superação.",
+                          "children": [
+                            {
+                              "text": "A bola entra! Todos festejam o empate.",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Passas a bola para o lado, evitando arriscar.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rematas de qualquer forma, mas falhas outra vez.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estás quase. Continua!\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "\"Pois... fiquei nervoso, estava sozinho.\"",
+              "type": "DialogueOption",
+              "score": 1,
+              "feedback": "- Reconheceste o erro com honestidade.",
+              "children": [
+                {
+                  "text": "Tomás: \"Acontece. Da próxima entra.\"",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Confia em mim!\" e rematas com força.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Mostraste confiança e foco na superação.",
+                          "children": [
+                            {
+                              "text": "A bola entra! Todos festejam o empate.",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Passas a bola para o lado, evitando arriscar.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rematas de qualquer forma, mas falhas outra vez.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estás quase. Continua!\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Ignoras e voltas a correr para a defesa.",
+              "type": "DialogueOption",
+              "score": 1,
+              "feedback": "- Suprimiste a frustração e seguiste o jogo.",
+              "children": [
+                {
+                  "text": "O professor observa e faz um sinal de aprovação.",
+                  "type": "Linear",
+                  "children": [
+                    {
+                      "text": "Minutos depois, estás frente à baliza de novo. O Tomás grita: \"Agora é tua!\"",
+                      "type": "ThreeOption",
+                      "children": [
+                        {
+                          "text": "\"Confia em mim!\" e rematas com força.",
+                          "type": "DialogueOption",
+                          "score": 1,
+                          "feedback": "- Mostraste confiança e foco na superação.",
+                          "children": [
+                            {
+                              "text": "A bola entra! Todos festejam o empate.",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Passas a bola para o lado, evitando arriscar.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Evitaste a pressão, mas perdeste uma oportunidade.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estavas tão perto... devias ter tentado.\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rematas de qualquer forma, mas falhas outra vez.",
+                          "type": "DialogueOption",
+                          "score": 0,
+                          "feedback": "- Nem sempre correr riscos resulta, mas tentaste novamente.",
+                          "children": [
+                            {
+                              "text": "Tomás: \"Estás quase. Continua!\"",
+                              "type": "Linear"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
