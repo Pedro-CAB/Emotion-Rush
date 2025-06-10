@@ -47,7 +47,7 @@ public class StaticSceneManager : SequenceManager
             }
             else if (PlayerPrefs.GetString("gameState") == "staticSceneDuringBreak")
             {
-                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
+                PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 10.0f)));
                 float breakTimeLeft = PlayerPrefs.GetFloat("breakTimeLeft");
                 if (breakTimeLeft <= 0.0f) //if the break is over
                 {

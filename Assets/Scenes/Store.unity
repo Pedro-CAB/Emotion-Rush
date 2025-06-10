@@ -19217,7 +19217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Intera\xE7\xF5es demoram -30 segundos em intervalos."
+  m_text: "Intera\xE7\xF5es demoram -10 segundos em intervalos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
   m_sharedMaterial: {fileID: 7545709033084576918, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
