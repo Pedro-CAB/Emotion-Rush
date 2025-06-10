@@ -38,7 +38,7 @@ public class BreakManager : SequenceManager
         StartCoroutine(WaitBeforeStartingTimer(2f)); // Wait 2 seconds before starting the timer
         //Debug.Log("standardBreakTime: " + standardBreakTime);
         //Debug.Log("timeLeft: " + timeLeft);
-        standardBreakTime = 300.0f + 60.0f * PlayerPrefs.GetInt("timeUpgradeLevel");
+        standardBreakTime = 300.0f + 30.0f * PlayerPrefs.GetInt("timeUpgradeLevel");
         //Debug.Log("Game State is " + gameState);
         if (gameState == "ongoingBreakScene")
         {

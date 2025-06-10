@@ -27602,7 +27602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1326955641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41344,7 +41344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Intervalos duram +1 minuto que antes.
+  m_text: Intervalos duram +30 segundos que antes.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
   m_sharedMaterial: {fileID: 7545709033084576918, guid: 7587779b96556c8429dc8db8ef909a4a, type: 2}
@@ -41371,7 +41371,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.8
+  m_fontSize: 49.15
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -41409,7 +41409,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -37.04609}
+  m_margin: {x: 0, y: 0, z: 54.5213, w: -37.04609}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
