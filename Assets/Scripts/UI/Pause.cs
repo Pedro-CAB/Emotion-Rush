@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public SequenceManager sequenceManager; // Reference to the SequenceManager for managing game state
+    public SequenceController sequenceController; // Reference to the SequenceController for managing game state
     public GameObject pausedUI;
     public GameObject unpausedUI;
 
@@ -68,7 +68,7 @@ public class Pause : MonoBehaviour
     public void QuitGame()
     {
         audioPlayer.playButtonPushSound();
-        sequenceManager.toMainMenu();
+        sequenceController.toMainMenu();
         Time.timeScale = 1;
     }
 }

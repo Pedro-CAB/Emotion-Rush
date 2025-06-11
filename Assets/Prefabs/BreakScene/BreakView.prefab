@@ -68,6 +68,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 3327870634102481779, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: breakController
+      value: 
+      objectReference: {fileID: 1238992988073230286}
+    - target: {fileID: 3327870634102481779, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: dialogueController
       value: 
       objectReference: {fileID: 6480218272804542727}
@@ -93,6 +97,10 @@ PrefabInstance:
       objectReference: {fileID: 3605747699637819221}
     - target: {fileID: 4607922777115105976, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: breakManager
+      value: 
+      objectReference: {fileID: 1238992988073230286}
+    - target: {fileID: 4607922777115105976, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: breakController
       value: 
       objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 4607922777115105976, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
@@ -125,6 +133,10 @@ PrefabInstance:
       objectReference: {fileID: 3605747699637819221}
     - target: {fileID: 7198573678586640267, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: sequenceManager
+      value: 
+      objectReference: {fileID: 1238992988073230286}
+    - target: {fileID: 7198573678586640267, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: sequenceController
       value: 
       objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 8044510816933378096, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
@@ -217,6 +229,10 @@ PrefabInstance:
       objectReference: {fileID: 3605747699637819221}
     - target: {fileID: 8642230632067207522, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: breakManager
+      value: 
+      objectReference: {fileID: 1238992988073230286}
+    - target: {fileID: 8642230632067207522, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: breakController
       value: 
       objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 8642230632067207522, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}

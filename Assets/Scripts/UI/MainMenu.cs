@@ -4,7 +4,7 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
-    public SequenceManager sequenceManager;
+    public SequenceController sequenceController;
     public AudioPlayer audioPlayer;
 
     public GameObject mainMenuUI;
@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject loadGameButton;
     public void Start()
     {
+        sequenceController = GetComponent<SequenceController>();
         areYouSureUI.SetActive(false);
         cleanPrefs();
         if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
@@ -51,7 +52,7 @@ public class MainMenu : MonoBehaviour
         audioPlayer.playButtonPushSound();
         resetPrefsForNewGame();
         StartCoroutine(WaitAndContinue(0.47f));
-        sequenceManager.startDay();
+        sequenceController.startDay();
 
         IEnumerator WaitAndContinue(float time)
         {
@@ -63,7 +64,7 @@ public class MainMenu : MonoBehaviour
     {
         audioPlayer.playButtonPushSound();
         StartCoroutine(WaitAndContinue(0.47f));
-        sequenceManager.startDay();
+        sequenceController.startDay();
 
         IEnumerator WaitAndContinue(float time)
         {

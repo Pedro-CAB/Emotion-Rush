@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-public class StaticSceneManager : SequenceManager
+public class StaticSceneController : SequenceController
 {
     public DialogueController dialogueController;
 

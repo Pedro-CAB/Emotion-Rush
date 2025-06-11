@@ -911,7 +911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6b598dc47ed094694bca75c60723f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceManager: {fileID: 131444861}
   isOutcomeMenu: 1
   coinSystem: {fileID: 131444859}
   classAIncText: {fileID: 1147198523}

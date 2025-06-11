@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Store : MonoBehaviour
 {
-    public SequenceManager sequenceManager;
+    public SequenceController sequenceController;
     public GameObject storeFrontUI;
     public GameObject upgradeStoreUI;
 
@@ -261,12 +261,12 @@ public class Store : MonoBehaviour
                 //TODO: Load Next Static Scene, as Break is over
                 //TODO: Delete the two lines below
                 PlayerPrefs.SetFloat("breakTimeLeft", breakTimeLeft);
-                sequenceManager.endStaticSceneDuringBreakAndBreak();
+                sequenceController.endStaticSceneDuringBreakAndBreak();
             }
             else
             {
                 PlayerPrefs.SetFloat("breakTimeLeft", breakTimeLeft);
-                sequenceManager.endStaticSceneDuringBreak();
+                sequenceController.endStaticSceneDuringBreak();
             }
         }
         else //if there is an extras store, go to store front
@@ -284,7 +284,7 @@ public class Store : MonoBehaviour
             else
             {
                 PlayerPrefs.SetFloat("breakTimeLeft", PlayerPrefs.GetFloat("breakTimeLeft") - (300.0f - (PlayerPrefs.GetInt("unsavedInteractionUpgradeLevel") * 30.0f)));
-                sequenceManager.endStaticSceneDuringBreak();
+                sequenceController.endStaticSceneDuringBreak();
             }
         }
     }

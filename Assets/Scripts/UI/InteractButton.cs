@@ -1,6 +1,8 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-
+/// <summary>
+/// View and Controller for the Interact Button in the game.
+/// Handles interactions when the button is pressed.
+/// </summary>
 public class InteractButton : MonoBehaviour
 {
     public PlayerController player;

@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Model and Controller for a Camera that follows a target GameObject in the game.
+/// </summary>
 public class FollowCamera : MonoBehaviour
 {
     public GameObject target;

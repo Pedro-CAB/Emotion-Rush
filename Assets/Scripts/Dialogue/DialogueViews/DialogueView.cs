@@ -19,9 +19,9 @@ public abstract class DialogueView : MonoBehaviour
     public DialogueController dialogueController;
 
     /// <summary>
-    /// BreakManager component that manages the break scene logic in the game.
+    /// BreakController component that manages the break scene logic in the game.
     /// </summary>
-    public BreakManager breakManager;
+    public BreakController breakController;
 
     /// <summary>
     /// DialogueLine struct where the current line to be displayed is stored.

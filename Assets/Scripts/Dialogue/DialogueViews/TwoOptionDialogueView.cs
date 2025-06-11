@@ -68,8 +68,8 @@ public class TwoOptionDialogueView : DialogueView
             {
                 string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
                 //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                breakManager.saveTimeLeft(); // Save the current break time left
-                breakManager.initiateStaticSceneDuringBreak(roomName);
+                breakController.saveTimeLeft(); // Save the current break time left
+                breakController.initiateStaticSceneDuringBreak(roomName);
             }
             else if (option == "B")
             {

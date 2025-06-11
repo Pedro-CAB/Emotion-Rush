@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 3666935779701675821}
+    - target: {fileID: 7819724383645306310, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+      propertyPath: sequenceController
+      value: 
+      objectReference: {fileID: 958218624487276798}
     - target: {fileID: 8563340167369751792, guid: 5d58571653f629c449e20464973fbd43, type: 3}
       propertyPath: linearDialogueView
       value: 
@@ -199,6 +203,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+--- !u!114 &958218624487276798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3376242652788514144, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+  m_PrefabInstance: {fileID: 2564399829497224606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e2db0e4cdd182499a6998d6bcb2285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1303001966630933825 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3567877214993975519, guid: 5d58571653f629c449e20464973fbd43, type: 3}

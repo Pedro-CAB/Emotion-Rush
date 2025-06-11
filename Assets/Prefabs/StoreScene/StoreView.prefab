@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 741432986919631256}
+    - target: {fileID: 161248269169811121, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
+      propertyPath: sequenceController
+      value: 
+      objectReference: {fileID: 4557066612047266651}
     - target: {fileID: 475098604459428307, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -229,6 +233,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2687a7d2b1bb3f49bfa53d05899aec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4557066612047266651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1351612524427998277, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
+  m_PrefabInstance: {fileID: 3313549395301054238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b45f837155fa84dbadc3dec46a86f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8680642305697185252 stripped

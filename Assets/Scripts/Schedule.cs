@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+/// <summary>
+/// Controller for the logic regarding time and day phases and View for the Schedule UI in the game.
+/// </summary>
 public class Schedule : MonoBehaviour
 {
-    int currentDay;
     [HideInInspector] public string currentWeekDay; // Monday, Tuesday, Wednesday, Thursday, Friday
     [HideInInspector] public int currentWeek;
 

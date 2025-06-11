@@ -1,8 +1,10 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
-public class BreakManager : SequenceManager
+/// <summary>
+/// Controller for School Break Scenes.
+/// </summary>
+public class BreakController : SequenceController
 {
     /// <summary>
     /// TextMeshProUGUI component where timer is displayed.

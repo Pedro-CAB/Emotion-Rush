@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SequenceManager : MonoBehaviour
+public class SequenceController : MonoBehaviour
 {
     /// <summary>
     /// Schedule component that manages the game phases.

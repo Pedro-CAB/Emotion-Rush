@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 public class ScoreManager : MonoBehaviour
 {
-    public SequenceManager sequenceManager;
+    private SequenceController sequenceController;
     public bool isOutcomeMenu; //Set as true in the outcome menu scene
 
     public CoinSystem coinSystem;
@@ -45,6 +45,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        sequenceController = GetComponent<SequenceController>();
         coinGain = 0;
         classAScore = PlayerPrefs.GetInt("classAScore");
         classBScore = PlayerPrefs.GetInt("classBScore");
@@ -213,7 +214,7 @@ public class ScoreManager : MonoBehaviour
         saveUpgrades();
         resetPlayerIncrement();
         coinSystem.saveDailyCoins(coinGain);
-        sequenceManager.toMainMenu();
+        sequenceController.toMainMenu();
     }
 
     public void saveAndContinue()
@@ -227,7 +228,7 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("saveAndContinue :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
         coinSystem.saveDailyCoins(coinGain);
         Debug.Log("saveAndContinue :: Current Week Day: " + PlayerPrefs.GetString("currentWeekDay"));
-        sequenceManager.startDay();
+        sequenceController.startDay();
     }
 
     void giveCoins()
