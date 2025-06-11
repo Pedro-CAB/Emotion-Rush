@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class InteractButton : MonoBehaviour
 {
-    public Player player;
+    public PlayerController player;
 
     public AudioPlayer audioPlayer;
 

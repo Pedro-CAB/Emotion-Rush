@@ -226,7 +226,7 @@ PrefabInstance:
     - target: {fileID: 8843554555841317167, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 2189187495228260717}
+      objectReference: {fileID: 2851233485820147915}
     - target: {fileID: 8843554555841317167, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: audioPlayer
       value: 
@@ -461,6 +461,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1080443772117383101}
     m_Modifications:
+    - target: {fileID: 4186975850147306172, guid: 7155fc1342b9db142a3ecd4a6f9f2457, type: 3}
+      propertyPath: movementJoystick
+      value: 
+      objectReference: {fileID: 2206417323496678891}
     - target: {fileID: 5201129312105611517, guid: 7155fc1342b9db142a3ecd4a6f9f2457, type: 3}
       propertyPath: m_Name
       value: Player
@@ -519,14 +523,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6947298958233788238, guid: 7155fc1342b9db142a3ecd4a6f9f2457, type: 3}
   m_PrefabInstance: {fileID: 6980595365497738739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2189187495228260717 stripped
+--- !u!114 &2851233485820147915 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9115708878837109918, guid: 7155fc1342b9db142a3ecd4a6f9f2457, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5148057751061605688, guid: 7155fc1342b9db142a3ecd4a6f9f2457, type: 3}
   m_PrefabInstance: {fileID: 6980595365497738739}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5597f176d4d755a41a7aff7be2efd8ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 89018d825e44eda478ecce7798574470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 6947298958233788238}
   - component: {fileID: 2386337749715894268}
   - component: {fileID: 1382832522116660957}
-  - component: {fileID: 9115708878837109918}
   - component: {fileID: 839533771111395387}
   - component: {fileID: 4502922051419174346}
+  - component: {fileID: 4186975850147306172}
+  - component: {fileID: 5148057751061605688}
+  - component: {fileID: 3226901242096490250}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -113,21 +115,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9115708878837109918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5201129312105611517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5597f176d4d755a41a7aff7be2efd8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementJoystick: {fileID: 0}
-  speed: 5
-  detect_distance: 0
 --- !u!50 &839533771111395387
 Rigidbody2D:
   serializedVersion: 5
@@ -201,3 +188,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.82445693, y: 0.24400723}
   m_EdgeRadius: 0
+--- !u!114 &4186975850147306172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201129312105611517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5597f176d4d755a41a7aff7be2efd8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementJoystick: {fileID: 0}
+  speed: 0
+--- !u!114 &5148057751061605688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201129312105611517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89018d825e44eda478ecce7798574470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detect_distance: 100
+--- !u!114 &3226901242096490250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201129312105611517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1d1dc76658f0841bc6c93485d34334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
