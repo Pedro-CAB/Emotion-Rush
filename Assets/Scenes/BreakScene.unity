@@ -1160,6 +1160,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2469766898895722065, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565323986374413862, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474893175166105343, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
+      propertyPath: m_text
+      value: "- Movimenta-te usando o joystick na esquerda.\n\n- Quando estiveres
+        frente a frente com a porta da Biblioteca, da Loja ou do Recreio, usa o bot\xE3o
+        A para entrar."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474893175166105343, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
+      propertyPath: m_fontSize
+      value: 44.35
+      objectReference: {fileID: 0}
     - target: {fileID: 7810049677899267379, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
       propertyPath: m_Name
       value: BreakView
