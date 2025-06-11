@@ -31,18 +31,4 @@ public class LinearDialogueBox : DialogueBox
         currentLine = l;
         StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
     }
-
-    /// <summary>
-    /// Coroutine that types out lines of dialogue one character at a time.
-    /// </summary>
-    /// <returns> IEnumerator that types out the line.</returns>
-    IEnumerator TypeLine()
-    {
-        textComponent.text = string.Empty; // Clear the text component before typing the new line
-        foreach (char letter in currentLine.content.ToCharArray())
-        {
-            textComponent.text += letter; // Display each letter one by one
-            yield return new WaitForSeconds(textSpeed); // Wait for the specified text speed before displaying the next letter
-        }
-    }
 }
