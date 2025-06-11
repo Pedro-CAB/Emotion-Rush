@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 20575527}
   - component: {fileID: 20575524}
   - component: {fileID: 20575523}
+  - component: {fileID: 20575528}
   m_Layer: 3
   m_Name: LibraryDoor
   m_TagString: Interactive NPC
@@ -295,6 +296,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &20575528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20575521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &369501438
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +321,7 @@ GameObject:
   - component: {fileID: 369501444}
   - component: {fileID: 369501441}
   - component: {fileID: 369501440}
+  - component: {fileID: 369501445}
   m_Layer: 3
   m_Name: AuditoryDoor
   m_TagString: Interactive NPC
@@ -471,6 +485,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &369501445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369501438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568623883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2940306356396512526, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
@@ -489,6 +515,7 @@ GameObject:
   - component: {fileID: 586505072}
   - component: {fileID: 586505069}
   - component: {fileID: 586505068}
+  - component: {fileID: 586505073}
   m_Layer: 3
   m_Name: PlaygroundDoor
   m_TagString: Interactive NPC
@@ -652,6 +679,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &586505073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586505066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &635555447
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +704,7 @@ GameObject:
   - component: {fileID: 635555453}
   - component: {fileID: 635555450}
   - component: {fileID: 635555449}
+  - component: {fileID: 635555454}
   m_Layer: 3
   m_Name: ClassroomCDoor
   m_TagString: Interactive NPC
@@ -828,6 +868,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &635555454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635555447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663722406
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +893,7 @@ GameObject:
   - component: {fileID: 663722412}
   - component: {fileID: 663722409}
   - component: {fileID: 663722408}
+  - component: {fileID: 663722413}
   m_Layer: 3
   m_Name: ClassroomBDoor
   m_TagString: Interactive NPC
@@ -1004,6 +1057,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &663722413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663722406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667800413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1185,7 @@ GameObject:
   - component: {fileID: 719196533}
   - component: {fileID: 719196530}
   - component: {fileID: 719196529}
+  - component: {fileID: 719196534}
   m_Layer: 3
   m_Name: ClassroomADoor
   m_TagString: Interactive NPC
@@ -1283,6 +1349,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &719196534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719196527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &743209301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1374,7 @@ GameObject:
   - component: {fileID: 743209307}
   - component: {fileID: 743209304}
   - component: {fileID: 743209303}
+  - component: {fileID: 743209308}
   m_Layer: 3
   m_Name: ClassroomDDoor
   m_TagString: Interactive NPC
@@ -1459,6 +1538,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &743209308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743209301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1143747020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1713,7 @@ GameObject:
   - component: {fileID: 1198470907}
   - component: {fileID: 1198470904}
   - component: {fileID: 1198470903}
+  - component: {fileID: 1198470908}
   m_Layer: 3
   m_Name: LeftEntranceDoor
   m_TagString: Interactive NPC
@@ -1785,6 +1877,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &1198470908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198470901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238885958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1902,7 @@ GameObject:
   - component: {fileID: 1238885964}
   - component: {fileID: 1238885961}
   - component: {fileID: 1238885960}
+  - component: {fileID: 1238885965}
   m_Layer: 3
   m_Name: LabDoor
   m_TagString: Interactive NPC
@@ -1961,6 +2066,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &1238885965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238885958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526663241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,6 +2091,7 @@ GameObject:
   - component: {fileID: 1526663247}
   - component: {fileID: 1526663248}
   - component: {fileID: 1526663246}
+  - component: {fileID: 1526663249}
   m_Layer: 3
   m_Name: StoreDoor
   m_TagString: Interactive NPC
@@ -2137,6 +2255,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &1526663249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526663241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1768033049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2280,7 @@ GameObject:
   - component: {fileID: 1768033055}
   - component: {fileID: 1768033052}
   - component: {fileID: 1768033051}
+  - component: {fileID: 1768033056}
   m_Layer: 3
   m_Name: RightEntranceDoor
   m_TagString: Interactive NPC
@@ -2313,6 +2444,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &1768033056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768033049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1867789067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1080443772117383101, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}
@@ -2331,6 +2474,7 @@ GameObject:
   - component: {fileID: 1898986611}
   - component: {fileID: 1898986608}
   - component: {fileID: 1898986607}
+  - component: {fileID: 1898986612}
   m_Layer: 3
   m_Name: FrontEntranceDoor
   m_TagString: Interactive NPC
@@ -2494,6 +2638,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 1993118279}
+--- !u!114 &1898986612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898986605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c2f782260448048b5cd5cf79f86b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1993118279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6480218272804542727, guid: e889708fd7947c64fa619b7ebacceedd, type: 3}

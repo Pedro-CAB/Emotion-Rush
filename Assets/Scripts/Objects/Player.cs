@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Current door being detected by the player.
     /// </summary>
-    private Door detectedDoor;
+    private DoorController detectedDoor;
 
     /// <summary>
     /// Datatype representing the possible directions the player can face.
@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
 
         if (hit)
         {
-            detectedDoor = hit.collider.gameObject.GetComponent<Door>();
+            detectedDoor = hit.collider.gameObject.GetComponent<DoorController>();
         }
     }
 
