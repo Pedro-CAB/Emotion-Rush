@@ -7,5 +7,5 @@ public class InteractiveObject : MonoBehaviour
     /// <summary>
     /// Reference for the Dialogue Logic Handler
     /// </summary>
-    public DialogueManager dialogueManager;
+    public DialogueController dialogueController;
 }

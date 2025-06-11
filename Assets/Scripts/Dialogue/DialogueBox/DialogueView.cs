@@ -3,10 +3,10 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// DialogueBox is an abstract class that serves as a base for different types of dialogue boxes in the game.
-/// In the Model-View-Controller (MVC) architecture, it acts as the View component for displaying dialogue to the player.
+/// DialogueView is an abstract class that serves as a template for different types of dialogue views in the game.
+/// It provides the basic structure and functionality for displaying dialogue lines, handling user input, and managing the dialogue flow.
 /// </summary>
-public abstract class DialogueBox : MonoBehaviour
+public abstract class DialogueView : MonoBehaviour
 {
     /// <summary>
     /// TextMeshProUGUI component that contains the Dialogue Prompt presented to the player.
@@ -14,9 +14,9 @@ public abstract class DialogueBox : MonoBehaviour
     public TextMeshProUGUI textComponent;
 
     /// <summary>
-    /// DialogueManager component that manages the dialogue logic in current scene.
+    /// DialogueController component that manages the dialogue logic in current scene.
     /// </summary>
-    public DialogueManager dialogueManager;
+    public DialogueController dialogueController;
 
     /// <summary>
     /// BreakManager component that manages the break scene logic in the game.
@@ -90,12 +90,12 @@ public abstract class DialogueBox : MonoBehaviour
                 if (currentLine.nextLine != null)
                 {
                     textComponent.text = string.Empty; // Clear the text component before displaying the next line
-                    //HideDialogueBox(); // Hide the dialogue box before displaying the next line
-                    dialogueManager.setCurrentLine(currentLine.nextLine); // Set the next line as the current line
+                    //HideDialogueView(); // Hide the dialogue box before displaying the next line
+                    dialogueController.setCurrentLine(currentLine.nextLine); // Set the next line as the current line
                 }
                 else
                 {
-                    HideDialogueBox(); // Hide the dialogue box after picking an option
+                    HideDialogueView(); // Hide the dialogue box after picking an option
                 }
             }
         }
@@ -108,7 +108,7 @@ public abstract class DialogueBox : MonoBehaviour
 
     }
 
-    public void HideDialogueBox()
+    public void HideDialogueView()
     {
         Debug.Log("Hiding Dialogue Box");
         textComponent.text = string.Empty; // Clear the text component when hiding the dialogue box

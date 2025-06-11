@@ -6,9 +6,9 @@ using System;
 using System.Linq;
 
 /// <summary>
-/// ThreeDialogueBox is a class that serves as the View for dialogue boxes in the game, in the Model-View-Controller (MVC) architecture.
+/// ThreeDialogueView is a class that serves as the View for dialogue boxes in the game.
 /// </summary>
-public class ThreeOptionDialogueBox : DialogueBox
+public class ThreeOptionDialogueView : DialogueView
 {
     /// <summary>
     /// UI component for the text of option A in dialogue options.
@@ -104,22 +104,21 @@ public class ThreeOptionDialogueBox : DialogueBox
             DialogueLine nextLine = chosenLine.nextLine;
             if (nextLine != null)
             {
-                dialogueManager.setCurrentLine(nextLine);
+                dialogueController.setCurrentLine(nextLine);
             }
             if (trigger != null && trigger.Contains("Door"))
             {
                 if (option == "A")
                 {
                     string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
-                    //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
-                    PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
+                    breakManager.saveTimeLeft(); // Save the current break time left
                     breakManager.initiateStaticSceneDuringBreak(roomName);
                 }
                 else if (option == "B")
                 {
                     //Player answered "No" to the door prompt
                     //Do nothing and close the dialogue box.
-                    HideDialogueBox();
+                    HideDialogueView();
                 }
             }
             else if (chosenLine.feedback != "None")
@@ -166,7 +165,7 @@ public class ThreeOptionDialogueBox : DialogueBox
             DialogueLine nextLine = currentLine.nextLine;
             if (nextLine != null)
             {
-                dialogueManager.setCurrentLine(nextLine);
+                dialogueController.setCurrentLine(nextLine);
             }
         }
     }

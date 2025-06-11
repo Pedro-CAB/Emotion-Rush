@@ -1,7 +1,7 @@
 /// <summary>
-/// LinearDialogueBox is a class that serves as the View for dialogue boxes in the game, in the Model-View-Controller (MVC) architecture.
+/// LinearDialogueView is a class that serves as the View for dialogue boxes in the game.
 /// </summary>
-public class LinearDialogueBox : DialogueBox
+public class LinearDialogueView : DialogueView
 {
 
     /// <summary>

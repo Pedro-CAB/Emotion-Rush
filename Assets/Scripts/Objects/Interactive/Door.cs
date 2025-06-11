@@ -72,6 +72,6 @@ public class Door : InteractiveObject
     /// </summary>
     public void whenInteracted()
     {
-        dialogueManager.setCurrentLine(prompt, doorName);
+        dialogueController.setCurrentLine(prompt, doorName);
     }
 }

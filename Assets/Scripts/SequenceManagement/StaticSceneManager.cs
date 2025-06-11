@@ -5,15 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 public class StaticSceneManager : SequenceManager
 {
-    public DialogueManager dialogueManager;
+    public DialogueController dialogueController;
 
     private string currentSceneName;
 
-    private DialogueSequence dialogueSequence;
+    private DialogueModel dialogueModel;
 
-    List<DialogueSequence> interactions = new List<DialogueSequence> { };
+    List<DialogueModel> interactions = new List<DialogueModel> { };
 
-    public InteractionLoader interactionLoader;
+    public DialogueLoader dialogueLoader;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()
@@ -27,12 +27,12 @@ public class StaticSceneManager : SequenceManager
         Debug.Log("Interaction count: " + interactions.Count);
         DialogueLine line = interactions[index].RootLine; // Get the first interaction line
         //player.setStaticScene();
-        dialogueManager.setCurrentLine(line); // Set the DialogueManager to start the scene with the first line of dialogue
+        dialogueController.setCurrentLine(line); // Set the DialogueController to start the scene with the first line of dialogue
     }
 
     void Update()
     {
-        if (!dialogueManager.isDialogueActive()) //if dialogue is over
+        if (!dialogueController.isDialogueActive()) //if dialogue is over
         {
             if (PlayerPrefs.GetString("gameState") == "staticSceneOutsideBreak") //if it was a static scene outside a break
             {
@@ -69,8 +69,8 @@ public class StaticSceneManager : SequenceManager
 
     public IEnumerator createSpecificInteractions(string sceneName)
     {
-        yield return interactionLoader.LoadInteractionFiles(sceneName);
-        interactions = interactionLoader.GetInteractions(); // Get the interactions from the InteractionLoader
+        yield return dialogueLoader.LoadInteractionFiles(sceneName);
+        interactions = dialogueLoader.GetInteractions(); // Get the interactions from the DialogueLoader
         Debug.Log("Loaded interactions for " + sceneName + " scene:" + interactions.Count);
     }
 }

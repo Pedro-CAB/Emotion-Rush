@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-public class InteractionLoader : MonoBehaviour
+public class DialogueLoader : MonoBehaviour
 {
-    public List<DialogueSequence> interactions = new List<DialogueSequence>();
+    public List<DialogueModel> interactions = new List<DialogueModel>();
 
     [System.Serializable]
     public class FileListWrapper
@@ -14,7 +14,7 @@ public class InteractionLoader : MonoBehaviour
         public string[] files;
     }
 
-    public List<DialogueSequence> GetInteractions()
+    public List<DialogueModel> GetInteractions()
     {
         return interactions;
     }
@@ -82,7 +82,7 @@ public class InteractionLoader : MonoBehaviour
                 continue;
             }
 #endif
-            DialogueSequence seq = new DialogueSequence(json); // ← assumes construtor por string JSON
+            DialogueModel seq = new DialogueModel(json); // ← assumes construtor por string JSON
             interactions.Add(seq);
         }
 

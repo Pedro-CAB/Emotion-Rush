@@ -59,7 +59,8 @@ public class BreakManager : SequenceManager
             PlayerPrefs.SetFloat("breakTimeLeft", standardBreakTime); // Restart Timer
             endBreak();
         }
-        else{
+        else
+        {
             updateTimerText();
         }
     }
@@ -79,10 +80,16 @@ public class BreakManager : SequenceManager
         return timeLeft;
     }
 
+    public void saveTimeLeft()
+    {
+        PlayerPrefs.SetFloat("breakTimeLeft", timeLeft);
+    }
+
     /// <summary>
     /// Updates the value displayed in the timer and decreases the time left, if the timer is running.
     /// </summary>
-    void updateTimerText(){
+    void updateTimerText()
+    {
         if (isTimerRunning)
         {
             timeLeft -= Time.deltaTime;

@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 /// Structure containing a dialog tree for a dialogue sequence, after parsing it from a JSON file.
 /// This class is responsible for parsing the JSON structure into a tree of DialogueLine objects.
 /// </summary>
-public class DialogueSequence : MonoBehaviour
+public class DialogueModel : MonoBehaviour
 {
     /// <summary>
     /// Root of the dialogue tree.
@@ -20,10 +20,10 @@ public class DialogueSequence : MonoBehaviour
     public string JsonFilePath { get; private set; }
 
     /// <summary>
-    /// Initiates a DialogueSequence object by parsing the provided JSON content.
+    /// Initiates a DialogueModel object by parsing the provided JSON content.
     /// </summary>
     /// <param name="jsonContent">JSON string that represents the dialogue structure.</param>
-    public DialogueSequence(string jsonContent)
+    public DialogueModel(string jsonContent)
     {
         Debug.Log(jsonContent);
         JObject rootObj = JObject.Parse(jsonContent);
