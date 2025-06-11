@@ -10,6 +10,7 @@ using System.Linq;
 
 /// <summary>
 /// DialogueBox is an abstract class that serves as a base for different types of dialogue boxes in the game.
+/// In the Model-View-Controller (MVC) architecture, it acts as the View component for displaying dialogue to the player.
 /// </summary>
 public abstract class DialogueBox : MonoBehaviour
 {

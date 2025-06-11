@@ -9,9 +9,7 @@ using System;
 using System.Linq;
 
 /// <summary>
-/// DialogueBox is a MonoBehaviour that manages the display and interaction of dialogue boxes in the game.
-/// It handles both linear dialogue and option-based dialogue, allowing players to interact with characters and make choices that affect the game state.
-/// It includes methods for starting dialogue lines, typing them out, picking options, and hiding the dialogue box.
+/// TwoDialogueBox is a class that serves as the View for dialogue boxes in the game, in the Model-View-Controller (MVC) architecture.
 /// </summary>
 public class TwoOptionDialogueBox : DialogueBox
 {
