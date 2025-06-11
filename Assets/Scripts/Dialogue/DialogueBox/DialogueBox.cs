@@ -55,8 +55,6 @@ public abstract class DialogueBox : MonoBehaviour
         random = new System.Random(); // Initialize the random number generator
     }
 
-    //Handling Linear Dialogue --------------------------------------------------------------------------------------------
-
     /// <summary>
     /// Start Displaying a Linear Dialogue Box and Typing a Linear Dialogue Line on it.
     /// </summary>

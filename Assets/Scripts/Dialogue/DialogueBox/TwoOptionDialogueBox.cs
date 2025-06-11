@@ -9,19 +9,9 @@ public class TwoOptionDialogueBox : DialogueBox
 {
 
     /// <summary>
-    /// Button component for the option A in dialogue options.
-    /// </summary>
-    public Button optionAButton;
-
-    /// <summary>
     /// TextMeshProUGUI component for the text of option A in dialogue options.
     /// </summary>
     public TextMeshProUGUI optionAText;
-
-    /// <summary>
-    /// Button component for the option B in dialogue options.
-    /// </summary>
-    public Button optionBButton;
 
     /// <summary>
     /// TextMeshProUGUI component for the text of option B in dialogue options.

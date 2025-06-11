@@ -10,34 +10,18 @@ using System.Linq;
 /// </summary>
 public class ThreeOptionDialogueBox : DialogueBox
 {
-
     /// <summary>
-    /// Button component for the option A in dialogue options.
-    /// </summary>
-    public Button optionAButton;
-
-    /// <summary>
-    /// TextMeshProUGUI component for the text of option A in dialogue options.
+    /// UI component for the text of option A in dialogue options.
     /// </summary>
     public TextMeshProUGUI optionAText;
 
     /// <summary>
-    /// Button component for the option B in dialogue options.
-    /// </summary>
-    public Button optionBButton;
-
-    /// <summary>
-    /// TextMeshProUGUI component for the text of option B in dialogue options.
+    /// UI component for the text of option B in dialogue options.
     /// </summary>
     public TextMeshProUGUI optionBText;
 
     /// <summary>
-    /// Button component for the option C in dialogue options.
-    /// </summary>
-    public Button optionCButton;
-
-    /// <summary>
-    /// TextMeshProUGUI component for the text of option C in dialogue options.
+    /// UI component for the text of option C in dialogue options.
     /// </summary>
     public TextMeshProUGUI optionCText;
 

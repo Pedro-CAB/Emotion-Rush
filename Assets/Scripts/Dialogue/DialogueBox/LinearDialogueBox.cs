@@ -3,11 +3,6 @@
 /// </summary>
 public class LinearDialogueBox : DialogueBox
 {
-    void Start()
-    {
-        textComponent.text = string.Empty;
-        random = new System.Random(); // Initialize the random number generator
-    }
 
     /// <summary>
     /// Start Displaying a Linear Dialogue Box and Typing a Linear Dialogue Line on it.
