@@ -139,6 +139,21 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 741432986919631256}
+    - target: {fileID: 3616692597547927729, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
+      propertyPath: m_text
+      value: "- Toca na imagem de uma melhoria para a comprares. Melhorias com o
+        pre\xE7o a vermelho significam que n\xE3o tens moedas suficientes.\n\n- O
+        n\xEDvel m\xE1ximo de cada melhoria \xE9 10.\n\n- Para saires da loja, carrega
+        no bot\xE3o no canto superior direito."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616692597547927729, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
+      propertyPath: m_fontSize
+      value: 35.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238033615263871080, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6164233481509391098, guid: f04486fb899632e498ce11c56b5204ca, type: 3}
       propertyPath: m_Pivot.x
       value: 0
