@@ -9,9 +9,7 @@ using System;
 using System.Linq;
 
 /// <summary>
-/// DialogueBox is a MonoBehaviour that manages the display and interaction of dialogue boxes in the game.
-/// It handles both linear dialogue and option-based dialogue, allowing players to interact with characters and make choices that affect the game state.
-/// It includes methods for starting dialogue lines, typing them out, picking options, and hiding the dialogue box.
+/// DialogueBox is an abstract class that serves as a base for different types of dialogue boxes in the game.
 /// </summary>
 public abstract class DialogueBox : MonoBehaviour
 {
@@ -65,7 +63,7 @@ public abstract class DialogueBox : MonoBehaviour
     //Handling Linear Dialogue --------------------------------------------------------------------------------------------
 
     /// <summary>
-    /// Start DIsplaying a Linear Dialogue Box and Typing a Linear Dialogue Line on it.
+    /// Start Displaying a Linear Dialogue Box and Typing a Linear Dialogue Line on it.
     /// </summary>
     /// <param name="l">Linear Line to be typed and displayed.</param>
     /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
