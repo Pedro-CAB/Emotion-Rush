@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8142885167654384969}
   - component: {fileID: 8926876696688698122}
   - component: {fileID: 805911516231319551}
-  - component: {fileID: 647431332294692180}
+  - component: {fileID: 4891710079612393932}
   m_Layer: 5
   m_Name: ThreeChoiceDialogBox
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &647431332294692180
+--- !u!114 &4891710079612393932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,20 +89,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 993802840966687047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f2f1e2c20db6e448fdb76b81cb1006, type: 3}
+  m_Script: {fileID: 11500000, guid: 2000024ddc716bb4ebe314ff6699ff49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 3168719121891996446}
+  dialogueManager: {fileID: 0}
+  breakManager: {fileID: 0}
+  textSpeed: 0.05
+  trigger: 
+  audioPlayer: {fileID: 0}
   optionAButton: {fileID: 2201330904976978619}
   optionAText: {fileID: 3091185939744253864}
   optionBButton: {fileID: 6433492471639520195}
   optionBText: {fileID: 2898936701079240110}
   optionCButton: {fileID: 7255274640349456732}
   optionCText: {fileID: 8554976713609010247}
-  dialogueManager: {fileID: 0}
-  breakManager: {fileID: 0}
-  textSpeed: 0.05
-  audioPlayer: {fileID: 0}
 --- !u!1 &2468373560158558497
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,8 +497,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 647431332294692180}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+      - m_Target: {fileID: 4891710079612393932}
+        m_TargetAssemblyTypeName: ThreeOptionDialogueBox, Assembly-CSharp
         m_MethodName: PickOption
         m_Mode: 5
         m_Arguments:
@@ -629,7 +630,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 647431332294692180}
+      - m_Target: {fileID: 4891710079612393932}
         m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
         m_MethodName: SkipDialog
         m_Mode: 1
@@ -762,8 +763,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 647431332294692180}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+      - m_Target: {fileID: 4891710079612393932}
+        m_TargetAssemblyTypeName: ThreeOptionDialogueBox, Assembly-CSharp
         m_MethodName: PickOption
         m_Mode: 5
         m_Arguments:
@@ -1031,8 +1032,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 647431332294692180}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+      - m_Target: {fileID: 4891710079612393932}
+        m_TargetAssemblyTypeName: ThreeOptionDialogueBox, Assembly-CSharp
         m_MethodName: PickOption
         m_Mode: 5
         m_Arguments:

@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3327870634102481779, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 3605747699637819221}
+    - target: {fileID: 3327870634102481779, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: breakManager
+      value: 
+      objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 3367895184409723346, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: audioPlayer
       value: 
@@ -71,6 +79,14 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 3605747699637819221}
+    - target: {fileID: 4607922777115105976, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 3605747699637819221}
+    - target: {fileID: 4607922777115105976, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: breakManager
+      value: 
+      objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 5982293251679167433, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -171,6 +187,14 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 3605747699637819221}
+    - target: {fileID: 8642230632067207522, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 3605747699637819221}
+    - target: {fileID: 8642230632067207522, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
+      propertyPath: breakManager
+      value: 
+      objectReference: {fileID: 1238992988073230286}
     - target: {fileID: 8843554555841317167, guid: de6bd38df5919174b9f0de74cdd09203, type: 3}
       propertyPath: player
       value: 

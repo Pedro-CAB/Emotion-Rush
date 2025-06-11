@@ -13,12 +13,8 @@ using System.Linq;
 /// It handles both linear dialogue and option-based dialogue, allowing players to interact with characters and make choices that affect the game state.
 /// It includes methods for starting dialogue lines, typing them out, picking options, and hiding the dialogue box.
 /// </summary>
-public class DialogueBox : MonoBehaviour
+public class ThreeOptionDialogueBox : DialogueBox
 {
-    /// <summary>
-    /// TextMeshProUGUI component that contains the Dialogue Prompt presented to the player.
-    /// </summary>
-    public TextMeshProUGUI textComponent;
 
     /// <summary>
     /// Button component for the option A in dialogue options.
@@ -51,134 +47,11 @@ public class DialogueBox : MonoBehaviour
     public TextMeshProUGUI optionCText;
 
     /// <summary>
-    /// DialogueManager component that manages the dialogue logic in current scene.
-    /// </summary>
-    public DialogueManager dialogueManager;
-
-    /// <summary>
-    /// BreakManager component that manages the break scene logic in the game.
-    /// </summary>
-    public BreakManager breakManager;
-
-    /// <summary>
-    /// DialogueLine struct where the current line to be displayed is stored.
-    /// </summary>
-    public DialogueLine currentLine;
-
-    /// <summary>
-    /// Speed at which the text is typed in the dialogue box.
-    /// </summary>
-    public float textSpeed;
-
-    /// <summary>
-    /// Stores the name of the object that triggered the current dialogue, if there is one.
-    /// Used for Door interactions.
-    /// </summary>
-    private string trigger;
-
-    /// <summary>
-    /// Component for generating random numbers used for randomizing options in Emotion Identification segments.
-    /// </summary>
-    public System.Random random;
-
-    /// <summary>
-    /// AudioPlayer component that manages audio playback in the game.
-    /// </summary>
-    public AudioPlayer audioPlayer;
-
-    void Start()
-    {
-        textComponent.text = string.Empty;
-        random = new System.Random(); // Initialize the random number generator
-    }
-
-    //Handling Linear Dialogue --------------------------------------------------------------------------------------------
-
-    /// <summary>
-    /// Start DIsplaying a Linear Dialogue Box and Typing a Linear Dialogue Line on it.
-    /// </summary>
-    /// <param name="l">Linear Line to be typed and displayed.</param>
-    /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
-    public void StartLinearDialogue(DialogueLine l, string triggeredBy = null)
-    {
-        trigger = triggeredBy; // Store the object that triggered the dialogue
-        enabled = true; // Show the dialogue box when starting the dialogue
-        currentLine = l;
-        StartCoroutine(TypeLine()); // Start the coroutine to type out the first line of dialogue
-    }
-
-    /// <summary>
-    /// Coroutine that types out lines of dialogue one character at a time.
-    /// </summary>
-    /// <returns> IEnumerator that types out the line.</returns>
-    IEnumerator TypeLine()
-    {
-        textComponent.text = string.Empty; // Clear the text component before typing the new line
-        foreach (char letter in currentLine.content.ToCharArray())
-        {
-            textComponent.text += letter; // Display each letter one by one
-            yield return new WaitForSeconds(textSpeed); // Wait for the specified text speed before displaying the next letter
-        }
-    }
-
-    /// <summary>
-    /// Shows whole line if the line wasn't fully typed yet, or skips to next line when line is linear and fully displayed.
-    /// If line is complete but not linear, it does nothing.
-    /// </summary>
-    public void SkipDialog()
-    {
-        audioPlayer.playButtonPushSound(); // Play the button sound when skipping dialogue
-        if (textComponent.text == currentLine.content)
-        { //If previous line is already fully displayed
-            if (currentLine.type == DialogueLine.LineType.Linear)
-            { //Only for linear lines
-                if (currentLine.nextLine != null)
-                {
-                    textComponent.text = string.Empty; // Clear the text component before displaying the next line
-                    //HideDialogueBox(); // Hide the dialogue box before displaying the next line
-                    dialogueManager.setCurrentLine(currentLine.nextLine); // Set the next line as the current line
-                }
-                else
-                {
-                    HideDialogueBox(); // Hide the dialogue box after picking an option
-                }
-            }
-        }
-        else
-        {
-            StopAllCoroutines(); // Stop the typing coroutine if the button is pressed before the line is fully displayed
-            textComponent.text = currentLine.content; // Display the full line immediately
-        }
-
-
-    }
-
-    //Handling Option Dialogue ----------------------------------------------------------------------------------------
-
-    /// <summary>
-    /// Starts displaying a Two Option Dialogue Box and typing a Two Option Dialogue Prompt for it.
-    /// </summary>
-    /// <param name="l">DialogueLine struct containing information on the line to be displayed.</param>
-    /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
-    public void StartTwoOptionDialogue(DialogueLine l, string triggeredBy = null)
-    {
-        //DisplayDialogueBox();
-        trigger = triggeredBy; // Store the object that triggered the dialogue
-        enabled = true; // Enable the dialogue box component to show the dialogue box
-        currentLine = l;
-
-        //index = 0;
-        StartCoroutine(TypeLine());
-        optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
-        optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
-    }
-
-    /// <summary>
     /// Starts displaying a Three Option Dialogue Box and typing a Two Option Dialogue Prompt for it.
     /// </summary>
     /// <param name="l">DialogueLine struct containing information on the line to be displayed.</param>
     /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
-    public void StartThreeOptionDialogue(DialogueLine l, string triggeredBy = null)
+    public override void handleDialogue(DialogueLine l, string triggeredBy = null)
     {
         trigger = triggeredBy; // Store the object that triggered the dialogue
         enabled = true; // Show the dialogue box when starting the dialogue
@@ -244,9 +117,8 @@ public class DialogueBox : MonoBehaviour
             optionIndex = 2; // Option C corresponds to index 2
         }
 
-        if (currentLine.type == DialogueLine.LineType.TwoOption || currentLine.type == DialogueLine.LineType.ThreeOption)
+        if (currentLine.type == DialogueLine.LineType.ThreeOption)
         {
-            DialogueLine promptLine = currentLine;
             DialogueLine chosenLine = currentLine.dialogueOptions[optionIndex];
             PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
             Debug.Log("Player Score Increment: " + PlayerPrefs.GetInt("playerScoreIncrement"));
@@ -318,12 +190,5 @@ public class DialogueBox : MonoBehaviour
                 dialogueManager.setCurrentLine(nextLine);
             }
         }
-    }
-
-    public void HideDialogueBox()
-    {
-        Debug.Log("Hiding Dialogue Box");
-        textComponent.text = string.Empty; // Clear the text component when hiding the dialogue box
-        gameObject.SetActive(false); // Disable the dialogue box component
     }
 }

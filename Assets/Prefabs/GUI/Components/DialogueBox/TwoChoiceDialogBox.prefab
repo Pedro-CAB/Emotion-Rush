@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8530775096035287797}
+      - m_Target: {fileID: 8570548717263962196}
         m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
         m_MethodName: SkipDialog
         m_Mode: 1
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 467785167413539393}
   - component: {fileID: 4379956516371793183}
   - component: {fileID: 4830597416722422528}
-  - component: {fileID: 8530775096035287797}
+  - component: {fileID: 8570548717263962196}
   m_Layer: 5
   m_Name: TwoChoiceDialogBox
   m_TagString: Untagged
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8530775096035287797
+--- !u!114 &8570548717263962196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,20 +221,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4761833973968920149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f2f1e2c20db6e448fdb76b81cb1006, type: 3}
+  m_Script: {fileID: 11500000, guid: 06cd5a5ac0299904bac9194a24b6eb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4174963395141343703}
+  dialogueManager: {fileID: 0}
+  breakManager: {fileID: 0}
+  textSpeed: 0.05
+  trigger: 
+  audioPlayer: {fileID: 0}
   optionAButton: {fileID: 1494660170754748519}
   optionAText: {fileID: 6250594210720351188}
   optionBButton: {fileID: 7686687173942980751}
   optionBText: {fileID: 2683499352371069805}
-  optionCButton: {fileID: 0}
-  optionCText: {fileID: 0}
-  dialogueManager: {fileID: 0}
-  breakManager: {fileID: 0}
-  textSpeed: 0.05
-  audioPlayer: {fileID: 0}
 --- !u!1 &4827511222805084857
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,8 +491,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8530775096035287797}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+      - m_Target: {fileID: 8570548717263962196}
+        m_TargetAssemblyTypeName: TwoOptionDialogueBox, Assembly-CSharp
         m_MethodName: PickOption
         m_Mode: 5
         m_Arguments:
@@ -761,8 +760,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8530775096035287797}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+      - m_Target: {fileID: 8570548717263962196}
+        m_TargetAssemblyTypeName: TwoOptionDialogueBox, Assembly-CSharp
         m_MethodName: PickOption
         m_Mode: 5
         m_Arguments:

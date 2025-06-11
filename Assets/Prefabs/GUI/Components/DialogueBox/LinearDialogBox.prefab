@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4638919556812956915}
   - component: {fileID: 3623584643705614166}
   - component: {fileID: 1456874088629109654}
-  - component: {fileID: 490674677479247560}
+  - component: {fileID: 5237114096944687586}
   m_Layer: 5
   m_Name: LinearDialogBox
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &490674677479247560
+--- !u!114 &5237114096944687586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,19 +86,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6670563993802577326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f2f1e2c20db6e448fdb76b81cb1006, type: 3}
+  m_Script: {fileID: 11500000, guid: 2485933cd33b38748894ba68d1fac06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 3255205948056847330}
-  optionAButton: {fileID: 0}
-  optionAText: {fileID: 0}
-  optionBButton: {fileID: 0}
-  optionBText: {fileID: 0}
-  optionCButton: {fileID: 0}
-  optionCText: {fileID: 0}
   dialogueManager: {fileID: 0}
   breakManager: {fileID: 0}
   textSpeed: 0.05
+  trigger: 
   audioPlayer: {fileID: 0}
 --- !u!1 &7970351640120857660
 GameObject:
@@ -221,8 +216,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 490674677479247560}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+      - m_Target: {fileID: 5237114096944687586}
+        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
         m_MethodName: SkipDialog
         m_Mode: 1
         m_Arguments:

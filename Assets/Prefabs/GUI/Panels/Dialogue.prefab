@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e868c27b31a2a594aacc2700257d6d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linearDialogueBox: {fileID: 6270347801258047852}
-  twoOptionDialogueBox: {fileID: 588148638195385644}
-  threeOptionDialogueBox: {fileID: 1901936319286247684}
+  linearDialogueBox: {fileID: 1830165246935375430}
+  twoOptionDialogueBox: {fileID: 628907971431655309}
+  threeOptionDialogueBox: {fileID: 5871552873869088156}
 --- !u!1001 &1340148941858704464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,6 +70,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThreeChoiceDialogBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4891710079612393932, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
+      propertyPath: textSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891710079612393932, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 8135470770479403913}
     - target: {fileID: 8142885167654384969, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -150,20 +158,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 647431332294692180, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
---- !u!114 &1901936319286247684 stripped
+--- !u!114 &5871552873869088156 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 647431332294692180, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4891710079612393932, guid: 0982052f6c64cb6438a70b77bd38fa79, type: 3}
   m_PrefabInstance: {fileID: 1340148941858704464}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f2f1e2c20db6e448fdb76b81cb1006, type: 3}
+  m_Script: {fileID: 11500000, guid: 2000024ddc716bb4ebe314ff6699ff49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &7176623129241631001 stripped
@@ -263,11 +272,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5237114096944687586, guid: fd45941c5be5a6c4493d63a8ba9efba3, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 8135470770479403913}
     - target: {fileID: 6670563993802577326, guid: fd45941c5be5a6c4493d63a8ba9efba3, type: 3}
       propertyPath: m_Name
       value: LinearDialogBox
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 490674677479247560, guid: fd45941c5be5a6c4493d63a8ba9efba3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -277,15 +291,15 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4638919556812956915, guid: fd45941c5be5a6c4493d63a8ba9efba3, type: 3}
   m_PrefabInstance: {fileID: 5894079546169046948}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6270347801258047852 stripped
+--- !u!114 &1830165246935375430 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 490674677479247560, guid: fd45941c5be5a6c4493d63a8ba9efba3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5237114096944687586, guid: fd45941c5be5a6c4493d63a8ba9efba3, type: 3}
   m_PrefabInstance: {fileID: 5894079546169046948}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f2f1e2c20db6e448fdb76b81cb1006, type: 3}
+  m_Script: {fileID: 11500000, guid: 2485933cd33b38748894ba68d1fac06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9100333187576014809
@@ -384,20 +398,25 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 8135470770479403913}
-    m_RemovedComponents: []
+    - target: {fileID: 8570548717263962196, guid: 40937a45d44e3ab46989544af13774fe, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 8135470770479403913}
+    m_RemovedComponents:
+    - {fileID: 8530775096035287797, guid: 40937a45d44e3ab46989544af13774fe, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40937a45d44e3ab46989544af13774fe, type: 3}
---- !u!114 &588148638195385644 stripped
+--- !u!114 &628907971431655309 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8530775096035287797, guid: 40937a45d44e3ab46989544af13774fe, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8570548717263962196, guid: 40937a45d44e3ab46989544af13774fe, type: 3}
   m_PrefabInstance: {fileID: 9100333187576014809}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f2f1e2c20db6e448fdb76b81cb1006, type: 3}
+  m_Script: {fileID: 11500000, guid: 06cd5a5ac0299904bac9194a24b6eb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8662402235588400536 stripped

@@ -1,0 +1,112 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
+using System;
+using System.Linq;
+
+/// <summary>
+/// DialogueBox is a MonoBehaviour that manages the display and interaction of dialogue boxes in the game.
+/// It handles both linear dialogue and option-based dialogue, allowing players to interact with characters and make choices that affect the game state.
+/// It includes methods for starting dialogue lines, typing them out, picking options, and hiding the dialogue box.
+/// </summary>
+public class TwoOptionDialogueBox : DialogueBox
+{
+
+    /// <summary>
+    /// Button component for the option A in dialogue options.
+    /// </summary>
+    public Button optionAButton;
+
+    /// <summary>
+    /// TextMeshProUGUI component for the text of option A in dialogue options.
+    /// </summary>
+    public TextMeshProUGUI optionAText;
+
+    /// <summary>
+    /// Button component for the option B in dialogue options.
+    /// </summary>
+    public Button optionBButton;
+
+    /// <summary>
+    /// TextMeshProUGUI component for the text of option B in dialogue options.
+    /// </summary>
+    public TextMeshProUGUI optionBText;
+
+    /// <summary>
+    /// Starts displaying a Two Option Dialogue Box and typing a Two Option Dialogue Prompt for it.
+    /// </summary>
+    /// <param name="l">DialogueLine struct containing information on the line to be displayed.</param>
+    /// <param name="triggeredBy">Name of the object that triggered the current dialogue. Null, if no object triggered the dialogue.</param>
+    public override void handleDialogue(DialogueLine l, string triggeredBy = null)
+    {
+        //DisplayDialogueBox();
+        trigger = triggeredBy; // Store the object that triggered the dialogue
+        enabled = true; // Enable the dialogue box component to show the dialogue box
+        currentLine = l;
+
+        //index = 0;
+        StartCoroutine(TypeLine());
+        optionAText.text = l.dialogueOptions[0].content; // Set the text for option A button
+        optionBText.text = l.dialogueOptions[1].content; // Set the text for option B button
+    }
+    
+    /// <summary>
+    /// Processes the player's choice picked from the available buttons.
+    /// </summary>
+    /// <param name="option">String containing the option the player picked between A, B or C.</param>
+    public void PickOption(string option)
+    {
+        StopAllCoroutines();
+        audioPlayer.playButtonPushSound(); // Play the button sound when picking an option
+        int optionIndex = 0;
+        if (option == "A")
+        {
+            optionIndex = 0; // Option A corresponds to index 0
+        }
+        else if (option == "B")
+        {
+            optionIndex = 1; // Option B corresponds to index 1
+        }
+
+        DialogueLine chosenLine = currentLine.dialogueOptions[optionIndex];
+        PlayerPrefs.SetInt("playerScoreIncrement", PlayerPrefs.GetInt("playerScoreIncrement") + chosenLine.score); // Increment the player's score based on the chosen line's score
+        Debug.Log("Player Score Increment: " + PlayerPrefs.GetInt("playerScoreIncrement"));
+        DialogueLine nextLine = chosenLine.nextLine;
+        if (nextLine != null)
+        {
+            dialogueManager.setCurrentLine(nextLine);
+        }
+        if (trigger != null && trigger.Contains("Door"))
+        {
+            if (option == "A")
+            {
+                string roomName = trigger.Substring(0, trigger.Length - 4); // Remove "Door" from the trigger name
+                //PlayerPrefs.SetString("gameState", "staticSceneDuringBreak"); // Save Current Game State
+                PlayerPrefs.SetFloat("breakTimeLeft", breakManager.getTimeLeft()); // Save the current break time left
+                breakManager.initiateStaticSceneDuringBreak(roomName);
+            }
+            else if (option == "B")
+            {
+                //Player answered "No" to the door prompt
+                //Do nothing and close the dialogue box.
+                HideDialogueBox();
+            }
+        }
+        else if (chosenLine.feedback != "None")
+        {
+            if (PlayerPrefs.GetString("feedback") == "")
+            {
+                PlayerPrefs.SetString("feedback", chosenLine.feedback); // Save the feedback for the chosen line
+            }
+            else
+            {
+                PlayerPrefs.SetString("feedback", PlayerPrefs.GetString("feedback") + "\n" + chosenLine.feedback); // Append the feedback for the chosen line
+            }
+        }
+        enabled = false; // Disable the dialogue box component after picking an option
+    }
+}

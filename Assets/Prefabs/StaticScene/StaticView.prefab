@@ -30,8 +30,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2977261174738170252}
-  - {fileID: 2653106755214466573}
   - {fileID: 1303001966630933825}
+  - {fileID: 2653106755214466573}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2564399829497224606
@@ -46,7 +46,15 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 3666935779701675821}
+    - target: {fileID: 1048128678578325748, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 3666935779701675821}
     - target: {fileID: 2041518268500373117, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 3666935779701675821}
+    - target: {fileID: 2258531665897779519, guid: 5d58571653f629c449e20464973fbd43, type: 3}
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 3666935779701675821}
@@ -135,6 +143,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5851626273062049301, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 3666935779701675821}
+    - target: {fileID: 6289863158948690661, guid: 5d58571653f629c449e20464973fbd43, type: 3}
+      propertyPath: textSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289863158948690661, guid: 5d58571653f629c449e20464973fbd43, type: 3}
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 3666935779701675821}
