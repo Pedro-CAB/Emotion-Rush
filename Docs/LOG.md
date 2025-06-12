@@ -60,6 +60,8 @@ Sprint 3 focused in incrementing both Static Scenes and School Break Scenes, whi
 - School Store GUI and Logic
 - Started Using PlayerPrefs for Tracking Variables Needed in Multiple Scenes
 - Adjustments to Dialogue GUI and Logic Refactoring
+- JSON Parser for Reading Interactions and Converting them in Game Objects
+- Added at least one interaction for each school room
 
 ### What Went Well
 - This Sprint was one of the most productive so far, with many features being incremented or implemented on it.
@@ -67,12 +69,21 @@ Sprint 3 focused in incrementing both Static Scenes and School Break Scenes, whi
 ### What Needs to Change/Improve
 - Some sections of code could use some refactoring for easing updates when necessary.
 ## Sprint 4
+
+The aim for Sprint 4 was finally achieving the MVP of Emotion Rush, by completing any mandatory features remaining in the product backlog in order to achieve the v1.0 release of Emotion Rush, the first playable version of the game. As planned, there were not that many features left implementing, so the rest of the Sprint was spent testing the game, fixing any encountered bugs and making adjustments to ensure the best quality possible for the release, which resulted in the more stable v1.1, still in this Sprint.
+
+### What Was Done
+- Emotion Identification Segments Scoring and Feedback Logic
+- Adjustments to Interaction Storage and Loading for Mobile Compatibility
+- Main Menu GUI Improvements
 ### What Went Well
-- 
+- Feature Implementation was handled very quickly, which allowed for polishing and bug fixing for a significant part of the Sprint, while also dedicating time to adding new content to the game.
 
 ### What Needs to Change/Improve
-- 
+- While Emotion Rush is now ready for testing with healthcare professionals, it's important to make some additional tests to detect and solve any possible bugs, as well as working on updating code documentation as well as refactoring code that may be disorganized for facilitating future updates or changes that need to be done.
 ## Sprint 5
+### What Was Done
+- 
 ### What Went Well
 - 
 
