@@ -27,11 +27,11 @@ Sprint 1 finished the implementation of the core mechanics of the game, focusing
 - Good Time Management allowed to accomplish all mechanics revolving around dialogue and led to UI related features being added mid sprint.
 
 ### What Needs to Change/Improve
-- Dialogue was not as quick to implement as initially foreseen. Situations like this are to be avoided in the future.
+- Dialogue was not as quick to implement as initially foreseen, leading to the decision to move the implementation of the Pause Menu to the next sprint's backlog. Situations like this are to be avoided in the future.
 
 ## Sprint 2 (25/04-08/05)
 
-Sprint 2 focused on building the gameplay by developing features related to static and explorable scenes inside the game, as well as transitioning between those scenes. New UI elements were also introduced, both for these features and for others.
+Sprint 2 focused on building the gameplay by developing features related to School Break scenes inside the game, as well as transitioning between those scenes. New UI elements were also introduced, both for these features and for others.
 
 ### What Was Done
 - Pause UI
@@ -48,5 +48,33 @@ Sprint 2 focused on building the gameplay by developing features related to stat
     - Limitations were encountered regarding multiple character sprites that represent a bigger amount of time to be invested into adding multiple characters and animations to the game. This process needs to be as quick and simple as possible.
     - Interaction Scenes during Breaks still need to be implemented. It is important to think how to implement them in a way that the timer doesn't restart after an interaction ends.
 ## Sprint 3
+
+Sprint 3 focused in incrementing both Static Scenes and School Break Scenes, while the Day Cycle logic was also being implemented. Additionally, logic and Day Outcome GUI was also developed, as well as multiple bug fixes and adjustments done to increments of previous sprints. 
+
+### What Was Done
+- Created Unity Scenes for Static Scenes in each school room
+- School Map Adjustments
+- Interactive Doors for accessing rooms during School Breaks
+- Coin System GUI and Logic
+- Day Outcome GUI and Logic
+- School Store GUI and Logic
+- Started Using PlayerPrefs for Tracking Variables Needed in Multiple Scenes
+- Adjustments to Dialogue GUI and Logic Refactoring
+
+### What Went Well
+- This Sprint was one of the most productive so far, with many features being incremented or implemented on it.
+
+### What Needs to Change/Improve
+- Some sections of code could use some refactoring for easing updates when necessary.
 ## Sprint 4
+### What Went Well
+- 
+
+### What Needs to Change/Improve
+- 
 ## Sprint 5
+### What Went Well
+- 
+
+### What Needs to Change/Improve
+- 
