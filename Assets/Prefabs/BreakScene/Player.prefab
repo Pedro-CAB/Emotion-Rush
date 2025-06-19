@@ -201,7 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 0}
-  speed: 0
 --- !u!114 &5148057751061605688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89018d825e44eda478ecce7798574470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detect_distance: 100
+  detect_distance: 1
 --- !u!114 &3226901242096490250
 MonoBehaviour:
   m_ObjectHideFlags: 0
