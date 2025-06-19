@@ -9,21 +9,35 @@ public class MainMenu : MonoBehaviour
 
     public GameObject mainMenuUI;
     public GameObject areYouSureUI;
+    public GameObject helpUI;
     public GameObject newGameButton;
     public GameObject loadGameButton;
+    public GameObject helpButton;
+
+    public GameObject[] helpPages;
+    public GameObject helpNextButton;
+    public GameObject helpPreviousButton;
+    private int currentPageIndex = 0;
     public void Start()
     {
         sequenceController = GetComponent<SequenceController>();
         areYouSureUI.SetActive(false);
+        helpUI.SetActive(false);
         cleanPrefs();
         if (PlayerPrefs.GetInt("savedGameExists") == -1) //if there is no saved game, there is no option to load game
         {
             loadGameButton.SetActive(false);
+            Vector3 loadGamePos = loadGameButton.transform.position;
+            Vector3 helpButtonPos = helpButton.transform.position;
+            helpButton.transform.position = new Vector3(helpButtonPos.x, loadGamePos.y, helpButtonPos.z);
         }
         else
         {
             loadGameButton.SetActive(true);
+            //Vector3 helpButtonPos = helpButton.transform.position;
+            //helpButton.transform.position = new Vector3(helpButtonPos.x, -528, helpButtonPos.z);
         }
+        helpButton.SetActive(true);
     }
 
     public void AreYouSure()
@@ -70,6 +84,65 @@ public class MainMenu : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
         }
+    }
+
+    public void Help()
+    {
+        audioPlayer.playButtonPushSound();
+        helpPreviousButton.SetActive(false);
+        helpUI.SetActive(true);
+        mainMenuUI.SetActive(false);
+        currentPageIndex = 0;
+        for (int i = 0; i < helpPages.Length; i++)
+        {
+            helpPages[i].SetActive(i == currentPageIndex);
+        }
+    }
+
+    public void NextHelpPage()
+    {
+        audioPlayer.playButtonPushSound();
+        if (currentPageIndex < helpPages.Length - 1)
+        {
+            helpPages[currentPageIndex].SetActive(false);
+            currentPageIndex++;
+            helpPages[currentPageIndex].SetActive(true);
+            if (currentPageIndex == helpPages.Length - 1)
+            {
+                helpNextButton.SetActive(false);
+            }
+            helpPreviousButton.SetActive(true);
+        }
+    }
+
+    public void PreviousHelpPage()
+    {
+        audioPlayer.playButtonPushSound();
+        if (currentPageIndex > 0)
+        {
+            helpPages[currentPageIndex].SetActive(false);
+            currentPageIndex--;
+            helpPages[currentPageIndex].SetActive(true);
+            if (currentPageIndex == 0)
+            {
+                helpPreviousButton.SetActive(false);
+            }
+            helpNextButton.SetActive(true);
+        }
+    }
+
+    public void BackToMainMenu()
+    {
+        audioPlayer.playButtonPushSound();
+        helpUI.SetActive(false);
+        mainMenuUI.SetActive(true);
+        currentPageIndex = 0;
+        for (int i = 0; i < helpPages.Length; i++)
+        {
+            helpPages[i].SetActive(false);
+        }
+        helpPreviousButton.SetActive(false);
+        helpNextButton.SetActive(true);
     }
 
     /// <summary>
