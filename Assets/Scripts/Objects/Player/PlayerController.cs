@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerView.handleJoystickInput();
+        handleJoystickInput();
         handleObjectDetection();
         playerView.handleAnimations();
     }
@@ -49,6 +49,25 @@ public class PlayerController : MonoBehaviour
     {
         playerModel.setLinearVelocity(velocity);
     }
+
+    /// <summary>
+    /// Translates joystick input into player movement.
+    /// </summary>
+    public void handleJoystickInput(){
+        MovementJoystick movementJoystick = playerModel.getMovementJoystick();
+        Rigidbody2D rb = playerModel.getRigidbody();
+        float speed = playerModel.getSpeed();
+        if (movementJoystick.joystickVector.y != 0)
+        {
+            playerModel.setLinearVelocity(new Vector2(movementJoystick.joystickVector.x * speed, movementJoystick.joystickVector.y * speed));
+        }
+
+        else
+        {
+            playerModel.setLinearVelocity(Vector2.zero);
+        }
+    }
+
 
     public PlayerModel.Directions getFacingDirection()
     {

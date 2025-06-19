@@ -12,24 +12,6 @@ public class PlayerView : MonoBehaviour
     }
 
     /// <summary>
-    /// Translates joystick input into player movement.
-    /// </summary>
-    public void handleJoystickInput(){
-        MovementJoystick movementJoystick = playerController.getMovementJoystick();
-        Rigidbody2D rb = playerController.getRigidbody();
-        float speed = playerController.getSpeed();
-        if (movementJoystick.joystickVector.y != 0)
-        {
-            playerController.setLinearVelocity(new Vector2(movementJoystick.joystickVector.x * speed, movementJoystick.joystickVector.y * speed));
-        }
-
-        else
-        {
-            playerController.setLinearVelocity(Vector2.zero);
-        }
-    }
-
-    /// <summary>
     /// Handles player animations based on movement and direction.
     /// </summary>
     public void handleAnimations(){
